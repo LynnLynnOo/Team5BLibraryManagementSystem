@@ -139,6 +139,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="readme.txt" />
     <Content Include="SA47Team05BESNETLMS.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>SA47Team05BESNETLMS.Context.cs</LastGenOutput>
