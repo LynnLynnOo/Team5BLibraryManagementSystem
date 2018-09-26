@@ -15,24 +15,20 @@ namespace Team5BLibraryManagementSystem
         public Frm_Main()
         {
             InitializeComponent();
-        }
-
-        private void Frm_Main_Load(object sender, EventArgs e)
-        {
 
         }
 
         private void BooksMenu(bool visibility)
         {
-            Btn_Searchbooks.Visible = visibility;
-            Btn_Registernewbooks.Visible = visibility;
+            btn_Searchbooks.Visible = visibility;
+            btn_Registernewbooks.Visible = visibility;
         }
 
         private void MemberMenu(bool visibility)
         {
-            Btn_Searcheditmember.Visible = visibility;
-            Btn_Addnewmember.Visible = visibility;
-            Btn_Borrowreturnbooks.Visible = visibility;
+            btn_Searcheditmember.Visible = visibility;
+            btn_Addnewmember.Visible = visibility;
+            btn_Borrowreturnbooks.Visible = visibility;
         }
 
         private void Btn_Books_MouseEnter_1(object sender, EventArgs e)
@@ -59,9 +55,16 @@ namespace Team5BLibraryManagementSystem
             BooksMenu(false);
         }
 
-        private void uC_Membersearchedit1_Load(object sender, EventArgs e)
+        private void btn_Books_MouseLeave(object sender, EventArgs e)
         {
+            BooksMenu(false);
+            MemberMenu(false);
+        }
 
+        private void btn_Members_MouseLeave(object sender, EventArgs e)
+        {
+            BooksMenu(false);
+            MemberMenu(false);
         }
     }
 }
