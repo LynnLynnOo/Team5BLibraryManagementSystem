@@ -63,18 +63,6 @@
     <Compile Include="Booksdetail.cs">
       <DependentUpon>SA47Team05BESNETLMS.tt</DependentUpon>
     </Compile>
-    <Compile Include="Frm_LendBook.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Frm_LendBook.Designer.cs">
-      <DependentUpon>Frm_LendBook.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Frm_LendMember.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Frm_LendMember.Designer.cs">
-      <DependentUpon>Frm_LendMember.cs</DependentUpon>
-    </Compile>
     <Compile Include="Helpersfunc.cs" />
     <Compile Include="Frm_Login.cs">
       <SubType>Form</SubType>
@@ -111,23 +99,11 @@
     <Compile Include="Transaction.cs">
       <DependentUpon>SA47Team05BESNETLMS.tt</DependentUpon>
     </Compile>
-    <Compile Include="Uc_Addbooks.cs">
+    <Compile Include="Uc-BookResearch.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Uc_Addbooks.Designer.cs">
-      <DependentUpon>Uc_Addbooks.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Uc_BookResearch.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Uc_BookResearch.Designer.cs">
-      <DependentUpon>Uc_BookResearch.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Uc_LendReturn.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Uc_LendReturn.Designer.cs">
-      <DependentUpon>Uc_LendReturn.cs</DependentUpon>
+    <Compile Include="Uc-BookResearch.Designer.cs">
+      <DependentUpon>Uc-BookResearch.cs</DependentUpon>
     </Compile>
     <Compile Include="UC_Membersearchedit.cs">
       <SubType>UserControl</SubType>
@@ -138,12 +114,12 @@
     <Compile Include="User.cs">
       <DependentUpon>SA47Team05BESNETLMS.tt</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Frm_LendBook.resx">
-      <DependentUpon>Frm_LendBook.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Frm_LendMember.resx">
-      <DependentUpon>Frm_LendMember.cs</DependentUpon>
-    </EmbeddedResource>
+    <Compile Include="Uc_Addnewmember.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Uc_Addnewmember.Designer.cs">
+      <DependentUpon>Uc_Addnewmember.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Frm_Login.resx">
       <DependentUpon>Frm_Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -159,14 +135,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Uc_Addbooks.resx">
-      <DependentUpon>Uc_Addbooks.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Uc_BookResearch.resx">
-      <DependentUpon>Uc_BookResearch.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Uc_LendReturn.resx">
-      <DependentUpon>Uc_LendReturn.cs</DependentUpon>
+    <EmbeddedResource Include="Uc-BookResearch.resx">
+      <DependentUpon>Uc-BookResearch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC_Membersearchedit.resx">
       <DependentUpon>UC_Membersearchedit.cs</DependentUpon>
