@@ -44,12 +44,12 @@ namespace Team5BLibraryManagementSystem
 
         private void label9_Click(object sender, EventArgs e)
         {
-
+           
         }
 
         private void btn_gotosearch_Click(object sender, EventArgs e)
         {
-            UC_Membersearchedit Memedit = new UC_Membersearchedit();
+            Uc_Membersearchedit Memedit = new Uc_Membersearchedit();
             Memedit.Show();
             Memedit.Dispose();
         }
