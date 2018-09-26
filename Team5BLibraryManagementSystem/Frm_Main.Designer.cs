@@ -61,6 +61,7 @@
             this.btn_Books.Text = "Books";
             this.btn_Books.UseVisualStyleBackColor = true;
             this.btn_Books.MouseEnter += new System.EventHandler(this.Btn_Books_MouseEnter_1);
+            this.btn_Books.MouseLeave += new System.EventHandler(this.btn_Books_MouseLeave);
             // 
             // btn_Reports
             // 
@@ -81,6 +82,7 @@
             this.btn_Members.Text = "Members";
             this.btn_Members.UseVisualStyleBackColor = true;
             this.btn_Members.MouseEnter += new System.EventHandler(this.Btn_Members_MouseEnter_1);
+            this.btn_Members.MouseLeave += new System.EventHandler(this.btn_Members_MouseLeave);
             // 
             // btn_Addnewmember
             // 
@@ -165,7 +167,6 @@
             this.Controls.Add(this.uC_Membersearchedit1);
             this.Name = "Frm_Main";
             this.Text = "Frm_Main";
-            this.Load += new System.EventHandler(this.Frm_Main_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 

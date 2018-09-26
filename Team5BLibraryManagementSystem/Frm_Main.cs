@@ -15,10 +15,6 @@ namespace Team5BLibraryManagementSystem
         public Frm_Main()
         {
             InitializeComponent();
-        }
-
-        private void Frm_Main_Load(object sender, EventArgs e)
-        {
 
         }
 
@@ -59,9 +55,16 @@ namespace Team5BLibraryManagementSystem
             BooksMenu(false);
         }
 
-        private void uC_Membersearchedit1_Load(object sender, EventArgs e)
+        private void btn_Books_MouseLeave(object sender, EventArgs e)
         {
+            BooksMenu(false);
+            MemberMenu(false);
+        }
 
+        private void btn_Members_MouseLeave(object sender, EventArgs e)
+        {
+            BooksMenu(false);
+            MemberMenu(false);
         }
     }
 }
