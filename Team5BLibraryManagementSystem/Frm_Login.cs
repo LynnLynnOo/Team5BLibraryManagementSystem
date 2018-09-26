@@ -17,9 +17,36 @@ namespace Team5BLibraryManagementSystem
             InitializeComponent();
         }
 
-        private void Btn_Login_Click(object sender, EventArgs e)
+        private void btn_Login_Click_1(object sender, EventArgs e)
         {
-
+            if (textbox_Username.Text == "" || textbox_Password.Text == "")
+            {
+                MessageBox.Show("Fields not entered!");
+                return;
+            }
+            SA47Team05BESNETLMSEntities ctx = new SA47Team05BESNETLMSEntities();
+            string username = textbox_Username.Text;
+            var query1 = ctx.Users.Where(x => x.username == username).Count();
+            if (query1 <= 0)
+            {
+                Console.WriteLine("invalid username");
+                MessageBox.Show("Invalid Fields!");
+                return;
+            }
+            string password = textbox_Password.Text;
+            string hash = Helpersfunc.GetMD5(password);
+            string query2 = ctx.Users.Where(x => x.username == username).First().password;
+            if (query2 != hash)
+            {
+                MessageBox.Show("Invalid Fields!");
+                return;
+            }
+            else
+            {
+                this.Hide();
+                Frm_Main frm_Main = new Frm_Main();
+                frm_Main.Show();
+            }
         }
     }
 }
