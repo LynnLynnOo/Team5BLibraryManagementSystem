@@ -182,9 +182,6 @@
     <EmbeddedResource Include="UC_Membersearchedit.resx">
       <DependentUpon>UC_Membersearchedit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Uc_Research.resx">
-      <DependentUpon>Uc_Research.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Uc_Researchbook.resx">
       <DependentUpon>Uc_Researchbook.cs</DependentUpon>
     </EmbeddedResource>
