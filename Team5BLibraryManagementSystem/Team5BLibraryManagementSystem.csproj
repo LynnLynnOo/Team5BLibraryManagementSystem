@@ -68,12 +68,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Frm_Book.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,17 +116,29 @@
     <Compile Include="Transaction.cs">
       <DependentUpon>SA47Team05BESNETLMS.tt</DependentUpon>
     </Compile>
-    <Compile Include="Uc-BookResearch.cs">
+    <Compile Include="Uc_Addbook.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Uc-BookResearch.Designer.cs">
-      <DependentUpon>Uc-BookResearch.cs</DependentUpon>
+    <Compile Include="Uc_Addbook.Designer.cs">
+      <DependentUpon>Uc_Addbook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Uc_LendBook.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Uc_LendBook.Designer.cs">
+      <DependentUpon>Uc_LendBook.cs</DependentUpon>
     </Compile>
     <Compile Include="UC_Membersearchedit.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UC_Membersearchedit.Designer.cs">
       <DependentUpon>UC_Membersearchedit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Uc_Researchbook.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Uc_Researchbook.Designer.cs">
+      <DependentUpon>Uc_Researchbook.cs</DependentUpon>
     </Compile>
     <Compile Include="User.cs">
       <DependentUpon>SA47Team05BESNETLMS.tt</DependentUpon>
@@ -143,9 +149,6 @@
     <Compile Include="Uc_Addnewmember.Designer.cs">
       <DependentUpon>Uc_Addnewmember.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Frm_Book.resx">
       <DependentUpon>Frm_Book.cs</DependentUpon>
     </EmbeddedResource>
@@ -167,14 +170,20 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Uc-BookResearch.resx">
-      <DependentUpon>Uc-BookResearch.cs</DependentUpon>
+    <EmbeddedResource Include="Uc_Addbook.resx">
+      <DependentUpon>Uc_Addbook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Uc_LendBook.resx">
+      <DependentUpon>Uc_LendBook.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC_Membersearchedit.resx">
       <DependentUpon>UC_Membersearchedit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Uc_Research.resx">
       <DependentUpon>Uc_Research.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Uc_Researchbook.resx">
+      <DependentUpon>Uc_Researchbook.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
     <None Include="DataSet1.xsc">
