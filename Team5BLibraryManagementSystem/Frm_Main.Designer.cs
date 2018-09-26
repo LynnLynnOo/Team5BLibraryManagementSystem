@@ -162,7 +162,6 @@
             this.Controls.Add(this.btn_Addnewmember);
             this.Controls.Add(this.btn_Searcheditmember);
             this.Controls.Add(this.btn_Searchbooks);
-            this.Controls.Add(this.uC_Membersearchedit1);
             this.Name = "Frm_Main";
             this.Text = "Frm_Main";
             this.Load += new System.EventHandler(this.Frm_Main_Load);

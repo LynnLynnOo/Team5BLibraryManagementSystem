@@ -17,7 +17,7 @@ namespace Team5BLibraryManagementSystem
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Book()
         {
-            this.Transactions = new HashSet<Transaction>();
+            this.Loandetails = new HashSet<Loandetail>();
         }
     
         public int bookid { get; set; }
@@ -26,6 +26,6 @@ namespace Team5BLibraryManagementSystem
     
         public virtual Booksdetail Booksdetail { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Transaction> Transactions { get; set; }
+        public virtual ICollection<Loandetail> Loandetails { get; set; }
     }
 }
