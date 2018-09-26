@@ -14,8 +14,18 @@ namespace Team5BLibraryManagementSystem
     
     public partial class Book
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Book()
+        {
+            this.Transactions = new HashSet<Transaction>();
+        }
+    
         public int bookid { get; set; }
         public int booksdetailsid { get; set; }
         public string status { get; set; }
+    
+        public virtual Booksdetail Booksdetail { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Transaction> Transactions { get; set; }
     }
 }

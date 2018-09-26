@@ -52,7 +52,6 @@
             this.Textbox_Idnumber = new System.Windows.Forms.TextBox();
             this.Textbox_Membername = new System.Windows.Forms.TextBox();
             this.btn_Search = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.Gb_Memberinformation.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -117,6 +116,7 @@
             this.Gb_Memberinformation.TabIndex = 72;
             this.Gb_Memberinformation.TabStop = false;
             this.Gb_Memberinformation.Text = "Member Information";
+            this.Gb_Memberinformation.Visible = false;
             // 
             // btn_Delete
             // 
@@ -136,7 +136,7 @@
             this.btn_Edit.Name = "btn_Edit";
             this.btn_Edit.Size = new System.Drawing.Size(112, 59);
             this.btn_Edit.TabIndex = 94;
-            this.btn_Edit.Text = "Edit";
+            this.btn_Edit.Text = "Update";
             this.btn_Edit.UseVisualStyleBackColor = true;
             this.btn_Edit.Click += new System.EventHandler(this.btn_Edit_Click);
             // 
@@ -189,6 +189,7 @@
             // 
             // Datetimepicker_Expirydate
             // 
+            this.Datetimepicker_Expirydate.Enabled = false;
             this.Datetimepicker_Expirydate.Location = new System.Drawing.Point(203, 410);
             this.Datetimepicker_Expirydate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Datetimepicker_Expirydate.Name = "Datetimepicker_Expirydate";
@@ -197,6 +198,7 @@
             // 
             // Datetimepicker_Joineddate
             // 
+            this.Datetimepicker_Joineddate.Enabled = false;
             this.Datetimepicker_Joineddate.Location = new System.Drawing.Point(203, 356);
             this.Datetimepicker_Joineddate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Datetimepicker_Joineddate.Name = "Datetimepicker_Joineddate";
@@ -285,6 +287,7 @@
             this.Textbox_Idnumber.Location = new System.Drawing.Point(203, 88);
             this.Textbox_Idnumber.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Textbox_Idnumber.Name = "Textbox_Idnumber";
+            this.Textbox_Idnumber.ReadOnly = true;
             this.Textbox_Idnumber.Size = new System.Drawing.Size(284, 26);
             this.Textbox_Idnumber.TabIndex = 73;
             // 
@@ -307,20 +310,10 @@
             this.btn_Search.UseVisualStyleBackColor = true;
             this.btn_Search.Click += new System.EventHandler(this.btn_Search_Click);
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(463, 71);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(236, 28);
-            this.textBox1.TabIndex = 74;
-            // 
             // Uc_Membersearchedit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.btn_Search);
             this.Controls.Add(this.Gb_Memberinformation);
             this.Controls.Add(this.Combobox_Category);
@@ -360,6 +353,5 @@
         private System.Windows.Forms.TextBox Textbox_Idnumber;
         private System.Windows.Forms.TextBox Textbox_Membername;
         private System.Windows.Forms.Button btn_Search;
-        private System.Windows.Forms.TextBox textBox1;
     }
 }
