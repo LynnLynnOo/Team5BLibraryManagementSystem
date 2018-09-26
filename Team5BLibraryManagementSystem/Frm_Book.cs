@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Drawing;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Team5BLibraryManagementSystem
 {
-    public partial class Uc_AddBooks : UserControl
+    public partial class Frm_Book : Form
     {
-        public Uc_AddBooks()
+        public Frm_Book()
         {
             InitializeComponent();
         }

@@ -63,6 +63,18 @@
     <Compile Include="Booksdetail.cs">
       <DependentUpon>SA47Team05BESNETLMS.tt</DependentUpon>
     </Compile>
+    <Compile Include="Frm_Book.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Book.Designer.cs">
+      <DependentUpon>Frm_Book.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Member.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Member.Designer.cs">
+      <DependentUpon>Frm_Member.cs</DependentUpon>
+    </Compile>
     <Compile Include="Helpersfunc.cs" />
     <Compile Include="Frm_Login.cs">
       <SubType>Form</SubType>
@@ -99,11 +111,17 @@
     <Compile Include="Transaction.cs">
       <DependentUpon>SA47Team05BESNETLMS.tt</DependentUpon>
     </Compile>
-    <Compile Include="Uc_Membersearchedit.cs">
+    <Compile Include="Uc-BookResearch.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Uc_Membersearchedit.Designer.cs">
-      <DependentUpon>Uc_Membersearchedit.cs</DependentUpon>
+    <Compile Include="Uc-BookResearch.Designer.cs">
+      <DependentUpon>Uc-BookResearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_Membersearchedit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_Membersearchedit.Designer.cs">
+      <DependentUpon>UC_Membersearchedit.cs</DependentUpon>
     </Compile>
     <Compile Include="User.cs">
       <DependentUpon>SA47Team05BESNETLMS.tt</DependentUpon>
@@ -114,11 +132,17 @@
     <Compile Include="Uc_Addnewmember.Designer.cs">
       <DependentUpon>Uc_Addnewmember.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Frm_Book.resx">
+      <DependentUpon>Frm_Book.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_Login.resx">
       <DependentUpon>Frm_Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Main.resx">
       <DependentUpon>Frm_Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Member.resx">
+      <DependentUpon>Frm_Member.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -129,8 +153,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Uc_Membersearchedit.resx">
-      <DependentUpon>Uc_Membersearchedit.cs</DependentUpon>
+    <EmbeddedResource Include="Uc-BookResearch.resx">
+      <DependentUpon>Uc-BookResearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_Membersearchedit.resx">
+      <DependentUpon>UC_Membersearchedit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Uc_Research.resx">
+      <DependentUpon>Uc_Research.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
