@@ -105,6 +105,12 @@
     <Compile Include="Uc_Addbooks.Designer.cs">
       <DependentUpon>Uc_Addbooks.cs</DependentUpon>
     </Compile>
+    <Compile Include="Uc_Lend.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Uc_Lend.Designer.cs">
+      <DependentUpon>Uc_Lend.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC_Membersearchedit.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -143,6 +149,9 @@
     </Compile>
     <EmbeddedResource Include="Uc_Addbooks.resx">
       <DependentUpon>Uc_Addbooks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Uc_Lend.resx">
+      <DependentUpon>Uc_Lend.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC_Membersearchedit.resx">
       <DependentUpon>UC_Membersearchedit.cs</DependentUpon>
