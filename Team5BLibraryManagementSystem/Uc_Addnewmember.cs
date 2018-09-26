@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Team5BLibraryManagementSystem
 {
-    public partial class UserControl1 : UserControl
+    public partial class Uc_Addnewmember : UserControl
     {
-        public UserControl1()
+        public Uc_Addnewmember()
         {
             InitializeComponent();
         }

@@ -1,6 +1,6 @@
 ﻿namespace Team5BLibraryManagementSystem
 {
-    partial class UserControl1
+    partial class Uc_Addnewmember
     {
         /// <summary> 
         /// Required designer variable.

@@ -108,11 +108,11 @@
     <Compile Include="User.cs">
       <DependentUpon>SA47Team05BESNETLMS.tt</DependentUpon>
     </Compile>
-    <Compile Include="UserControl1.cs">
+    <Compile Include="Uc_Addnewmember.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControl1.Designer.cs">
-      <DependentUpon>UserControl1.cs</DependentUpon>
+    <Compile Include="Uc_Addnewmember.Designer.cs">
+      <DependentUpon>Uc_Addnewmember.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Frm_Login.resx">
       <DependentUpon>Frm_Login.cs</DependentUpon>
