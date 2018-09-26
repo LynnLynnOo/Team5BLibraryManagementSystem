@@ -31,17 +31,15 @@
             this.btuRetirew1 = new System.Windows.Forms.Button();
             this.butRetriew2 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.dateDue = new System.Windows.Forms.DateTimePicker();
+            this.date_Due = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.dateIssue = new System.Windows.Forms.DateTimePicker();
+            this.date_Issue = new System.Windows.Forms.DateTimePicker();
             this.butReturn = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textRemark = new System.Windows.Forms.TextBox();
             this.textBookID2 = new System.Windows.Forms.TextBox();
-            this.textBookID = new System.Windows.Forms.TextBox();
+            this.textbox_Bookid = new System.Windows.Forms.TextBox();
             this.textMemberID2 = new System.Windows.Forms.TextBox();
-            this.textMemberID = new System.Windows.Forms.TextBox();
+            this.textbox_MemberID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.butLend = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -73,12 +71,12 @@
             this.label2.TabIndex = 49;
             this.label2.Text = "Memember ID";
             // 
-            // dateDue
+            // date_Due
             // 
-            this.dateDue.Location = new System.Drawing.Point(235, 213);
-            this.dateDue.Name = "dateDue";
-            this.dateDue.Size = new System.Drawing.Size(200, 21);
-            this.dateDue.TabIndex = 48;
+            this.date_Due.Location = new System.Drawing.Point(235, 213);
+            this.date_Due.Name = "date_Due";
+            this.date_Due.Size = new System.Drawing.Size(200, 21);
+            this.date_Due.TabIndex = 48;
             // 
             // label5
             // 
@@ -98,37 +96,22 @@
             this.label4.TabIndex = 46;
             this.label4.Text = "Date Of Issue";
             // 
-            // dateIssue
+            // date_Issue
             // 
-            this.dateIssue.Location = new System.Drawing.Point(235, 177);
-            this.dateIssue.Name = "dateIssue";
-            this.dateIssue.Size = new System.Drawing.Size(200, 21);
-            this.dateIssue.TabIndex = 45;
+            this.date_Issue.Location = new System.Drawing.Point(235, 177);
+            this.date_Issue.Name = "date_Issue";
+            this.date_Issue.Size = new System.Drawing.Size(200, 21);
+            this.date_Issue.TabIndex = 45;
             // 
             // butReturn
             // 
-            this.butReturn.Location = new System.Drawing.Point(281, 296);
+            this.butReturn.Location = new System.Drawing.Point(285, 277);
             this.butReturn.Name = "butReturn";
             this.butReturn.Size = new System.Drawing.Size(75, 23);
             this.butReturn.TabIndex = 44;
             this.butReturn.Text = "Return";
             this.butReturn.UseVisualStyleBackColor = true;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(130, 255);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(47, 12);
-            this.label3.TabIndex = 43;
-            this.label3.Text = "Remarks";
-            // 
-            // textRemark
-            // 
-            this.textRemark.Location = new System.Drawing.Point(235, 246);
-            this.textRemark.Name = "textRemark";
-            this.textRemark.Size = new System.Drawing.Size(179, 21);
-            this.textRemark.TabIndex = 42;
+            this.butReturn.Click += new System.EventHandler(this.butReturn_Click);
             // 
             // textBookID2
             // 
@@ -138,12 +121,12 @@
             this.textBookID2.Size = new System.Drawing.Size(100, 21);
             this.textBookID2.TabIndex = 41;
             // 
-            // textBookID
+            // textbox_Bookid
             // 
-            this.textBookID.Location = new System.Drawing.Point(235, 113);
-            this.textBookID.Name = "textBookID";
-            this.textBookID.Size = new System.Drawing.Size(100, 21);
-            this.textBookID.TabIndex = 40;
+            this.textbox_Bookid.Location = new System.Drawing.Point(235, 113);
+            this.textbox_Bookid.Name = "textbox_Bookid";
+            this.textbox_Bookid.Size = new System.Drawing.Size(100, 21);
+            this.textbox_Bookid.TabIndex = 40;
             // 
             // textMemberID2
             // 
@@ -153,12 +136,12 @@
             this.textMemberID2.Size = new System.Drawing.Size(100, 21);
             this.textMemberID2.TabIndex = 39;
             // 
-            // textMemberID
+            // textbox_MemberID
             // 
-            this.textMemberID.Location = new System.Drawing.Point(235, 62);
-            this.textMemberID.Name = "textMemberID";
-            this.textMemberID.Size = new System.Drawing.Size(100, 21);
-            this.textMemberID.TabIndex = 38;
+            this.textbox_MemberID.Location = new System.Drawing.Point(235, 62);
+            this.textbox_MemberID.Name = "textbox_MemberID";
+            this.textbox_MemberID.Size = new System.Drawing.Size(100, 21);
+            this.textbox_MemberID.TabIndex = 38;
             // 
             // label1
             // 
@@ -171,12 +154,13 @@
             // 
             // butLend
             // 
-            this.butLend.Location = new System.Drawing.Point(172, 296);
+            this.butLend.Location = new System.Drawing.Point(154, 277);
             this.butLend.Name = "butLend";
             this.butLend.Size = new System.Drawing.Size(75, 23);
             this.butLend.TabIndex = 36;
             this.butLend.Text = "Lend";
             this.butLend.UseVisualStyleBackColor = true;
+            this.butLend.Click += new System.EventHandler(this.butLend_Click);
             // 
             // Uc_Lend
             // 
@@ -185,21 +169,20 @@
             this.Controls.Add(this.btuRetirew1);
             this.Controls.Add(this.butRetriew2);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.dateDue);
+            this.Controls.Add(this.date_Due);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.dateIssue);
+            this.Controls.Add(this.date_Issue);
             this.Controls.Add(this.butReturn);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.textRemark);
             this.Controls.Add(this.textBookID2);
-            this.Controls.Add(this.textBookID);
+            this.Controls.Add(this.textbox_Bookid);
             this.Controls.Add(this.textMemberID2);
-            this.Controls.Add(this.textMemberID);
+            this.Controls.Add(this.textbox_MemberID);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.butLend);
             this.Name = "Uc_Lend";
             this.Size = new System.Drawing.Size(564, 381);
+            this.Load += new System.EventHandler(this.Uc_Lend_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -210,17 +193,15 @@
         private System.Windows.Forms.Button btuRetirew1;
         private System.Windows.Forms.Button butRetriew2;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DateTimePicker dateDue;
+        private System.Windows.Forms.DateTimePicker date_Due;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DateTimePicker dateIssue;
+        private System.Windows.Forms.DateTimePicker date_Issue;
         private System.Windows.Forms.Button butReturn;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textRemark;
         private System.Windows.Forms.TextBox textBookID2;
-        private System.Windows.Forms.TextBox textBookID;
+        private System.Windows.Forms.TextBox textbox_Bookid;
         private System.Windows.Forms.TextBox textMemberID2;
-        private System.Windows.Forms.TextBox textMemberID;
+        private System.Windows.Forms.TextBox textbox_MemberID;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button butLend;
     }
