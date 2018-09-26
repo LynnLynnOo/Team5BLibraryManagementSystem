@@ -176,6 +176,9 @@
     <EmbeddedResource Include="Uc_LendBook.resx">
       <DependentUpon>Uc_LendBook.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Uc_Addnewmember.resx">
+      <DependentUpon>Uc_Addnewmember.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UC_Membersearchedit.resx">
       <DependentUpon>UC_Membersearchedit.cs</DependentUpon>
     </EmbeddedResource>

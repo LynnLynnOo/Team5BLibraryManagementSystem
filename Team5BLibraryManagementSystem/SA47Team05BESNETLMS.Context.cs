@@ -27,8 +27,9 @@ namespace Team5BLibraryManagementSystem
     
         public virtual DbSet<Book> Books { get; set; }
         public virtual DbSet<Booksdetail> Booksdetails { get; set; }
+        public virtual DbSet<Loandetail> Loandetails { get; set; }
         public virtual DbSet<Member> Members { get; set; }
-        public virtual DbSet<Transaction> Transactions { get; set; }
+        public virtual DbSet<Returndetail> Returndetails { get; set; }
         public virtual DbSet<User> Users { get; set; }
     }
 }

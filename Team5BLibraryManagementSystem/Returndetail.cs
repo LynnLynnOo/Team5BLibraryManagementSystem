@@ -12,17 +12,12 @@ namespace Team5BLibraryManagementSystem
     using System;
     using System.Collections.Generic;
     
-    public partial class Transaction
+    public partial class Returndetail
     {
-        public int transactionid { get; set; }
-        public int memberid { get; set; }
-        public int bookid { get; set; }
-        public string status { get; set; }
-        public System.DateTime startdate { get; set; }
-        public System.DateTime enddate { get; set; }
-        public int extensioncount { get; set; }
+        public int Returndetailsid { get; set; }
+        public int loandetailsid { get; set; }
+        public System.DateTime returndate { get; set; }
     
-        public virtual Member Member { get; set; }
-        public virtual Book Book { get; set; }
+        public virtual Loandetail Loandetail { get; set; }
     }
 }
