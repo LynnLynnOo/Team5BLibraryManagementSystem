@@ -122,29 +122,17 @@
     <Compile Include="Transaction.cs">
       <DependentUpon>SA47Team05BESNETLMS.tt</DependentUpon>
     </Compile>
-    <Compile Include="Uc_Addbooks.cs">
+    <Compile Include="Uc-BookResearch.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Uc_Addbooks.Designer.cs">
-      <DependentUpon>Uc_Addbooks.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Uc_Lend.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Uc_Lend.Designer.cs">
-      <DependentUpon>Uc_Lend.cs</DependentUpon>
+    <Compile Include="Uc-BookResearch.Designer.cs">
+      <DependentUpon>Uc-BookResearch.cs</DependentUpon>
     </Compile>
     <Compile Include="UC_Membersearchedit.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UC_Membersearchedit.Designer.cs">
       <DependentUpon>UC_Membersearchedit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Uc_Research.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Uc_Research.Designer.cs">
-      <DependentUpon>Uc_Research.cs</DependentUpon>
     </Compile>
     <Compile Include="User.cs">
       <DependentUpon>SA47Team05BESNETLMS.tt</DependentUpon>
@@ -179,11 +167,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Uc_Addbooks.resx">
-      <DependentUpon>Uc_Addbooks.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Uc_Lend.resx">
-      <DependentUpon>Uc_Lend.cs</DependentUpon>
+    <EmbeddedResource Include="Uc-BookResearch.resx">
+      <DependentUpon>Uc-BookResearch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC_Membersearchedit.resx">
       <DependentUpon>UC_Membersearchedit.cs</DependentUpon>
