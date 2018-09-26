@@ -54,5 +54,10 @@ namespace Team5BLibraryManagementSystem
             Datetimepicker_Joineddate.Text = q.joindate.ToString();
             Datetimepicker_Expirydate.Text = q.expirydate.ToString();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
