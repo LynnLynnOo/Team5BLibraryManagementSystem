@@ -30,22 +30,19 @@
         {
             this.Combobox_Category = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.Btn_Search = new System.Windows.Forms.Button();
             this.Textbox_Category = new System.Windows.Forms.TextBox();
             this.Gb_Memberinformation = new System.Windows.Forms.GroupBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btn_Delete = new System.Windows.Forms.Button();
+            this.btn_Edit = new System.Windows.Forms.Button();
+            this.btn_Print = new System.Windows.Forms.Button();
             this.Datetimepicker_Dob = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.Textbox_Phone = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.Combobox_Occupation = new System.Windows.Forms.ComboBox();
             this.Datetimepicker_Expirydate = new System.Windows.Forms.DateTimePicker();
             this.Datetimepicker_Joineddate = new System.Windows.Forms.DateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -54,6 +51,7 @@
             this.Textbox_email = new System.Windows.Forms.TextBox();
             this.Textbox_Idnumber = new System.Windows.Forms.TextBox();
             this.Textbox_Membername = new System.Windows.Forms.TextBox();
+            this.btn_Search = new System.Windows.Forms.Button();
             this.Gb_Memberinformation.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -81,17 +79,6 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "Search By";
             // 
-            // Btn_Search
-            // 
-            this.Btn_Search.Location = new System.Drawing.Point(237, 68);
-            this.Btn_Search.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Btn_Search.Name = "Btn_Search";
-            this.Btn_Search.Size = new System.Drawing.Size(111, 32);
-            this.Btn_Search.TabIndex = 7;
-            this.Btn_Search.Text = "Search";
-            this.Btn_Search.UseVisualStyleBackColor = true;
-            this.Btn_Search.Click += new System.EventHandler(this.button1_Click);
-            // 
             // Textbox_Category
             // 
             this.Textbox_Category.Location = new System.Drawing.Point(463, 23);
@@ -104,19 +91,17 @@
             // 
             // Gb_Memberinformation
             // 
-            this.Gb_Memberinformation.Controls.Add(this.button5);
-            this.Gb_Memberinformation.Controls.Add(this.button4);
-            this.Gb_Memberinformation.Controls.Add(this.button2);
+            this.Gb_Memberinformation.Controls.Add(this.btn_Delete);
+            this.Gb_Memberinformation.Controls.Add(this.btn_Edit);
+            this.Gb_Memberinformation.Controls.Add(this.btn_Print);
             this.Gb_Memberinformation.Controls.Add(this.Datetimepicker_Dob);
             this.Gb_Memberinformation.Controls.Add(this.label7);
             this.Gb_Memberinformation.Controls.Add(this.Textbox_Phone);
             this.Gb_Memberinformation.Controls.Add(this.label3);
-            this.Gb_Memberinformation.Controls.Add(this.Combobox_Occupation);
             this.Gb_Memberinformation.Controls.Add(this.Datetimepicker_Expirydate);
             this.Gb_Memberinformation.Controls.Add(this.Datetimepicker_Joineddate);
             this.Gb_Memberinformation.Controls.Add(this.label9);
             this.Gb_Memberinformation.Controls.Add(this.label8);
-            this.Gb_Memberinformation.Controls.Add(this.label6);
             this.Gb_Memberinformation.Controls.Add(this.label5);
             this.Gb_Memberinformation.Controls.Add(this.label4);
             this.Gb_Memberinformation.Controls.Add(this.label2);
@@ -131,36 +116,40 @@
             this.Gb_Memberinformation.TabIndex = 72;
             this.Gb_Memberinformation.TabStop = false;
             this.Gb_Memberinformation.Text = "Member Information";
+            this.Gb_Memberinformation.Visible = false;
             // 
-            // button5
+            // btn_Delete
             // 
-            this.button5.Location = new System.Drawing.Point(573, 301);
-            this.button5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(112, 59);
-            this.button5.TabIndex = 95;
-            this.button5.Text = "Delete";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btn_Delete.Location = new System.Drawing.Point(564, 285);
+            this.btn_Delete.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn_Delete.Name = "btn_Delete";
+            this.btn_Delete.Size = new System.Drawing.Size(112, 59);
+            this.btn_Delete.TabIndex = 95;
+            this.btn_Delete.Text = "Delete";
+            this.btn_Delete.UseVisualStyleBackColor = true;
+            this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
             // 
-            // button4
+            // btn_Edit
             // 
-            this.button4.Location = new System.Drawing.Point(573, 219);
-            this.button4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(112, 59);
-            this.button4.TabIndex = 94;
-            this.button4.Text = "Edit";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btn_Edit.Location = new System.Drawing.Point(564, 203);
+            this.btn_Edit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn_Edit.Name = "btn_Edit";
+            this.btn_Edit.Size = new System.Drawing.Size(112, 59);
+            this.btn_Edit.TabIndex = 94;
+            this.btn_Edit.Text = "Update";
+            this.btn_Edit.UseVisualStyleBackColor = true;
+            this.btn_Edit.Click += new System.EventHandler(this.btn_Edit_Click);
             // 
-            // button2
+            // btn_Print
             // 
-            this.button2.Location = new System.Drawing.Point(573, 142);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(112, 59);
-            this.button2.TabIndex = 93;
-            this.button2.Text = "Print";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_Print.Location = new System.Drawing.Point(564, 126);
+            this.btn_Print.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn_Print.Name = "btn_Print";
+            this.btn_Print.Size = new System.Drawing.Size(112, 59);
+            this.btn_Print.TabIndex = 93;
+            this.btn_Print.Text = "Print";
+            this.btn_Print.UseVisualStyleBackColor = true;
+            this.btn_Print.Click += new System.EventHandler(this.btn_Print_Click);
             // 
             // Datetimepicker_Dob
             // 
@@ -198,25 +187,10 @@
             this.label3.TabIndex = 86;
             this.label3.Text = "Phone";
             // 
-            // Combobox_Occupation
-            // 
-            this.Combobox_Occupation.FormattingEnabled = true;
-            this.Combobox_Occupation.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.Combobox_Occupation.Items.AddRange(new object[] {
-            "Professor",
-            "Faculty",
-            "Student",
-            "Research Scholar",
-            "Others"});
-            this.Combobox_Occupation.Location = new System.Drawing.Point(203, 358);
-            this.Combobox_Occupation.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Combobox_Occupation.Name = "Combobox_Occupation";
-            this.Combobox_Occupation.Size = new System.Drawing.Size(284, 28);
-            this.Combobox_Occupation.TabIndex = 85;
-            // 
             // Datetimepicker_Expirydate
             // 
-            this.Datetimepicker_Expirydate.Location = new System.Drawing.Point(203, 468);
+            this.Datetimepicker_Expirydate.Enabled = false;
+            this.Datetimepicker_Expirydate.Location = new System.Drawing.Point(203, 410);
             this.Datetimepicker_Expirydate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Datetimepicker_Expirydate.Name = "Datetimepicker_Expirydate";
             this.Datetimepicker_Expirydate.Size = new System.Drawing.Size(284, 26);
@@ -224,7 +198,8 @@
             // 
             // Datetimepicker_Joineddate
             // 
-            this.Datetimepicker_Joineddate.Location = new System.Drawing.Point(203, 414);
+            this.Datetimepicker_Joineddate.Enabled = false;
+            this.Datetimepicker_Joineddate.Location = new System.Drawing.Point(203, 356);
             this.Datetimepicker_Joineddate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Datetimepicker_Joineddate.Name = "Datetimepicker_Joineddate";
             this.Datetimepicker_Joineddate.Size = new System.Drawing.Size(284, 26);
@@ -233,7 +208,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(88, 473);
+            this.label9.Location = new System.Drawing.Point(88, 415);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(90, 20);
@@ -243,22 +218,12 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(83, 414);
+            this.label8.Location = new System.Drawing.Point(83, 356);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(95, 20);
             this.label8.TabIndex = 81;
             this.label8.Text = "Joined Date";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(88, 361);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(90, 20);
-            this.label6.TabIndex = 80;
-            this.label6.Text = "Occupation";
             // 
             // label5
             // 
@@ -322,6 +287,7 @@
             this.Textbox_Idnumber.Location = new System.Drawing.Point(203, 88);
             this.Textbox_Idnumber.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Textbox_Idnumber.Name = "Textbox_Idnumber";
+            this.Textbox_Idnumber.ReadOnly = true;
             this.Textbox_Idnumber.Size = new System.Drawing.Size(284, 26);
             this.Textbox_Idnumber.TabIndex = 73;
             // 
@@ -333,14 +299,25 @@
             this.Textbox_Membername.Size = new System.Drawing.Size(284, 26);
             this.Textbox_Membername.TabIndex = 72;
             // 
+            // btn_Search
+            // 
+            this.btn_Search.Location = new System.Drawing.Point(237, 68);
+            this.btn_Search.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn_Search.Name = "btn_Search";
+            this.btn_Search.Size = new System.Drawing.Size(111, 32);
+            this.btn_Search.TabIndex = 73;
+            this.btn_Search.Text = "Search";
+            this.btn_Search.UseVisualStyleBackColor = true;
+            this.btn_Search.Click += new System.EventHandler(this.btn_Search_Click);
+            // 
             // Uc_Membersearchedit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btn_Search);
             this.Controls.Add(this.Gb_Memberinformation);
             this.Controls.Add(this.Combobox_Category);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.Btn_Search);
             this.Controls.Add(this.Textbox_Category);
             this.Name = "Uc_Membersearchedit";
             this.Size = new System.Drawing.Size(846, 635);
@@ -354,22 +331,19 @@
         #endregion
         private System.Windows.Forms.ComboBox Combobox_Category;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button Btn_Search;
         private System.Windows.Forms.TextBox Textbox_Category;
         private System.Windows.Forms.GroupBox Gb_Memberinformation;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btn_Delete;
+        private System.Windows.Forms.Button btn_Edit;
+        private System.Windows.Forms.Button btn_Print;
         private System.Windows.Forms.DateTimePicker Datetimepicker_Dob;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox Textbox_Phone;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox Combobox_Occupation;
         private System.Windows.Forms.DateTimePicker Datetimepicker_Expirydate;
         private System.Windows.Forms.DateTimePicker Datetimepicker_Joineddate;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
@@ -378,5 +352,6 @@
         private System.Windows.Forms.TextBox Textbox_email;
         private System.Windows.Forms.TextBox Textbox_Idnumber;
         private System.Windows.Forms.TextBox Textbox_Membername;
+        private System.Windows.Forms.Button btn_Search;
     }
 }
