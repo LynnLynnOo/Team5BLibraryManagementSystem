@@ -14,6 +14,12 @@ namespace Team5BLibraryManagementSystem
     
     public partial class Member
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Member()
+        {
+            this.Transactions = new HashSet<Transaction>();
+        }
+    
         public int memberid { get; set; }
         public string name { get; set; }
         public string address { get; set; }
@@ -22,5 +28,8 @@ namespace Team5BLibraryManagementSystem
         public System.DateTime dateofbirth { get; set; }
         public System.DateTime joindate { get; set; }
         public System.DateTime expirydate { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Transaction> Transactions { get; set; }
     }
 }

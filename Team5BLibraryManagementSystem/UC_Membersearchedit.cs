@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Team5BLibraryManagementSystem
 {
-    public partial class UC_Membersearchedit : UserControl
+    public partial class Uc_Membersearchedit : UserControl
     {
-        public UC_Membersearchedit()
+        public Uc_Membersearchedit()
         {
             InitializeComponent();
         }
@@ -41,6 +41,7 @@ namespace Team5BLibraryManagementSystem
         {
 
             SA47Team05BESNETLMSEntities context = new SA47Team05BESNETLMSEntities();
+
             var q = (from x in context.Members
                      where x.memberid.ToString() == Textbox_Category.Text
                      select x).First();
