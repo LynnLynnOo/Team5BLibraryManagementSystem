@@ -87,14 +87,12 @@ namespace Team5BLibraryManagementSystem
                 Textbox_Address.Text = q.address.ToString();
                 Datetimepicker_Joineddate.Text = q.joindate.ToString();
                 Datetimepicker_Expirydate.Text = q.expirydate.ToString();
-
             }
 
             catch
             {
                 Gb_Memberinformation.Visible = false;
-                MessageBox.Show("Member does not exist!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning );
-              
+                MessageBox.Show("Member does not exist!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);       
             }
             
         }

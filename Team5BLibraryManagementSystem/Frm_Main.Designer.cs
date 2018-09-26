@@ -60,6 +60,7 @@
             this.btn_Books.TabIndex = 25;
             this.btn_Books.Text = "Books";
             this.btn_Books.UseVisualStyleBackColor = true;
+            this.btn_Books.Click += new System.EventHandler(this.btn_Books_Click);
             this.btn_Books.MouseEnter += new System.EventHandler(this.Btn_Books_MouseEnter_1);
             this.btn_Books.MouseLeave += new System.EventHandler(this.btn_Books_MouseLeave);
             // 

@@ -66,5 +66,10 @@ namespace Team5BLibraryManagementSystem
             BooksMenu(false);
             MemberMenu(false);
         }
+
+        private void btn_Books_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
