@@ -152,7 +152,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1097, 644);
-            this.Controls.Add(this.uC_Membersearchedit1);
             this.Controls.Add(this.btn_Borrowreturnbooks);
             this.Controls.Add(this.btn_Logout);
             this.Controls.Add(this.btn_Registernewbooks);
@@ -163,6 +162,7 @@
             this.Controls.Add(this.btn_Addnewmember);
             this.Controls.Add(this.btn_Searcheditmember);
             this.Controls.Add(this.btn_Searchbooks);
+            this.Controls.Add(this.uC_Membersearchedit1);
             this.Name = "Frm_Main";
             this.Text = "Frm_Main";
             this.Load += new System.EventHandler(this.Frm_Main_Load);
