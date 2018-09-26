@@ -99,11 +99,11 @@
     <Compile Include="Transaction.cs">
       <DependentUpon>SA47Team05BESNETLMS.tt</DependentUpon>
     </Compile>
-    <Compile Include="UC_Membersearchedit.cs">
+    <Compile Include="Uc_Membersearchedit.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UC_Membersearchedit.Designer.cs">
-      <DependentUpon>UC_Membersearchedit.cs</DependentUpon>
+    <Compile Include="Uc_Membersearchedit.Designer.cs">
+      <DependentUpon>Uc_Membersearchedit.cs</DependentUpon>
     </Compile>
     <Compile Include="User.cs">
       <DependentUpon>SA47Team05BESNETLMS.tt</DependentUpon>
@@ -123,8 +123,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="UC_Membersearchedit.resx">
-      <DependentUpon>UC_Membersearchedit.cs</DependentUpon>
+    <EmbeddedResource Include="Uc_Membersearchedit.resx">
+      <DependentUpon>Uc_Membersearchedit.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />

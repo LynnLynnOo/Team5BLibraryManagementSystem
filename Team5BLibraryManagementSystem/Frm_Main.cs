@@ -24,15 +24,15 @@ namespace Team5BLibraryManagementSystem
 
         private void BooksMenu(bool visibility)
         {
-            Btn_Searchbooks.Visible = visibility;
-            Btn_Registernewbooks.Visible = visibility;
+            btn_Searchbooks.Visible = visibility;
+            btn_Registernewbooks.Visible = visibility;
         }
 
         private void MemberMenu(bool visibility)
         {
-            Btn_Searcheditmember.Visible = visibility;
-            Btn_Addnewmember.Visible = visibility;
-            Btn_Borrowreturnbooks.Visible = visibility;
+            btn_Searcheditmember.Visible = visibility;
+            btn_Addnewmember.Visible = visibility;
+            btn_Borrowreturnbooks.Visible = visibility;
         }
 
         private void Btn_Books_MouseEnter_1(object sender, EventArgs e)
