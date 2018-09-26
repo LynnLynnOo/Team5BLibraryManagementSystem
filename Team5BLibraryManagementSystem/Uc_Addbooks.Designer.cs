@@ -1,6 +1,6 @@
 ﻿namespace Team5BLibraryManagementSystem
 {
-    partial class Uc_Addbooks
+    partial class Uc_AddBooks
     {
         /// <summary> 
         /// Required designer variable.
@@ -248,7 +248,7 @@
             this.textBookID.Size = new System.Drawing.Size(100, 21);
             this.textBookID.TabIndex = 36;
             // 
-            // Uc_Addbooks
+            // Uc_AddBooks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -273,7 +273,7 @@
             this.Controls.Add(this.textAuthor);
             this.Controls.Add(this.textBookName);
             this.Controls.Add(this.textBookID);
-            this.Name = "Uc_Addbooks";
+            this.Name = "Uc_AddBooks";
             this.Size = new System.Drawing.Size(564, 381);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

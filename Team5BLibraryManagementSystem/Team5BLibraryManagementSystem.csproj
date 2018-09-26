@@ -99,6 +99,12 @@
     <Compile Include="Transaction.cs">
       <DependentUpon>SA47Team05BESNETLMS.tt</DependentUpon>
     </Compile>
+    <Compile Include="Uc_Addbooks.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Uc_Addbooks.Designer.cs">
+      <DependentUpon>Uc_Addbooks.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC_Membersearchedit.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -135,6 +141,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Uc_Addbooks.resx">
+      <DependentUpon>Uc_Addbooks.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UC_Membersearchedit.resx">
       <DependentUpon>UC_Membersearchedit.cs</DependentUpon>
     </EmbeddedResource>
