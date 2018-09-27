@@ -24,6 +24,7 @@ namespace Team5BLibraryManagementSystem
             uc_Reports1.Visible = visibility;
             uc_Researchbook1.Visible = visibility;
             uC_Membersearchedit1.Visible = visibility;
+            uc_ReturnBook1.Visible = visibility;
             
         }
 
