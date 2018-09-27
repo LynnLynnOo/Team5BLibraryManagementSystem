@@ -262,10 +262,13 @@
     <Compile Include="User.cs">
       <DependentUpon>SA47Team05BESNETLMS.tt</DependentUpon>
     </Compile>
-    <Compile Include="ViewAllLoanedBook.cs">
+    <Compile Include="ViewBooksListing.cs">
       <DependentUpon>SA47Team05BESNETLMS.tt</DependentUpon>
     </Compile>
-    <Compile Include="ViewBooksListing.cs">
+    <Compile Include="ViewLoanedBook.cs">
+      <DependentUpon>SA47Team05BESNETLMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ViewTotalLoanCount.cs">
       <DependentUpon>SA47Team05BESNETLMS.tt</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Frm_Book.resx">
