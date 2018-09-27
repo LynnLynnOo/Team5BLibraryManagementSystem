@@ -44,9 +44,10 @@
             // 
             // btn_Borrowreturnbooks
             // 
-            this.btn_Borrowreturnbooks.Location = new System.Drawing.Point(210, 523);
+            this.btn_Borrowreturnbooks.Location = new System.Drawing.Point(140, 340);
+            this.btn_Borrowreturnbooks.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Borrowreturnbooks.Name = "btn_Borrowreturnbooks";
-            this.btn_Borrowreturnbooks.Size = new System.Drawing.Size(214, 121);
+            this.btn_Borrowreturnbooks.Size = new System.Drawing.Size(143, 79);
             this.btn_Borrowreturnbooks.TabIndex = 29;
             this.btn_Borrowreturnbooks.Text = "Borrow/Return Books";
             this.btn_Borrowreturnbooks.UseVisualStyleBackColor = true;
@@ -54,9 +55,10 @@
             // 
             // btn_Books
             // 
-            this.btn_Books.Location = new System.Drawing.Point(0, 166);
+            this.btn_Books.Location = new System.Drawing.Point(0, 108);
+            this.btn_Books.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Books.Name = "btn_Books";
-            this.btn_Books.Size = new System.Drawing.Size(214, 121);
+            this.btn_Books.Size = new System.Drawing.Size(143, 79);
             this.btn_Books.TabIndex = 25;
             this.btn_Books.Text = "Books";
             this.btn_Books.UseVisualStyleBackColor = true;
@@ -66,9 +68,10 @@
             // 
             // btn_Reports
             // 
-            this.btn_Reports.Location = new System.Drawing.Point(0, 404);
+            this.btn_Reports.Location = new System.Drawing.Point(0, 263);
+            this.btn_Reports.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Reports.Name = "btn_Reports";
-            this.btn_Reports.Size = new System.Drawing.Size(214, 121);
+            this.btn_Reports.Size = new System.Drawing.Size(143, 79);
             this.btn_Reports.TabIndex = 28;
             this.btn_Reports.Text = "Reports";
             this.btn_Reports.UseVisualStyleBackColor = true;
@@ -76,9 +79,10 @@
             // 
             // btn_Members
             // 
-            this.btn_Members.Location = new System.Drawing.Point(0, 285);
+            this.btn_Members.Location = new System.Drawing.Point(0, 185);
+            this.btn_Members.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Members.Name = "btn_Members";
-            this.btn_Members.Size = new System.Drawing.Size(214, 121);
+            this.btn_Members.Size = new System.Drawing.Size(143, 79);
             this.btn_Members.TabIndex = 26;
             this.btn_Members.Text = "Members";
             this.btn_Members.UseVisualStyleBackColor = true;
@@ -87,9 +91,10 @@
             // 
             // btn_Addnewmember
             // 
-            this.btn_Addnewmember.Location = new System.Drawing.Point(211, 404);
+            this.btn_Addnewmember.Location = new System.Drawing.Point(141, 263);
+            this.btn_Addnewmember.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Addnewmember.Name = "btn_Addnewmember";
-            this.btn_Addnewmember.Size = new System.Drawing.Size(214, 121);
+            this.btn_Addnewmember.Size = new System.Drawing.Size(143, 79);
             this.btn_Addnewmember.TabIndex = 23;
             this.btn_Addnewmember.Text = "Add New Member";
             this.btn_Addnewmember.UseVisualStyleBackColor = true;
@@ -97,9 +102,10 @@
             // 
             // btn_Logout
             // 
-            this.btn_Logout.Location = new System.Drawing.Point(0, 523);
+            this.btn_Logout.Location = new System.Drawing.Point(0, 340);
+            this.btn_Logout.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Logout.Name = "btn_Logout";
-            this.btn_Logout.Size = new System.Drawing.Size(214, 121);
+            this.btn_Logout.Size = new System.Drawing.Size(143, 79);
             this.btn_Logout.TabIndex = 27;
             this.btn_Logout.Text = "Log out";
             this.btn_Logout.UseVisualStyleBackColor = true;
@@ -107,9 +113,10 @@
             // 
             // btn_Searcheditmember
             // 
-            this.btn_Searcheditmember.Location = new System.Drawing.Point(211, 285);
+            this.btn_Searcheditmember.Location = new System.Drawing.Point(141, 185);
+            this.btn_Searcheditmember.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Searcheditmember.Name = "btn_Searcheditmember";
-            this.btn_Searcheditmember.Size = new System.Drawing.Size(214, 121);
+            this.btn_Searcheditmember.Size = new System.Drawing.Size(143, 79);
             this.btn_Searcheditmember.TabIndex = 22;
             this.btn_Searcheditmember.Text = "Search / Edit Member Info";
             this.btn_Searcheditmember.UseVisualStyleBackColor = true;
@@ -117,9 +124,10 @@
             // 
             // btn_Registernewbooks
             // 
-            this.btn_Registernewbooks.Location = new System.Drawing.Point(212, 285);
+            this.btn_Registernewbooks.Location = new System.Drawing.Point(141, 185);
+            this.btn_Registernewbooks.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Registernewbooks.Name = "btn_Registernewbooks";
-            this.btn_Registernewbooks.Size = new System.Drawing.Size(214, 121);
+            this.btn_Registernewbooks.Size = new System.Drawing.Size(143, 79);
             this.btn_Registernewbooks.TabIndex = 21;
             this.btn_Registernewbooks.Text = "Register New Books";
             this.btn_Registernewbooks.UseVisualStyleBackColor = true;
@@ -127,9 +135,10 @@
             // 
             // btn_Searchbooks
             // 
-            this.btn_Searchbooks.Location = new System.Drawing.Point(212, 166);
+            this.btn_Searchbooks.Location = new System.Drawing.Point(141, 108);
+            this.btn_Searchbooks.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Searchbooks.Name = "btn_Searchbooks";
-            this.btn_Searchbooks.Size = new System.Drawing.Size(214, 121);
+            this.btn_Searchbooks.Size = new System.Drawing.Size(143, 79);
             this.btn_Searchbooks.TabIndex = 20;
             this.btn_Searchbooks.Text = "Search Books";
             this.btn_Searchbooks.UseVisualStyleBackColor = true;
@@ -138,24 +147,26 @@
             // pictureBox1
             // 
             this.pictureBox1.Location = new System.Drawing.Point(0, 1);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(214, 166);
+            this.pictureBox1.Size = new System.Drawing.Size(143, 108);
             this.pictureBox1.TabIndex = 19;
             this.pictureBox1.TabStop = false;
             // 
             // uC_Membersearchedit1
             // 
-            this.uC_Membersearchedit1.Location = new System.Drawing.Point(214, 4);
+            this.uC_Membersearchedit1.Location = new System.Drawing.Point(143, 3);
+            this.uC_Membersearchedit1.Margin = new System.Windows.Forms.Padding(1);
             this.uC_Membersearchedit1.Name = "uC_Membersearchedit1";
-            this.uC_Membersearchedit1.Size = new System.Drawing.Size(880, 640);
+            this.uC_Membersearchedit1.Size = new System.Drawing.Size(587, 416);
             this.uC_Membersearchedit1.TabIndex = 30;
             this.uC_Membersearchedit1.Load += new System.EventHandler(this.uC_Membersearchedit1_Load);
             // 
             // Frm_Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1097, 644);
+            this.ClientSize = new System.Drawing.Size(731, 419);
             this.Controls.Add(this.btn_Borrowreturnbooks);
             this.Controls.Add(this.btn_Logout);
             this.Controls.Add(this.btn_Registernewbooks);
@@ -167,6 +178,7 @@
             this.Controls.Add(this.btn_Searcheditmember);
             this.Controls.Add(this.btn_Searchbooks);
             this.Controls.Add(this.uC_Membersearchedit1);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Frm_Main";
             this.Text = "Frm_Main";
             this.Load += new System.EventHandler(this.Frm_Main_Load);

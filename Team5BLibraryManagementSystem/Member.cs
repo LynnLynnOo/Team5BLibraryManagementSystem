@@ -17,7 +17,7 @@ namespace Team5BLibraryManagementSystem
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Member()
         {
-            this.Loandetails = new HashSet<Loandetail>();
+            this.Transactions = new HashSet<Transaction>();
         }
     
         public int memberid { get; set; }
@@ -30,6 +30,6 @@ namespace Team5BLibraryManagementSystem
         public System.DateTime expirydate { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Loandetail> Loandetails { get; set; }
+        public virtual ICollection<Transaction> Transactions { get; set; }
     }
 }

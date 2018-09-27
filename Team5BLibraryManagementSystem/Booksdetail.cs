@@ -24,7 +24,7 @@ namespace Team5BLibraryManagementSystem
         public string title { get; set; }
         public string author { get; set; }
         public string publisher { get; set; }
-        public decimal publishyear { get; set; }
+        public int publishyear { get; set; }
         public string category { get; set; }
         public string isbn { get; set; }
         public int quantity { get; set; }

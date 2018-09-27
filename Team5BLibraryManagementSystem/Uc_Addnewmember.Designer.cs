@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.dtp_Dob = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.textbox_Phone = new System.Windows.Forms.TextBox();
@@ -48,7 +49,11 @@
             this.btn_Reset = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
             this.SuspendLayout();
             // 
             // dtp_Dob
@@ -73,6 +78,7 @@
             this.textbox_Phone.Name = "textbox_Phone";
             this.textbox_Phone.Size = new System.Drawing.Size(165, 20);
             this.textbox_Phone.TabIndex = 62;
+            this.textbox_Phone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textbox_Phone_KeyPress);
             // 
             // label3
             // 
@@ -165,11 +171,13 @@
             this.textbox_Email.Name = "textbox_Email";
             this.textbox_Email.Size = new System.Drawing.Size(165, 20);
             this.textbox_Email.TabIndex = 49;
+            this.textbox_Email.Leave += new System.EventHandler(this.textbox_Email_Leave);
             // 
             // textbox_Ic
             // 
             this.textbox_Ic.Location = new System.Drawing.Point(115, 42);
             this.textbox_Ic.Name = "textbox_Ic";
+            this.textbox_Ic.ReadOnly = true;
             this.textbox_Ic.Size = new System.Drawing.Size(165, 20);
             this.textbox_Ic.TabIndex = 48;
             // 
@@ -235,6 +243,14 @@
             this.label9.Text = "Registration Form";
             this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // errorProvider2
+            // 
+            this.errorProvider2.ContainerControl = this;
+            // 
             // Uc_Addnewmember
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -246,8 +262,11 @@
             this.Controls.Add(this.btn_Submit);
             this.Name = "Uc_Addnewmember";
             this.Size = new System.Drawing.Size(564, 381);
+            this.Load += new System.EventHandler(this.Uc_Addnewmember_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -275,5 +294,7 @@
         private System.Windows.Forms.Button btn_Reset;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ErrorProvider errorProvider2;
     }
 }
