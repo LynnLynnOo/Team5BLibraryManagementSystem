@@ -231,6 +231,7 @@
             this.groupBox1.Size = new System.Drawing.Size(311, 257);
             this.groupBox1.TabIndex = 67;
             this.groupBox1.TabStop = false;
+            
             // 
             // label9
             // 
@@ -241,7 +242,7 @@
             this.label9.Size = new System.Drawing.Size(175, 24);
             this.label9.TabIndex = 65;
             this.label9.Text = "Registration Form";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
+            
             // 
             // errorProvider1
             // 

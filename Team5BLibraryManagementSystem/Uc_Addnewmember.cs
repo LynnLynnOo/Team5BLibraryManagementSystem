@@ -25,7 +25,7 @@ namespace Team5BLibraryManagementSystem
 
             if (textbox_Memname.Text == "" || textbox_Email.Text == "" || textbox_Phone.Text == "" || textbox_Address.Text == "")
             {
-                MessageBox.Show("Please fill all field");
+                MessageBox.Show("Please must fill in all of the field","Warning!");
                 return;
             }
             else
@@ -49,29 +49,17 @@ namespace Team5BLibraryManagementSystem
 
                 catch
                 {
-                    MessageBox.Show("Member Already Exists!");
+                    MessageBox.Show("Member Already Exists!","Warning!");
                 }
             }
 
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void btn_gotosearch_Click(object sender, EventArgs e)
-        {
-            Uc_Membersearchedit Memedit = new Uc_Membersearchedit();
-            Memedit.Show();
-            Memedit.Dispose();
         }
 
         //Reset button
         private void btn_Reset_Click(object sender, EventArgs e)
         {
             textbox_Memname.Clear();
-            textbox_Ic.Clear();
+            // textbox_Ic.Clear();
             textbox_Phone.Clear();
             textbox_Email.Clear();
             textbox_Address.Clear();
@@ -85,7 +73,7 @@ namespace Team5BLibraryManagementSystem
         {
             SA47Team05BESNETLMSEntities context = new SA47Team05BESNETLMSEntities();
             int q = (from x in context.Members select x).Count();
-            count = count + q;
+            count = count + q+ 1;
             textbox_Ic.Text =count.ToString();
         }
 
@@ -94,18 +82,18 @@ namespace Team5BLibraryManagementSystem
         private void textbox_Phone_KeyPress(object sender, KeyPressEventArgs e)
         {
             char ch = e.KeyChar;
-            if (!char.IsLetter(ch) && ch != 8)
+            if (!char.IsLetter(ch) && ch != 9)
             {
                 errorProvider2.Clear();
             }
             else
             {
-                errorProvider2.SetError(this.textbox_Phone, "Wrong Number....Try again!");
+                errorProvider2.SetError(this.textbox_Phone, "Wrong Number!");
                 return;
             }
         }
 
-        //Email Validaation
+        //Email Validation
         private void textbox_Email_Leave(object sender, EventArgs e)
         {
             string pattern = @"^(?!\.)(""([^""\r\\]|\\[""\r\\])*""|"
