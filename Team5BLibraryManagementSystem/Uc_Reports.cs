@@ -64,9 +64,6 @@ namespace Team5BLibraryManagementSystem
             }
         }
 
-
-
-
         private void btn_PrintMemberListing_Click(object sender, EventArgs e)
         {
             Frm_MemberListing f1 = new Frm_MemberListing(this);
@@ -100,7 +97,6 @@ namespace Team5BLibraryManagementSystem
                 return;
             }
         }
-
         private void btn_PrintBooksOverdue_Click(object sender, EventArgs e)
         {
             if (rdbtn_Overdueby1day.Checked == true)
@@ -131,6 +127,11 @@ namespace Team5BLibraryManagementSystem
                 f1.ShowDialog();
                 return;
             }
+        }
+
+        private void btn_Print_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

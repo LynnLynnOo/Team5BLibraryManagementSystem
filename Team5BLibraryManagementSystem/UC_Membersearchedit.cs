@@ -56,27 +56,30 @@ namespace Team5BLibraryManagementSystem
             }
 
             else
-            {
+            {        
                 try
                 {
                     labelSearch.Visible = false;
                     switch (Combobox_Category.SelectedItem)
                     {
                         case "Member ID":
-                            Gb_Memberinformation.Visible = true;
+                            if(chkvldy.IsValidID(Textbox_Category.Text))
+                            {
+                                Gb_Memberinformation.Visible = true;
 
-                            var q = (from x in context.Members
-                                     where x.memberid.ToString() == Textbox_Category.Text
-                                     select x).First();
+                                var q = (from x in context.Members
+                                         where x.memberid.ToString() == Textbox_Category.Text
+                                         select x).First();
 
-                            Textbox_Membername.Text = q.name.ToString();
-                            Textbox_Idnumber.Text = q.memberid.ToString();
-                            Textbox_Phone.Text = q.phonenumber.ToString();
-                            Textbox_email.Text = q.email.ToString();
-                            Datetimepicker_Dob.Text = q.dateofbirth.ToString();
-                            Textbox_Address.Text = q.address.ToString();
-                            Datetimepicker_Joineddate.Text = q.joindate.ToString();
-                            Datetimepicker_Expirydate.Text = q.expirydate.ToString();
+                                Textbox_Membername.Text = q.name.ToString();
+                                Textbox_Idnumber.Text = q.memberid.ToString();
+                                Textbox_Phone.Text = q.phonenumber.ToString();
+                                Textbox_email.Text = q.email.ToString();
+                                Datetimepicker_Dob.Text = q.dateofbirth.ToString();
+                                Textbox_Address.Text = q.address.ToString();
+                                Datetimepicker_Joineddate.Text = q.joindate.ToString();
+                                Datetimepicker_Expirydate.Text = q.expirydate.ToString();
+                            }            
                             break;
 
                         case "Member Name":
@@ -97,20 +100,24 @@ namespace Team5BLibraryManagementSystem
                             break;
 
                         case "Phone":
-                            Gb_Memberinformation.Visible = true;
 
-                            var s = (from x in context.Members
-                                     where x.phonenumber.ToString() == Textbox_Category.Text
-                                     select x).First();
+                            if (chkvldy.IsValidPhone(Textbox_Category.Text))
+                            {
+                                Gb_Memberinformation.Visible = true;
 
-                            Textbox_Membername.Text = s.name.ToString();
-                            Textbox_Idnumber.Text = s.memberid.ToString();
-                            Textbox_Phone.Text = s.phonenumber.ToString();
-                            Textbox_email.Text = s.email.ToString();
-                            Datetimepicker_Dob.Text = s.dateofbirth.ToString();
-                            Textbox_Address.Text = s.address.ToString();
-                            Datetimepicker_Joineddate.Text = s.joindate.ToString();
-                            Datetimepicker_Expirydate.Text = s.expirydate.ToString();
+                                var s = (from x in context.Members
+                                         where x.phonenumber.ToString() == Textbox_Category.Text
+                                         select x).First();
+
+                                Textbox_Membername.Text = s.name.ToString();
+                                Textbox_Idnumber.Text = s.memberid.ToString();
+                                Textbox_Phone.Text = s.phonenumber.ToString();
+                                Textbox_email.Text = s.email.ToString();
+                                Datetimepicker_Dob.Text = s.dateofbirth.ToString();
+                                Textbox_Address.Text = s.address.ToString();
+                                Datetimepicker_Joineddate.Text = s.joindate.ToString();
+                                Datetimepicker_Expirydate.Text = s.expirydate.ToString();
+                            }              
                             break;
 
                         case "Email":
@@ -183,7 +190,6 @@ namespace Team5BLibraryManagementSystem
 
                 else
                 {
-
                     SA47Team05BESNETLMSEntities context = new SA47Team05BESNETLMSEntities();
                     Member q = context.Members.Where(x => x.memberid.ToString() == Textbox_Idnumber.Text).First();
 
@@ -197,10 +203,7 @@ namespace Team5BLibraryManagementSystem
                             q.dateofbirth = Convert.ToDateTime(Datetimepicker_Dob.Text);
                             q.address = Textbox_Address.Text;
                             context.SaveChanges();
-                            btn_Edit.Visible = true;
-                            btn_Save.Visible = false;
-                            btn_Cancel.Visible = false;
-                            btn_Delete.Visible = true;
+                            DefaultVisibility();
                         }
                         else
                         {

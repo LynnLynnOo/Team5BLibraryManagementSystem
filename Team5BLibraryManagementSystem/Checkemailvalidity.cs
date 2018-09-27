@@ -14,6 +14,21 @@ namespace Team5BLibraryManagementSystem
 {
     public class Checkemailvalidity
     {
+        //Check id validity
+        public bool IsValidID(string strIn)
+        {
+            if (strIn.Any(char.IsDigit))
+            {
+                return true;
+            }
+
+            else
+            {
+                MessageBox.Show("Invalid ID!", "Warning", MessageBoxButtons.OK);
+                return false;
+            }
+        }
+
         //Check name validity
         public bool IsValidName(string strIn)
         {
