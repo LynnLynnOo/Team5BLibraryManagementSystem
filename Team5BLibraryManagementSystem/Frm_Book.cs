@@ -21,5 +21,10 @@ namespace Team5BLibraryManagementSystem
         {
 
         }
+
+        private void uc_Researchbook1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
