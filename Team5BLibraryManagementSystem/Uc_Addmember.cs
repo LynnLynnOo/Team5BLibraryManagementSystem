@@ -20,10 +20,7 @@ namespace Team5BLibraryManagementSystem
         }
 
         //Submit button
-        private void btn_Submit_Click(object sender, EventArgs e)
-        {
 
-        }
 
         //Reset button
         private void btn_Reset_Click(object sender, EventArgs e)
@@ -51,6 +48,52 @@ namespace Team5BLibraryManagementSystem
         private void textbox_Email_Leave(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_Reset_Click_1(object sender, EventArgs e)
+        {
+            textbox_Memname.Clear();
+            // textbox_Ic.Clear();
+            textbox_Phone.Clear();
+            textbox_Email.Clear();
+            textbox_Address.Clear();
+            dtp_Joindate.ResetText();
+            dtp_Expirydate.ResetText();
+            dtp_Dob.ResetText();
+        }
+
+        private void btn_Submit_Click_1(object sender, EventArgs e)
+        {
+
+            if (textbox_Memname.Text == "" || textbox_Email.Text == "" || textbox_Phone.Text == "" || textbox_Address.Text == "")
+            {
+                MessageBox.Show("Please must fill in all of the field", "Warning!");
+                return;
+            }
+            else
+            {
+                try
+                {
+
+                    SA47Team05BESNETLMSEntities context = new SA47Team05BESNETLMSEntities();
+                    Member m = new Member();
+                    m.name = textbox_Memname.Text;
+                    m.memberid = Convert.ToInt32(textbox_Ic.Text);
+                    m.phonenumber = textbox_Phone.Text;
+                    m.email = textbox_Email.Text;
+                    m.dateofbirth = Convert.ToDateTime(dtp_Dob.Text);
+                    m.address = textbox_Address.Text;
+                    m.joindate = Convert.ToDateTime(dtp_Joindate.Text);
+                    m.expirydate = Convert.ToDateTime(dtp_Expirydate.Text);
+                    context.Members.Add(m);
+                    context.SaveChanges();
+                }
+
+                catch
+                {
+                    MessageBox.Show("Member Already Exists!", "Warning!");
+                }
+            }
         }
     }
 }

@@ -261,6 +261,7 @@
             this.btn_Reset.TabIndex = 70;
             this.btn_Reset.Text = "Reset";
             this.btn_Reset.UseVisualStyleBackColor = true;
+            this.btn_Reset.Click += new System.EventHandler(this.btn_Reset_Click_1);
             // 
             // btn_Submit
             // 
@@ -271,6 +272,7 @@
             this.btn_Submit.TabIndex = 69;
             this.btn_Submit.Text = "Submit";
             this.btn_Submit.UseVisualStyleBackColor = true;
+            this.btn_Submit.Click += new System.EventHandler(this.btn_Submit_Click_1);
             // 
             // errorProvider1
             // 
