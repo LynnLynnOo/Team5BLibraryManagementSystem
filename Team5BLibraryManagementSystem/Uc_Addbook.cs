@@ -14,12 +14,20 @@ namespace Team5BLibraryManagementSystem
     {
         DataSet1 ds;
         DataSet1TableAdapters.BooksdetailsTableAdapter ta;
+        DataSet1TableAdapters.BooksTableAdapter ta1;
         int pasn;
         public Uc_Addbook()
         {
             InitializeComponent();
         }
+        public int bookDetailsID
+        {
+            get { return Convert.ToInt32(text_Bookdetail.Text); }
+        }
 
+
+        //public int Theid
+        //{ get; set; }
         private void label6_Click(object sender, EventArgs e)
         {
 
@@ -30,8 +38,17 @@ namespace Team5BLibraryManagementSystem
             pasn = find2(text_Bookdetail.Text);
             int a = Convert.ToInt32(text_Quantity.Text);
             int b = Convert.ToInt32(ds.Tables["Booksdetails"].Rows[pasn]["quantity"]);
+            //Theid = Convert.ToInt32(text_Bookdetail.Text);
             if (a < b)
-            { Form selectbook = new Form1(); }
+            { Form1 selectbook = new Form1(this);
+                DialogResult dr = selectbook.ShowDialog();
+                if (dr == DialogResult.OK)
+                {
+                   int selectid = Convert.ToInt32(ds.Books[selectbook.SelectedRow].bookid.ToString());
+                    ds.Tables["Books"].Rows[selectid].Delete();
+                    ta1.Update(ds);
+                }
+            }
             if (a >b)
             {  while (a > b)
                 {
@@ -39,21 +56,23 @@ namespace Team5BLibraryManagementSystem
                     int x = Convert.ToInt32(ds.Tables["Books"].Rows.Count.ToString());
                     int y = Convert.ToInt32(ds.Tables["Books"].Rows[x - 1]["bookid"].ToString());
                     r["bookid"] = y + 1;
-                    r["booksdetialsid"] = text_Bookdetail.Text;
+                    r["booksdetailsid"] = text_Bookdetail.Text;
                     r["status"] = "Avaliable";
+                    ds.Tables["Books"].Rows.Add(r);
                     b++;
+                    ta1.Update(ds);
                 }
             }
-            ds.Tables["Booksdetails"].Rows[pasn]["booksdetialsid"] = text_Bookdetail.Text;
+            //ds.Tables["Booksdetails"].Rows[pasn]["booksdetailsid"] = text_Bookdetail.Text;
            ds.Tables["Booksdetails"].Rows[pasn]["title"] = textBookName.Text ;
              ds.Tables["Booksdetails"].Rows[pasn]["author"]= textAuthor.Text ;
             ds.Tables["Booksdetails"].Rows[pasn]["category"] = textGenre.Text ;
             ds.Tables["Booksdetails"].Rows[pasn]["publisher"] = textPublisher.Text ;
-            ds.Tables["Booksdetails"].Rows[pasn]["publishyear"]= comboBox_year.ValueMember;
+            ds.Tables["Booksdetails"].Rows[pasn]["publishyear"]= comboBox_year.Text.ToString();
             ds.Tables["Booksdetails"].Rows[pasn]["isbn"] = text_Isbn.Text;
-             ds.Tables["Booksdetails"].Rows[pasn]["quantity"]= text_Quantity.Text;
-          
+             ds.Tables["Booksdetails"].Rows[pasn]["quantity"]= text_Quantity.Text;        
             ta.Update(ds);
+            MessageBox.Show("Update Successfully!");
         }
         private int find2(string Search)
         {
@@ -63,11 +82,11 @@ namespace Team5BLibraryManagementSystem
             while (i < x - 1)
             {
 
-                if (ds.Tables["Booksdetails"].Rows[i]["booksdetialsid"].ToString() != Search)
+                if (ds.Tables["Booksdetails"].Rows[i]["booksdetailsid"].ToString() != Search)
                 {
                     i++;
                 }
-                if (ds.Tables["Booksdetails"].Rows[i]["booksdetialsid"].ToString() == Search)
+                if (ds.Tables["Booksdetails"].Rows[i]["booksdetailsid"].ToString() == Search)
                 {
                     T = i;
                     break;
@@ -75,7 +94,7 @@ namespace Team5BLibraryManagementSystem
             }
             if (T == 0)
             {
-                if (Search != ds.Tables["Booksdetails"].Rows[i]["booksdetialsid"].ToString())
+                if (Search != ds.Tables["Booksdetails"].Rows[0]["booksdetailsid"].ToString())
                 { MessageBox.Show("BooksdetailsID is wrong"); }
             }
             return T;
@@ -83,12 +102,12 @@ namespace Team5BLibraryManagementSystem
      
         private void P()
         {
-            text_Bookdetail.Text = ds.Tables["Booksdetails"].Rows[pasn]["booksdetialsid"].ToString();
+            text_Bookdetail.Text = ds.Tables["Booksdetails"].Rows[pasn]["booksdetailsid"].ToString();
             textBookName.Text = ds.Tables["Booksdetails"].Rows[pasn]["title"].ToString();
             textAuthor.Text = ds.Tables["Booksdetails"].Rows[pasn]["author"].ToString();
             textGenre.Text = ds.Tables["Booksdetails"].Rows[pasn]["category"].ToString();
             textPublisher.Text = ds.Tables["Booksdetails"].Rows[pasn]["publisher"].ToString();
-            comboBox_year.ValueMember = ds.Tables["Booksdetails"].Rows[pasn]["publishyear"].ToString();
+            comboBox_year.Text = ds.Tables["Booksdetails"].Rows[pasn]["publishyear"].ToString();
             text_Isbn.Text = ds.Tables["Booksdetails"].Rows[pasn]["isbn"].ToString();
             text_Quantity.Text = ds.Tables["Booksdetails"].Rows[pasn]["quantity"].ToString();
         }
@@ -97,7 +116,9 @@ namespace Team5BLibraryManagementSystem
         {
             ds = new DataSet1();
             ta = new DataSet1TableAdapters.BooksdetailsTableAdapter();
+            ta1 = new DataSet1TableAdapters.BooksTableAdapter();
             ta.Fill(ds.Booksdetails);
+            ta1.Fill(ds.Books);
         }
 
         private void textBookID_TextChanged(object sender, EventArgs e)
@@ -106,18 +127,33 @@ namespace Team5BLibraryManagementSystem
 
         private void butInsert_Click(object sender, EventArgs e)
         {
-            pasn = find2(text_Bookdetail.Text);
+            int a = Convert.ToInt32(text_Quantity.Text);
             DataRow r = ds.Tables["Booksdetails"].NewRow();
-            r["booksdetialsid"] = text_Bookdetail.Text;
+            //r["booksdetailsid"] = text_Bookdetail.Text;
             r["title"] = textBookName.Text;
             r["author"] = textAuthor.Text;
             r["category"] = textGenre.Text;
             r["publisher"] = textPublisher.Text;
-            r["publishyear"] = comboBox_year.ValueMember;
+            r["publishyear"] = comboBox_year.Text;
             r["isbn"] = text_Isbn.Text;
-            r["quantity"] = text_Quantity;
+            r["quantity"] = a;
             ds.Tables["Booksdetails"].Rows.Add(r);
             ta.Update(ds);
+                while (a > 0)
+                {
+                    DataRow b = ds.Tables["Books"].NewRow();
+                    int x = Convert.ToInt32(ds.Tables["Books"].Rows.Count.ToString());
+                    int y = Convert.ToInt32(ds.Tables["Books"].Rows[x - 1]["bookid"].ToString());
+                int z = Convert.ToInt32(ds.Tables["Booksdetails"].Rows.Count.ToString());
+                b["bookid"] = y + 1;
+                    b["booksdetailsid"] = ds.Tables["Booksdetails"].Rows[z-1]["booksdetailsid"]; ;
+                    b["status"] = "Avaliable";
+                ds.Tables["Books"].Rows.Add(b);
+                a--;
+                    ta1.Update(ds);
+                MessageBox.Show("Insert Successfully!");
+                }
+            
         }
 
         private void butDelete_Click(object sender, EventArgs e)
@@ -125,6 +161,9 @@ namespace Team5BLibraryManagementSystem
             pasn = find2(text_Bookdetail.Text);
             ds.Tables["Booksdetails"].Rows[pasn].Delete();
             ta.Update(ds);
+            SA47Team05BESNETLMSEntities context = new SA47Team05BESNETLMSEntities();
+
+
         }
 
         private void butFind_Click(object sender, EventArgs e)
@@ -173,5 +212,7 @@ namespace Team5BLibraryManagementSystem
             pasn = x - 1;
             P();
         }
+
+       
     }
 }

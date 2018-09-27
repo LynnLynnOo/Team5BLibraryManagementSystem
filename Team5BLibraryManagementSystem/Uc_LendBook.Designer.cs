@@ -33,7 +33,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.date_Issue = new System.Windows.Forms.DateTimePicker();
-            this.butReturn = new System.Windows.Forms.Button();
             this.textbox_BookID = new System.Windows.Forms.TextBox();
             this.textbox_MemberID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -81,15 +80,6 @@
             this.date_Issue.Size = new System.Drawing.Size(200, 21);
             this.date_Issue.TabIndex = 45;
             // 
-            // butReturn
-            // 
-            this.butReturn.Location = new System.Drawing.Point(279, 242);
-            this.butReturn.Name = "butReturn";
-            this.butReturn.Size = new System.Drawing.Size(75, 23);
-            this.butReturn.TabIndex = 44;
-            this.butReturn.Text = "Return";
-            this.butReturn.UseVisualStyleBackColor = true;
-            // 
             // textbox_BookID
             // 
             this.textbox_BookID.Location = new System.Drawing.Point(235, 104);
@@ -115,7 +105,7 @@
             // 
             // butLend
             // 
-            this.butLend.Location = new System.Drawing.Point(164, 242);
+            this.butLend.Location = new System.Drawing.Point(218, 249);
             this.butLend.Name = "butLend";
             this.butLend.Size = new System.Drawing.Size(75, 23);
             this.butLend.TabIndex = 36;
@@ -132,7 +122,6 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.date_Issue);
-            this.Controls.Add(this.butReturn);
             this.Controls.Add(this.textbox_BookID);
             this.Controls.Add(this.textbox_MemberID);
             this.Controls.Add(this.label1);
@@ -151,7 +140,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker date_Issue;
-        private System.Windows.Forms.Button butReturn;
         private System.Windows.Forms.TextBox textbox_BookID;
         private System.Windows.Forms.TextBox textbox_MemberID;
         private System.Windows.Forms.Label label1;
