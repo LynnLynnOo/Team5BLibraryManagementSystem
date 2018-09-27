@@ -76,5 +76,10 @@ namespace Team5BLibraryManagementSystem
         {
 
         }
+
+        private void uC_Membersearchedit1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

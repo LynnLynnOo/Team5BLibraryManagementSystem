@@ -25,7 +25,6 @@ namespace Team5BLibraryManagementSystem
         public int bookid { get; set; }
         public System.DateTime startdate { get; set; }
         public System.DateTime enddate { get; set; }
-        public int status { get; set; }
     
         public virtual Book Book { get; set; }
         public virtual Member Member { get; set; }

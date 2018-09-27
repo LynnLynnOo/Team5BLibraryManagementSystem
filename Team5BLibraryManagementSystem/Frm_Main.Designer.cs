@@ -149,6 +149,7 @@
             this.uC_Membersearchedit1.Name = "uC_Membersearchedit1";
             this.uC_Membersearchedit1.Size = new System.Drawing.Size(880, 640);
             this.uC_Membersearchedit1.TabIndex = 30;
+            this.uC_Membersearchedit1.Load += new System.EventHandler(this.uC_Membersearchedit1_Load);
             // 
             // Frm_Main
             // 

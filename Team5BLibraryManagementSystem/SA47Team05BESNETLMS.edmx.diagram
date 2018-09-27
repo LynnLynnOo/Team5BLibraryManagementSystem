@@ -4,16 +4,13 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="8b090aac3ade4b1f949c8baedf514a14" Name="Diagram1" ZoomLevel="99">
+      <Diagram DiagramId="f4bc0e63936242a0ab3edd37c4741885" Name="Diagram1">
         <EntityTypeShape EntityType="SA47Team05BESNETLMSModel.Book" Width="1.5" PointX="3" PointY="1.375" IsExpanded="true" />
         <EntityTypeShape EntityType="SA47Team05BESNETLMSModel.Booksdetail" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="SA47Team05BESNETLMSModel.Loandetail" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="SA47Team05BESNETLMSModel.Member" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
         <EntityTypeShape EntityType="SA47Team05BESNETLMSModel.Returndetail" Width="1.5" PointX="7.5" PointY="1.5" IsExpanded="true" />
         <EntityTypeShape EntityType="SA47Team05BESNETLMSModel.User" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SA47Team05BESNETLMSModel.ViewBooksListing" Width="1.5" PointX="7.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SA47Team05BESNETLMSModel.ViewLoanedBook" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SA47Team05BESNETLMSModel.ViewTotalLoanCount" Width="1.5" PointX="2.75" PointY="8.75" IsExpanded="true" />
         <AssociationConnector Association="SA47Team05BESNETLMSModel.FK_Books_Booksdetails" ManuallyRouted="false" />
         <AssociationConnector Association="SA47Team05BESNETLMSModel.FK_Loandetails_Books" ManuallyRouted="false" />
         <AssociationConnector Association="SA47Team05BESNETLMSModel.FK_Loandetails_Members" ManuallyRouted="false" />
