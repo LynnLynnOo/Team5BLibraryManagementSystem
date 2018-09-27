@@ -12,10 +12,12 @@ namespace Team5BLibraryManagementSystem
     using System;
     using System.Collections.Generic;
     
-    public partial class User
+    public partial class Returndetail
     {
-        public int userid { get; set; }
-        public string username { get; set; }
-        public string password { get; set; }
+        public int Returndetailsid { get; set; }
+        public int loandetailsid { get; set; }
+        public System.DateTime returndate { get; set; }
+    
+        public virtual Loandetail Loandetail { get; set; }
     }
 }

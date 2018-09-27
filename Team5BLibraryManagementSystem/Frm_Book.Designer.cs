@@ -28,46 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.butBookOK = new System.Windows.Forms.Button();
-            this.dataBook = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataBook)).BeginInit();
+            this.uc_ReturnBook1 = new Team5BLibraryManagementSystem.Uc_ReturnBook();
             this.SuspendLayout();
             // 
-            // butBookOK
+            // uc_ReturnBook1
             // 
-            this.butBookOK.Location = new System.Drawing.Point(325, 299);
-            this.butBookOK.Name = "butBookOK";
-            this.butBookOK.Size = new System.Drawing.Size(75, 23);
-            this.butBookOK.TabIndex = 7;
-            this.butBookOK.Text = "OK";
-            this.butBookOK.UseVisualStyleBackColor = true;
-            // 
-            // dataBook
-            // 
-            this.dataBook.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataBook.Location = new System.Drawing.Point(205, 77);
-            this.dataBook.Name = "dataBook";
-            this.dataBook.RowTemplate.Height = 23;
-            this.dataBook.Size = new System.Drawing.Size(327, 181);
-            this.dataBook.TabIndex = 6;
+            this.uc_ReturnBook1.Location = new System.Drawing.Point(77, 6);
+            this.uc_ReturnBook1.Name = "uc_ReturnBook1";
+            this.uc_ReturnBook1.Size = new System.Drawing.Size(564, 381);
+            this.uc_ReturnBook1.TabIndex = 0;
             // 
             // Frm_Book
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(736, 399);
-            this.Controls.Add(this.butBookOK);
-            this.Controls.Add(this.dataBook);
+            this.Controls.Add(this.uc_ReturnBook1);
             this.Name = "Frm_Book";
             this.Text = "Frm_Book";
-            ((System.ComponentModel.ISupportInitialize)(this.dataBook)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button butBookOK;
-        private System.Windows.Forms.DataGridView dataBook;
+        private Uc_ReturnBook uc_ReturnBook1;
     }
 }

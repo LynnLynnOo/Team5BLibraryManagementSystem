@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{D774D2D7-8AA9-4B0B-BA98-FB8E0C586662}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Exe</OutputType>
     <RootNamespace>Team5BLibraryManagementSystem</RootNamespace>
     <AssemblyName>Team5BLibraryManagementSystem</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
@@ -65,6 +65,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Book.cs">
+      <DependentUpon>SA47Team05BESNETLMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BookListByAvailability_Result.cs">
       <DependentUpon>SA47Team05BESNETLMS.tt</DependentUpon>
     </Compile>
     <Compile Include="Booksdetail.cs">
@@ -152,11 +155,23 @@
     <Compile Include="Frm_Main.Designer.cs">
       <DependentUpon>Frm_Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="Loandetail.cs">
+      <DependentUpon>SA47Team05BESNETLMS.tt</DependentUpon>
+    </Compile>
     <Compile Include="Member.cs">
+      <DependentUpon>SA47Team05BESNETLMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MembersBeforeExpiry_Result.cs">
+      <DependentUpon>SA47Team05BESNETLMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MembersPastExpiry_Result.cs">
       <DependentUpon>SA47Team05BESNETLMS.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Returndetail.cs">
+      <DependentUpon>SA47Team05BESNETLMS.tt</DependentUpon>
+    </Compile>
     <Compile Include="Rpt_BookListByAvailability.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -214,9 +229,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SA47Team05BESNETLMS.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Transaction.cs">
-      <DependentUpon>SA47Team05BESNETLMS.tt</DependentUpon>
-    </Compile>
     <Compile Include="Uc_Addbook.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -253,7 +265,22 @@
     <Compile Include="Uc_Addnewmember.Designer.cs">
       <DependentUpon>Uc_Addnewmember.cs</DependentUpon>
     </Compile>
+    <Compile Include="Uc_ReturnBook.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Uc_ReturnBook.Designer.cs">
+      <DependentUpon>Uc_ReturnBook.cs</DependentUpon>
+    </Compile>
     <Compile Include="User.cs">
+      <DependentUpon>SA47Team05BESNETLMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ViewBooksListing.cs">
+      <DependentUpon>SA47Team05BESNETLMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ViewLoanedBook.cs">
+      <DependentUpon>SA47Team05BESNETLMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ViewTotalLoanCount.cs">
       <DependentUpon>SA47Team05BESNETLMS.tt</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Form1.resx">
@@ -341,6 +368,9 @@
     <EmbeddedResource Include="Uc_Researchbook.resx">
       <DependentUpon>Uc_Researchbook.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Uc_ReturnBook.resx">
+      <DependentUpon>Uc_ReturnBook.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
     <None Include="DataSet1.xsc">
       <DependentUpon>DataSet1.xsd</DependentUpon>
@@ -405,7 +435,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Content Include="readme.txt" />

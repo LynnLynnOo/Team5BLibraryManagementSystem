@@ -42,11 +42,15 @@ namespace Team5BLibraryManagementSystem
             if (a < b)
             { Form1 selectbook = new Form1(this);
                 DialogResult dr = selectbook.ShowDialog();
+                SA47Team05BESNETLMSEntities context = new SA47Team05BESNETLMSEntities();
                 if (dr == DialogResult.OK)
                 {
-                   int selectid = Convert.ToInt32(ds.Books[selectbook.SelectedRow].bookid.ToString());
-                    ds.Tables["Books"].Rows[selectid].Delete();
-                    ta1.Update(ds);
+                   int selectid = Convert.ToInt32(selectbook.selectedBookID);
+                    Console.WriteLine(selectid);
+                    Book c = context.Books.Where(x => x.bookid == selectid).First();
+                    context.Books.Remove(c);
+                    context.SaveChanges();
+                   
                 }
             }
             if (a >b)
@@ -158,12 +162,14 @@ namespace Team5BLibraryManagementSystem
 
         private void butDelete_Click(object sender, EventArgs e)
         {
-            pasn = find2(text_Bookdetail.Text);
-            ds.Tables["Booksdetails"].Rows[pasn].Delete();
-            ta.Update(ds);
+            int u= Convert.ToInt32(text_Bookdetail.Text);
             SA47Team05BESNETLMSEntities context = new SA47Team05BESNETLMSEntities();
-
-
+            Booksdetail a = context.Booksdetails.Where(d => d.booksdetailsid == u).First();
+            Book c = context.Books.Where(x => x.booksdetailsid ==u ).First();
+            context.Booksdetails.Remove(a);
+            context.Books.Remove(c);
+            context.SaveChanges();
+            MessageBox.Show("Delete Sucessfully!");
         }
 
         private void butFind_Click(object sender, EventArgs e)
@@ -177,7 +183,7 @@ namespace Team5BLibraryManagementSystem
             pasn = find2(text_Bookdetail.Text);
             if (pasn > 0)
             {
-                pasn++;
+                pasn--;
                 P();
             }
             else {
@@ -189,12 +195,12 @@ namespace Team5BLibraryManagementSystem
         {
             pasn = find2(text_Bookdetail.Text);
             int x = Convert.ToInt32(ds.Tables["Booksdetails"].Rows.Count.ToString());
-            if (pasn < x)
+            if (pasn < x-1)
             {
                 pasn++;
                 P();
             }
-            else
+            if (pasn ==x-1)
             {
                 MessageBox.Show("It is the last one");
             }
