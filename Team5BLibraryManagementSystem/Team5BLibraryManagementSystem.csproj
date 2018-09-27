@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{D774D2D7-8AA9-4B0B-BA98-FB8E0C586662}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>WinExe</OutputType>
     <RootNamespace>Team5BLibraryManagementSystem</RootNamespace>
     <AssemblyName>Team5BLibraryManagementSystem</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
@@ -35,17 +35,24 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -60,6 +67,9 @@
     <Compile Include="Book.cs">
       <DependentUpon>SA47Team05BESNETLMS.tt</DependentUpon>
     </Compile>
+    <Compile Include="BookListByAvailability_Result.cs">
+      <DependentUpon>SA47Team05BESNETLMS.tt</DependentUpon>
+    </Compile>
     <Compile Include="Booksdetail.cs">
       <DependentUpon>SA47Team05BESNETLMS.tt</DependentUpon>
     </Compile>
@@ -68,17 +78,62 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Dataset_BookListAvailability.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Dataset_BookListAvailability.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dataset_MembersByExpiry.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Dataset_MembersByExpiry.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dataset_MonthlyLoanReport.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Dataset_MonthlyLoanReport.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Frm_Book.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm_Book.Designer.cs">
       <DependentUpon>Frm_Book.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_BookListingByAvailability.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_BookListingByAvailability.Designer.cs">
+      <DependentUpon>Frm_BookListingByAvailability.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_BookListingByCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_BookListingByCategory.Designer.cs">
+      <DependentUpon>Frm_BookListingByCategory.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_Member.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm_Member.Designer.cs">
       <DependentUpon>Frm_Member.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_MemberListing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_MemberListing.Designer.cs">
+      <DependentUpon>Frm_MemberListing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Sjw.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Sjw.Designer.cs">
+      <DependentUpon>Frm_Sjw.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_MonthlyLoanReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_MonthlyLoanReport.Designer.cs">
+      <DependentUpon>Frm_MonthlyLoanReport.cs</DependentUpon>
     </Compile>
     <Compile Include="Helpersfunc.cs" />
     <Compile Include="Frm_Login.cs">
@@ -99,10 +154,58 @@
     <Compile Include="Member.cs">
       <DependentUpon>SA47Team05BESNETLMS.tt</DependentUpon>
     </Compile>
+    <Compile Include="MembersBeforeExpiry_Result.cs">
+      <DependentUpon>SA47Team05BESNETLMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MembersPastExpiry_Result.cs">
+      <DependentUpon>SA47Team05BESNETLMS.tt</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Returndetail.cs">
       <DependentUpon>SA47Team05BESNETLMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Rpt_BookListByAvailability.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Rpt_BookListByAvailability.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rpt_BookListingByCategory.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Rpt_BookListingByCategory.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rpt_MemberListing.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Rpt_MemberListing.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rpt_MemberListingBeforeExpiry.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Rpt_MemberListingBeforeExpiry.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rpt_MemberListingPastExpiry.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Rpt_MemberListingPastExpiry.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rpt_MonthlyLoanReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Rpt_MonthlyLoanReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rpt_WeeklyLoanReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Rpt_WeeklyLoanReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="SA47Team05BESNETLMS.Context.cs">
       <AutoGen>True</AutoGen>
@@ -137,6 +240,12 @@
     <Compile Include="Uc_Membersearchedit.Designer.cs">
       <DependentUpon>Uc_Membersearchedit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Uc_Reports.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Uc_Reports.Designer.cs">
+      <DependentUpon>Uc_Reports.cs</DependentUpon>
+    </Compile>
     <Compile Include="Uc_Researchbook.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -152,8 +261,20 @@
     <Compile Include="Uc_Addnewmember.Designer.cs">
       <DependentUpon>Uc_Addnewmember.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewAllLoanedBook.cs">
+      <DependentUpon>SA47Team05BESNETLMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ViewBooksListing.cs">
+      <DependentUpon>SA47Team05BESNETLMS.tt</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Frm_Book.resx">
       <DependentUpon>Frm_Book.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_BookListingByAvailability.resx">
+      <DependentUpon>Frm_BookListingByAvailability.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_BookListingByCategory.resx">
+      <DependentUpon>Frm_BookListingByCategory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Login.resx">
       <DependentUpon>Frm_Login.cs</DependentUpon>
@@ -164,6 +285,15 @@
     <EmbeddedResource Include="Frm_Member.resx">
       <DependentUpon>Frm_Member.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Frm_MemberListing.resx">
+      <DependentUpon>Frm_MemberListing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Sjw.resx">
+      <DependentUpon>Frm_Sjw.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_MonthlyLoanReport.resx">
+      <DependentUpon>Frm_MonthlyLoanReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -173,6 +303,34 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Rpt_BookListByAvailability.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Rpt_BookListByAvailability.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rpt_BookListingByCategory.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Rpt_BookListingByCategory.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rpt_MemberListing.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Rpt_MemberListing.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rpt_MemberListingBeforeExpiry.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Rpt_MemberListingBeforeExpiry.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rpt_MemberListingPastExpiry.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Rpt_MemberListingPastExpiry.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rpt_MonthlyLoanReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Rpt_MonthlyLoanReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rpt_WeeklyLoanReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Rpt_WeeklyLoanReport.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Uc_Addbook.resx">
       <DependentUpon>Uc_Addbook.cs</DependentUpon>
     </EmbeddedResource>
@@ -184,6 +342,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Uc_Membersearchedit.resx">
       <DependentUpon>Uc_Membersearchedit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Uc_Reports.resx">
+      <DependentUpon>Uc_Reports.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Uc_Researchbook.resx">
       <DependentUpon>Uc_Researchbook.cs</DependentUpon>
@@ -199,6 +360,39 @@
     </None>
     <None Include="DataSet1.xss">
       <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset_BookListAvailability.xsc">
+      <DependentUpon>Dataset_BookListAvailability.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset_BookListAvailability.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Dataset_BookListAvailability.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Dataset_BookListAvailability.xss">
+      <DependentUpon>Dataset_BookListAvailability.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset_MembersByExpiry.xsc">
+      <DependentUpon>Dataset_MembersByExpiry.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset_MembersByExpiry.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Dataset_MembersByExpiry.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Dataset_MembersByExpiry.xss">
+      <DependentUpon>Dataset_MembersByExpiry.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset_MonthlyLoanReport.xsc">
+      <DependentUpon>Dataset_MonthlyLoanReport.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset_MonthlyLoanReport.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Dataset_MonthlyLoanReport.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Dataset_MonthlyLoanReport.xss">
+      <DependentUpon>Dataset_MonthlyLoanReport.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -236,6 +430,7 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
