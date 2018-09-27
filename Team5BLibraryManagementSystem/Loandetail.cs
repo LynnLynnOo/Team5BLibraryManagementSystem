@@ -12,17 +12,23 @@ namespace Team5BLibraryManagementSystem
     using System;
     using System.Collections.Generic;
     
-    public partial class Transaction
+    public partial class Loandetail
     {
-        public int transactionid { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Loandetail()
+        {
+            this.Returndetails = new HashSet<Returndetail>();
+        }
+    
+        public int loandetailsid { get; set; }
         public int memberid { get; set; }
         public int bookid { get; set; }
-        public string status { get; set; }
         public System.DateTime startdate { get; set; }
         public System.DateTime enddate { get; set; }
-        public int extensioncount { get; set; }
     
         public virtual Book Book { get; set; }
         public virtual Member Member { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Returndetail> Returndetails { get; set; }
     }
 }

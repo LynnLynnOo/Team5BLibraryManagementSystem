@@ -23,8 +23,8 @@ namespace Team5BLibraryManagementSystem
         {
 
         }
-    
-        
+
+
         private void btn_Print_Click(object sender, EventArgs e)
         {
 
@@ -35,13 +35,13 @@ namespace Team5BLibraryManagementSystem
             SA47Team05BESNETLMSEntities context = new SA47Team05BESNETLMSEntities();
             var q = context.Members.Where(x => x.memberid.ToString() == Textbox_Idnumber.Text).First();
 
-            DialogResult dialogResult = MessageBox.Show(String.Format("Are you sure you want to remove the user,{0}?",q.name), "Warning", MessageBoxButtons.YesNo);
-           
-            if(dialogResult==DialogResult.Yes)
-            {                
+            DialogResult dialogResult = MessageBox.Show(String.Format("Are you sure you want to remove the user,{0}?", q.name), "Warning", MessageBoxButtons.YesNo);
+
+            if (dialogResult == DialogResult.Yes)
+            {
                 context.Members.Remove(q);
                 context.SaveChanges();
-                MessageBox.Show(String.Format("{0} has been removed.", q.name),"Confirmation",MessageBoxButtons.OK);
+                MessageBox.Show(String.Format("{0} has been removed.", q.name), "Confirmation", MessageBoxButtons.OK);
             }
         }
 
@@ -49,7 +49,7 @@ namespace Team5BLibraryManagementSystem
         {
 
             SA47Team05BESNETLMSEntities context = new SA47Team05BESNETLMSEntities();
-     
+
             if (Textbox_Category.Text == "" || Combobox_Category.SelectedItem == null)
             {
                 labelSearch.Visible = true;
@@ -63,58 +63,69 @@ namespace Team5BLibraryManagementSystem
                     switch (Combobox_Category.SelectedItem)
                     {
                         case "Member ID":
-                            Gb_Memberinformation.Visible = true;
+                            if (chkvldy.IsValidID(Textbox_Category.Text))
+                            {
+                                Gb_Memberinformation.Visible = true;
 
-                            var q = (from x in context.Members
-                                     where x.memberid.ToString() == Textbox_Category.Text
-                                     select x).First();
+                                var q = (from x in context.Members
+                                         where x.memberid.ToString() == Textbox_Category.Text
+                                         select x).First();
 
-                            Textbox_Membername.Text = q.name.ToString();
-                            Textbox_Idnumber.Text = q.memberid.ToString();
-                            Textbox_Phone.Text = q.phonenumber.ToString();
-                            Textbox_email.Text = q.email.ToString();
-                            Datetimepicker_Dob.Text = q.dateofbirth.ToString();
-                            Textbox_Address.Text = q.address.ToString();
-                            Datetimepicker_Joineddate.Text = q.joindate.ToString();
-                            Datetimepicker_Expirydate.Text = q.expirydate.ToString();
+                                Textbox_Membername.Text = q.name.ToString();
+                                Textbox_Idnumber.Text = q.memberid.ToString();
+                                Textbox_Phone.Text = q.phonenumber.ToString();
+                                Textbox_email.Text = q.email.ToString();
+                                Datetimepicker_Dob.Text = q.dateofbirth.ToString();
+                                Textbox_Address.Text = q.address.ToString();
+                                Datetimepicker_Joineddate.Text = q.joindate.ToString();
+                                Datetimepicker_Expirydate.Text = q.expirydate.ToString();
+                            }
                             break;
 
                         case "Member Name":
-                            Gb_Memberinformation.Visible = true;
+                            if (chkvldy.IsValidName(Textbox_Category.Text))
+                            {
 
-                            var r = (from x in context.Members
-                                     where x.name == Textbox_Category.Text
-                                     select x).First();
+                                Gb_Memberinformation.Visible = true;
 
-                            Textbox_Membername.Text = r.name.ToString();
-                            Textbox_Idnumber.Text = r.memberid.ToString();
-                            Textbox_Phone.Text = r.phonenumber.ToString();
-                            Textbox_email.Text = r.email.ToString();
-                            Datetimepicker_Dob.Text = r.dateofbirth.ToString();
-                            Textbox_Address.Text = r.address.ToString();
-                            Datetimepicker_Joineddate.Text = r.joindate.ToString();
-                            Datetimepicker_Expirydate.Text = r.expirydate.ToString();
+                                var r = (from x in context.Members
+                                         where x.name == Textbox_Category.Text
+                                         select x).First();
+
+                                Textbox_Membername.Text = r.name.ToString();
+                                Textbox_Idnumber.Text = r.memberid.ToString();
+                                Textbox_Phone.Text = r.phonenumber.ToString();
+                                Textbox_email.Text = r.email.ToString();
+                                Datetimepicker_Dob.Text = r.dateofbirth.ToString();
+                                Textbox_Address.Text = r.address.ToString();
+                                Datetimepicker_Joineddate.Text = r.joindate.ToString();
+                                Datetimepicker_Expirydate.Text = r.expirydate.ToString();
+                            }
                             break;
 
                         case "Phone":
-                            Gb_Memberinformation.Visible = true;
 
-                            var s = (from x in context.Members
-                                     where x.phonenumber.ToString() == Textbox_Category.Text
-                                     select x).First();
+                            if (chkvldy.IsValidPhone(Textbox_Category.Text))
+                            {
+                                Gb_Memberinformation.Visible = true;
 
-                            Textbox_Membername.Text = s.name.ToString();
-                            Textbox_Idnumber.Text = s.memberid.ToString();
-                            Textbox_Phone.Text = s.phonenumber.ToString();
-                            Textbox_email.Text = s.email.ToString();
-                            Datetimepicker_Dob.Text = s.dateofbirth.ToString();
-                            Textbox_Address.Text = s.address.ToString();
-                            Datetimepicker_Joineddate.Text = s.joindate.ToString();
-                            Datetimepicker_Expirydate.Text = s.expirydate.ToString();
+                                var s = (from x in context.Members
+                                         where x.phonenumber.ToString() == Textbox_Category.Text
+                                         select x).First();
+
+                                Textbox_Membername.Text = s.name.ToString();
+                                Textbox_Idnumber.Text = s.memberid.ToString();
+                                Textbox_Phone.Text = s.phonenumber.ToString();
+                                Textbox_email.Text = s.email.ToString();
+                                Datetimepicker_Dob.Text = s.dateofbirth.ToString();
+                                Textbox_Address.Text = s.address.ToString();
+                                Datetimepicker_Joineddate.Text = s.joindate.ToString();
+                                Datetimepicker_Expirydate.Text = s.expirydate.ToString();
+                            }
                             break;
 
                         case "Email":
-                         
+
                             if (chkvldy.IsValidEmail(Textbox_Category.Text))
                             {
                                 var t = (from x in context.Members
@@ -134,7 +145,7 @@ namespace Team5BLibraryManagementSystem
                             else
                             {
                                 MessageBox.Show("Invalid Email");
-                            }                           
+                            }
                             break;
                     }
                 }
@@ -142,8 +153,8 @@ namespace Team5BLibraryManagementSystem
                 {
                     Gb_Memberinformation.Visible = false;
                     MessageBox.Show("Member does not exist!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }                        
-            }                  
+                }
+            }
         }
 
         private void Uc_Membersearchedit_Load(object sender, EventArgs e)
@@ -154,7 +165,7 @@ namespace Team5BLibraryManagementSystem
             btn_Delete.Visible = true;
             Textbox_Address.Enabled = false;
             Textbox_Membername.Enabled = false;
-            Textbox_Phone.Enabled = false; 
+            Textbox_Phone.Enabled = false;
             Textbox_email.Enabled = false;
             Datetimepicker_Dob.Enabled = false;
         }
@@ -183,7 +194,6 @@ namespace Team5BLibraryManagementSystem
 
                 else
                 {
-
                     SA47Team05BESNETLMSEntities context = new SA47Team05BESNETLMSEntities();
                     Member q = context.Members.Where(x => x.memberid.ToString() == Textbox_Idnumber.Text).First();
 
@@ -197,10 +207,7 @@ namespace Team5BLibraryManagementSystem
                             q.dateofbirth = Convert.ToDateTime(Datetimepicker_Dob.Text);
                             q.address = Textbox_Address.Text;
                             context.SaveChanges();
-                            btn_Edit.Visible = true;
-                            btn_Save.Visible = false;
-                            btn_Cancel.Visible = false;
-                            btn_Delete.Visible = true;
+                            DefaultVisibility();
                         }
                         else
                         {
@@ -213,7 +220,7 @@ namespace Team5BLibraryManagementSystem
             {
                 MessageBox.Show("Please confirm all the information!", "Warning", MessageBoxButtons.OK);
             }
-            
+
         }
 
         private void btn_Cancel_Click(object sender, EventArgs e)
@@ -239,5 +246,5 @@ namespace Team5BLibraryManagementSystem
     }
 
 
-    
+
 }

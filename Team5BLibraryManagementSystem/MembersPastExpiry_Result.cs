@@ -10,16 +10,9 @@
 namespace Team5BLibraryManagementSystem
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class Member
+    public partial class MembersPastExpiry_Result
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Member()
-        {
-            this.Loandetails = new HashSet<Loandetail>();
-        }
-    
         public int memberid { get; set; }
         public string name { get; set; }
         public string address { get; set; }
@@ -28,8 +21,5 @@ namespace Team5BLibraryManagementSystem
         public System.DateTime dateofbirth { get; set; }
         public System.DateTime joindate { get; set; }
         public System.DateTime expirydate { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Loandetail> Loandetails { get; set; }
     }
 }

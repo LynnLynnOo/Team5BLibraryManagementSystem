@@ -4,12 +4,12 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="SA47Team05BESNETLMSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="SA47Team05BESNETLMSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Books">
           <Key>
             <PropertyRef Name="bookid" />
           </Key>
-          <Property Name="bookid" Type="int" Nullable="false" />
+          <Property Name="bookid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="booksdetailsid" Type="int" Nullable="false" />
           <Property Name="status" Type="nvarchar" MaxLength="20" Nullable="false" />
         </EntityType>
@@ -17,47 +17,75 @@
           <Key>
             <PropertyRef Name="booksdetailsid" />
           </Key>
-          <Property Name="booksdetailsid" Type="int" Nullable="false" />
+          <Property Name="booksdetailsid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="title" Type="nvarchar" MaxLength="255" Nullable="false" />
           <Property Name="author" Type="nvarchar" MaxLength="255" Nullable="false" />
           <Property Name="publisher" Type="nvarchar" MaxLength="255" Nullable="false" />
-          <Property Name="publishyear" Type="int" Nullable="false" />
+          <Property Name="publishyear" Type="numeric" Precision="4" Scale="0" Nullable="false" />
           <Property Name="category" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="isbn" Type="nvarchar" MaxLength="13" Nullable="false" />
           <Property Name="quantity" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Loandetails">
+          <Key>
+            <PropertyRef Name="loandetailsid" />
+          </Key>
+          <Property Name="loandetailsid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="memberid" Type="int" Nullable="false" />
+          <Property Name="bookid" Type="int" Nullable="false" />
+          <Property Name="startdate" Type="date" Nullable="false" />
+          <Property Name="enddate" Type="date" Nullable="false" />
         </EntityType>
         <EntityType Name="Members">
           <Key>
             <PropertyRef Name="memberid" />
           </Key>
-          <Property Name="memberid" Type="int" Nullable="false" />
+          <Property Name="memberid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="name" Type="nvarchar" MaxLength="255" Nullable="false" />
           <Property Name="address" Type="nvarchar" MaxLength="255" Nullable="false" />
           <Property Name="phonenumber" Type="nvarchar" MaxLength="8" Nullable="false" />
           <Property Name="email" Type="nvarchar" MaxLength="255" Nullable="false" />
-          <Property Name="dateofbirth" Type="datetime" Nullable="false" />
-          <Property Name="joindate" Type="datetime" Nullable="false" />
-          <Property Name="expirydate" Type="datetime" Nullable="false" />
+          <Property Name="dateofbirth" Type="date" Nullable="false" />
+          <Property Name="joindate" Type="date" Nullable="false" />
+          <Property Name="expirydate" Type="date" Nullable="false" />
         </EntityType>
-        <EntityType Name="Transactions">
+        <EntityType Name="Returndetails">
           <Key>
-            <PropertyRef Name="transactionid" />
+            <PropertyRef Name="Returndetailsid" />
           </Key>
-          <Property Name="transactionid" Type="int" Nullable="false" />
-          <Property Name="memberid" Type="int" Nullable="false" />
-          <Property Name="bookid" Type="int" Nullable="false" />
-          <Property Name="status" Type="nvarchar" MaxLength="20" Nullable="false" />
-          <Property Name="startdate" Type="datetime" Nullable="false" />
-          <Property Name="enddate" Type="datetime" Nullable="false" />
-          <Property Name="extensioncount" Type="int" Nullable="false" />
+          <Property Name="Returndetailsid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="loandetailsid" Type="int" Nullable="false" />
+          <Property Name="returndate" Type="date" Nullable="false" />
         </EntityType>
         <EntityType Name="Users">
           <Key>
             <PropertyRef Name="userid" />
           </Key>
-          <Property Name="userid" Type="float" Nullable="false" />
-          <Property Name="username" Type="nvarchar" MaxLength="255" Nullable="false" />
-          <Property Name="password" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="userid" Type="int" Nullable="false" />
+          <Property Name="username" Type="text" Nullable="false" />
+          <Property Name="password" Type="text" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'SA47Team05BESNETLMS.dbo.ViewBooksListing' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ViewBooksListing">
+          <Key>
+            <PropertyRef Name="bookid" />
+            <PropertyRef Name="title" />
+            <PropertyRef Name="author" />
+            <PropertyRef Name="publisher" />
+            <PropertyRef Name="category" />
+            <PropertyRef Name="publishyear" />
+            <PropertyRef Name="isbn" />
+            <PropertyRef Name="status" />
+          </Key>
+          <Property Name="bookid" Type="int" Nullable="false" />
+          <Property Name="title" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="author" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="publisher" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="category" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="publishyear" Type="numeric" Precision="4" Scale="0" Nullable="false" />
+          <Property Name="isbn" Type="nvarchar" MaxLength="13" Nullable="false" />
+          <Property Name="status" Type="nvarchar" MaxLength="20" Nullable="false" />
         </EntityType>
         <Association Name="FK_Books_Booksdetails">
           <End Role="Booksdetails" Type="Self.Booksdetails" Multiplicity="1" />
@@ -71,50 +99,85 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Transactions_Books">
+        <Association Name="FK_Loandetails_Books">
           <End Role="Books" Type="Self.Books" Multiplicity="1" />
-          <End Role="Transactions" Type="Self.Transactions" Multiplicity="*" />
+          <End Role="Loandetails" Type="Self.Loandetails" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Books">
               <PropertyRef Name="bookid" />
             </Principal>
-            <Dependent Role="Transactions">
+            <Dependent Role="Loandetails">
               <PropertyRef Name="bookid" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Transactions_Members">
+        <Association Name="FK_Loandetails_Members">
           <End Role="Members" Type="Self.Members" Multiplicity="1" />
-          <End Role="Transactions" Type="Self.Transactions" Multiplicity="*" />
+          <End Role="Loandetails" Type="Self.Loandetails" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Members">
               <PropertyRef Name="memberid" />
             </Principal>
-            <Dependent Role="Transactions">
+            <Dependent Role="Loandetails">
               <PropertyRef Name="memberid" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Returndetails_Loandetails">
+          <End Role="Loandetails" Type="Self.Loandetails" Multiplicity="1" />
+          <End Role="Returndetails" Type="Self.Returndetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Loandetails">
+              <PropertyRef Name="loandetailsid" />
+            </Principal>
+            <Dependent Role="Returndetails">
+              <PropertyRef Name="loandetailsid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="BookListByAvailability" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="status" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="MembersBeforeExpiry" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="MembersPastExpiry" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="SA47Team05BESNETLMSModelStoreContainer">
           <EntitySet Name="Books" EntityType="Self.Books" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Booksdetails" EntityType="Self.Booksdetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Loandetails" EntityType="Self.Loandetails" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Members" EntityType="Self.Members" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Transactions" EntityType="Self.Transactions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Returndetails" EntityType="Self.Returndetails" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ViewBooksListing" EntityType="Self.ViewBooksListing" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ViewBooksListing].[bookid] AS [bookid], 
+    [ViewBooksListing].[title] AS [title], 
+    [ViewBooksListing].[author] AS [author], 
+    [ViewBooksListing].[publisher] AS [publisher], 
+    [ViewBooksListing].[category] AS [category], 
+    [ViewBooksListing].[publishyear] AS [publishyear], 
+    [ViewBooksListing].[isbn] AS [isbn], 
+    [ViewBooksListing].[status] AS [status]
+    FROM [dbo].[ViewBooksListing] AS [ViewBooksListing]</DefiningQuery>
+          </EntitySet>
           <AssociationSet Name="FK_Books_Booksdetails" Association="Self.FK_Books_Booksdetails">
             <End Role="Booksdetails" EntitySet="Booksdetails" />
             <End Role="Books" EntitySet="Books" />
           </AssociationSet>
-          <AssociationSet Name="FK_Transactions_Books" Association="Self.FK_Transactions_Books">
+          <AssociationSet Name="FK_Loandetails_Books" Association="Self.FK_Loandetails_Books">
             <End Role="Books" EntitySet="Books" />
-            <End Role="Transactions" EntitySet="Transactions" />
+            <End Role="Loandetails" EntitySet="Loandetails" />
           </AssociationSet>
-          <AssociationSet Name="FK_Transactions_Members" Association="Self.FK_Transactions_Members">
+          <AssociationSet Name="FK_Loandetails_Members" Association="Self.FK_Loandetails_Members">
             <End Role="Members" EntitySet="Members" />
-            <End Role="Transactions" EntitySet="Transactions" />
+            <End Role="Loandetails" EntitySet="Loandetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Returndetails_Loandetails" Association="Self.FK_Returndetails_Loandetails">
+            <End Role="Loandetails" EntitySet="Loandetails" />
+            <End Role="Returndetails" EntitySet="Returndetails" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="SA47Team05BESNETLMSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -122,61 +185,89 @@
           <Key>
             <PropertyRef Name="bookid" />
           </Key>
-          <Property Name="bookid" Type="Int32" Nullable="false" />
+          <Property Name="bookid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="booksdetailsid" Type="Int32" Nullable="false" />
           <Property Name="status" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Booksdetail" Relationship="Self.FK_Books_Booksdetails" FromRole="Books" ToRole="Booksdetails" />
-          <NavigationProperty Name="Transactions" Relationship="Self.FK_Transactions_Books" FromRole="Books" ToRole="Transactions" />
+          <NavigationProperty Name="Loandetails" Relationship="Self.FK_Loandetails_Books" FromRole="Books" ToRole="Loandetails" />
         </EntityType>
         <EntityType Name="Booksdetail">
           <Key>
             <PropertyRef Name="booksdetailsid" />
           </Key>
-          <Property Name="booksdetailsid" Type="Int32" Nullable="false" />
+          <Property Name="booksdetailsid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="title" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="author" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="publisher" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="publishyear" Type="Int32" Nullable="false" />
+          <Property Name="publishyear" Type="Decimal" Precision="4" Scale="0" Nullable="false" />
           <Property Name="category" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="isbn" Type="String" MaxLength="13" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="quantity" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Books" Relationship="Self.FK_Books_Booksdetails" FromRole="Booksdetails" ToRole="Books" />
         </EntityType>
+        <EntityType Name="Loandetail">
+          <Key>
+            <PropertyRef Name="loandetailsid" />
+          </Key>
+          <Property Name="loandetailsid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="memberid" Type="Int32" Nullable="false" />
+          <Property Name="bookid" Type="Int32" Nullable="false" />
+          <Property Name="startdate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="enddate" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="Book" Relationship="Self.FK_Loandetails_Books" FromRole="Loandetails" ToRole="Books" />
+          <NavigationProperty Name="Member" Relationship="Self.FK_Loandetails_Members" FromRole="Loandetails" ToRole="Members" />
+          <NavigationProperty Name="Returndetails" Relationship="Self.FK_Returndetails_Loandetails" FromRole="Loandetails" ToRole="Returndetails" />
+        </EntityType>
         <EntityType Name="Member">
           <Key>
             <PropertyRef Name="memberid" />
           </Key>
-          <Property Name="memberid" Type="Int32" Nullable="false" />
+          <Property Name="memberid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="address" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="phonenumber" Type="String" MaxLength="8" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="email" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="dateofbirth" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="joindate" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="expirydate" Type="DateTime" Nullable="false" Precision="3" />
-          <NavigationProperty Name="Transactions" Relationship="Self.FK_Transactions_Members" FromRole="Members" ToRole="Transactions" />
+          <Property Name="dateofbirth" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="joindate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="expirydate" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="Loandetails" Relationship="Self.FK_Loandetails_Members" FromRole="Members" ToRole="Loandetails" />
         </EntityType>
-        <EntityType Name="Transaction">
+        <EntityType Name="Returndetail">
           <Key>
-            <PropertyRef Name="transactionid" />
+            <PropertyRef Name="Returndetailsid" />
           </Key>
-          <Property Name="transactionid" Type="Int32" Nullable="false" />
-          <Property Name="memberid" Type="Int32" Nullable="false" />
-          <Property Name="bookid" Type="Int32" Nullable="false" />
-          <Property Name="status" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="startdate" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="enddate" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="extensioncount" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Book" Relationship="Self.FK_Transactions_Books" FromRole="Transactions" ToRole="Books" />
-          <NavigationProperty Name="Member" Relationship="Self.FK_Transactions_Members" FromRole="Transactions" ToRole="Members" />
+          <Property Name="Returndetailsid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="loandetailsid" Type="Int32" Nullable="false" />
+          <Property Name="returndate" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="Loandetail" Relationship="Self.FK_Returndetails_Loandetails" FromRole="Returndetails" ToRole="Loandetails" />
         </EntityType>
         <EntityType Name="User">
           <Key>
             <PropertyRef Name="userid" />
           </Key>
-          <Property Name="userid" Type="Double" Nullable="false" />
-          <Property Name="username" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="password" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="userid" Type="Int32" Nullable="false" />
+          <Property Name="username" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ViewBooksListing">
+          <Key>
+            <PropertyRef Name="bookid" />
+            <PropertyRef Name="title" />
+            <PropertyRef Name="author" />
+            <PropertyRef Name="publisher" />
+            <PropertyRef Name="category" />
+            <PropertyRef Name="publishyear" />
+            <PropertyRef Name="isbn" />
+            <PropertyRef Name="status" />
+          </Key>
+          <Property Name="bookid" Type="Int32" Nullable="false" />
+          <Property Name="title" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="author" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="publisher" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="category" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="publishyear" Type="Decimal" Precision="4" Scale="0" Nullable="false" />
+          <Property Name="isbn" Type="String" MaxLength="13" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="status" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
         <Association Name="FK_Books_Booksdetails">
           <End Role="Booksdetails" Type="Self.Booksdetail" Multiplicity="1" />
@@ -190,49 +281,99 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Transactions_Books">
+        <Association Name="FK_Loandetails_Books">
           <End Role="Books" Type="Self.Book" Multiplicity="1" />
-          <End Role="Transactions" Type="Self.Transaction" Multiplicity="*" />
+          <End Role="Loandetails" Type="Self.Loandetail" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Books">
               <PropertyRef Name="bookid" />
             </Principal>
-            <Dependent Role="Transactions">
+            <Dependent Role="Loandetails">
               <PropertyRef Name="bookid" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Transactions_Members">
+        <Association Name="FK_Loandetails_Members">
           <End Role="Members" Type="Self.Member" Multiplicity="1" />
-          <End Role="Transactions" Type="Self.Transaction" Multiplicity="*" />
+          <End Role="Loandetails" Type="Self.Loandetail" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Members">
               <PropertyRef Name="memberid" />
             </Principal>
-            <Dependent Role="Transactions">
+            <Dependent Role="Loandetails">
               <PropertyRef Name="memberid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Returndetails_Loandetails">
+          <End Role="Loandetails" Type="Self.Loandetail" Multiplicity="1" />
+          <End Role="Returndetails" Type="Self.Returndetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Loandetails">
+              <PropertyRef Name="loandetailsid" />
+            </Principal>
+            <Dependent Role="Returndetails">
+              <PropertyRef Name="loandetailsid" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="SA47Team05BESNETLMSEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Books" EntityType="Self.Book" />
           <EntitySet Name="Booksdetails" EntityType="Self.Booksdetail" />
+          <EntitySet Name="Loandetails" EntityType="Self.Loandetail" />
           <EntitySet Name="Members" EntityType="Self.Member" />
-          <EntitySet Name="Transactions" EntityType="Self.Transaction" />
+          <EntitySet Name="Returndetails" EntityType="Self.Returndetail" />
           <EntitySet Name="Users" EntityType="Self.User" />
+          <EntitySet Name="ViewBooksListings" EntityType="Self.ViewBooksListing" />
           <AssociationSet Name="FK_Books_Booksdetails" Association="Self.FK_Books_Booksdetails">
             <End Role="Booksdetails" EntitySet="Booksdetails" />
             <End Role="Books" EntitySet="Books" />
           </AssociationSet>
-          <AssociationSet Name="FK_Transactions_Books" Association="Self.FK_Transactions_Books">
+          <AssociationSet Name="FK_Loandetails_Books" Association="Self.FK_Loandetails_Books">
             <End Role="Books" EntitySet="Books" />
-            <End Role="Transactions" EntitySet="Transactions" />
+            <End Role="Loandetails" EntitySet="Loandetails" />
           </AssociationSet>
-          <AssociationSet Name="FK_Transactions_Members" Association="Self.FK_Transactions_Members">
+          <AssociationSet Name="FK_Loandetails_Members" Association="Self.FK_Loandetails_Members">
             <End Role="Members" EntitySet="Members" />
-            <End Role="Transactions" EntitySet="Transactions" />
+            <End Role="Loandetails" EntitySet="Loandetails" />
           </AssociationSet>
+          <AssociationSet Name="FK_Returndetails_Loandetails" Association="Self.FK_Returndetails_Loandetails">
+            <End Role="Loandetails" EntitySet="Loandetails" />
+            <End Role="Returndetails" EntitySet="Returndetails" />
+          </AssociationSet>
+          <FunctionImport Name="BookListByAvailability" ReturnType="Collection(SA47Team05BESNETLMSModel.BookListByAvailability_Result)">
+            <Parameter Name="status" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="MembersBeforeExpiry" ReturnType="Collection(SA47Team05BESNETLMSModel.MembersBeforeExpiry_Result)" />
+          <FunctionImport Name="MembersPastExpiry" ReturnType="Collection(SA47Team05BESNETLMSModel.MembersPastExpiry_Result)" />
         </EntityContainer>
+        <ComplexType Name="BookListByAvailability_Result">
+          <Property Type="Int32" Name="bookid" Nullable="false" />
+          <Property Type="String" Name="title" Nullable="false" MaxLength="255" />
+          <Property Type="String" Name="author" Nullable="false" MaxLength="255" />
+          <Property Type="String" Name="publisher" Nullable="false" MaxLength="255" />
+          <Property Type="String" Name="category" Nullable="false" MaxLength="20" />
+        </ComplexType>
+        <ComplexType Name="MembersBeforeExpiry_Result">
+          <Property Type="Int32" Name="memberid" Nullable="false" />
+          <Property Type="String" Name="name" Nullable="false" MaxLength="255" />
+          <Property Type="String" Name="address" Nullable="false" MaxLength="255" />
+          <Property Type="String" Name="phonenumber" Nullable="false" MaxLength="8" />
+          <Property Type="String" Name="email" Nullable="false" MaxLength="255" />
+          <Property Type="DateTime" Name="dateofbirth" Nullable="false" />
+          <Property Type="DateTime" Name="joindate" Nullable="false" />
+          <Property Type="DateTime" Name="expirydate" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="MembersPastExpiry_Result">
+          <Property Type="Int32" Name="memberid" Nullable="false" />
+          <Property Type="String" Name="name" Nullable="false" MaxLength="255" />
+          <Property Type="String" Name="address" Nullable="false" MaxLength="255" />
+          <Property Type="String" Name="phonenumber" Nullable="false" MaxLength="8" />
+          <Property Type="String" Name="email" Nullable="false" MaxLength="255" />
+          <Property Type="DateTime" Name="dateofbirth" Nullable="false" />
+          <Property Type="DateTime" Name="joindate" Nullable="false" />
+          <Property Type="DateTime" Name="expirydate" Nullable="false" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -262,6 +403,17 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Loandetails">
+            <EntityTypeMapping TypeName="SA47Team05BESNETLMSModel.Loandetail">
+              <MappingFragment StoreEntitySet="Loandetails">
+                <ScalarProperty Name="loandetailsid" ColumnName="loandetailsid" />
+                <ScalarProperty Name="memberid" ColumnName="memberid" />
+                <ScalarProperty Name="bookid" ColumnName="bookid" />
+                <ScalarProperty Name="startdate" ColumnName="startdate" />
+                <ScalarProperty Name="enddate" ColumnName="enddate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Members">
             <EntityTypeMapping TypeName="SA47Team05BESNETLMSModel.Member">
               <MappingFragment StoreEntitySet="Members">
@@ -276,16 +428,12 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Transactions">
-            <EntityTypeMapping TypeName="SA47Team05BESNETLMSModel.Transaction">
-              <MappingFragment StoreEntitySet="Transactions">
-                <ScalarProperty Name="transactionid" ColumnName="transactionid" />
-                <ScalarProperty Name="memberid" ColumnName="memberid" />
-                <ScalarProperty Name="bookid" ColumnName="bookid" />
-                <ScalarProperty Name="status" ColumnName="status" />
-                <ScalarProperty Name="startdate" ColumnName="startdate" />
-                <ScalarProperty Name="enddate" ColumnName="enddate" />
-                <ScalarProperty Name="extensioncount" ColumnName="extensioncount" />
+          <EntitySetMapping Name="Returndetails">
+            <EntityTypeMapping TypeName="SA47Team05BESNETLMSModel.Returndetail">
+              <MappingFragment StoreEntitySet="Returndetails">
+                <ScalarProperty Name="Returndetailsid" ColumnName="Returndetailsid" />
+                <ScalarProperty Name="loandetailsid" ColumnName="loandetailsid" />
+                <ScalarProperty Name="returndate" ColumnName="returndate" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -298,6 +446,59 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="ViewBooksListings">
+            <EntityTypeMapping TypeName="SA47Team05BESNETLMSModel.ViewBooksListing">
+              <MappingFragment StoreEntitySet="ViewBooksListing">
+                <ScalarProperty Name="bookid" ColumnName="bookid" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="author" ColumnName="author" />
+                <ScalarProperty Name="publisher" ColumnName="publisher" />
+                <ScalarProperty Name="category" ColumnName="category" />
+                <ScalarProperty Name="publishyear" ColumnName="publishyear" />
+                <ScalarProperty Name="isbn" ColumnName="isbn" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="BookListByAvailability" FunctionName="SA47Team05BESNETLMSModel.Store.BookListByAvailability">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SA47Team05BESNETLMSModel.BookListByAvailability_Result">
+                <ScalarProperty Name="bookid" ColumnName="bookid" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="author" ColumnName="author" />
+                <ScalarProperty Name="publisher" ColumnName="publisher" />
+                <ScalarProperty Name="category" ColumnName="category" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="MembersBeforeExpiry" FunctionName="SA47Team05BESNETLMSModel.Store.MembersBeforeExpiry">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SA47Team05BESNETLMSModel.MembersBeforeExpiry_Result">
+                <ScalarProperty Name="memberid" ColumnName="memberid" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="phonenumber" ColumnName="phonenumber" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="dateofbirth" ColumnName="dateofbirth" />
+                <ScalarProperty Name="joindate" ColumnName="joindate" />
+                <ScalarProperty Name="expirydate" ColumnName="expirydate" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="MembersPastExpiry" FunctionName="SA47Team05BESNETLMSModel.Store.MembersPastExpiry">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SA47Team05BESNETLMSModel.MembersPastExpiry_Result">
+                <ScalarProperty Name="memberid" ColumnName="memberid" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="phonenumber" ColumnName="phonenumber" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="dateofbirth" ColumnName="dateofbirth" />
+                <ScalarProperty Name="joindate" ColumnName="joindate" />
+                <ScalarProperty Name="expirydate" ColumnName="expirydate" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
