@@ -25,6 +25,7 @@ namespace Team5BLibraryManagementSystem
             uc_Researchbook1.Visible = visibility;
             uC_Membersearchedit1.Visible = visibility;
             uc_ReturnBook1.Visible = visibility;
+            uc_Addmember1.Visible = visibility;
             
         }
 
@@ -173,6 +174,7 @@ namespace Team5BLibraryManagementSystem
         {
             AllMenu(false);
             Usercontrol(false);
+            uc_Addmember1.Visible = true;
         }
 
         private void btn_Reports_Click(object sender, EventArgs e)
@@ -200,6 +202,11 @@ namespace Team5BLibraryManagementSystem
                 e.Cancel = true;
             }
         
+        }
+
+        private void btn_Books_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

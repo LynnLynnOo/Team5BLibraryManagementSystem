@@ -1,6 +1,6 @@
 ﻿namespace Team5BLibraryManagementSystem
 {
-    partial class Uc_Addnewmember
+    partial class Uc_Addmember
     {
         /// <summary> 
         /// Required designer variable.
@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            this.uc_ReturnBook1 = new Team5BLibraryManagementSystem.Uc_ReturnBook();
+            this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.label9 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dtp_Dob = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.textbox_Phone = new System.Windows.Forms.TextBox();
@@ -45,16 +49,62 @@
             this.textbox_Email = new System.Windows.Forms.TextBox();
             this.textbox_Ic = new System.Windows.Forms.TextBox();
             this.textbox_Memname = new System.Windows.Forms.TextBox();
-            this.btn_Submit = new System.Windows.Forms.Button();
             this.btn_Reset = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label9 = new System.Windows.Forms.Label();
+            this.btn_Submit = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
             this.SuspendLayout();
+            // 
+            // uc_ReturnBook1
+            // 
+            this.uc_ReturnBook1.Location = new System.Drawing.Point(82, 52);
+            this.uc_ReturnBook1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uc_ReturnBook1.Name = "uc_ReturnBook1";
+            this.uc_ReturnBook1.Size = new System.Drawing.Size(8, 8);
+            this.uc_ReturnBook1.TabIndex = 0;
+            // 
+            // errorProvider2
+            // 
+            this.errorProvider2.ContainerControl = this;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(299, 51);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(265, 33);
+            this.label9.TabIndex = 68;
+            this.label9.Text = "Registration Form";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.dtp_Dob);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.textbox_Phone);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.dtp_Expirydate);
+            this.groupBox1.Controls.Add(this.dtp_Joindate);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.textbox_Address);
+            this.groupBox1.Controls.Add(this.textbox_Email);
+            this.groupBox1.Controls.Add(this.textbox_Ic);
+            this.groupBox1.Controls.Add(this.textbox_Memname);
+            this.groupBox1.Location = new System.Drawing.Point(195, 102);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox1.Size = new System.Drawing.Size(518, 383);
+            this.groupBox1.TabIndex = 71;
+            this.groupBox1.TabStop = false;
             // 
             // dtp_Dob
             // 
@@ -81,7 +131,6 @@
             this.textbox_Phone.Name = "textbox_Phone";
             this.textbox_Phone.Size = new System.Drawing.Size(307, 26);
             this.textbox_Phone.TabIndex = 62;
-            this.textbox_Phone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textbox_Phone_KeyPress);
             // 
             // label3
             // 
@@ -185,7 +234,6 @@
             this.textbox_Email.Name = "textbox_Email";
             this.textbox_Email.Size = new System.Drawing.Size(307, 26);
             this.textbox_Email.TabIndex = 49;
-            this.textbox_Email.Leave += new System.EventHandler(this.textbox_Email_Leave);
             // 
             // textbox_Ic
             // 
@@ -204,90 +252,45 @@
             this.textbox_Memname.Size = new System.Drawing.Size(307, 26);
             this.textbox_Memname.TabIndex = 47;
             // 
-            // btn_Submit
-            // 
-            this.btn_Submit.Location = new System.Drawing.Point(272, 497);
-            this.btn_Submit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btn_Submit.Name = "btn_Submit";
-            this.btn_Submit.Size = new System.Drawing.Size(112, 35);
-            this.btn_Submit.TabIndex = 65;
-            this.btn_Submit.Text = "Submit";
-            this.btn_Submit.UseVisualStyleBackColor = true;
-            this.btn_Submit.Click += new System.EventHandler(this.btn_Submit_Click);
-            // 
             // btn_Reset
             // 
-            this.btn_Reset.Location = new System.Drawing.Point(453, 497);
+            this.btn_Reset.Location = new System.Drawing.Point(468, 513);
             this.btn_Reset.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_Reset.Name = "btn_Reset";
             this.btn_Reset.Size = new System.Drawing.Size(112, 35);
-            this.btn_Reset.TabIndex = 66;
+            this.btn_Reset.TabIndex = 70;
             this.btn_Reset.Text = "Reset";
             this.btn_Reset.UseVisualStyleBackColor = true;
-            this.btn_Reset.Click += new System.EventHandler(this.btn_Reset_Click);
             // 
-            // groupBox1
+            // btn_Submit
             // 
-            this.groupBox1.Controls.Add(this.dtp_Dob);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.textbox_Phone);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.dtp_Expirydate);
-            this.groupBox1.Controls.Add(this.dtp_Joindate);
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.textbox_Address);
-            this.groupBox1.Controls.Add(this.textbox_Email);
-            this.groupBox1.Controls.Add(this.textbox_Ic);
-            this.groupBox1.Controls.Add(this.textbox_Memname);
-            this.groupBox1.Location = new System.Drawing.Point(180, 86);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox1.Size = new System.Drawing.Size(518, 383);
-            this.groupBox1.TabIndex = 67;
-            this.groupBox1.TabStop = false;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(284, 35);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(265, 33);
-            this.label9.TabIndex = 65;
-            this.label9.Text = "Registration Form";
+            this.btn_Submit.Location = new System.Drawing.Point(287, 513);
+            this.btn_Submit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn_Submit.Name = "btn_Submit";
+            this.btn_Submit.Size = new System.Drawing.Size(112, 35);
+            this.btn_Submit.TabIndex = 69;
+            this.btn_Submit.Text = "Submit";
+            this.btn_Submit.UseVisualStyleBackColor = true;
             // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // errorProvider2
-            // 
-            this.errorProvider2.ContainerControl = this;
-            // 
-            // Uc_Addnewmember
+            // Uc_Addmember
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.Controls.Add(this.label9);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btn_Reset);
             this.Controls.Add(this.btn_Submit);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "Uc_Addnewmember";
-            this.Size = new System.Drawing.Size(846, 586);
-            this.Load += new System.EventHandler(this.Uc_Addnewmember_Load);
+            this.Controls.Add(this.uc_ReturnBook1);
+            this.Name = "Uc_Addmember";
+            this.Size = new System.Drawing.Size(908, 598);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -295,6 +298,10 @@
 
         #endregion
 
+        private Uc_ReturnBook uc_ReturnBook1;
+        private System.Windows.Forms.ErrorProvider errorProvider2;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DateTimePicker dtp_Dob;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textbox_Phone;
@@ -311,11 +318,8 @@
         private System.Windows.Forms.TextBox textbox_Email;
         private System.Windows.Forms.TextBox textbox_Ic;
         private System.Windows.Forms.TextBox textbox_Memname;
-        private System.Windows.Forms.Button btn_Submit;
         private System.Windows.Forms.Button btn_Reset;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button btn_Submit;
         private System.Windows.Forms.ErrorProvider errorProvider1;
-        private System.Windows.Forms.ErrorProvider errorProvider2;
     }
 }

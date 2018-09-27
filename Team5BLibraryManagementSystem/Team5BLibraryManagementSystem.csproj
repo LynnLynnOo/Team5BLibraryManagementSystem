@@ -235,6 +235,12 @@
     <Compile Include="Uc_Addbook.Designer.cs">
       <DependentUpon>Uc_Addbook.cs</DependentUpon>
     </Compile>
+    <Compile Include="Uc_Addmember.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Uc_Addmember.Designer.cs">
+      <DependentUpon>Uc_Addmember.cs</DependentUpon>
+    </Compile>
     <Compile Include="Uc_LendBook.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -258,12 +264,6 @@
     </Compile>
     <Compile Include="Uc_Researchbook.Designer.cs">
       <DependentUpon>Uc_Researchbook.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Uc_Addnewmember.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Uc_Addnewmember.Designer.cs">
-      <DependentUpon>Uc_Addnewmember.cs</DependentUpon>
     </Compile>
     <Compile Include="Uc_ReturnBook.cs">
       <SubType>UserControl</SubType>
@@ -353,11 +353,11 @@
     <EmbeddedResource Include="Uc_Addbook.resx">
       <DependentUpon>Uc_Addbook.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Uc_Addmember.resx">
+      <DependentUpon>Uc_Addmember.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Uc_LendBook.resx">
       <DependentUpon>Uc_LendBook.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Uc_Addnewmember.resx">
-      <DependentUpon>Uc_Addnewmember.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Uc_Membersearchedit.resx">
       <DependentUpon>Uc_Membersearchedit.cs</DependentUpon>
