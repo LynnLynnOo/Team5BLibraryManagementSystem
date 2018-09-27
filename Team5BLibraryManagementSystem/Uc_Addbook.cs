@@ -50,7 +50,15 @@ namespace Team5BLibraryManagementSystem
                     Book c = context.Books.Where(x => x.bookid == selectid).First();
                     context.Books.Remove(c);
                     context.SaveChanges();
-                   
+                    ds.Tables["Booksdetails"].Rows[pasn]["title"] = textBookName.Text;
+                    ds.Tables["Booksdetails"].Rows[pasn]["author"] = textAuthor.Text;
+                    ds.Tables["Booksdetails"].Rows[pasn]["category"] = textGenre.Text;
+                    ds.Tables["Booksdetails"].Rows[pasn]["publisher"] = textPublisher.Text;
+                    ds.Tables["Booksdetails"].Rows[pasn]["publishyear"] = comboBox_year.Text.ToString();
+                    ds.Tables["Booksdetails"].Rows[pasn]["isbn"] = text_Isbn.Text;
+                    ds.Tables["Booksdetails"].Rows[pasn]["quantity"] = text_Quantity.Text;
+                    ta.Update(ds);
+                    MessageBox.Show("Update Successfully!");
                 }
             }
             if (a >b)
@@ -65,18 +73,19 @@ namespace Team5BLibraryManagementSystem
                     ds.Tables["Books"].Rows.Add(r);
                     b++;
                     ta1.Update(ds);
+                    ds.Tables["Booksdetails"].Rows[pasn]["title"] = textBookName.Text;
+                    ds.Tables["Booksdetails"].Rows[pasn]["author"] = textAuthor.Text;
+                    ds.Tables["Booksdetails"].Rows[pasn]["category"] = textGenre.Text;
+                    ds.Tables["Booksdetails"].Rows[pasn]["publisher"] = textPublisher.Text;
+                    ds.Tables["Booksdetails"].Rows[pasn]["publishyear"] = comboBox_year.Text.ToString();
+                    ds.Tables["Booksdetails"].Rows[pasn]["isbn"] = text_Isbn.Text;
+                    ds.Tables["Booksdetails"].Rows[pasn]["quantity"] = text_Quantity.Text;
+                    ta.Update(ds);
+                    MessageBox.Show("Update Successfully!");
                 }
             }
             //ds.Tables["Booksdetails"].Rows[pasn]["booksdetailsid"] = text_Bookdetail.Text;
-           ds.Tables["Booksdetails"].Rows[pasn]["title"] = textBookName.Text ;
-             ds.Tables["Booksdetails"].Rows[pasn]["author"]= textAuthor.Text ;
-            ds.Tables["Booksdetails"].Rows[pasn]["category"] = textGenre.Text ;
-            ds.Tables["Booksdetails"].Rows[pasn]["publisher"] = textPublisher.Text ;
-            ds.Tables["Booksdetails"].Rows[pasn]["publishyear"]= comboBox_year.Text.ToString();
-            ds.Tables["Booksdetails"].Rows[pasn]["isbn"] = text_Isbn.Text;
-             ds.Tables["Booksdetails"].Rows[pasn]["quantity"]= text_Quantity.Text;        
-            ta.Update(ds);
-            MessageBox.Show("Update Successfully!");
+           
         }
         private int find2(string Search)
         {
@@ -164,10 +173,11 @@ namespace Team5BLibraryManagementSystem
         {
             int u= Convert.ToInt32(text_Bookdetail.Text);
             SA47Team05BESNETLMSEntities context = new SA47Team05BESNETLMSEntities();
+            context.Books.Where(x => x.booksdetailsid == u).ToList().ForEach(y => context.Books.Remove(y));
+
             Booksdetail a = context.Booksdetails.Where(d => d.booksdetailsid == u).First();
-            Book c = context.Books.Where(x => x.booksdetailsid ==u ).First();
+            
             context.Booksdetails.Remove(a);
-            context.Books.Remove(c);
             context.SaveChanges();
             MessageBox.Show("Delete Sucessfully!");
         }

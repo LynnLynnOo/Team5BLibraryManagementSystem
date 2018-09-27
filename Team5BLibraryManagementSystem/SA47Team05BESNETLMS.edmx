@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="SA47Team05BESNETLMSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="SA47Team05BESNETLMSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Books">
           <Key>
             <PropertyRef Name="bookid" />
@@ -251,7 +251,8 @@ warning 6002: The table/view 'SA47Team05BESNETLMS.dbo.ViewTotalLoanCount' does n
             <End Role="Returndetails" EntitySet="Returndetails" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="SA47Team05BESNETLMSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -314,6 +315,14 @@ warning 6002: The table/view 'SA47Team05BESNETLMS.dbo.ViewTotalLoanCount' does n
           <Property Name="loandetailsid" Type="Int32" Nullable="false" />
           <Property Name="returndate" Type="DateTime" Nullable="false" Precision="0" />
           <NavigationProperty Name="Loandetail" Relationship="Self.FK_Returndetails_Loandetails" FromRole="Returndetails" ToRole="Loandetails" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="userid" />
+          </Key>
+          <Property Name="userid" Type="Int32" Nullable="false" />
+          <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
         <EntityType Name="ViewBooksListing">
           <Key>
@@ -433,6 +442,7 @@ warning 6002: The table/view 'SA47Team05BESNETLMS.dbo.ViewTotalLoanCount' does n
           <EntitySet Name="Loandetails" EntityType="Self.Loandetail" />
           <EntitySet Name="Members" EntityType="Self.Member" />
           <EntitySet Name="Returndetails" EntityType="Self.Returndetail" />
+          <EntitySet Name="Users" EntityType="Self.User" />
           <EntitySet Name="ViewBooksListings" EntityType="Self.ViewBooksListing" />
           <EntitySet Name="ViewLoanedBooks" EntityType="Self.ViewLoanedBook" />
           <EntitySet Name="ViewTotalLoanCounts" EntityType="Self.ViewTotalLoanCount" />
@@ -453,11 +463,10 @@ warning 6002: The table/view 'SA47Team05BESNETLMS.dbo.ViewTotalLoanCount' does n
             <End Role="Returndetails" EntitySet="Returndetails" />
           </AssociationSet>
           <FunctionImport Name="BookListByAvailability" ReturnType="Collection(SA47Team05BESNETLMSModel.BookListByAvailability_Result)">
-          <Parameter Name="status" Mode="In" Type="String" />
+            <Parameter Name="status" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="MembersBeforeExpiry" ReturnType="Collection(SA47Team05BESNETLMSModel.MembersBeforeExpiry_Result)" />
           <FunctionImport Name="MembersPastExpiry" ReturnType="Collection(SA47Team05BESNETLMSModel.MembersPastExpiry_Result)" />
-          <EntitySet Name="Users" EntityType="SA47Team05BESNETLMSModel.User" />
         </EntityContainer>
         <ComplexType Name="BookListByAvailability_Result">
           <Property Type="Int32" Name="bookid" Nullable="false" />
@@ -486,14 +495,6 @@ warning 6002: The table/view 'SA47Team05BESNETLMS.dbo.ViewTotalLoanCount' does n
           <Property Type="DateTime" Name="joindate" Nullable="false" />
           <Property Type="DateTime" Name="expirydate" Nullable="false" />
         </ComplexType>
-        <EntityType Name="User">
-          <Key>
-            <PropertyRef Name="userid" />
-          </Key>
-          <Property Name="userid" Type="Int32" Nullable="false" />
-          <Property Name="username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -554,6 +555,15 @@ warning 6002: The table/view 'SA47Team05BESNETLMS.dbo.ViewTotalLoanCount' does n
                 <ScalarProperty Name="Returndetailsid" ColumnName="Returndetailsid" />
                 <ScalarProperty Name="loandetailsid" ColumnName="loandetailsid" />
                 <ScalarProperty Name="returndate" ColumnName="returndate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="SA47Team05BESNETLMSModel.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="userid" ColumnName="userid" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="password" ColumnName="password" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -641,15 +651,6 @@ warning 6002: The table/view 'SA47Team05BESNETLMS.dbo.ViewTotalLoanCount' does n
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <EntitySetMapping Name="Users">
-            <EntityTypeMapping TypeName="SA47Team05BESNETLMSModel.User">
-              <MappingFragment StoreEntitySet="Users">
-                <ScalarProperty Name="password" ColumnName="password" />
-                <ScalarProperty Name="username" ColumnName="username" />
-                <ScalarProperty Name="userid" ColumnName="userid" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
