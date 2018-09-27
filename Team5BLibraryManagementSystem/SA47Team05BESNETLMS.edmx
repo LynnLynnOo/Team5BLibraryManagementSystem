@@ -125,8 +125,8 @@
           <Property Name="bookid" Type="Int32" Nullable="false" />
           <Property Name="booksdetailsid" Type="Int32" Nullable="false" />
           <Property Name="status" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Booksdetail" Relationship="SA47Team05BESNETLMSModel.FK_Books_Booksdetails" FromRole="Book" ToRole="Booksdetail" />
-          <NavigationProperty Name="Transactions" Relationship="SA47Team05BESNETLMSModel.FK_Transactions_Books" FromRole="Book" ToRole="Transaction" />
+          <NavigationProperty Name="Booksdetail" Relationship="Self.FK_Books_Booksdetails" FromRole="Books" ToRole="Booksdetails" />
+          <NavigationProperty Name="Transactions" Relationship="Self.FK_Transactions_Books" FromRole="Books" ToRole="Transactions" />
         </EntityType>
         <EntityType Name="Booksdetail">
           <Key>
@@ -140,7 +140,7 @@
           <Property Name="category" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="isbn" Type="String" MaxLength="13" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="quantity" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Books" Relationship="SA47Team05BESNETLMSModel.FK_Books_Booksdetails" FromRole="Booksdetail" ToRole="Book" />
+          <NavigationProperty Name="Books" Relationship="Self.FK_Books_Booksdetails" FromRole="Booksdetails" ToRole="Books" />
         </EntityType>
         <EntityType Name="Member">
           <Key>
@@ -154,7 +154,7 @@
           <Property Name="dateofbirth" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="joindate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="expirydate" Type="DateTime" Nullable="false" Precision="3" />
-          <NavigationProperty Name="Transactions" Relationship="SA47Team05BESNETLMSModel.FK_Transactions_Members" FromRole="Member" ToRole="Transaction" />
+          <NavigationProperty Name="Transactions" Relationship="Self.FK_Transactions_Members" FromRole="Members" ToRole="Transactions" />
         </EntityType>
         <EntityType Name="Transaction">
           <Key>
@@ -167,8 +167,8 @@
           <Property Name="startdate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="enddate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="extensioncount" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Member" Relationship="SA47Team05BESNETLMSModel.FK_Transactions_Members" FromRole="Transaction" ToRole="Member" />
-          <NavigationProperty Name="Book" Relationship="SA47Team05BESNETLMSModel.FK_Transactions_Books" FromRole="Transaction" ToRole="Book" />
+          <NavigationProperty Name="Book" Relationship="Self.FK_Transactions_Books" FromRole="Transactions" ToRole="Books" />
+          <NavigationProperty Name="Member" Relationship="Self.FK_Transactions_Members" FromRole="Transactions" ToRole="Members" />
         </EntityType>
         <EntityType Name="User">
           <Key>
@@ -178,61 +178,61 @@
           <Property Name="username" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="password" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
+        <Association Name="FK_Books_Booksdetails">
+          <End Role="Booksdetails" Type="Self.Booksdetail" Multiplicity="1" />
+          <End Role="Books" Type="Self.Book" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Booksdetails">
+              <PropertyRef Name="booksdetailsid" />
+            </Principal>
+            <Dependent Role="Books">
+              <PropertyRef Name="booksdetailsid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Transactions_Books">
+          <End Role="Books" Type="Self.Book" Multiplicity="1" />
+          <End Role="Transactions" Type="Self.Transaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Books">
+              <PropertyRef Name="bookid" />
+            </Principal>
+            <Dependent Role="Transactions">
+              <PropertyRef Name="bookid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Transactions_Members">
+          <End Role="Members" Type="Self.Member" Multiplicity="1" />
+          <End Role="Transactions" Type="Self.Transaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Members">
+              <PropertyRef Name="memberid" />
+            </Principal>
+            <Dependent Role="Transactions">
+              <PropertyRef Name="memberid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="SA47Team05BESNETLMSEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Books" EntityType="Self.Book" />
           <EntitySet Name="Booksdetails" EntityType="Self.Booksdetail" />
           <EntitySet Name="Members" EntityType="Self.Member" />
           <EntitySet Name="Transactions" EntityType="Self.Transaction" />
           <EntitySet Name="Users" EntityType="Self.User" />
-          <AssociationSet Name="FK_Books_Booksdetails" Association="SA47Team05BESNETLMSModel.FK_Books_Booksdetails">
-            <End Role="Booksdetail" EntitySet="Booksdetails" />
-            <End Role="Book" EntitySet="Books" />
+          <AssociationSet Name="FK_Books_Booksdetails" Association="Self.FK_Books_Booksdetails">
+            <End Role="Booksdetails" EntitySet="Booksdetails" />
+            <End Role="Books" EntitySet="Books" />
           </AssociationSet>
-          <AssociationSet Name="FK_Transactions_Members" Association="SA47Team05BESNETLMSModel.FK_Transactions_Members">
-            <End Role="Member" EntitySet="Members" />
-            <End Role="Transaction" EntitySet="Transactions" />
+          <AssociationSet Name="FK_Transactions_Books" Association="Self.FK_Transactions_Books">
+            <End Role="Books" EntitySet="Books" />
+            <End Role="Transactions" EntitySet="Transactions" />
           </AssociationSet>
-          <AssociationSet Name="FK_Transactions_Books" Association="SA47Team05BESNETLMSModel.FK_Transactions_Books">
-            <End Role="Book" EntitySet="Books" />
-            <End Role="Transaction" EntitySet="Transactions" />
+          <AssociationSet Name="FK_Transactions_Members" Association="Self.FK_Transactions_Members">
+            <End Role="Members" EntitySet="Members" />
+            <End Role="Transactions" EntitySet="Transactions" />
           </AssociationSet>
         </EntityContainer>
-        <Association Name="FK_Books_Booksdetails">
-          <End Type="SA47Team05BESNETLMSModel.Booksdetail" Role="Booksdetail" Multiplicity="1" />
-          <End Type="SA47Team05BESNETLMSModel.Book" Role="Book" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Booksdetail">
-              <PropertyRef Name="booksdetailsid" />
-            </Principal>
-            <Dependent Role="Book">
-              <PropertyRef Name="booksdetailsid" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Transactions_Members">
-          <End Type="SA47Team05BESNETLMSModel.Member" Role="Member" Multiplicity="1" />
-          <End Type="SA47Team05BESNETLMSModel.Transaction" Role="Transaction" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Member">
-              <PropertyRef Name="memberid" />
-            </Principal>
-            <Dependent Role="Transaction">
-              <PropertyRef Name="memberid" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Transactions_Books">
-          <End Type="SA47Team05BESNETLMSModel.Book" Role="Book" Multiplicity="1" />
-          <End Type="SA47Team05BESNETLMSModel.Transaction" Role="Transaction" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Book">
-              <PropertyRef Name="bookid" />
-            </Principal>
-            <Dependent Role="Transaction">
-              <PropertyRef Name="bookid" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->

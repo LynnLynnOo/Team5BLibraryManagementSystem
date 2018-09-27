@@ -66,5 +66,20 @@ namespace Team5BLibraryManagementSystem
             BooksMenu(false);
             MemberMenu(false);
         }
+
+        private void btn_Books_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Frm_Main_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void uC_Membersearchedit1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

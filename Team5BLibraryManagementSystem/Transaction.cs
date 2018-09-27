@@ -22,7 +22,7 @@ namespace Team5BLibraryManagementSystem
         public System.DateTime enddate { get; set; }
         public int extensioncount { get; set; }
     
-        public virtual Member Member { get; set; }
         public virtual Book Book { get; set; }
+        public virtual Member Member { get; set; }
     }
 }

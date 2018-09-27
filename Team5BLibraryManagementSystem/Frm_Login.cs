@@ -48,5 +48,10 @@ namespace Team5BLibraryManagementSystem
                 frm_Main.Show();
             }
         }
+
+        private void textbox_Username_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -52,6 +52,9 @@
             this.Textbox_Idnumber = new System.Windows.Forms.TextBox();
             this.Textbox_Membername = new System.Windows.Forms.TextBox();
             this.btn_Search = new System.Windows.Forms.Button();
+            this.btn_Save = new System.Windows.Forms.Button();
+            this.btn_Cancel = new System.Windows.Forms.Button();
+            this.labelSearch = new System.Windows.Forms.Label();
             this.Gb_Memberinformation.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,7 +70,7 @@
             this.Combobox_Category.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Combobox_Category.Name = "Combobox_Category";
             this.Combobox_Category.Size = new System.Drawing.Size(196, 28);
-            this.Combobox_Category.TabIndex = 9;
+            this.Combobox_Category.TabIndex = 1;
             // 
             // label1
             // 
@@ -81,16 +84,20 @@
             // 
             // Textbox_Category
             // 
-            this.Textbox_Category.Location = new System.Drawing.Point(463, 23);
+            this.Textbox_Category.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.Textbox_Category.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.FileSystemDirectories;
+            this.Textbox_Category.Location = new System.Drawing.Point(473, 23);
             this.Textbox_Category.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Textbox_Category.Multiline = true;
             this.Textbox_Category.Name = "Textbox_Category";
             this.Textbox_Category.Size = new System.Drawing.Size(236, 28);
-            this.Textbox_Category.TabIndex = 6;
+            this.Textbox_Category.TabIndex = 2;
             this.Textbox_Category.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // Gb_Memberinformation
             // 
+            this.Gb_Memberinformation.Controls.Add(this.btn_Cancel);
+            this.Gb_Memberinformation.Controls.Add(this.btn_Save);
             this.Gb_Memberinformation.Controls.Add(this.btn_Delete);
             this.Gb_Memberinformation.Controls.Add(this.btn_Edit);
             this.Gb_Memberinformation.Controls.Add(this.btn_Print);
@@ -110,9 +117,9 @@
             this.Gb_Memberinformation.Controls.Add(this.Textbox_email);
             this.Gb_Memberinformation.Controls.Add(this.Textbox_Idnumber);
             this.Gb_Memberinformation.Controls.Add(this.Textbox_Membername);
-            this.Gb_Memberinformation.Location = new System.Drawing.Point(34, 108);
+            this.Gb_Memberinformation.Location = new System.Drawing.Point(33, 157);
             this.Gb_Memberinformation.Name = "Gb_Memberinformation";
-            this.Gb_Memberinformation.Size = new System.Drawing.Size(769, 509);
+            this.Gb_Memberinformation.Size = new System.Drawing.Size(778, 465);
             this.Gb_Memberinformation.TabIndex = 72;
             this.Gb_Memberinformation.TabStop = false;
             this.Gb_Memberinformation.Text = "Member Information";
@@ -120,7 +127,7 @@
             // 
             // btn_Delete
             // 
-            this.btn_Delete.Location = new System.Drawing.Point(564, 285);
+            this.btn_Delete.Location = new System.Drawing.Point(549, 255);
             this.btn_Delete.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_Delete.Name = "btn_Delete";
             this.btn_Delete.Size = new System.Drawing.Size(112, 59);
@@ -131,22 +138,22 @@
             // 
             // btn_Edit
             // 
-            this.btn_Edit.Location = new System.Drawing.Point(564, 203);
+            this.btn_Edit.Location = new System.Drawing.Point(549, 180);
             this.btn_Edit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_Edit.Name = "btn_Edit";
             this.btn_Edit.Size = new System.Drawing.Size(112, 59);
             this.btn_Edit.TabIndex = 94;
-            this.btn_Edit.Text = "Update";
+            this.btn_Edit.Text = "Edit";
             this.btn_Edit.UseVisualStyleBackColor = true;
             this.btn_Edit.Click += new System.EventHandler(this.btn_Edit_Click);
             // 
             // btn_Print
             // 
-            this.btn_Print.Location = new System.Drawing.Point(564, 126);
+            this.btn_Print.Location = new System.Drawing.Point(549, 107);
             this.btn_Print.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_Print.Name = "btn_Print";
             this.btn_Print.Size = new System.Drawing.Size(112, 59);
-            this.btn_Print.TabIndex = 93;
+            this.btn_Print.TabIndex = 12;
             this.btn_Print.Text = "Print";
             this.btn_Print.UseVisualStyleBackColor = true;
             this.btn_Print.Click += new System.EventHandler(this.btn_Print_Click);
@@ -157,7 +164,7 @@
             this.Datetimepicker_Dob.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Datetimepicker_Dob.Name = "Datetimepicker_Dob";
             this.Datetimepicker_Dob.Size = new System.Drawing.Size(284, 26);
-            this.Datetimepicker_Dob.TabIndex = 89;
+            this.Datetimepicker_Dob.TabIndex = 8;
             // 
             // label7
             // 
@@ -175,7 +182,7 @@
             this.Textbox_Phone.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Textbox_Phone.Name = "Textbox_Phone";
             this.Textbox_Phone.Size = new System.Drawing.Size(284, 26);
-            this.Textbox_Phone.TabIndex = 87;
+            this.Textbox_Phone.TabIndex = 6;
             // 
             // label3
             // 
@@ -183,9 +190,9 @@
             this.label3.Location = new System.Drawing.Point(123, 142);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(55, 20);
+            this.label3.Size = new System.Drawing.Size(59, 20);
             this.label3.TabIndex = 86;
-            this.label3.Text = "Phone";
+            this.label3.Text = "Phone:";
             // 
             // Datetimepicker_Expirydate
             // 
@@ -194,7 +201,7 @@
             this.Datetimepicker_Expirydate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Datetimepicker_Expirydate.Name = "Datetimepicker_Expirydate";
             this.Datetimepicker_Expirydate.Size = new System.Drawing.Size(284, 26);
-            this.Datetimepicker_Expirydate.TabIndex = 84;
+            this.Datetimepicker_Expirydate.TabIndex = 11;
             // 
             // Datetimepicker_Joineddate
             // 
@@ -203,7 +210,7 @@
             this.Datetimepicker_Joineddate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Datetimepicker_Joineddate.Name = "Datetimepicker_Joineddate";
             this.Datetimepicker_Joineddate.Size = new System.Drawing.Size(284, 26);
-            this.Datetimepicker_Joineddate.TabIndex = 83;
+            this.Datetimepicker_Joineddate.TabIndex = 10;
             // 
             // label9
             // 
@@ -211,9 +218,9 @@
             this.label9.Location = new System.Drawing.Point(88, 415);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(90, 20);
+            this.label9.Size = new System.Drawing.Size(94, 20);
             this.label9.TabIndex = 82;
-            this.label9.Text = "Expiry Date";
+            this.label9.Text = "Expiry Date:";
             // 
             // label8
             // 
@@ -221,9 +228,9 @@
             this.label8.Location = new System.Drawing.Point(83, 356);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(95, 20);
+            this.label8.Size = new System.Drawing.Size(99, 20);
             this.label8.TabIndex = 81;
-            this.label8.Text = "Joined Date";
+            this.label8.Text = "Joined Date:";
             // 
             // label5
             // 
@@ -238,12 +245,12 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(88, 88);
+            this.label4.Location = new System.Drawing.Point(90, 91);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(88, 20);
+            this.label4.Size = new System.Drawing.Size(92, 20);
             this.label4.TabIndex = 78;
-            this.label4.Text = "Member ID";
+            this.label4.Text = "Member ID:";
             // 
             // label2
             // 
@@ -259,12 +266,12 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(59, 37);
+            this.label10.Location = new System.Drawing.Point(63, 30);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(119, 20);
+            this.label10.Size = new System.Drawing.Size(124, 20);
             this.label10.TabIndex = 76;
-            this.label10.Text = "Member Name";
+            this.label10.Text = "Member Name:";
             // 
             // Textbox_Address
             // 
@@ -272,7 +279,7 @@
             this.Textbox_Address.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Textbox_Address.Name = "Textbox_Address";
             this.Textbox_Address.Size = new System.Drawing.Size(284, 26);
-            this.Textbox_Address.TabIndex = 75;
+            this.Textbox_Address.TabIndex = 9;
             // 
             // Textbox_email
             // 
@@ -280,7 +287,7 @@
             this.Textbox_email.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Textbox_email.Name = "Textbox_email";
             this.Textbox_email.Size = new System.Drawing.Size(284, 26);
-            this.Textbox_email.TabIndex = 74;
+            this.Textbox_email.TabIndex = 7;
             // 
             // Textbox_Idnumber
             // 
@@ -289,31 +296,66 @@
             this.Textbox_Idnumber.Name = "Textbox_Idnumber";
             this.Textbox_Idnumber.ReadOnly = true;
             this.Textbox_Idnumber.Size = new System.Drawing.Size(284, 26);
-            this.Textbox_Idnumber.TabIndex = 73;
+            this.Textbox_Idnumber.TabIndex = 5;
             // 
             // Textbox_Membername
             // 
-            this.Textbox_Membername.Location = new System.Drawing.Point(203, 31);
+            this.Textbox_Membername.Location = new System.Drawing.Point(203, 27);
             this.Textbox_Membername.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Textbox_Membername.Name = "Textbox_Membername";
             this.Textbox_Membername.Size = new System.Drawing.Size(284, 26);
-            this.Textbox_Membername.TabIndex = 72;
+            this.Textbox_Membername.TabIndex = 4;
             // 
             // btn_Search
             // 
-            this.btn_Search.Location = new System.Drawing.Point(237, 68);
+            this.btn_Search.Location = new System.Drawing.Point(237, 77);
             this.btn_Search.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_Search.Name = "btn_Search";
-            this.btn_Search.Size = new System.Drawing.Size(111, 32);
-            this.btn_Search.TabIndex = 73;
+            this.btn_Search.Size = new System.Drawing.Size(111, 59);
+            this.btn_Search.TabIndex = 3;
             this.btn_Search.Text = "Search";
             this.btn_Search.UseVisualStyleBackColor = true;
             this.btn_Search.Click += new System.EventHandler(this.btn_Search_Click);
+            // 
+            // btn_Save
+            // 
+            this.btn_Save.Location = new System.Drawing.Point(549, 180);
+            this.btn_Save.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn_Save.Name = "btn_Save";
+            this.btn_Save.Size = new System.Drawing.Size(112, 59);
+            this.btn_Save.TabIndex = 13;
+            this.btn_Save.Text = "Save";
+            this.btn_Save.UseVisualStyleBackColor = true;
+            this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
+            // 
+            // btn_Cancel
+            // 
+            this.btn_Cancel.Location = new System.Drawing.Point(549, 255);
+            this.btn_Cancel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn_Cancel.Name = "btn_Cancel";
+            this.btn_Cancel.Size = new System.Drawing.Size(112, 59);
+            this.btn_Cancel.TabIndex = 14;
+            this.btn_Cancel.Text = "Cancel";
+            this.btn_Cancel.UseVisualStyleBackColor = true;
+            this.btn_Cancel.Click += new System.EventHandler(this.btn_Cancel_Click);
+            // 
+            // labelSearch
+            // 
+            this.labelSearch.AutoSize = true;
+            this.labelSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSearch.ForeColor = System.Drawing.Color.Crimson;
+            this.labelSearch.Location = new System.Drawing.Point(469, 56);
+            this.labelSearch.Name = "labelSearch";
+            this.labelSearch.Size = new System.Drawing.Size(268, 20);
+            this.labelSearch.TabIndex = 73;
+            this.labelSearch.Text = "*Please key in the search words.";
+            this.labelSearch.Visible = false;
             // 
             // Uc_Membersearchedit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.labelSearch);
             this.Controls.Add(this.btn_Search);
             this.Controls.Add(this.Gb_Memberinformation);
             this.Controls.Add(this.Combobox_Category);
@@ -321,6 +363,7 @@
             this.Controls.Add(this.Textbox_Category);
             this.Name = "Uc_Membersearchedit";
             this.Size = new System.Drawing.Size(846, 635);
+            this.Load += new System.EventHandler(this.Uc_Membersearchedit_Load);
             this.Gb_Memberinformation.ResumeLayout(false);
             this.Gb_Memberinformation.PerformLayout();
             this.ResumeLayout(false);
@@ -353,5 +396,8 @@
         private System.Windows.Forms.TextBox Textbox_Idnumber;
         private System.Windows.Forms.TextBox Textbox_Membername;
         private System.Windows.Forms.Button btn_Search;
+        private System.Windows.Forms.Button btn_Save;
+        private System.Windows.Forms.Button btn_Cancel;
+        private System.Windows.Forms.Label labelSearch;
     }
 }
