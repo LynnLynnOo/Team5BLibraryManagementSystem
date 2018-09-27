@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace Team5BLibraryManagementSystem
 {
-    public partial class Frm_Book : Form
+    public partial class Form2 : Form
     {
-        public Frm_Book()
+        public Form2()
         {
             InitializeComponent();
-        }
-
-        private void uc_Addbook1_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

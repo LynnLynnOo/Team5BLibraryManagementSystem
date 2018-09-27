@@ -36,6 +36,9 @@ namespace Team5BLibraryManagementSystem
         public virtual DbSet<ViewLoanedBook> ViewLoanedBooks { get; set; }
         public virtual DbSet<ViewTotalLoanCount> ViewTotalLoanCounts { get; set; }
         public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<ViewBooksListing> ViewBooksListings { get; set; }
+        public virtual DbSet<ViewLoanedBook> ViewLoanedBooks { get; set; }
+        public virtual DbSet<ViewTotalLoanCount> ViewTotalLoanCounts { get; set; }
     
         public virtual ObjectResult<BookListByAvailability_Result> BookListByAvailability(string status)
         {

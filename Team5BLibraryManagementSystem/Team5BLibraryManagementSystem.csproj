@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{D774D2D7-8AA9-4B0B-BA98-FB8E0C586662}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Exe</OutputType>
     <RootNamespace>Team5BLibraryManagementSystem</RootNamespace>
     <AssemblyName>Team5BLibraryManagementSystem</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
@@ -78,6 +78,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Dataset_BookListAvailability.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -259,6 +265,12 @@
     <Compile Include="Uc_Addnewmember.Designer.cs">
       <DependentUpon>Uc_Addnewmember.cs</DependentUpon>
     </Compile>
+    <Compile Include="Uc_ReturnBook.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Uc_ReturnBook.Designer.cs">
+      <DependentUpon>Uc_ReturnBook.cs</DependentUpon>
+    </Compile>
     <Compile Include="User.cs">
       <DependentUpon>SA47Team05BESNETLMS.tt</DependentUpon>
     </Compile>
@@ -271,6 +283,9 @@
     <Compile Include="ViewTotalLoanCount.cs">
       <DependentUpon>SA47Team05BESNETLMS.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_Book.resx">
       <DependentUpon>Frm_Book.cs</DependentUpon>
     </EmbeddedResource>
@@ -353,6 +368,9 @@
     <EmbeddedResource Include="Uc_Researchbook.resx">
       <DependentUpon>Uc_Researchbook.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Uc_ReturnBook.resx">
+      <DependentUpon>Uc_ReturnBook.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
     <None Include="DataSet1.xsc">
       <DependentUpon>DataSet1.xsd</DependentUpon>
@@ -417,7 +435,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Content Include="readme.txt" />
