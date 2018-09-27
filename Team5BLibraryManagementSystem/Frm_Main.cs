@@ -157,6 +157,7 @@ namespace Team5BLibraryManagementSystem
 
             AllMenu(false);
             Usercontrol(false);
+            uc_ReturnBook1.Visible = true;
 
         }
 
@@ -197,10 +198,7 @@ namespace Team5BLibraryManagementSystem
             {
                 e.Cancel = true;
             }
-         
-
-
-
+        
         }
     }
 }

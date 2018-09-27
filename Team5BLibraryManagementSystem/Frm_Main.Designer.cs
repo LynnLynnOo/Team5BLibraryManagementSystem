@@ -45,6 +45,7 @@
             this.uc_LendBook1 = new Team5BLibraryManagementSystem.Uc_LendBook();
             this.uc_Addbook1 = new Team5BLibraryManagementSystem.Uc_Addbook();
             this.uC_Membersearchedit1 = new Team5BLibraryManagementSystem.Uc_Membersearchedit();
+            this.uc_ReturnBook1 = new Team5BLibraryManagementSystem.Uc_ReturnBook();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -187,6 +188,7 @@
             this.panel1.Controls.Add(this.uc_LendBook1);
             this.panel1.Controls.Add(this.uc_Addbook1);
             this.panel1.Controls.Add(this.uC_Membersearchedit1);
+            this.panel1.Controls.Add(this.uc_ReturnBook1);
             this.panel1.Location = new System.Drawing.Point(0, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1099, 643);
@@ -233,6 +235,14 @@
             this.uC_Membersearchedit1.Size = new System.Drawing.Size(880, 640);
             this.uC_Membersearchedit1.TabIndex = 30;
             // 
+            // uc_ReturnBook1
+            // 
+            this.uc_ReturnBook1.Location = new System.Drawing.Point(217, 0);
+            this.uc_ReturnBook1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uc_ReturnBook1.Name = "uc_ReturnBook1";
+            this.uc_ReturnBook1.Size = new System.Drawing.Size(846, 635);
+            this.uc_ReturnBook1.TabIndex = 36;
+            // 
             // Frm_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -273,5 +283,6 @@
         private Uc_LendBook uc_LendBook1;
         private Uc_Addbook uc_Addbook1;
         private System.Windows.Forms.Panel panel1;
+        private Uc_ReturnBook uc_ReturnBook1;
     }
 }
