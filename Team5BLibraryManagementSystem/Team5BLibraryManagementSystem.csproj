@@ -65,14 +65,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Book.cs">
-      <DependentUpon>SA47Team05BESNETLMS.tt</DependentUpon>
+      <DependentUpon>SA47Team05BESNETLMSEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="BookListByAvailability_Result.cs">
       <DependentUpon>SA47Team05BESNETLMS.tt</DependentUpon>
     </Compile>
     <Compile Include="Booksdetail.cs">
-      <DependentUpon>SA47Team05BESNETLMS.tt</DependentUpon>
+      <DependentUpon>SA47Team05BESNETLMSEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="Checkemailvalidity.cs" />
     <Compile Include="DataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -149,10 +150,10 @@
       <DependentUpon>Frm_Main.cs</DependentUpon>
     </Compile>
     <Compile Include="Loandetail.cs">
-      <DependentUpon>SA47Team05BESNETLMS.tt</DependentUpon>
+      <DependentUpon>SA47Team05BESNETLMSEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Member.cs">
-      <DependentUpon>SA47Team05BESNETLMS.tt</DependentUpon>
+      <DependentUpon>SA47Team05BESNETLMSEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="MembersBeforeExpiry_Result.cs">
       <DependentUpon>SA47Team05BESNETLMS.tt</DependentUpon>
@@ -163,7 +164,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Returndetail.cs">
-      <DependentUpon>SA47Team05BESNETLMS.tt</DependentUpon>
+      <DependentUpon>SA47Team05BESNETLMSEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Rpt_BookListByAvailability.cs">
       <AutoGen>True</AutoGen>
@@ -210,17 +211,17 @@
     <Compile Include="SA47Team05BESNETLMS.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SA47Team05BESNETLMS.Context.tt</DependentUpon>
+      <DependentUpon>SA47Team05BESNETLMSEntities.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="SA47Team05BESNETLMS.cs">
+    <Compile Include="SA47Team05BESNETLMSEntities.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SA47Team05BESNETLMS.tt</DependentUpon>
+      <DependentUpon>SA47Team05BESNETLMSEntities.tt</DependentUpon>
     </Compile>
-    <Compile Include="SA47Team05BESNETLMS.Designer.cs">
+    <Compile Include="SA47Team05BESNETLMSEntities.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SA47Team05BESNETLMS.edmx</DependentUpon>
+      <DependentUpon>SA47Team05BESNETLMSEntities.edmx</DependentUpon>
     </Compile>
     <Compile Include="Uc_Addbook.cs">
       <SubType>UserControl</SubType>
@@ -252,9 +253,6 @@
     <Compile Include="Uc_Researchbook.Designer.cs">
       <DependentUpon>Uc_Researchbook.cs</DependentUpon>
     </Compile>
-    <Compile Include="User.cs">
-      <DependentUpon>SA47Team05BESNETLMS.tt</DependentUpon>
-    </Compile>
     <Compile Include="Uc_Addnewmember.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -266,6 +264,9 @@
     </Compile>
     <Compile Include="ViewBooksListing.cs">
       <DependentUpon>SA47Team05BESNETLMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="User.cs">
+      <DependentUpon>SA47Team05BESNETLMSEntities.tt</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Frm_Book.resx">
       <DependentUpon>Frm_Book.cs</DependentUpon>
@@ -404,12 +405,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EntityDeploy Include="SA47Team05BESNETLMS.edmx">
+    <EntityDeploy Include="SA47Team05BESNETLMSEntities.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>SA47Team05BESNETLMS.Designer.cs</LastGenOutput>
+      <LastGenOutput>SA47Team05BESNETLMSEntities.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="SA47Team05BESNETLMS.edmx.diagram">
-      <DependentUpon>SA47Team05BESNETLMS.edmx</DependentUpon>
+    <None Include="SA47Team05BESNETLMSEntities.edmx.diagram">
+      <DependentUpon>SA47Team05BESNETLMSEntities.edmx</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -417,15 +418,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="readme.txt" />
-    <Content Include="SA47Team05BESNETLMS.Context.tt">
+    <Content Include="SA47Team05BESNETLMSEntities.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>SA47Team05BESNETLMS.Context.cs</LastGenOutput>
-      <DependentUpon>SA47Team05BESNETLMS.edmx</DependentUpon>
+      <DependentUpon>SA47Team05BESNETLMSEntities.edmx</DependentUpon>
+      <LastGenOutput>SA47Team05BESNETLMSEntities.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="SA47Team05BESNETLMS.tt">
+    <Content Include="SA47Team05BESNETLMSEntities.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>SA47Team05BESNETLMS.edmx</DependentUpon>
-      <LastGenOutput>SA47Team05BESNETLMS.cs</LastGenOutput>
+      <DependentUpon>SA47Team05BESNETLMSEntities.edmx</DependentUpon>
+      <LastGenOutput>SA47Team05BESNETLMSEntities.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>

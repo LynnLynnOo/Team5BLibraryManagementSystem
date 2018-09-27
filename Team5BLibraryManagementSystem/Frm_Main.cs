@@ -71,5 +71,10 @@ namespace Team5BLibraryManagementSystem
         {
 
         }
+
+        private void Frm_Main_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

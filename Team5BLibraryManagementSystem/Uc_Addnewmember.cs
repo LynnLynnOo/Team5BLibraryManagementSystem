@@ -21,6 +21,7 @@ namespace Team5BLibraryManagementSystem
         {
             try
             {
+
                 SA47Team05BESNETLMSEntities context = new SA47Team05BESNETLMSEntities();
                 Member m = new Member();
                 m.name = textbox_Memname.Text;

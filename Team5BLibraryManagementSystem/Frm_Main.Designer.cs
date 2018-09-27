@@ -145,9 +145,9 @@
             // 
             // uC_Membersearchedit1
             // 
-            this.uC_Membersearchedit1.Location = new System.Drawing.Point(212, 1);
+            this.uC_Membersearchedit1.Location = new System.Drawing.Point(214, 4);
             this.uC_Membersearchedit1.Name = "uC_Membersearchedit1";
-            this.uC_Membersearchedit1.Size = new System.Drawing.Size(846, 635);
+            this.uC_Membersearchedit1.Size = new System.Drawing.Size(880, 640);
             this.uC_Membersearchedit1.TabIndex = 30;
             // 
             // Frm_Main
@@ -168,6 +168,7 @@
             this.Controls.Add(this.uC_Membersearchedit1);
             this.Name = "Frm_Main";
             this.Text = "Frm_Main";
+            this.Load += new System.EventHandler(this.Frm_Main_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
