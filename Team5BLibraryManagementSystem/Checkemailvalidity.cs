@@ -14,26 +14,41 @@ namespace Team5BLibraryManagementSystem
 {
     public class Checkemailvalidity
     {
+        //Check id validity
+        public bool IsValidID(string strIn)
+        {
+            if (strIn.Any(char.IsDigit))
+            {
+                return true;
+            }
+
+            else
+            {
+                MessageBox.Show("Invalid ID!", "Warning", MessageBoxButtons.OK);
+                return false;
+            }
+        }
+
         //Check name validity
         public bool IsValidName(string strIn)
         {
             if (strIn.Any(char.IsSymbol) || strIn.Any(char.IsDigit))
             {
-                MessageBox.Show("Name cannot contains special characters and digits!","Warning",MessageBoxButtons.OK);
+                MessageBox.Show("Name cannot contains special characters and digits!", "Warning", MessageBoxButtons.OK);
                 return false;
             }
 
             else
             {
                 return true;
-            }           
+            }
         }
 
         //Check phone validity
         public bool IsValidPhone(string strIn)
         {
             if (strIn.Any(char.IsDigit))
-            {              
+            {
                 return true;
             }
 
@@ -51,7 +66,7 @@ namespace Team5BLibraryManagementSystem
             invalid = false;
             if (String.IsNullOrEmpty(strIn))
                 return false;
-          
+
             try
             {
                 strIn = Regex.Replace(strIn, @"(@)(.+)$", this.DomainMapper,
@@ -63,10 +78,10 @@ namespace Team5BLibraryManagementSystem
             }
 
             if (invalid)
-            {               
-                return false;               
+            {
+                return false;
             }
-                
+
             try
             {
                 return Regex.IsMatch(strIn,
@@ -82,7 +97,7 @@ namespace Team5BLibraryManagementSystem
 
         private string DomainMapper(Match match)
         {
-          
+
             IdnMapping idn = new IdnMapping();
 
             string domainName = match.Groups[2].Value;
