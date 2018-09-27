@@ -15,6 +15,7 @@ namespace Team5BLibraryManagementSystem
         public Frm_Login()
         {
             InitializeComponent();
+            this.AcceptButton = btn_Login;
         }
 
         private void btn_Login_Click_1(object sender, EventArgs e)
@@ -26,7 +27,15 @@ namespace Team5BLibraryManagementSystem
             }
             SA47Team05BESNETLMSEntities ctx = new SA47Team05BESNETLMSEntities();
             string username = textbox_Username.Text;
-            var query1 = ctx.Users.Where(x => x.username == username).Count();
+            int query1 = 0;
+            try
+            {
+                query1 = ctx.Users.Where(x => x.username == username).Count();
+            }
+            catch
+            {
+                MessageBox.Show("Please try again later.");
+            }
             if (query1 <= 0)
             {
                 Console.WriteLine("invalid username");
@@ -47,11 +56,6 @@ namespace Team5BLibraryManagementSystem
                 Frm_Main frm_Main = new Frm_Main();
                 frm_Main.Show();
             }
-        }
-
-        private void textbox_Username_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

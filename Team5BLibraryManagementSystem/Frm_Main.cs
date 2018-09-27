@@ -184,5 +184,23 @@ namespace Team5BLibraryManagementSystem
         {
             this.Close();
         }
+
+        private void Frm_Main_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want to log out?", "Exit", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                Frm_Login f1 = new Frm_Login();
+                f1.Show();
+            }
+            else
+            {
+                e.Cancel = true;
+            }
+         
+
+
+
+        }
     }
 }

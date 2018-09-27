@@ -30,19 +30,20 @@ namespace Team5BLibraryManagementSystem
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
             this.booksTableAdapter.Fill(this.dataSet1.Books);
             ds = new DataSet1();
             ta = new DataSet1TableAdapters.BooksTableAdapter();
             ta.Fill(ds.Books);
-            DataView dv = new DataView(ds.Tables["Books"]);
             Uc_Addbook uc1 = new Uc_Addbook();
+        }
+        public string selectedBookID
+        {
+            get { return dataGridView1.SelectedRows[0].Cells[0].Value.ToString(); }
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-           
-            SelectedRow = e.RowIndex;
+       
         }
         public int SelectedRow
         { get; set; }

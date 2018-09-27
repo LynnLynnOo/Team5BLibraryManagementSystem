@@ -246,6 +246,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "Frm_Main";
             this.Text = "Frm_Main";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frm_Main_FormClosing);
             this.Load += new System.EventHandler(this.Frm_Main_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
