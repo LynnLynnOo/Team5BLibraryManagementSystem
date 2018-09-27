@@ -85,7 +85,6 @@ namespace Team5BLibraryManagementSystem
         {
             SA47Team05BESNETLMSEntities context = new SA47Team05BESNETLMSEntities();
             int q = (from x in context.Members select x).Count();
-            MessageBox.Show(q.ToString());
             count = count + q;
             textbox_Ic.Text =count.ToString();
         }
