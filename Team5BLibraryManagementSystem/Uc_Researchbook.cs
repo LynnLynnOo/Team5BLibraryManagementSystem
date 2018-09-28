@@ -51,7 +51,7 @@ namespace Team5BLibraryManagementSystem
 
                     case "Book ID":
                         data_Search.Visible = true;
-                        data_Search.DataSource = context.ViewBooksListings.Where(x => x.title.ToString() == text_Search.Text).ToList();
+                        data_Search.DataSource = context.ViewBooksListings.Where(x => x.bookid.ToString() == text_Search.Text).ToList();
                         break;
 
                     case "Status":

@@ -14,19 +14,18 @@ namespace Team5BLibraryManagementSystem
     {
         public Frm_Main()
         {
-            InitializeComponent();
+            InitializeComponent();       
         }
         
         private void Usercontrol(bool visibility)
         {
-            uc_Addbook1.Visible = visibility;
-            uc_LendBook1.Visible = visibility;
-            uc_Reports1.Visible = visibility;
-            uc_Researchbook1.Visible = visibility;
-            uC_Membersearchedit1.Visible = visibility;
-            uc_ReturnBook1.Visible = visibility;
-            uc_Addmember1.Visible = visibility;
-            
+             uc_Addbook1.Visible = visibility;
+             uc_LendBook1.Visible = visibility;
+             uc_Reports4.Visible = visibility;
+             uc_Researchbook1.Visible = visibility;
+             uc_ReturnBook1.Visible = visibility;
+             //uc_Addmember1.Visible = visibility;
+             uc_Membersearchedit1.Visible = visibility;
         }
 
         private void BooksMenu(bool visibility)
@@ -84,30 +83,9 @@ namespace Team5BLibraryManagementSystem
             BooksMenu(false);
         }
 
-        private void btn_Addnewmember_MouseLeave(object sender, EventArgs e)
-        {
-           MemberMenu(false);
-            BooksMenu(false);
-        }
-
-        private void panel1_MouseEnter(object sender, EventArgs e)
-        {
-            AllMenu(false);
-        }
-
         private void pictureBox1_MouseEnter(object sender, EventArgs e)
         {
             AllMenu(false);
-        }
-
-        private void btn_Returnbooks_MouseLeave(object sender, EventArgs e)
-        {
-            AllMenu(false);
-        }
-
-        private void btn_Registernewbooks_MouseLeave(object sender, EventArgs e)
-        {
-
         }
 
         private void btn_Books_MouseEnter_1(object sender, EventArgs e)
@@ -138,13 +116,14 @@ namespace Team5BLibraryManagementSystem
         {
             Usercontrol(false);
             AllMenu(false);
+            uc_Researchbook1.Visible = true;           
         }
 
         private void btn_Searcheditmember_Click(object sender, EventArgs e)
         {
             AllMenu(false);
             Usercontrol(false);
-            uC_Membersearchedit1.Visible = true;
+            uc_Membersearchedit1.Visible = true;
         }
 
         private void btn_Loanbooks_Click(object sender, EventArgs e)
@@ -156,11 +135,9 @@ namespace Team5BLibraryManagementSystem
 
         private void btn_Returnbooks_Click(object sender, EventArgs e)
         {
-
             AllMenu(false);
             Usercontrol(false);
             uc_ReturnBook1.Visible = true;
-
         }
 
         private void btn_Registernewbooks_Click(object sender, EventArgs e)
@@ -174,14 +151,14 @@ namespace Team5BLibraryManagementSystem
         {
             AllMenu(false);
             Usercontrol(false);
-            uc_Addmember1.Visible = true;
+            //uc_Addmember1.Visible = true;
         }
 
         private void btn_Reports_Click(object sender, EventArgs e)
         {
             AllMenu(false);
             Usercontrol(false);
-            uc_Reports1.Visible = true;
+            uc_Reports4.Visible = true;
         }
 
         private void btn_Logout_Click(object sender, EventArgs e)
@@ -204,9 +181,49 @@ namespace Team5BLibraryManagementSystem
         
         }
 
-        private void btn_Books_Click(object sender, EventArgs e)
+        private void pictureBox2_MouseEnter(object sender, EventArgs e)
         {
+            AllMenu(false);
+        }
 
+        private void btn_Logout_MouseEnter(object sender, EventArgs e)
+        {
+            AllMenu(false);
+        }
+
+        private void Frm_Main_MouseLeave(object sender, EventArgs e)
+        {
+            AllMenu(false);
+        }
+
+        private void uc_Researchbook1_MouseEnter(object sender, EventArgs e)
+        {
+            AllMenu(false);
+        }
+
+        private void uc_Reports4_MouseEnter(object sender, EventArgs e)
+        {
+            AllMenu(false);
+        }
+
+        private void uc_Membersearchedit1_MouseEnter(object sender, EventArgs e)
+        {
+            AllMenu(false);
+        }
+
+        private void uc_LendBook1_MouseEnter(object sender, EventArgs e)
+        {
+            AllMenu(false);
+        }
+
+        private void uc_Addbook1_MouseEnter(object sender, EventArgs e)
+        {
+            AllMenu(false);
+        }
+
+        private void uc_ReturnBook1_MouseEnter(object sender, EventArgs e)
+        {
+            AllMenu(false);
         }
     }
 }
