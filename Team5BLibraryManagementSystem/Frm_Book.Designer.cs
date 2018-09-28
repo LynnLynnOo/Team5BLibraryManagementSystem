@@ -28,23 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.uc_Researchbook1 = new Team5BLibraryManagementSystem.Uc_Researchbook();
+            this.uc_Addbook1 = new Team5BLibraryManagementSystem.Uc_Addbook();
             this.SuspendLayout();
             // 
-            // uc_Researchbook1
+            // uc_Addbook1
             // 
-            this.uc_Researchbook1.Location = new System.Drawing.Point(50, 12);
-            this.uc_Researchbook1.Name = "uc_Researchbook1";
-            this.uc_Researchbook1.Size = new System.Drawing.Size(564, 381);
-            this.uc_Researchbook1.TabIndex = 0;
-            this.uc_Researchbook1.Load += new System.EventHandler(this.uc_Researchbook1_Load);
+            this.uc_Addbook1.Location = new System.Drawing.Point(60, 6);
+            this.uc_Addbook1.Name = "uc_Addbook1";
+            this.uc_Addbook1.Size = new System.Drawing.Size(564, 381);
+            this.uc_Addbook1.TabIndex = 0;
+            this.uc_Addbook1.Load += new System.EventHandler(this.uc_Addbook1_Load_1);
             // 
             // Frm_Book
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(736, 399);
-            this.Controls.Add(this.uc_Researchbook1);
+            this.Controls.Add(this.uc_Addbook1);
             this.Name = "Frm_Book";
             this.Text = "Frm_Book";
             this.ResumeLayout(false);
@@ -53,6 +53,6 @@
 
         #endregion
 
-        private Uc_Researchbook uc_Researchbook1;
+        private Uc_Addbook uc_Addbook1;
     }
 }
