@@ -155,6 +155,9 @@
     <Compile Include="Frm_Main.Designer.cs">
       <DependentUpon>Frm_Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="HistoryByMembers_Result.cs">
+      <DependentUpon>SA47Team05BESNETLMS.tt</DependentUpon>
+    </Compile>
     <Compile Include="Loandetail.cs">
       <DependentUpon>SA47Team05BESNETLMS.tt</DependentUpon>
     </Compile>
@@ -442,7 +445,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="readme.txt" />
-    <None Include="Resources\Banner.PNG" />
     <Content Include="SA47Team05BESNETLMS.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>SA47Team05BESNETLMS.edmx</DependentUpon>
@@ -453,6 +455,7 @@
       <DependentUpon>SA47Team05BESNETLMS.edmx</DependentUpon>
       <LastGenOutput>SA47Team05BESNETLMS.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\Banner.PNG" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

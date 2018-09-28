@@ -46,6 +46,15 @@ namespace Team5BLibraryManagementSystem
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<BookListByAvailability_Result>("BookListByAvailability", statusParameter);
         }
     
+        public virtual ObjectResult<HistoryByMembers_Result> HistoryByMembers(Nullable<int> memberid)
+        {
+            var memberidParameter = memberid.HasValue ?
+                new ObjectParameter("memberid", memberid) :
+                new ObjectParameter("memberid", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<HistoryByMembers_Result>("HistoryByMembers", memberidParameter);
+        }
+    
         public virtual ObjectResult<MembersBeforeExpiry_Result> MembersBeforeExpiry()
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<MembersBeforeExpiry_Result>("MembersBeforeExpiry");

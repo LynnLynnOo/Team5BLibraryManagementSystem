@@ -25,6 +25,7 @@
           <Property Name="category" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="isbn" Type="nvarchar" MaxLength="13" Nullable="false" />
           <Property Name="quantity" Type="int" Nullable="false" />
+          <Property Name="location" Type="nvarchar" MaxLength="10" Nullable="false" />
         </EntityType>
         <EntityType Name="Loandetails">
           <Key>
@@ -77,6 +78,7 @@ warning 6002: The table/view 'SA47Team05BESNETLMS.dbo.ViewBooksListing' does not
             <PropertyRef Name="publishyear" />
             <PropertyRef Name="isbn" />
             <PropertyRef Name="status" />
+            <PropertyRef Name="location" />
           </Key>
           <Property Name="bookid" Type="int" Nullable="false" />
           <Property Name="title" Type="nvarchar" MaxLength="255" Nullable="false" />
@@ -86,6 +88,7 @@ warning 6002: The table/view 'SA47Team05BESNETLMS.dbo.ViewBooksListing' does not
           <Property Name="publishyear" Type="numeric" Precision="4" Scale="0" Nullable="false" />
           <Property Name="isbn" Type="nvarchar" MaxLength="13" Nullable="false" />
           <Property Name="status" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="location" Type="nvarchar" MaxLength="10" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'SA47Team05BESNETLMS.dbo.ViewLoanedBooks' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -186,6 +189,9 @@ warning 6002: The table/view 'SA47Team05BESNETLMS.dbo.ViewTotalLoanCount' does n
         <Function Name="BookListByAvailability" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="status" Type="nvarchar" Mode="In" />
         </Function>
+        <Function Name="HistoryByMembers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="memberid" Type="int" Mode="In" />
+        </Function>
         <Function Name="MembersBeforeExpiry" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="MembersPastExpiry" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="SA47Team05BESNETLMSModelStoreContainer">
@@ -204,7 +210,8 @@ warning 6002: The table/view 'SA47Team05BESNETLMS.dbo.ViewTotalLoanCount' does n
     [ViewBooksListing].[category] AS [category], 
     [ViewBooksListing].[publishyear] AS [publishyear], 
     [ViewBooksListing].[isbn] AS [isbn], 
-    [ViewBooksListing].[status] AS [status]
+    [ViewBooksListing].[status] AS [status], 
+    [ViewBooksListing].[location] AS [location]
     FROM [dbo].[ViewBooksListing] AS [ViewBooksListing]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="ViewLoanedBooks" EntityType="Self.ViewLoanedBooks" store:Type="Views" store:Schema="dbo">
@@ -278,6 +285,7 @@ warning 6002: The table/view 'SA47Team05BESNETLMS.dbo.ViewTotalLoanCount' does n
           <Property Name="category" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="isbn" Type="String" MaxLength="13" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="quantity" Type="Int32" Nullable="false" />
+          <Property Name="location" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Books" Relationship="Self.FK_Books_Booksdetails" FromRole="Booksdetails" ToRole="Books" />
         </EntityType>
         <EntityType Name="Loandetail">
@@ -334,6 +342,7 @@ warning 6002: The table/view 'SA47Team05BESNETLMS.dbo.ViewTotalLoanCount' does n
             <PropertyRef Name="publishyear" />
             <PropertyRef Name="isbn" />
             <PropertyRef Name="status" />
+            <PropertyRef Name="location" />
           </Key>
           <Property Name="bookid" Type="Int32" Nullable="false" />
           <Property Name="title" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
@@ -343,6 +352,7 @@ warning 6002: The table/view 'SA47Team05BESNETLMS.dbo.ViewTotalLoanCount' does n
           <Property Name="publishyear" Type="Decimal" Precision="4" Scale="0" Nullable="false" />
           <Property Name="isbn" Type="String" MaxLength="13" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="status" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="location" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
         <EntityType Name="ViewLoanedBook">
           <Key>
@@ -465,6 +475,9 @@ warning 6002: The table/view 'SA47Team05BESNETLMS.dbo.ViewTotalLoanCount' does n
           <FunctionImport Name="BookListByAvailability" ReturnType="Collection(SA47Team05BESNETLMSModel.BookListByAvailability_Result)">
             <Parameter Name="status" Mode="In" Type="String" />
           </FunctionImport>
+          <FunctionImport Name="HistoryByMembers" ReturnType="Collection(SA47Team05BESNETLMSModel.HistoryByMembers_Result)">
+            <Parameter Name="memberid" Mode="In" Type="Int32" />
+          </FunctionImport>
           <FunctionImport Name="MembersBeforeExpiry" ReturnType="Collection(SA47Team05BESNETLMSModel.MembersBeforeExpiry_Result)" />
           <FunctionImport Name="MembersPastExpiry" ReturnType="Collection(SA47Team05BESNETLMSModel.MembersPastExpiry_Result)" />
         </EntityContainer>
@@ -474,6 +487,19 @@ warning 6002: The table/view 'SA47Team05BESNETLMS.dbo.ViewTotalLoanCount' does n
           <Property Type="String" Name="author" Nullable="false" MaxLength="255" />
           <Property Type="String" Name="publisher" Nullable="false" MaxLength="255" />
           <Property Type="String" Name="category" Nullable="false" MaxLength="20" />
+        </ComplexType>
+        <ComplexType Name="HistoryByMembers_Result">
+          <Property Type="Int32" Name="memberid" Nullable="true" />
+          <Property Type="Int32" Name="bookid" Nullable="false" />
+          <Property Type="Int32" Name="booksdetailsid" Nullable="false" />
+          <Property Type="String" Name="title" Nullable="false" MaxLength="255" />
+          <Property Type="String" Name="author" Nullable="false" MaxLength="255" />
+          <Property Type="String" Name="publisher" Nullable="false" MaxLength="255" />
+          <Property Type="Decimal" Name="publishyear" Nullable="false" Precision="4" Scale="0" />
+          <Property Type="String" Name="category" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="isbn" Nullable="false" MaxLength="13" />
+          <Property Type="DateTime" Name="startdate" Nullable="true" />
+          <Property Type="DateTime" Name="enddate" Nullable="true" />
         </ComplexType>
         <ComplexType Name="MembersBeforeExpiry_Result">
           <Property Type="Int32" Name="memberid" Nullable="false" />
@@ -521,6 +547,7 @@ warning 6002: The table/view 'SA47Team05BESNETLMS.dbo.ViewTotalLoanCount' does n
                 <ScalarProperty Name="category" ColumnName="category" />
                 <ScalarProperty Name="isbn" ColumnName="isbn" />
                 <ScalarProperty Name="quantity" ColumnName="quantity" />
+                <ScalarProperty Name="location" ColumnName="location" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -578,6 +605,7 @@ warning 6002: The table/view 'SA47Team05BESNETLMS.dbo.ViewTotalLoanCount' does n
                 <ScalarProperty Name="publishyear" ColumnName="publishyear" />
                 <ScalarProperty Name="isbn" ColumnName="isbn" />
                 <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="location" ColumnName="location" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -620,6 +648,23 @@ warning 6002: The table/view 'SA47Team05BESNETLMS.dbo.ViewTotalLoanCount' does n
                 <ScalarProperty Name="author" ColumnName="author" />
                 <ScalarProperty Name="publisher" ColumnName="publisher" />
                 <ScalarProperty Name="category" ColumnName="category" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="HistoryByMembers" FunctionName="SA47Team05BESNETLMSModel.Store.HistoryByMembers">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SA47Team05BESNETLMSModel.HistoryByMembers_Result">
+                <ScalarProperty Name="memberid" ColumnName="memberid" />
+                <ScalarProperty Name="bookid" ColumnName="bookid" />
+                <ScalarProperty Name="booksdetailsid" ColumnName="booksdetailsid" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="author" ColumnName="author" />
+                <ScalarProperty Name="publisher" ColumnName="publisher" />
+                <ScalarProperty Name="publishyear" ColumnName="publishyear" />
+                <ScalarProperty Name="category" ColumnName="category" />
+                <ScalarProperty Name="isbn" ColumnName="isbn" />
+                <ScalarProperty Name="startdate" ColumnName="startdate" />
+                <ScalarProperty Name="enddate" ColumnName="enddate" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
