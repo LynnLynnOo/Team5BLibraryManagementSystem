@@ -30,11 +30,6 @@
         {
             this.btn_Loanbooks = new System.Windows.Forms.Button();
             this.btn_Registernewbooks = new System.Windows.Forms.Button();
-            this.uc_Membersearchedit1 = new Team5BLibraryManagementSystem.Uc_Membersearchedit();
-            this.uc_LendBook1 = new Team5BLibraryManagementSystem.Uc_LendBook();
-            this.uc_ReturnBook1 = new Team5BLibraryManagementSystem.Uc_ReturnBook();
-            this.uc_Reports4 = new Team5BLibraryManagementSystem.Uc_Reports();
-            this.uc_Researchbook1 = new Team5BLibraryManagementSystem.Uc_Researchbook();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btn_Searchbooks = new System.Windows.Forms.Button();
@@ -45,7 +40,13 @@
             this.btn_Logout = new System.Windows.Forms.Button();
             this.btn_Books = new System.Windows.Forms.Button();
             this.btn_Members = new System.Windows.Forms.Button();
+            this.uc_LendBook1 = new Team5BLibraryManagementSystem.Uc_LendBook();
             this.uc_Addbook1 = new Team5BLibraryManagementSystem.Uc_Addbook();
+            this.uc_ReturnBook1 = new Team5BLibraryManagementSystem.Uc_ReturnBook();
+            this.uc_Researchbook1 = new Team5BLibraryManagementSystem.Uc_Researchbook();
+            this.uc_Reports4 = new Team5BLibraryManagementSystem.Uc_Reports();
+            this.uc_Membersearchedit1 = new Team5BLibraryManagementSystem.Uc_Membersearchedit();
+            this.uc_Addmember1 = new Team5BLibraryManagementSystem.Uc_Addmember();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -83,55 +84,6 @@
             this.btn_Registernewbooks.Visible = false;
             this.btn_Registernewbooks.Click += new System.EventHandler(this.btn_Registernewbooks_Click);
             this.btn_Registernewbooks.MouseEnter += new System.EventHandler(this.btn_Registernewbooks_MouseEnter);
-            // 
-            // uc_Membersearchedit1
-            // 
-            this.uc_Membersearchedit1.BackColor = System.Drawing.Color.White;
-            this.uc_Membersearchedit1.Location = new System.Drawing.Point(214, 142);
-            this.uc_Membersearchedit1.Name = "uc_Membersearchedit1";
-            this.uc_Membersearchedit1.Size = new System.Drawing.Size(882, 517);
-            this.uc_Membersearchedit1.TabIndex = 41;
-            this.uc_Membersearchedit1.MouseEnter += new System.EventHandler(this.uc_Membersearchedit1_MouseEnter);
-            // 
-            // uc_LendBook1
-            // 
-            this.uc_LendBook1.BackColor = System.Drawing.Color.White;
-            this.uc_LendBook1.Location = new System.Drawing.Point(214, 142);
-            this.uc_LendBook1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.uc_LendBook1.Name = "uc_LendBook1";
-            this.uc_LendBook1.Size = new System.Drawing.Size(882, 517);
-            this.uc_LendBook1.TabIndex = 40;
-            this.uc_LendBook1.MouseEnter += new System.EventHandler(this.uc_LendBook1_MouseEnter);
-            // 
-            // uc_ReturnBook1
-            // 
-            this.uc_ReturnBook1.BackColor = System.Drawing.Color.White;
-            this.uc_ReturnBook1.Location = new System.Drawing.Point(214, 142);
-            this.uc_ReturnBook1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.uc_ReturnBook1.Name = "uc_ReturnBook1";
-            this.uc_ReturnBook1.Size = new System.Drawing.Size(882, 517);
-            this.uc_ReturnBook1.TabIndex = 44;
-            this.uc_ReturnBook1.MouseEnter += new System.EventHandler(this.uc_ReturnBook1_MouseEnter);
-            // 
-            // uc_Reports4
-            // 
-            this.uc_Reports4.BackColor = System.Drawing.Color.White;
-            this.uc_Reports4.Location = new System.Drawing.Point(214, 142);
-            this.uc_Reports4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.uc_Reports4.Name = "uc_Reports4";
-            this.uc_Reports4.Size = new System.Drawing.Size(882, 517);
-            this.uc_Reports4.TabIndex = 42;
-            this.uc_Reports4.MouseEnter += new System.EventHandler(this.uc_Reports4_MouseEnter);
-            // 
-            // uc_Researchbook1
-            // 
-            this.uc_Researchbook1.BackColor = System.Drawing.Color.White;
-            this.uc_Researchbook1.Location = new System.Drawing.Point(214, 142);
-            this.uc_Researchbook1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.uc_Researchbook1.Name = "uc_Researchbook1";
-            this.uc_Researchbook1.Size = new System.Drawing.Size(882, 517);
-            this.uc_Researchbook1.TabIndex = 43;
-            this.uc_Researchbook1.MouseEnter += new System.EventHandler(this.uc_Researchbook1_MouseEnter);
             // 
             // pictureBox1
             // 
@@ -285,6 +237,16 @@
             this.btn_Members.UseVisualStyleBackColor = false;
             this.btn_Members.MouseEnter += new System.EventHandler(this.btn_Members_MouseEnter_1);
             // 
+            // uc_LendBook1
+            // 
+            this.uc_LendBook1.BackColor = System.Drawing.Color.White;
+            this.uc_LendBook1.Location = new System.Drawing.Point(214, 142);
+            this.uc_LendBook1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uc_LendBook1.Name = "uc_LendBook1";
+            this.uc_LendBook1.Size = new System.Drawing.Size(882, 517);
+            this.uc_LendBook1.TabIndex = 40;
+            this.uc_LendBook1.MouseEnter += new System.EventHandler(this.uc_LendBook1_MouseEnter);
+            // 
             // uc_Addbook1
             // 
             this.uc_Addbook1.BackColor = System.Drawing.Color.White;
@@ -294,6 +256,54 @@
             this.uc_Addbook1.Size = new System.Drawing.Size(882, 517);
             this.uc_Addbook1.TabIndex = 45;
             this.uc_Addbook1.MouseEnter += new System.EventHandler(this.uc_Addbook1_MouseEnter);
+            // 
+            // uc_ReturnBook1
+            // 
+            this.uc_ReturnBook1.BackColor = System.Drawing.Color.White;
+            this.uc_ReturnBook1.Location = new System.Drawing.Point(214, 142);
+            this.uc_ReturnBook1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uc_ReturnBook1.Name = "uc_ReturnBook1";
+            this.uc_ReturnBook1.Size = new System.Drawing.Size(882, 517);
+            this.uc_ReturnBook1.TabIndex = 44;
+            this.uc_ReturnBook1.MouseEnter += new System.EventHandler(this.uc_ReturnBook1_MouseEnter);
+            // 
+            // uc_Researchbook1
+            // 
+            this.uc_Researchbook1.BackColor = System.Drawing.Color.White;
+            this.uc_Researchbook1.Location = new System.Drawing.Point(214, 142);
+            this.uc_Researchbook1.Margin = new System.Windows.Forms.Padding(6);
+            this.uc_Researchbook1.Name = "uc_Researchbook1";
+            this.uc_Researchbook1.Size = new System.Drawing.Size(882, 517);
+            this.uc_Researchbook1.TabIndex = 43;
+            this.uc_Researchbook1.MouseEnter += new System.EventHandler(this.uc_Researchbook1_MouseEnter);
+            // 
+            // uc_Reports4
+            // 
+            this.uc_Reports4.BackColor = System.Drawing.Color.White;
+            this.uc_Reports4.Location = new System.Drawing.Point(214, 142);
+            this.uc_Reports4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.uc_Reports4.Name = "uc_Reports4";
+            this.uc_Reports4.Size = new System.Drawing.Size(882, 517);
+            this.uc_Reports4.TabIndex = 42;
+            this.uc_Reports4.MouseEnter += new System.EventHandler(this.uc_Reports4_MouseEnter);
+            // 
+            // uc_Membersearchedit1
+            // 
+            this.uc_Membersearchedit1.BackColor = System.Drawing.Color.White;
+            this.uc_Membersearchedit1.Location = new System.Drawing.Point(214, 142);
+            this.uc_Membersearchedit1.Name = "uc_Membersearchedit1";
+            this.uc_Membersearchedit1.Size = new System.Drawing.Size(882, 517);
+            this.uc_Membersearchedit1.TabIndex = 41;
+            this.uc_Membersearchedit1.MouseEnter += new System.EventHandler(this.uc_Membersearchedit1_MouseEnter);
+            // 
+            // uc_Addmember1
+            // 
+            this.uc_Addmember1.BackColor = System.Drawing.Color.White;
+            this.uc_Addmember1.Location = new System.Drawing.Point(214, 142);
+            this.uc_Addmember1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uc_Addmember1.Name = "uc_Addmember1";
+            this.uc_Addmember1.Size = new System.Drawing.Size(882, 517);
+            this.uc_Addmember1.TabIndex = 46;
             // 
             // Frm_Main
             // 
@@ -318,6 +328,7 @@
             this.Controls.Add(this.uc_Researchbook1);
             this.Controls.Add(this.uc_Reports4);
             this.Controls.Add(this.uc_Membersearchedit1);
+            this.Controls.Add(this.uc_Addmember1);
             this.Name = "Frm_Main";
             this.Text = "Frm_Main";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frm_Main_FormClosing);
@@ -352,5 +363,6 @@
         private System.Windows.Forms.Button btn_Books;
         private System.Windows.Forms.Button btn_Members;
         private Uc_Addbook uc_Addbook1;
+        private Uc_Addmember uc_Addmember1;
     }
 }

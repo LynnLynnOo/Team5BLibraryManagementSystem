@@ -153,7 +153,7 @@
             this.btn_PrintMemberListing.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_PrintMemberListing.Name = "btn_PrintMemberListing";
             this.btn_PrintMemberListing.Size = new System.Drawing.Size(129, 60);
-            this.btn_PrintMemberListing.TabIndex = 5;
+            this.btn_PrintMemberListing.TabIndex = 4;
             this.btn_PrintMemberListing.Text = "Print";
             this.btn_PrintMemberListing.UseVisualStyleBackColor = true;
             this.btn_PrintMemberListing.Click += new System.EventHandler(this.btn_PrintMemberListing_Click);
@@ -168,7 +168,7 @@
             this.rdbtn_Membersbeforeexpiry.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rdbtn_Membersbeforeexpiry.Name = "rdbtn_Membersbeforeexpiry";
             this.rdbtn_Membersbeforeexpiry.Size = new System.Drawing.Size(263, 24);
-            this.rdbtn_Membersbeforeexpiry.TabIndex = 2;
+            this.rdbtn_Membersbeforeexpiry.TabIndex = 1;
             this.rdbtn_Membersbeforeexpiry.TabStop = true;
             this.rdbtn_Membersbeforeexpiry.Text = "Members Before Expiry Date";
             this.rdbtn_Membersbeforeexpiry.UseVisualStyleBackColor = true;
@@ -182,7 +182,7 @@
             this.rdbtn_Allmembers.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rdbtn_Allmembers.Name = "rdbtn_Allmembers";
             this.rdbtn_Allmembers.Size = new System.Drawing.Size(132, 24);
-            this.rdbtn_Allmembers.TabIndex = 1;
+            this.rdbtn_Allmembers.TabIndex = 3;
             this.rdbtn_Allmembers.Text = "All Members";
             this.rdbtn_Allmembers.UseVisualStyleBackColor = true;
             // 
@@ -195,7 +195,7 @@
             this.rdbtn_Membersafterexpiry.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rdbtn_Membersafterexpiry.Name = "rdbtn_Membersafterexpiry";
             this.rdbtn_Membersafterexpiry.Size = new System.Drawing.Size(249, 24);
-            this.rdbtn_Membersafterexpiry.TabIndex = 0;
+            this.rdbtn_Membersafterexpiry.TabIndex = 2;
             this.rdbtn_Membersafterexpiry.Text = "Members After Expiry Date";
             this.rdbtn_Membersafterexpiry.UseVisualStyleBackColor = true;
             // 
@@ -222,7 +222,7 @@
             this.rdbtn_Availability.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rdbtn_Availability.Name = "rdbtn_Availability";
             this.rdbtn_Availability.Size = new System.Drawing.Size(256, 24);
-            this.rdbtn_Availability.TabIndex = 7;
+            this.rdbtn_Availability.TabIndex = 2;
             this.rdbtn_Availability.Text = "Books Listing By Availability";
             this.rdbtn_Availability.UseVisualStyleBackColor = true;
             // 
@@ -236,7 +236,7 @@
             this.rdbtn_Category.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rdbtn_Category.Name = "rdbtn_Category";
             this.rdbtn_Category.Size = new System.Drawing.Size(244, 24);
-            this.rdbtn_Category.TabIndex = 6;
+            this.rdbtn_Category.TabIndex = 1;
             this.rdbtn_Category.TabStop = true;
             this.rdbtn_Category.Text = "Books Listing By Category";
             this.rdbtn_Category.UseVisualStyleBackColor = true;
@@ -249,7 +249,7 @@
             this.btn_BookList.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_BookList.Name = "btn_BookList";
             this.btn_BookList.Size = new System.Drawing.Size(129, 60);
-            this.btn_BookList.TabIndex = 5;
+            this.btn_BookList.TabIndex = 3;
             this.btn_BookList.Text = "Print";
             this.btn_BookList.UseVisualStyleBackColor = true;
             this.btn_BookList.Click += new System.EventHandler(this.btn_BookList_Click);

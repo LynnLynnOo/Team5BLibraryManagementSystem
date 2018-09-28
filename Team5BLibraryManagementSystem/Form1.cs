@@ -55,23 +55,31 @@ namespace Team5BLibraryManagementSystem
                     {
                         int selectid = Convert.ToInt32(dataGridView1.SelectedRows[i].Cells[0].Value.ToString());
                         Book c = context.Books.Where(x => x.bookid == selectid).First();
-                        if (c.status == "Avaliable")
+                        if (c.status == "On Loan")
                         {
-                            context.Books.Remove(c);
-                            context.SaveChanges();
+                            MessageBox.Show("The book was lent out,please select other books");
+                            
                         }
                         else
                         {
-                            MessageBox.Show("The book was lent out,please select other books");
+                            context.Books.Remove(c);
+                            context.SaveChanges();
+                            this.DialogResult = DialogResult.OK;
                         }
 
                     }
 
                 }
-                this.DialogResult = DialogResult.OK;
+                
             }
         }
         private void but_Cancel_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+            Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
             Close();

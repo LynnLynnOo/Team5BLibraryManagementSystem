@@ -36,6 +36,10 @@ namespace Team5BLibraryManagementSystem
         private void butUpdate_Click(object sender, EventArgs e)
         {
             pasn = find2(text_Bookdetail.Text);
+            if (pasn == -1)
+            {
+                return;
+            }
             int a = Convert.ToInt32(text_Quantity.Text);
             int b = Convert.ToInt32(ds.Tables["Booksdetails"].Rows[pasn]["quantity"]);
             //Theid = Convert.ToInt32(text_Bookdetail.Text);
@@ -115,13 +119,16 @@ namespace Team5BLibraryManagementSystem
             if (T == 0)
             {
                 if (Search != ds.Tables["Booksdetails"].Rows[0]["booksdetailsid"].ToString())
-                { MessageBox.Show("BooksdetailsID is wrong"); }
+                { MessageBox.Show("BooksdetailsID is wrong");
+                    return -1;
+                }
+                
             }
             return T;
         }
      
         private void P()
-        {
+        {   
             text_Bookdetail.Text = ds.Tables["Booksdetails"].Rows[pasn]["booksdetailsid"].ToString();
             textBookName.Text = ds.Tables["Booksdetails"].Rows[pasn]["title"].ToString();
             textAuthor.Text = ds.Tables["Booksdetails"].Rows[pasn]["author"].ToString();
@@ -143,10 +150,16 @@ namespace Team5BLibraryManagementSystem
 
         private void textBookID_TextChanged(object sender, EventArgs e)
         {
-                    }
+        }
 
         private void butInsert_Click(object sender, EventArgs e)
         {
+
+            pasn = find2(text_Bookdetail.Text);
+            if (pasn == -1)
+            {
+                return;
+            }
             int a = Convert.ToInt32(text_Quantity.Text);
             DataRow r = ds.Tables["Booksdetails"].NewRow();
             //r["booksdetailsid"] = text_Bookdetail.Text;
@@ -173,23 +186,44 @@ namespace Team5BLibraryManagementSystem
                     ta1.Update(ds);
                
                 }
-            MessageBox.Show("Insert Successfully!");
+            MessageBox.Show("Inserted Successfully!");
         }
 
         private void butDelete_Click(object sender, EventArgs e)
         {
             int u= Convert.ToInt32(text_Bookdetail.Text);
+            pasn = find2(text_Bookdetail.Text);
+            if (pasn == -1)
+            {
+                return;
+            }
             SA47Team05BESNETLMSEntities context = new SA47Team05BESNETLMSEntities();
-            context.Books.Where(x => x.booksdetailsid == u).ToList().ForEach(y => context.Books.Remove(y));
-            Booksdetail a = context.Booksdetails.Where(d => d.booksdetailsid == u).First();
-            context.Booksdetails.Remove(a);
-            context.SaveChanges();
-            MessageBox.Show("Delete Sucessfully!");
+            int a = Convert.ToInt32(text_Quantity.Text);
+            var query = from x in context.Books where x.booksdetailsid == u select x;
+            int j = 0;
+            foreach(var one in query)
+            {
+                if(one.status=="On Loan")
+                { j++; }
+            }
+            if (j==0)
+            {
+                context.Books.Where(x => x.booksdetailsid == u).ToList().ForEach(y => context.Books.Remove(y));
+                Booksdetail b = context.Booksdetails.Where(d => d.booksdetailsid == u).First();
+                context.Booksdetails.Remove(b);
+                context.SaveChanges();
+                MessageBox.Show("Deleted Sucessfully!");
+
+
+            }
+            if(j!=0)
+            { MessageBox.Show("The book was lent out,please select another one"); }
+            
         }
 
        
 
-        private void button5_Click(object sender, EventArgs e)
+        private void button5_Click_1(object sender, EventArgs e)
         {
             pasn = find2(text_Bookdetail.Text);
             if (pasn > 0)
@@ -202,7 +236,7 @@ namespace Team5BLibraryManagementSystem
             }
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void button6_Click_1(object sender, EventArgs e)
         {
             pasn = find2(text_Bookdetail.Text);
             int x = Convert.ToInt32(ds.Tables["Booksdetails"].Rows.Count.ToString());
@@ -245,6 +279,23 @@ namespace Team5BLibraryManagementSystem
         private void butFind_Click_1(object sender, EventArgs e)
         {
             pasn = find2(text_find.Text);
+            if (pasn == -1)
+            {
+                return;
+            }
+            P();
+        }
+
+        private void button8_Click_1(object sender, EventArgs e)
+        {
+            int x = Convert.ToInt32(ds.Tables["Booksdetails"].Rows.Count.ToString());
+            pasn = x - 1;
+            P();
+        }
+
+        private void button7_Click_1(object sender, EventArgs e)
+        {
+            pasn = 0;
             P();
         }
     }

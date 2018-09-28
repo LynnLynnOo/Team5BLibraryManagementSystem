@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.Combobox_Category = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.Textbox_Category = new System.Windows.Forms.TextBox();
             this.Gb_Memberinformation = new System.Windows.Forms.GroupBox();
+            this.labelSearch = new System.Windows.Forms.Label();
             this.btn_Cancel = new System.Windows.Forms.Button();
             this.btn_Save = new System.Windows.Forms.Button();
             this.btn_Delete = new System.Windows.Forms.Button();
@@ -54,8 +56,9 @@
             this.Textbox_Idnumber = new System.Windows.Forms.TextBox();
             this.Textbox_Membername = new System.Windows.Forms.TextBox();
             this.btn_Search = new System.Windows.Forms.Button();
-            this.labelSearch = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.Gb_Memberinformation.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // Combobox_Category
@@ -66,10 +69,10 @@
             "Member ID",
             "Phone",
             "Email"});
-            this.Combobox_Category.Location = new System.Drawing.Point(321, 37);
+            this.Combobox_Category.Location = new System.Drawing.Point(228, 37);
             this.Combobox_Category.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Combobox_Category.Name = "Combobox_Category";
-            this.Combobox_Category.Size = new System.Drawing.Size(236, 28);
+            this.Combobox_Category.Size = new System.Drawing.Size(329, 28);
             this.Combobox_Category.TabIndex = 1;
             // 
             // label1
@@ -77,7 +80,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label1.Location = new System.Drawing.Point(208, 40);
+            this.label1.Location = new System.Drawing.Point(36, 45);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(91, 20);
@@ -88,16 +91,17 @@
             // 
             this.Textbox_Category.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.Textbox_Category.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.FileSystemDirectories;
-            this.Textbox_Category.Location = new System.Drawing.Point(321, 75);
+            this.Textbox_Category.Location = new System.Drawing.Point(228, 75);
             this.Textbox_Category.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Textbox_Category.Multiline = true;
             this.Textbox_Category.Name = "Textbox_Category";
-            this.Textbox_Category.Size = new System.Drawing.Size(236, 28);
+            this.Textbox_Category.Size = new System.Drawing.Size(329, 28);
             this.Textbox_Category.TabIndex = 2;
             this.Textbox_Category.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // Gb_Memberinformation
             // 
+            this.Gb_Memberinformation.Controls.Add(this.labelSearch);
             this.Gb_Memberinformation.Controls.Add(this.btn_Cancel);
             this.Gb_Memberinformation.Controls.Add(this.btn_Save);
             this.Gb_Memberinformation.Controls.Add(this.btn_Delete);
@@ -121,17 +125,29 @@
             this.Gb_Memberinformation.Controls.Add(this.Textbox_Membername);
             this.Gb_Memberinformation.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Gb_Memberinformation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.Gb_Memberinformation.Location = new System.Drawing.Point(176, 133);
+            this.Gb_Memberinformation.Location = new System.Drawing.Point(27, 133);
             this.Gb_Memberinformation.Name = "Gb_Memberinformation";
-            this.Gb_Memberinformation.Size = new System.Drawing.Size(556, 344);
+            this.Gb_Memberinformation.Size = new System.Drawing.Size(822, 344);
             this.Gb_Memberinformation.TabIndex = 72;
             this.Gb_Memberinformation.TabStop = false;
             this.Gb_Memberinformation.Text = "Member Information";
             this.Gb_Memberinformation.Visible = false;
             // 
+            // labelSearch
+            // 
+            this.labelSearch.AutoSize = true;
+            this.labelSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSearch.ForeColor = System.Drawing.Color.Crimson;
+            this.labelSearch.Location = new System.Drawing.Point(207, -23);
+            this.labelSearch.Name = "labelSearch";
+            this.labelSearch.Size = new System.Drawing.Size(268, 20);
+            this.labelSearch.TabIndex = 73;
+            this.labelSearch.Text = "*Please key in the search words.";
+            this.labelSearch.Visible = false;
+            // 
             // btn_Cancel
             // 
-            this.btn_Cancel.Location = new System.Drawing.Point(435, 187);
+            this.btn_Cancel.Location = new System.Drawing.Point(584, 203);
             this.btn_Cancel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_Cancel.Name = "btn_Cancel";
             this.btn_Cancel.Size = new System.Drawing.Size(112, 38);
@@ -142,7 +158,7 @@
             // 
             // btn_Save
             // 
-            this.btn_Save.Location = new System.Drawing.Point(435, 131);
+            this.btn_Save.Location = new System.Drawing.Point(584, 147);
             this.btn_Save.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_Save.Name = "btn_Save";
             this.btn_Save.Size = new System.Drawing.Size(112, 38);
@@ -153,7 +169,7 @@
             // 
             // btn_Delete
             // 
-            this.btn_Delete.Location = new System.Drawing.Point(435, 187);
+            this.btn_Delete.Location = new System.Drawing.Point(584, 203);
             this.btn_Delete.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_Delete.Name = "btn_Delete";
             this.btn_Delete.Size = new System.Drawing.Size(112, 38);
@@ -164,7 +180,7 @@
             // 
             // btn_Edit
             // 
-            this.btn_Edit.Location = new System.Drawing.Point(435, 131);
+            this.btn_Edit.Location = new System.Drawing.Point(584, 147);
             this.btn_Edit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_Edit.Name = "btn_Edit";
             this.btn_Edit.Size = new System.Drawing.Size(112, 38);
@@ -175,7 +191,7 @@
             // 
             // btn_Print
             // 
-            this.btn_Print.Location = new System.Drawing.Point(435, 77);
+            this.btn_Print.Location = new System.Drawing.Point(584, 93);
             this.btn_Print.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_Print.Name = "btn_Print";
             this.btn_Print.Size = new System.Drawing.Size(112, 38);
@@ -186,10 +202,10 @@
             // 
             // Datetimepicker_Dob
             // 
-            this.Datetimepicker_Dob.Location = new System.Drawing.Point(145, 182);
+            this.Datetimepicker_Dob.Location = new System.Drawing.Point(201, 185);
             this.Datetimepicker_Dob.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Datetimepicker_Dob.Name = "Datetimepicker_Dob";
-            this.Datetimepicker_Dob.Size = new System.Drawing.Size(284, 26);
+            this.Datetimepicker_Dob.Size = new System.Drawing.Size(329, 26);
             this.Datetimepicker_Dob.TabIndex = 8;
             // 
             // label7
@@ -206,10 +222,10 @@
             // 
             // Textbox_Phone
             // 
-            this.Textbox_Phone.Location = new System.Drawing.Point(145, 107);
+            this.Textbox_Phone.Location = new System.Drawing.Point(201, 110);
             this.Textbox_Phone.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Textbox_Phone.Name = "Textbox_Phone";
-            this.Textbox_Phone.Size = new System.Drawing.Size(284, 26);
+            this.Textbox_Phone.Size = new System.Drawing.Size(329, 26);
             this.Textbox_Phone.TabIndex = 6;
             // 
             // label3
@@ -227,19 +243,19 @@
             // Datetimepicker_Expirydate
             // 
             this.Datetimepicker_Expirydate.Enabled = false;
-            this.Datetimepicker_Expirydate.Location = new System.Drawing.Point(145, 293);
+            this.Datetimepicker_Expirydate.Location = new System.Drawing.Point(201, 296);
             this.Datetimepicker_Expirydate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Datetimepicker_Expirydate.Name = "Datetimepicker_Expirydate";
-            this.Datetimepicker_Expirydate.Size = new System.Drawing.Size(284, 26);
+            this.Datetimepicker_Expirydate.Size = new System.Drawing.Size(329, 26);
             this.Datetimepicker_Expirydate.TabIndex = 11;
             // 
             // Datetimepicker_Joineddate
             // 
             this.Datetimepicker_Joineddate.Enabled = false;
-            this.Datetimepicker_Joineddate.Location = new System.Drawing.Point(145, 254);
+            this.Datetimepicker_Joineddate.Location = new System.Drawing.Point(201, 257);
             this.Datetimepicker_Joineddate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Datetimepicker_Joineddate.Name = "Datetimepicker_Joineddate";
-            this.Datetimepicker_Joineddate.Size = new System.Drawing.Size(284, 26);
+            this.Datetimepicker_Joineddate.Size = new System.Drawing.Size(329, 26);
             this.Datetimepicker_Joineddate.TabIndex = 10;
             // 
             // label9
@@ -316,36 +332,36 @@
             // 
             // Textbox_Address
             // 
-            this.Textbox_Address.Location = new System.Drawing.Point(145, 218);
+            this.Textbox_Address.Location = new System.Drawing.Point(201, 221);
             this.Textbox_Address.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Textbox_Address.Name = "Textbox_Address";
-            this.Textbox_Address.Size = new System.Drawing.Size(284, 26);
+            this.Textbox_Address.Size = new System.Drawing.Size(329, 26);
             this.Textbox_Address.TabIndex = 9;
             // 
             // Textbox_email
             // 
-            this.Textbox_email.Location = new System.Drawing.Point(145, 143);
+            this.Textbox_email.Location = new System.Drawing.Point(201, 146);
             this.Textbox_email.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Textbox_email.Name = "Textbox_email";
-            this.Textbox_email.Size = new System.Drawing.Size(284, 26);
+            this.Textbox_email.Size = new System.Drawing.Size(329, 26);
             this.Textbox_email.TabIndex = 7;
             // 
             // Textbox_Idnumber
             // 
             this.Textbox_Idnumber.BackColor = System.Drawing.Color.White;
-            this.Textbox_Idnumber.Location = new System.Drawing.Point(145, 71);
+            this.Textbox_Idnumber.Location = new System.Drawing.Point(201, 74);
             this.Textbox_Idnumber.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Textbox_Idnumber.Name = "Textbox_Idnumber";
             this.Textbox_Idnumber.ReadOnly = true;
-            this.Textbox_Idnumber.Size = new System.Drawing.Size(284, 26);
+            this.Textbox_Idnumber.Size = new System.Drawing.Size(329, 26);
             this.Textbox_Idnumber.TabIndex = 5;
             // 
             // Textbox_Membername
             // 
-            this.Textbox_Membername.Location = new System.Drawing.Point(145, 31);
+            this.Textbox_Membername.Location = new System.Drawing.Point(201, 34);
             this.Textbox_Membername.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Textbox_Membername.Name = "Textbox_Membername";
-            this.Textbox_Membername.Size = new System.Drawing.Size(284, 26);
+            this.Textbox_Membername.Size = new System.Drawing.Size(329, 26);
             this.Textbox_Membername.TabIndex = 4;
             // 
             // btn_Search
@@ -361,24 +377,15 @@
             this.btn_Search.UseVisualStyleBackColor = true;
             this.btn_Search.Click += new System.EventHandler(this.btn_Search_Click);
             // 
-            // labelSearch
+            // errorProvider1
             // 
-            this.labelSearch.AutoSize = true;
-            this.labelSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSearch.ForeColor = System.Drawing.Color.Crimson;
-            this.labelSearch.Location = new System.Drawing.Point(317, 108);
-            this.labelSearch.Name = "labelSearch";
-            this.labelSearch.Size = new System.Drawing.Size(268, 20);
-            this.labelSearch.TabIndex = 73;
-            this.labelSearch.Text = "*Please key in the search words.";
-            this.labelSearch.Visible = false;
+            this.errorProvider1.ContainerControl = this;
             // 
             // Uc_Membersearchedit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.labelSearch);
             this.Controls.Add(this.btn_Search);
             this.Controls.Add(this.Gb_Memberinformation);
             this.Controls.Add(this.Combobox_Category);
@@ -389,6 +396,7 @@
             this.Load += new System.EventHandler(this.Uc_Membersearchedit_Load);
             this.Gb_Memberinformation.ResumeLayout(false);
             this.Gb_Memberinformation.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -422,5 +430,6 @@
         private System.Windows.Forms.Button btn_Save;
         private System.Windows.Forms.Button btn_Cancel;
         private System.Windows.Forms.Label labelSearch;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

@@ -71,10 +71,10 @@ namespace Team5BLibraryManagementSystem
         //Member ID count
         private void Uc_Addnewmember_Load(object sender, EventArgs e)
         {
-            SA47Team05BESNETLMSEntities context = new SA47Team05BESNETLMSEntities();
-            int q = (from x in context.Members select x).Count();
-            count = count + q+ 1;
-            textbox_Ic.Text =count.ToString();
+            DataSet1 ds = new DataSet1();
+            var adapter = new DataSet1TableAdapters.MembersTableAdapter();
+            adapter.Fill(ds.Members);
+            textbox_Ic.Text = Convert.ToString(ds.Members.Count + 1);
         }
 
 

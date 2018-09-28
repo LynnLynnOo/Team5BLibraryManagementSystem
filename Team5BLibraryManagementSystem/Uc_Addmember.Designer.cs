@@ -62,7 +62,7 @@
             this.dtp_Dob.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dtp_Dob.Name = "dtp_Dob";
             this.dtp_Dob.Size = new System.Drawing.Size(281, 26);
-            this.dtp_Dob.TabIndex = 64;
+            this.dtp_Dob.TabIndex = 5;
             // 
             // label5
             // 
@@ -78,11 +78,11 @@
             // 
             // textbox_Phone
             // 
-            this.textbox_Phone.Location = new System.Drawing.Point(172, 105);
+            this.textbox_Phone.Location = new System.Drawing.Point(172, 106);
             this.textbox_Phone.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textbox_Phone.Name = "textbox_Phone";
             this.textbox_Phone.Size = new System.Drawing.Size(281, 26);
-            this.textbox_Phone.TabIndex = 62;
+            this.textbox_Phone.TabIndex = 3;
             this.textbox_Phone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textbox_Phone_KeyPress);
             // 
             // label3
@@ -103,7 +103,7 @@
             this.dtp_Expirydate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dtp_Expirydate.Name = "dtp_Expirydate";
             this.dtp_Expirydate.Size = new System.Drawing.Size(281, 26);
-            this.dtp_Expirydate.TabIndex = 59;
+            this.dtp_Expirydate.TabIndex = 8;
             // 
             // dtp_Joindate
             // 
@@ -111,7 +111,7 @@
             this.dtp_Joindate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dtp_Joindate.Name = "dtp_Joindate";
             this.dtp_Joindate.Size = new System.Drawing.Size(281, 26);
-            this.dtp_Joindate.TabIndex = 58;
+            this.dtp_Joindate.TabIndex = 7;
             // 
             // label8
             // 
@@ -191,7 +191,7 @@
             this.textbox_Address.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textbox_Address.Name = "textbox_Address";
             this.textbox_Address.Size = new System.Drawing.Size(281, 26);
-            this.textbox_Address.TabIndex = 50;
+            this.textbox_Address.TabIndex = 6;
             // 
             // textbox_Email
             // 
@@ -199,7 +199,7 @@
             this.textbox_Email.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textbox_Email.Name = "textbox_Email";
             this.textbox_Email.Size = new System.Drawing.Size(281, 26);
-            this.textbox_Email.TabIndex = 49;
+            this.textbox_Email.TabIndex = 4;
             this.textbox_Email.Leave += new System.EventHandler(this.textbox_Email_Leave);
             // 
             // textbox_Ic
@@ -209,7 +209,7 @@
             this.textbox_Ic.Name = "textbox_Ic";
             this.textbox_Ic.ReadOnly = true;
             this.textbox_Ic.Size = new System.Drawing.Size(281, 26);
-            this.textbox_Ic.TabIndex = 48;
+            this.textbox_Ic.TabIndex = 2;
             // 
             // textbox_Memname
             // 
@@ -217,17 +217,17 @@
             this.textbox_Memname.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textbox_Memname.Name = "textbox_Memname";
             this.textbox_Memname.Size = new System.Drawing.Size(281, 26);
-            this.textbox_Memname.TabIndex = 47;
+            this.textbox_Memname.TabIndex = 1;
             // 
             // btn_Submit
             // 
             this.btn_Submit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Submit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btn_Submit.Location = new System.Drawing.Point(130, 414);
+            this.btn_Submit.Location = new System.Drawing.Point(297, 428);
             this.btn_Submit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_Submit.Name = "btn_Submit";
             this.btn_Submit.Size = new System.Drawing.Size(112, 38);
-            this.btn_Submit.TabIndex = 65;
+            this.btn_Submit.TabIndex = 9;
             this.btn_Submit.Text = "Submit";
             this.btn_Submit.UseVisualStyleBackColor = true;
             this.btn_Submit.Click += new System.EventHandler(this.btn_Submit_Click);
@@ -236,11 +236,11 @@
             // 
             this.btn_Reset.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Reset.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btn_Reset.Location = new System.Drawing.Point(311, 414);
+            this.btn_Reset.Location = new System.Drawing.Point(478, 428);
             this.btn_Reset.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_Reset.Name = "btn_Reset";
             this.btn_Reset.Size = new System.Drawing.Size(112, 38);
-            this.btn_Reset.TabIndex = 66;
+            this.btn_Reset.TabIndex = 10;
             this.btn_Reset.Text = "Reset";
             this.btn_Reset.UseVisualStyleBackColor = true;
             this.btn_Reset.Click += new System.EventHandler(this.btn_Reset_Click);
@@ -263,7 +263,7 @@
             this.groupBox1.Controls.Add(this.textbox_Email);
             this.groupBox1.Controls.Add(this.textbox_Ic);
             this.groupBox1.Controls.Add(this.textbox_Memname);
-            this.groupBox1.Location = new System.Drawing.Point(44, 49);
+            this.groupBox1.Location = new System.Drawing.Point(211, 63);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -276,7 +276,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label9.Location = new System.Drawing.Point(152, 9);
+            this.label9.Location = new System.Drawing.Point(319, 23);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(265, 33);
@@ -302,7 +302,7 @@
             this.Controls.Add(this.btn_Submit);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Uc_Addmember";
-            this.Size = new System.Drawing.Size(573, 479);
+            this.Size = new System.Drawing.Size(882, 517);
             this.Load += new System.EventHandler(this.Uc_Addnewmember_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

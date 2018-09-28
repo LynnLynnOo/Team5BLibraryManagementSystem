@@ -53,11 +53,12 @@
             // 
             // date_Due
             // 
+            this.date_Due.Enabled = false;
             this.date_Due.Location = new System.Drawing.Point(423, 294);
             this.date_Due.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.date_Due.Name = "date_Due";
             this.date_Due.Size = new System.Drawing.Size(298, 26);
-            this.date_Due.TabIndex = 48;
+            this.date_Due.TabIndex = 4;
             // 
             // label5
             // 
@@ -85,11 +86,12 @@
             // 
             // date_Issue
             // 
+            this.date_Issue.Enabled = false;
             this.date_Issue.Location = new System.Drawing.Point(423, 229);
             this.date_Issue.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.date_Issue.Name = "date_Issue";
             this.date_Issue.Size = new System.Drawing.Size(298, 26);
-            this.date_Issue.TabIndex = 45;
+            this.date_Issue.TabIndex = 3;
             // 
             // textbox_BookID
             // 
@@ -97,7 +99,7 @@
             this.textbox_BookID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textbox_BookID.Name = "textbox_BookID";
             this.textbox_BookID.Size = new System.Drawing.Size(148, 26);
-            this.textbox_BookID.TabIndex = 40;
+            this.textbox_BookID.TabIndex = 2;
             // 
             // textbox_MemberID
             // 
@@ -105,7 +107,7 @@
             this.textbox_MemberID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textbox_MemberID.Name = "textbox_MemberID";
             this.textbox_MemberID.Size = new System.Drawing.Size(148, 26);
-            this.textbox_MemberID.TabIndex = 38;
+            this.textbox_MemberID.TabIndex = 1;
             // 
             // label1
             // 
@@ -126,7 +128,7 @@
             this.butLend.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.butLend.Name = "butLend";
             this.butLend.Size = new System.Drawing.Size(112, 38);
-            this.butLend.TabIndex = 36;
+            this.butLend.TabIndex = 5;
             this.butLend.Text = "Lend";
             this.butLend.UseVisualStyleBackColor = true;
             this.butLend.Click += new System.EventHandler(this.butLend_Click);

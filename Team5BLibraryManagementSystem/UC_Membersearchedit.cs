@@ -241,8 +241,6 @@ namespace Team5BLibraryManagementSystem
             Datetimepicker_Dob.Enabled = false;
         }
 
-
-
     }
 
 

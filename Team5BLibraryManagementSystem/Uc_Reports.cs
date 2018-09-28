@@ -64,9 +64,6 @@ namespace Team5BLibraryManagementSystem
             }
         }
 
-
-
-
         private void btn_PrintMemberListing_Click(object sender, EventArgs e)
         {
             Frm_MemberListing f1 = new Frm_MemberListing(this);

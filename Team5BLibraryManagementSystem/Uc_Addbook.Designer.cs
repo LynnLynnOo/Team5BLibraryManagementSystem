@@ -50,13 +50,13 @@
             this.but_Minus = new System.Windows.Forms.Button();
             this.but_Plus = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.butFind = new System.Windows.Forms.Button();
             this.text_find = new System.Windows.Forms.TextBox();
             this.button8 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,7 +68,7 @@
             this.text_Isbn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.text_Isbn.Name = "text_Isbn";
             this.text_Isbn.Size = new System.Drawing.Size(148, 26);
-            this.text_Isbn.TabIndex = 56;
+            this.text_Isbn.TabIndex = 13;
             // 
             // label6
             // 
@@ -91,7 +91,7 @@
             this.textPublisher.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textPublisher.Name = "textPublisher";
             this.textPublisher.Size = new System.Drawing.Size(148, 26);
-            this.textPublisher.TabIndex = 54;
+            this.textPublisher.TabIndex = 11;
             // 
             // label5
             // 
@@ -113,7 +113,7 @@
             this.textGenre.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textGenre.Name = "textGenre";
             this.textGenre.Size = new System.Drawing.Size(148, 26);
-            this.textGenre.TabIndex = 52;
+            this.textGenre.TabIndex = 10;
             // 
             // label4
             // 
@@ -135,7 +135,7 @@
             this.butDelete.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.butDelete.Name = "butDelete";
             this.butDelete.Size = new System.Drawing.Size(112, 38);
-            this.butDelete.TabIndex = 45;
+            this.butDelete.TabIndex = 18;
             this.butDelete.Text = "Delete";
             this.butDelete.UseVisualStyleBackColor = true;
             this.butDelete.Click += new System.EventHandler(this.butDelete_Click);
@@ -148,7 +148,7 @@
             this.butInsert.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.butInsert.Name = "butInsert";
             this.butInsert.Size = new System.Drawing.Size(112, 38);
-            this.butInsert.TabIndex = 44;
+            this.butInsert.TabIndex = 17;
             this.butInsert.Text = "Insert";
             this.butInsert.UseVisualStyleBackColor = true;
             this.butInsert.Click += new System.EventHandler(this.butInsert_Click);
@@ -161,7 +161,7 @@
             this.butUpdate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.butUpdate.Name = "butUpdate";
             this.butUpdate.Size = new System.Drawing.Size(112, 38);
-            this.butUpdate.TabIndex = 43;
+            this.butUpdate.TabIndex = 17;
             this.butUpdate.Text = "Update";
             this.butUpdate.UseVisualStyleBackColor = true;
             this.butUpdate.Click += new System.EventHandler(this.butUpdate_Click);
@@ -198,7 +198,7 @@
             this.textAuthor.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textAuthor.Name = "textAuthor";
             this.textAuthor.Size = new System.Drawing.Size(148, 26);
-            this.textAuthor.TabIndex = 38;
+            this.textAuthor.TabIndex = 9;
             // 
             // textBookName
             // 
@@ -208,7 +208,7 @@
             this.textBookName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBookName.Name = "textBookName";
             this.textBookName.Size = new System.Drawing.Size(148, 26);
-            this.textBookName.TabIndex = 37;
+            this.textBookName.TabIndex = 8;
             // 
             // label7
             // 
@@ -255,7 +255,7 @@
             this.comboBox_year.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.comboBox_year.Name = "comboBox_year";
             this.comboBox_year.Size = new System.Drawing.Size(148, 28);
-            this.comboBox_year.TabIndex = 58;
+            this.comboBox_year.TabIndex = 12;
             // 
             // label9
             // 
@@ -276,8 +276,9 @@
             this.text_Bookdetail.Location = new System.Drawing.Point(375, 117);
             this.text_Bookdetail.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.text_Bookdetail.Name = "text_Bookdetail";
+            this.text_Bookdetail.ReadOnly = true;
             this.text_Bookdetail.Size = new System.Drawing.Size(148, 26);
-            this.text_Bookdetail.TabIndex = 62;
+            this.text_Bookdetail.TabIndex = 7;
             // 
             // text_Quantity
             // 
@@ -287,7 +288,7 @@
             this.text_Quantity.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.text_Quantity.Name = "text_Quantity";
             this.text_Quantity.Size = new System.Drawing.Size(70, 26);
-            this.text_Quantity.TabIndex = 60;
+            this.text_Quantity.TabIndex = 14;
             // 
             // label8
             // 
@@ -305,11 +306,11 @@
             // 
             this.but_Minus.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.but_Minus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.but_Minus.Location = new System.Drawing.Point(375, 434);
+            this.but_Minus.Location = new System.Drawing.Point(375, 433);
             this.but_Minus.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.but_Minus.Name = "but_Minus";
             this.but_Minus.Size = new System.Drawing.Size(28, 38);
-            this.but_Minus.TabIndex = 63;
+            this.but_Minus.TabIndex = 15;
             this.but_Minus.Text = "-";
             this.but_Minus.UseVisualStyleBackColor = true;
             this.but_Minus.Click += new System.EventHandler(this.but_Minus_Click);
@@ -318,11 +319,11 @@
             // 
             this.but_Plus.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.but_Plus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.but_Plus.Location = new System.Drawing.Point(493, 435);
+            this.but_Plus.Location = new System.Drawing.Point(495, 433);
             this.but_Plus.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.but_Plus.Name = "but_Plus";
             this.but_Plus.Size = new System.Drawing.Size(28, 38);
-            this.but_Plus.TabIndex = 64;
+            this.but_Plus.TabIndex = 16;
             this.but_Plus.Text = "+";
             this.but_Plus.UseVisualStyleBackColor = true;
             this.but_Plus.Click += new System.EventHandler(this.but_Plus_Click);
@@ -343,6 +344,18 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Search Book";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label1.Location = new System.Drawing.Point(58, 41);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(118, 20);
+            this.label1.TabIndex = 70;
+            this.label1.Text = "Bookdetail ID";
+            // 
             // butFind
             // 
             this.butFind.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -351,7 +364,7 @@
             this.butFind.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.butFind.Name = "butFind";
             this.butFind.Size = new System.Drawing.Size(112, 38);
-            this.butFind.TabIndex = 10;
+            this.butFind.TabIndex = 2;
             this.butFind.Text = "Find";
             this.butFind.UseVisualStyleBackColor = true;
             this.butFind.Click += new System.EventHandler(this.butFind_Click_1);
@@ -364,7 +377,7 @@
             this.text_find.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.text_find.Name = "text_find";
             this.text_find.Size = new System.Drawing.Size(148, 26);
-            this.text_find.TabIndex = 0;
+            this.text_find.TabIndex = 1;
             // 
             // button8
             // 
@@ -374,9 +387,10 @@
             this.button8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(48, 38);
-            this.button8.TabIndex = 68;
+            this.button8.TabIndex = 6;
             this.button8.Text = ">>";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click_1);
             // 
             // button7
             // 
@@ -386,9 +400,10 @@
             this.button7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(46, 38);
-            this.button7.TabIndex = 67;
+            this.button7.TabIndex = 5;
             this.button7.Text = "<<";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click_1);
             // 
             // button6
             // 
@@ -398,9 +413,10 @@
             this.button6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(48, 38);
-            this.button6.TabIndex = 66;
+            this.button6.TabIndex = 4;
             this.button6.Text = ">";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click_1);
             // 
             // button5
             // 
@@ -410,21 +426,10 @@
             this.button5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(46, 38);
-            this.button5.TabIndex = 65;
+            this.button5.TabIndex = 3;
             this.button5.Text = "<";
             this.button5.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label1.Location = new System.Drawing.Point(58, 41);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(118, 20);
-            this.label1.TabIndex = 70;
-            this.label1.Text = "Bookdetail ID";
+            this.button5.Click += new System.EventHandler(this.button5_Click_1);
             // 
             // Uc_Addbook
             // 
