@@ -187,11 +187,7 @@ namespace Team5BLibraryManagementSystem
             MessageBox.Show("Delete Sucessfully!");
         }
 
-        private void butFind_Click(object sender, EventArgs e)
-        {
-            pasn = find2(text_find.Text);
-            P();
-        }
+       
 
         private void button5_Click(object sender, EventArgs e)
         {
@@ -244,6 +240,12 @@ namespace Team5BLibraryManagementSystem
         {
             int a = Convert.ToInt32(text_Quantity.Text);
             text_Quantity.Text = Convert.ToString(a +1);
+        }
+
+        private void butFind_Click_1(object sender, EventArgs e)
+        {
+            pasn = find2(text_find.Text);
+            P();
         }
     }
 }
