@@ -45,20 +45,27 @@ namespace Team5BLibraryManagementSystem
                 SA47Team05BESNETLMSEntities context = new SA47Team05BESNETLMSEntities();
                 if (dr == DialogResult.OK)
                 {
-                   int selectid = Convert.ToInt32(selectbook.selectedBookID);
-                    Console.WriteLine(selectid);
-                    Book c = context.Books.Where(x => x.bookid == selectid).First();
-                    context.Books.Remove(c);
-                    context.SaveChanges();
-                    ds.Tables["Booksdetails"].Rows[pasn]["title"] = textBookName.Text;
-                    ds.Tables["Booksdetails"].Rows[pasn]["author"] = textAuthor.Text;
-                    ds.Tables["Booksdetails"].Rows[pasn]["category"] = textGenre.Text;
-                    ds.Tables["Booksdetails"].Rows[pasn]["publisher"] = textPublisher.Text;
-                    ds.Tables["Booksdetails"].Rows[pasn]["publishyear"] = comboBox_year.Text.ToString();
-                    ds.Tables["Booksdetails"].Rows[pasn]["isbn"] = text_Isbn.Text;
-                    ds.Tables["Booksdetails"].Rows[pasn]["quantity"] = text_Quantity.Text;
-                    ta.Update(ds);
-                    MessageBox.Show("Update Successfully!");
+                   //int selectid = Convert.ToInt32(selectbook.selectedBookID);
+                   // Console.WriteLine(selectid);
+                   // Book c = context.Books.Where(x => x.bookid == selectid).First();
+                   // if (c.status == "Avaliable")
+                   // {
+                        //context.Books.Remove(c);
+                        //context.SaveChanges();
+                        ds.Tables["Booksdetails"].Rows[pasn]["title"] = textBookName.Text;
+                        ds.Tables["Booksdetails"].Rows[pasn]["author"] = textAuthor.Text;
+                        ds.Tables["Booksdetails"].Rows[pasn]["category"] = textGenre.Text;
+                        ds.Tables["Booksdetails"].Rows[pasn]["publisher"] = textPublisher.Text;
+                        ds.Tables["Booksdetails"].Rows[pasn]["publishyear"] = comboBox_year.Text.ToString();
+                        ds.Tables["Booksdetails"].Rows[pasn]["isbn"] = text_Isbn.Text;
+                        ds.Tables["Booksdetails"].Rows[pasn]["quantity"] = text_Quantity.Text;
+                        ta.Update(ds);
+                        MessageBox.Show("Update Successfully!");
+                    //}
+                    //else
+                    //{
+                    //    MessageBox.Show("The book was lent out,please select other books");
+                    //}
                 }
             }
             if (a >b)
@@ -81,8 +88,8 @@ namespace Team5BLibraryManagementSystem
                     ds.Tables["Booksdetails"].Rows[pasn]["isbn"] = text_Isbn.Text;
                     ds.Tables["Booksdetails"].Rows[pasn]["quantity"] = text_Quantity.Text;
                     ta.Update(ds);
-                    MessageBox.Show("Update Successfully!");
                 }
+                MessageBox.Show("Update Successfully!");
             }
             //ds.Tables["Booksdetails"].Rows[pasn]["booksdetailsid"] = text_Bookdetail.Text;
            
@@ -164,9 +171,9 @@ namespace Team5BLibraryManagementSystem
                 ds.Tables["Books"].Rows.Add(b);
                 a--;
                     ta1.Update(ds);
-                MessageBox.Show("Insert Successfully!");
+               
                 }
-            
+            MessageBox.Show("Insert Successfully!");
         }
 
         private void butDelete_Click(object sender, EventArgs e)
@@ -174,9 +181,7 @@ namespace Team5BLibraryManagementSystem
             int u= Convert.ToInt32(text_Bookdetail.Text);
             SA47Team05BESNETLMSEntities context = new SA47Team05BESNETLMSEntities();
             context.Books.Where(x => x.booksdetailsid == u).ToList().ForEach(y => context.Books.Remove(y));
-
             Booksdetail a = context.Booksdetails.Where(d => d.booksdetailsid == u).First();
-            
             context.Booksdetails.Remove(a);
             context.SaveChanges();
             MessageBox.Show("Delete Sucessfully!");
@@ -229,6 +234,16 @@ namespace Team5BLibraryManagementSystem
             P();
         }
 
-       
+        private void but_Minus_Click(object sender, EventArgs e)
+        {
+            int a = Convert.ToInt32(text_Quantity.Text);
+            text_Quantity.Text =Convert.ToString( a - 1);
+        }
+
+        private void but_Plus_Click(object sender, EventArgs e)
+        {
+            int a = Convert.ToInt32(text_Quantity.Text);
+            text_Quantity.Text = Convert.ToString(a +1);
+        }
     }
 }

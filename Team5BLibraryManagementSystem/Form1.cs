@@ -36,23 +36,41 @@ namespace Team5BLibraryManagementSystem
             ta.Fill(ds.Books);
             Uc_Addbook uc1 = new Uc_Addbook();
         }
-        public string selectedBookID
-        {
-            get { return dataGridView1.SelectedRows[0].Cells[0].Value.ToString(); }
-        }
+       
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
        
         }
-        public int SelectedRow
-        { get; set; }
 
         private void but_OK_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.OK;
-        }
+            DialogResult dr = MessageBox.Show("Do you want to delete them?", "Confirmation", MessageBoxButtons.YesNoCancel);
+            if (dr == DialogResult.Yes)
+            {
+                SA47Team05BESNETLMSEntities context = new SA47Team05BESNETLMSEntities();
+                if (dataGridView1.SelectedRows.Count > 0)
+                {
+                    for (int i = 0; i < dataGridView1.SelectedRows.Count; i++)
+                    {
+                        int selectid = Convert.ToInt32(dataGridView1.SelectedRows[i].Cells[0].Value.ToString());
+                        Book c = context.Books.Where(x => x.bookid == selectid).First();
+                        if (c.status == "Avaliable")
+                        {
+                            context.Books.Remove(c);
+                            context.SaveChanges();
+                        }
+                        else
+                        {
+                            MessageBox.Show("The book was lent out,please select other books");
+                        }
 
+                    }
+
+                }
+                this.DialogResult = DialogResult.OK;
+            }
+        }
         private void but_Cancel_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;

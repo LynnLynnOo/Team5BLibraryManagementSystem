@@ -54,6 +54,8 @@
             this.text_Bookdetail = new System.Windows.Forms.TextBox();
             this.text_Quantity = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.but_Minus = new System.Windows.Forms.Button();
+            this.but_Plus = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -294,9 +296,9 @@
             // 
             // text_Quantity
             // 
-            this.text_Quantity.Location = new System.Drawing.Point(236, 232);
+            this.text_Quantity.Location = new System.Drawing.Point(261, 232);
             this.text_Quantity.Name = "text_Quantity";
-            this.text_Quantity.Size = new System.Drawing.Size(100, 21);
+            this.text_Quantity.Size = new System.Drawing.Size(48, 21);
             this.text_Quantity.TabIndex = 60;
             // 
             // label8
@@ -308,10 +310,32 @@
             this.label8.TabIndex = 59;
             this.label8.Text = "Quantity";
             // 
+            // but_Minus
+            // 
+            this.but_Minus.Location = new System.Drawing.Point(236, 229);
+            this.but_Minus.Name = "but_Minus";
+            this.but_Minus.Size = new System.Drawing.Size(19, 23);
+            this.but_Minus.TabIndex = 63;
+            this.but_Minus.Text = "-";
+            this.but_Minus.UseVisualStyleBackColor = true;
+            this.but_Minus.Click += new System.EventHandler(this.but_Minus_Click);
+            // 
+            // but_Plus
+            // 
+            this.but_Plus.Location = new System.Drawing.Point(315, 230);
+            this.but_Plus.Name = "but_Plus";
+            this.but_Plus.Size = new System.Drawing.Size(19, 23);
+            this.but_Plus.TabIndex = 64;
+            this.but_Plus.Text = "+";
+            this.but_Plus.UseVisualStyleBackColor = true;
+            this.but_Plus.Click += new System.EventHandler(this.but_Plus_Click);
+            // 
             // Uc_Addbook
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.but_Plus);
+            this.Controls.Add(this.but_Minus);
             this.Controls.Add(this.text_Bookdetail);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.text_Quantity);
@@ -374,5 +398,7 @@
         private System.Windows.Forms.TextBox text_Bookdetail;
         private System.Windows.Forms.TextBox text_Quantity;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button but_Minus;
+        private System.Windows.Forms.Button but_Plus;
     }
 }
