@@ -187,7 +187,7 @@
             // 
             // butInsert
             // 
-            this.butInsert.Location = new System.Drawing.Point(224, 267);
+            this.butInsert.Location = new System.Drawing.Point(223, 267);
             this.butInsert.Name = "butInsert";
             this.butInsert.Size = new System.Drawing.Size(75, 23);
             this.butInsert.TabIndex = 44;
@@ -296,7 +296,7 @@
             // 
             // text_Quantity
             // 
-            this.text_Quantity.Location = new System.Drawing.Point(261, 232);
+            this.text_Quantity.Location = new System.Drawing.Point(261, 230);
             this.text_Quantity.Name = "text_Quantity";
             this.text_Quantity.Size = new System.Drawing.Size(48, 21);
             this.text_Quantity.TabIndex = 60;

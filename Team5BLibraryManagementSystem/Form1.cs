@@ -45,31 +45,36 @@ namespace Team5BLibraryManagementSystem
 
         private void but_OK_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Do you want to delete them?", "Confirmation", MessageBoxButtons.YesNoCancel);
-            if (dr == DialogResult.Yes)
-            {
+            //DialogResult dr = MessageBox.Show("Do you want to delete them?", "Confirmation", MessageBoxButtons.YesNoCancel);
+            //if (dr == DialogResult.Yes)
+            //{
                 SA47Team05BESNETLMSEntities context = new SA47Team05BESNETLMSEntities();
                 if (dataGridView1.SelectedRows.Count > 0)
                 {
+                    DialogResult dr = MessageBox.Show("Do you want to delete them?", "Confirmation", MessageBoxButtons.YesNoCancel);
+                    if (dr == DialogResult.Yes)
+                    {
                     for (int i = 0; i < dataGridView1.SelectedRows.Count; i++)
                     {
                         int selectid = Convert.ToInt32(dataGridView1.SelectedRows[i].Cells[0].Value.ToString());
                         Book c = context.Books.Where(x => x.bookid == selectid).First();
-                        if (c.status == "Avaliable")
-                        {
-                            context.Books.Remove(c);
-                            context.SaveChanges();
-                        }
-                        else
+                        if (c.status == "On Loan")
                         {
                             MessageBox.Show("The book was lent out,please select other books");
                         }
+                        else
+                        {
+                            context.Books.Remove(c);
+                            context.SaveChanges();
+                            this.DialogResult = DialogResult.OK;
+                        }
+                    }
 
                     }
 
                 }
-                this.DialogResult = DialogResult.OK;
-            }
+             // this.DialogResult = DialogResult.OK;
+            
         }
         private void but_Cancel_Click(object sender, EventArgs e)
         {
