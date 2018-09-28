@@ -37,6 +37,7 @@
             this.textbox_MemberID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.butLend = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label2
@@ -133,11 +134,24 @@
             this.butLend.UseVisualStyleBackColor = true;
             this.butLend.Click += new System.EventHandler(this.butLend_Click);
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label9.Location = new System.Drawing.Point(246, 29);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(387, 33);
+            this.label9.TabIndex = 66;
+            this.label9.Text = "Member Registration Form";
+            // 
             // Uc_LendBook
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.date_Due);
             this.Controls.Add(this.label5);
@@ -166,5 +180,6 @@
         private System.Windows.Forms.TextBox textbox_MemberID;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button butLend;
+        private System.Windows.Forms.Label label9;
     }
 }

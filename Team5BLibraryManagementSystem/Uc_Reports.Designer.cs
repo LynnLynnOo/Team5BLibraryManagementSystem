@@ -70,7 +70,7 @@
             // 
             this.cmb_Typesofreport.BackColor = System.Drawing.Color.White;
             this.cmb_Typesofreport.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmb_Typesofreport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.cmb_Typesofreport.ForeColor = System.Drawing.Color.Black;
             this.cmb_Typesofreport.FormattingEnabled = true;
             this.cmb_Typesofreport.Items.AddRange(new object[] {
             "Overdue Books",
@@ -94,7 +94,7 @@
             this.groupBox_Weeklyloanreport.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox_Weeklyloanreport.Name = "groupBox_Weeklyloanreport";
             this.groupBox_Weeklyloanreport.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox_Weeklyloanreport.Size = new System.Drawing.Size(517, 388);
+            this.groupBox_Weeklyloanreport.Size = new System.Drawing.Size(517, 324);
             this.groupBox_Weeklyloanreport.TabIndex = 2;
             this.groupBox_Weeklyloanreport.TabStop = false;
             this.groupBox_Weeklyloanreport.Visible = false;
@@ -140,7 +140,7 @@
             this.groupBox_MemberListing.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox_MemberListing.Name = "groupBox_MemberListing";
             this.groupBox_MemberListing.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox_MemberListing.Size = new System.Drawing.Size(517, 388);
+            this.groupBox_MemberListing.Size = new System.Drawing.Size(517, 324);
             this.groupBox_MemberListing.TabIndex = 3;
             this.groupBox_MemberListing.TabStop = false;
             this.groupBox_MemberListing.Visible = false;
@@ -208,7 +208,7 @@
             this.groupBox_BookList.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox_BookList.Name = "groupBox_BookList";
             this.groupBox_BookList.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox_BookList.Size = new System.Drawing.Size(517, 388);
+            this.groupBox_BookList.Size = new System.Drawing.Size(517, 316);
             this.groupBox_BookList.TabIndex = 4;
             this.groupBox_BookList.TabStop = false;
             this.groupBox_BookList.Visible = false;
@@ -245,7 +245,7 @@
             // 
             this.btn_BookList.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_BookList.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btn_BookList.Location = new System.Drawing.Point(234, 280);
+            this.btn_BookList.Location = new System.Drawing.Point(218, 203);
             this.btn_BookList.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_BookList.Name = "btn_BookList";
             this.btn_BookList.Size = new System.Drawing.Size(129, 60);
@@ -265,7 +265,7 @@
             this.groupBox_OverdueBooks.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox_OverdueBooks.Name = "groupBox_OverdueBooks";
             this.groupBox_OverdueBooks.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox_OverdueBooks.Size = new System.Drawing.Size(517, 380);
+            this.groupBox_OverdueBooks.Size = new System.Drawing.Size(517, 324);
             this.groupBox_OverdueBooks.TabIndex = 5;
             this.groupBox_OverdueBooks.TabStop = false;
             this.groupBox_OverdueBooks.Visible = false;
@@ -331,10 +331,10 @@
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.cmb_Typesofreport);
             this.Controls.Add(this.label_Typesofreport);
-            this.Controls.Add(this.groupBox_MemberListing);
-            this.Controls.Add(this.groupBox_Weeklyloanreport);
             this.Controls.Add(this.groupBox_BookList);
             this.Controls.Add(this.groupBox_OverdueBooks);
+            this.Controls.Add(this.groupBox_MemberListing);
+            this.Controls.Add(this.groupBox_Weeklyloanreport);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Uc_Reports";
             this.Size = new System.Drawing.Size(882, 517);
