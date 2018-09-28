@@ -57,5 +57,10 @@ namespace Team5BLibraryManagementSystem
                 frm_Main.Show();
             }
         }
+
+        private void Frm_Login_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

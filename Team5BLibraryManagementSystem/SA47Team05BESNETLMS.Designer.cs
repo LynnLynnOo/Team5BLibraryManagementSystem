@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\49742\source\repos\Team5BLibraryManagementSystem\Team5BLibraryManagementSystem\SA47Team05BESNETLMS.edmx'. 
+﻿// T4 code generation is enabled for model 'D:\Zan_Tun_Khine\SA47\SA4102 ENTERPRISE SOLUTIONS DESIGN AND DEVELOPMENT\ESNet\ESNET_CA\GitHubRepo_13\Team5BLibraryManagementSystem\SA47Team05BESNETLMS.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

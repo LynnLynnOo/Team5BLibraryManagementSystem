@@ -28,6 +28,7 @@ namespace Team5BLibraryManagementSystem
         public string category { get; set; }
         public string isbn { get; set; }
         public int quantity { get; set; }
+        public string location { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Book> Books { get; set; }

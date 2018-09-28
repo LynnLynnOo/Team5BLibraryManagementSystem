@@ -38,40 +38,51 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(115, 78);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label1.Location = new System.Drawing.Point(303, 138);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(83, 12);
+            this.label1.Size = new System.Drawing.Size(120, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "LoanDetail ID";
             // 
             // text_Loanid
             // 
-            this.text_Loanid.Location = new System.Drawing.Point(213, 75);
+            this.text_Loanid.Location = new System.Drawing.Point(451, 133);
+            this.text_Loanid.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.text_Loanid.Name = "text_Loanid";
-            this.text_Loanid.Size = new System.Drawing.Size(100, 21);
+            this.text_Loanid.Size = new System.Drawing.Size(148, 26);
             this.text_Loanid.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(115, 122);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label2.Location = new System.Drawing.Point(303, 211);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 12);
+            this.label2.Size = new System.Drawing.Size(74, 20);
             this.label2.TabIndex = 2;
             this.label2.Text = "Book ID";
             // 
             // text_Bookid
             // 
-            this.text_Bookid.Location = new System.Drawing.Point(213, 119);
+            this.text_Bookid.Location = new System.Drawing.Point(451, 206);
+            this.text_Bookid.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.text_Bookid.Name = "text_Bookid";
-            this.text_Bookid.Size = new System.Drawing.Size(100, 21);
+            this.text_Bookid.Size = new System.Drawing.Size(148, 26);
             this.text_Bookid.TabIndex = 3;
             // 
             // but_Return
             // 
-            this.but_Return.Location = new System.Drawing.Point(213, 191);
+            this.but_Return.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.but_Return.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.but_Return.Location = new System.Drawing.Point(451, 326);
+            this.but_Return.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.but_Return.Name = "but_Return";
-            this.but_Return.Size = new System.Drawing.Size(75, 23);
+            this.but_Return.Size = new System.Drawing.Size(112, 38);
             this.but_Return.TabIndex = 4;
             this.but_Return.Text = "Return";
             this.but_Return.UseVisualStyleBackColor = true;
@@ -79,15 +90,17 @@
             // 
             // Uc_ReturnBook
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.but_Return);
             this.Controls.Add(this.text_Bookid);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.text_Loanid);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Uc_ReturnBook";
-            this.Size = new System.Drawing.Size(564, 381);
+            this.Size = new System.Drawing.Size(882, 517);
             this.Load += new System.EventHandler(this.Uc_ReturnBook_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

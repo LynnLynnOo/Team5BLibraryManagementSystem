@@ -18,6 +18,7 @@ namespace Team5BLibraryManagementSystem
         public Uc_LendBook()
         {
             InitializeComponent();
+            date_Due.Value = DateTime.Now.AddDays(14);
         }
 
         private void butLend_Click(object sender, EventArgs e)

@@ -36,24 +36,21 @@ namespace Team5BLibraryManagementSystem
             ta.Fill(ds.Books);
             Uc_Addbook uc1 = new Uc_Addbook();
         }
-       
+
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-       
-        }
 
+        }
+        //Button OK
         private void but_OK_Click(object sender, EventArgs e)
         {
-            //DialogResult dr = MessageBox.Show("Do you want to delete them?", "Confirmation", MessageBoxButtons.YesNoCancel);
-            //if (dr == DialogResult.Yes)
-            //{
-                SA47Team05BESNETLMSEntities context = new SA47Team05BESNETLMSEntities();
-                if (dataGridView1.SelectedRows.Count > 0)
+            SA47Team05BESNETLMSEntities context = new SA47Team05BESNETLMSEntities();
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                DialogResult dr = MessageBox.Show("Do you want to delete them?", "Confirmation", MessageBoxButtons.YesNoCancel);
+                if (dr == DialogResult.Yes)
                 {
-                    DialogResult dr = MessageBox.Show("Do you want to delete them?", "Confirmation", MessageBoxButtons.YesNoCancel);
-                    if (dr == DialogResult.Yes)
-                    {
                     for (int i = 0; i < dataGridView1.SelectedRows.Count; i++)
                     {
                         int selectid = Convert.ToInt32(dataGridView1.SelectedRows[i].Cells[0].Value.ToString());
@@ -61,6 +58,7 @@ namespace Team5BLibraryManagementSystem
                         if (c.status == "On Loan")
                         {
                             MessageBox.Show("The book was lent out,please select other books");
+
                         }
                         else
                         {
@@ -68,15 +66,20 @@ namespace Team5BLibraryManagementSystem
                             context.SaveChanges();
                             this.DialogResult = DialogResult.OK;
                         }
-                    }
 
                     }
 
                 }
-             // this.DialogResult = DialogResult.OK;
-            
+
+            }
         }
         private void but_Cancel_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+            Close();
+        }
+        //Button Cancel
+        private void button1_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
             Close();

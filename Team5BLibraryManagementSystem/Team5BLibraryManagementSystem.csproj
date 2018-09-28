@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{D774D2D7-8AA9-4B0B-BA98-FB8E0C586662}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>WinExe</OutputType>
     <RootNamespace>Team5BLibraryManagementSystem</RootNamespace>
     <AssemblyName>Team5BLibraryManagementSystem</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
@@ -32,7 +32,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject />
+    <StartupObject>Team5BLibraryManagementSystem.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
@@ -154,6 +154,9 @@
     </Compile>
     <Compile Include="Frm_Main.Designer.cs">
       <DependentUpon>Frm_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HistoryByMembers_Result.cs">
+      <DependentUpon>SA47Team05BESNETLMS.tt</DependentUpon>
     </Compile>
     <Compile Include="Loandetail.cs">
       <DependentUpon>SA47Team05BESNETLMS.tt</DependentUpon>
@@ -321,6 +324,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Rpt_BookListByAvailability.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -451,6 +455,7 @@
       <DependentUpon>SA47Team05BESNETLMS.edmx</DependentUpon>
       <LastGenOutput>SA47Team05BESNETLMS.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\Banner.PNG" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
