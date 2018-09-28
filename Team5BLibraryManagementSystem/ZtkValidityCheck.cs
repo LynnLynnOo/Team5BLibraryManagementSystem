@@ -12,10 +12,24 @@ using System.Text.RegularExpressions;
 
 namespace Team5BLibraryManagementSystem
 {
-    public class Checkemailvalidity
+
+    public class ZtkValidityCheck
     {
+        //Check member validity
+        public static bool MemberIsValid(DateTime expiry_date)
+        {
+            if (expiry_date > DateTime.Now)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         //Check id validity
-        public bool IsValidID(string strIn)
+        public static bool IsValidID(string strIn)
         {
             if (strIn.Any(char.IsDigit))
             {
@@ -30,7 +44,7 @@ namespace Team5BLibraryManagementSystem
         }
 
         //Check name validity
-        public bool IsValidName(string strIn)
+        public static bool IsValidName(string strIn)
         {
             if (strIn.Any(char.IsSymbol) || strIn.Any(char.IsDigit))
             {
@@ -45,7 +59,7 @@ namespace Team5BLibraryManagementSystem
         }
 
         //Check phone validity
-        public bool IsValidPhone(string strIn)
+        public static bool IsValidPhone(string strIn)
         {
             if (strIn.Any(char.IsDigit))
             {
@@ -58,7 +72,7 @@ namespace Team5BLibraryManagementSystem
                 return false;
             }
         }
-
+    
         //Check email validity
         bool invalid = false;
         public bool IsValidEmail(string strIn)
@@ -73,12 +87,13 @@ namespace Team5BLibraryManagementSystem
                                       RegexOptions.None, TimeSpan.FromMilliseconds(200));
             }
             catch (RegexMatchTimeoutException)
-            {
+            {              
                 return false;
             }
 
             if (invalid)
             {
+               
                 return false;
             }
 
@@ -107,9 +122,11 @@ namespace Team5BLibraryManagementSystem
             }
             catch (ArgumentException)
             {
+                
                 invalid = true;
             }
             return match.Groups[1].Value + domainName;
-        }
+        } 
+        
     }
 }

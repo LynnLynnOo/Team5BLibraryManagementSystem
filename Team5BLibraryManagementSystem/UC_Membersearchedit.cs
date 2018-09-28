@@ -13,17 +13,12 @@ namespace Team5BLibraryManagementSystem
 {
     public partial class Uc_Membersearchedit : UserControl
     {
-        Checkemailvalidity chkvldy = new Checkemailvalidity();
+        ZtkValidityCheck chkvldy = new ZtkValidityCheck();   
         public Uc_Membersearchedit()
         {
             InitializeComponent();
+            labelSearch.Visible = false; ;
         }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
 
         private void btn_Print_Click(object sender, EventArgs e)
         {
@@ -33,7 +28,7 @@ namespace Team5BLibraryManagementSystem
         private void btn_Delete_Click(object sender, EventArgs e)
         {
             SA47Team05BESNETLMSEntities context = new SA47Team05BESNETLMSEntities();
-            var q = context.Members.Where(x => x.memberid.ToString() == Textbox_Idnumber.Text).First();
+            var q = context.Members.Where(x => x.memberid.ToString() == textbox_Idnumber.Text).First();
 
             DialogResult dialogResult = MessageBox.Show(String.Format("Are you sure you want to remove the user,{0}?", q.name), "Warning", MessageBoxButtons.YesNo);
 
@@ -42,6 +37,7 @@ namespace Team5BLibraryManagementSystem
                 context.Members.Remove(q);
                 context.SaveChanges();
                 MessageBox.Show(String.Format("{0} has been removed.", q.name), "Confirmation", MessageBoxButtons.OK);
+                Clearfields();
             }
         }
 
@@ -50,7 +46,7 @@ namespace Team5BLibraryManagementSystem
 
             SA47Team05BESNETLMSEntities context = new SA47Team05BESNETLMSEntities();
 
-            if (Textbox_Category.Text == "" || Combobox_Category.SelectedItem == null)
+            if (textbox_Category.Text == "" || combobox_Category.SelectedItem == null)
             {
                 labelSearch.Visible = true;
             }
@@ -60,87 +56,124 @@ namespace Team5BLibraryManagementSystem
                 try
                 {
                     labelSearch.Visible = false;
-                    switch (Combobox_Category.SelectedItem)
+                    switch (combobox_Category.SelectedItem)
                     {
                         case "Member ID":
-                            if (chkvldy.IsValidID(Textbox_Category.Text))
+                            if (ZtkValidityCheck.IsValidID(textbox_Category.Text))
                             {
                                 Gb_Memberinformation.Visible = true;
-
+                                
                                 var q = (from x in context.Members
-                                         where x.memberid.ToString() == Textbox_Category.Text
+                                         where x.memberid.ToString() == textbox_Category.Text
                                          select x).First();
+                                
+                                textbox_Membername.Text = q.name.ToString();
+                                textbox_Idnumber.Text = q.memberid.ToString();
+                                textbox_Phone.Text = q.phonenumber.ToString();
+                                textbox_email.Text = q.email.ToString();
+                                datetimepicker_Dob.Text = q.dateofbirth.ToString();
+                                textbox_Address.Text = q.address.ToString();
+                                datetimepicker_Joineddate.Text = q.joindate.ToString();
+                                datetimepicker_Expirydate.Text = q.expirydate.ToString();                             
 
-                                Textbox_Membername.Text = q.name.ToString();
-                                Textbox_Idnumber.Text = q.memberid.ToString();
-                                Textbox_Phone.Text = q.phonenumber.ToString();
-                                Textbox_email.Text = q.email.ToString();
-                                Datetimepicker_Dob.Text = q.dateofbirth.ToString();
-                                Textbox_Address.Text = q.address.ToString();
-                                Datetimepicker_Joineddate.Text = q.joindate.ToString();
-                                Datetimepicker_Expirydate.Text = q.expirydate.ToString();
+                                if(ZtkValidityCheck.MemberIsValid(q.expirydate))
+                                {
+                                    textbox_Status.Text = "Active";
+                                }
+                                else
+                                {
+                                    textbox_Status.Text="Expired";
+                                }
+
                             }
                             break;
 
                         case "Member Name":
-                            if (chkvldy.IsValidName(Textbox_Category.Text))
+                            if (ZtkValidityCheck.IsValidName(textbox_Category.Text))
                             {
 
                                 Gb_Memberinformation.Visible = true;
 
                                 var r = (from x in context.Members
-                                         where x.name == Textbox_Category.Text
+                                         where x.name == textbox_Category.Text
                                          select x).First();
 
-                                Textbox_Membername.Text = r.name.ToString();
-                                Textbox_Idnumber.Text = r.memberid.ToString();
-                                Textbox_Phone.Text = r.phonenumber.ToString();
-                                Textbox_email.Text = r.email.ToString();
-                                Datetimepicker_Dob.Text = r.dateofbirth.ToString();
-                                Textbox_Address.Text = r.address.ToString();
-                                Datetimepicker_Joineddate.Text = r.joindate.ToString();
-                                Datetimepicker_Expirydate.Text = r.expirydate.ToString();
+                                textbox_Membername.Text = r.name.ToString();
+                                textbox_Idnumber.Text = r.memberid.ToString();
+                                textbox_Phone.Text = r.phonenumber.ToString();
+                                textbox_email.Text = r.email.ToString();
+                                datetimepicker_Dob.Text = r.dateofbirth.ToString();
+                                textbox_Address.Text = r.address.ToString();
+                                datetimepicker_Joineddate.Text = r.joindate.ToString();
+                                datetimepicker_Expirydate.Text = r.expirydate.ToString();
+
+                                if (ZtkValidityCheck.MemberIsValid(r.expirydate))
+                                {
+                                    textbox_Status.Text = "Active";
+                                }
+                                else
+                                {
+                                    textbox_Status.Text = "Expired";
+                                }
                             }
                             break;
 
                         case "Phone":
 
-                            if (chkvldy.IsValidPhone(Textbox_Category.Text))
+                            if (ZtkValidityCheck.IsValidPhone(textbox_Category.Text))
                             {
                                 Gb_Memberinformation.Visible = true;
 
                                 var s = (from x in context.Members
-                                         where x.phonenumber.ToString() == Textbox_Category.Text
+                                         where x.phonenumber.ToString() == textbox_Category.Text
                                          select x).First();
 
-                                Textbox_Membername.Text = s.name.ToString();
-                                Textbox_Idnumber.Text = s.memberid.ToString();
-                                Textbox_Phone.Text = s.phonenumber.ToString();
-                                Textbox_email.Text = s.email.ToString();
-                                Datetimepicker_Dob.Text = s.dateofbirth.ToString();
-                                Textbox_Address.Text = s.address.ToString();
-                                Datetimepicker_Joineddate.Text = s.joindate.ToString();
-                                Datetimepicker_Expirydate.Text = s.expirydate.ToString();
+                                textbox_Membername.Text = s.name.ToString();
+                                textbox_Idnumber.Text = s.memberid.ToString();
+                                textbox_Phone.Text = s.phonenumber.ToString();
+                                textbox_email.Text = s.email.ToString();
+                                datetimepicker_Dob.Text = s.dateofbirth.ToString();
+                                textbox_Address.Text = s.address.ToString();
+                                datetimepicker_Joineddate.Text = s.joindate.ToString();
+                                datetimepicker_Expirydate.Text = s.expirydate.ToString();
+
+                                if (ZtkValidityCheck.MemberIsValid(s.expirydate))
+                                {
+                                    textbox_Status.Text = "Active";
+                                }
+                                else
+                                {
+                                    textbox_Status.Text = "Expired";
+                                }
                             }
                             break;
 
                         case "Email":
 
-                            if (chkvldy.IsValidEmail(Textbox_Category.Text))
+                            if (chkvldy.IsValidEmail(textbox_Category.Text))
                             {
                                 var t = (from x in context.Members
-                                         where x.email.ToString() == Textbox_Category.Text
+                                         where x.email.ToString() == textbox_Category.Text
                                          select x).First();
 
                                 Gb_Memberinformation.Visible = true;
-                                Textbox_Membername.Text = t.name.ToString();
-                                Textbox_Idnumber.Text = t.memberid.ToString();
-                                Textbox_Phone.Text = t.phonenumber.ToString();
-                                Textbox_email.Text = t.email.ToString();
-                                Datetimepicker_Dob.Text = t.dateofbirth.ToString();
-                                Textbox_Address.Text = t.address.ToString();
-                                Datetimepicker_Joineddate.Text = t.joindate.ToString();
-                                Datetimepicker_Expirydate.Text = t.expirydate.ToString();
+                                textbox_Membername.Text = t.name.ToString();
+                                textbox_Idnumber.Text = t.memberid.ToString();
+                                textbox_Phone.Text = t.phonenumber.ToString();
+                                textbox_email.Text = t.email.ToString();
+                                datetimepicker_Dob.Text = t.dateofbirth.ToString();
+                                textbox_Address.Text = t.address.ToString();
+                                datetimepicker_Joineddate.Text = t.joindate.ToString();
+                                datetimepicker_Expirydate.Text = t.expirydate.ToString();
+
+                                if (ZtkValidityCheck.MemberIsValid(t.expirydate))
+                                {
+                                    textbox_Status.Text = "Active";
+                                }
+                                else
+                                {
+                                    textbox_Status.Text = "Expired";
+                                }
                             }
                             else
                             {
@@ -163,11 +196,11 @@ namespace Team5BLibraryManagementSystem
             btn_Save.Visible = false;
             btn_Cancel.Visible = false;
             btn_Delete.Visible = true;
-            Textbox_Address.Enabled = false;
-            Textbox_Membername.Enabled = false;
-            Textbox_Phone.Enabled = false;
-            Textbox_email.Enabled = false;
-            Datetimepicker_Dob.Enabled = false;
+            textbox_Address.Enabled = false;
+            textbox_Membername.Enabled = false;
+            textbox_Phone.Enabled = false;
+            textbox_email.Enabled = false;
+            datetimepicker_Dob.Enabled = false;
         }
 
         private void btn_Edit_Click(object sender, EventArgs e)
@@ -176,18 +209,18 @@ namespace Team5BLibraryManagementSystem
             btn_Save.Visible = true;
             btn_Cancel.Visible = true;
             btn_Delete.Visible = false;
-            Textbox_Address.Enabled = true;
-            Textbox_Membername.Enabled = true;
-            Textbox_Phone.Enabled = true;
-            Textbox_email.Enabled = true;
-            Datetimepicker_Dob.Enabled = true;
+            textbox_Address.Enabled = true;
+            textbox_Membername.Enabled = true;
+            textbox_Phone.Enabled = true;
+            textbox_email.Enabled = true;
+            datetimepicker_Dob.Enabled = true;
         }
 
         private void btn_Save_Click(object sender, EventArgs e)
         {
             try
             {
-                if (Textbox_Membername.Text == "" || Textbox_Phone.Text == "" || Textbox_email.Text == "" || Textbox_Address.Text == "")
+                if (textbox_Membername.Text == "" || textbox_Phone.Text == "" || textbox_email.Text == "" || textbox_Address.Text == "")
                 {
                     MessageBox.Show("Please fill up all the fields!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
@@ -195,17 +228,17 @@ namespace Team5BLibraryManagementSystem
                 else
                 {
                     SA47Team05BESNETLMSEntities context = new SA47Team05BESNETLMSEntities();
-                    Member q = context.Members.Where(x => x.memberid.ToString() == Textbox_Idnumber.Text).First();
+                    Member q = context.Members.Where(x => x.memberid.ToString() == textbox_Idnumber.Text).First();
 
-                    if (chkvldy.IsValidName(Textbox_Membername.Text) && chkvldy.IsValidPhone(Textbox_Phone.Text))
+                    if (ZtkValidityCheck.IsValidName(textbox_Membername.Text) && ZtkValidityCheck.IsValidPhone(textbox_Phone.Text))
                     {
-                        q.name = Textbox_Membername.Text;
-                        q.phonenumber = Textbox_Phone.Text;
-                        if (chkvldy.IsValidEmail(Textbox_email.Text))
+                        q.name = textbox_Membername.Text;
+                        q.phonenumber = textbox_Phone.Text;
+                        if (chkvldy.IsValidEmail(textbox_email.Text))
                         {
-                            q.email = Textbox_email.Text;
-                            q.dateofbirth = Convert.ToDateTime(Datetimepicker_Dob.Text);
-                            q.address = Textbox_Address.Text;
+                            q.email = textbox_email.Text;
+                            q.dateofbirth = Convert.ToDateTime(datetimepicker_Dob.Text);
+                            q.address = textbox_Address.Text;
                             context.SaveChanges();
                             DefaultVisibility();
                         }
@@ -234,15 +267,24 @@ namespace Team5BLibraryManagementSystem
             btn_Save.Visible = false;
             btn_Cancel.Visible = false;
             btn_Delete.Visible = true;
-            Textbox_Address.Enabled = false;
-            Textbox_Membername.Enabled = false;
-            Textbox_Phone.Enabled = false;
-            Textbox_email.Enabled = false;
-            Datetimepicker_Dob.Enabled = false;
+            textbox_Address.Enabled = false;
+            textbox_Membername.Enabled = false;
+            textbox_Phone.Enabled = false;
+            textbox_email.Enabled = false;
+            datetimepicker_Dob.Enabled = false;
         }
 
+        //To clear all the fields
+        private void Clearfields()
+        {
+            textbox_Address.Clear();
+            textbox_Idnumber.Clear();
+            textbox_Membername.Clear();
+            textbox_Phone.Clear();
+            textbox_email.Clear();
+            datetimepicker_Dob.ResetText();
+            datetimepicker_Expirydate.ResetText();
+            datetimepicker_Joineddate.ResetText();
+        }
     }
-
-
-
 }

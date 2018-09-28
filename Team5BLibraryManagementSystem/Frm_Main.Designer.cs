@@ -250,6 +250,7 @@
             // uc_Addbook1
             // 
             this.uc_Addbook1.BackColor = System.Drawing.Color.White;
+            this.uc_Addbook1.ForeColor = System.Drawing.Color.White;
             this.uc_Addbook1.Location = new System.Drawing.Point(214, 142);
             this.uc_Addbook1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uc_Addbook1.Name = "uc_Addbook1";
@@ -330,7 +331,7 @@
             this.Controls.Add(this.uc_Membersearchedit1);
             this.Controls.Add(this.uc_Addmember1);
             this.Name = "Frm_Main";
-            this.Text = "Frm_Main";
+            this.Text = "Library Management System";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frm_Main_FormClosing);
             this.Load += new System.EventHandler(this.Frm_Main_Load);
             this.MouseLeave += new System.EventHandler(this.Frm_Main_MouseLeave);

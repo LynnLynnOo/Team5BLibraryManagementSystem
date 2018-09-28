@@ -73,7 +73,7 @@
     <Compile Include="Booksdetail.cs">
       <DependentUpon>SA47Team05BESNETLMS.tt</DependentUpon>
     </Compile>
-    <Compile Include="Checkemailvalidity.cs" />
+    <Compile Include="ZtkValidityCheck.cs" />
     <Compile Include="DataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
