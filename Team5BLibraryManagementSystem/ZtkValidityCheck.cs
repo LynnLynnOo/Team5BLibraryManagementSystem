@@ -61,6 +61,8 @@ namespace Team5BLibraryManagementSystem
         //Check phone validity
         public static bool IsValidPhone(string strIn)
         {
+
+           
             if (strIn.Any(char.IsDigit))
             {
                 return true;

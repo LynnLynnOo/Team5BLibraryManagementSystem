@@ -437,12 +437,12 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label10.Location = new System.Drawing.Point(342, 5);
+            this.label10.Location = new System.Drawing.Point(315, 5);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(208, 33);
+            this.label10.Size = new System.Drawing.Size(289, 33);
             this.label10.TabIndex = 70;
-            this.label10.Text = "Search Books";
+            this.label10.Text = "Books Management";
             // 
             // Uc_Addbook
             // 

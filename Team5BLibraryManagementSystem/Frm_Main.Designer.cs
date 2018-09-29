@@ -99,9 +99,9 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::Team5BLibraryManagementSystem.Properties.Resources.Banner;
-            this.pictureBox2.Location = new System.Drawing.Point(214, 0);
+            this.pictureBox2.Location = new System.Drawing.Point(216, 0);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(882, 140);
+            this.pictureBox2.Size = new System.Drawing.Size(881, 140);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 38;
             this.pictureBox2.TabStop = false;
@@ -305,6 +305,7 @@
             this.uc_Addmember1.Name = "uc_Addmember1";
             this.uc_Addmember1.Size = new System.Drawing.Size(882, 517);
             this.uc_Addmember1.TabIndex = 46;
+            this.uc_Addmember1.MouseEnter += new System.EventHandler(this.uc_Addmember1_MouseEnter);
             // 
             // Frm_Main
             // 
@@ -323,14 +324,15 @@
             this.Controls.Add(this.btn_Registernewbooks);
             this.Controls.Add(this.btn_Addnewmember);
             this.Controls.Add(this.btn_Searcheditmember);
+            this.Controls.Add(this.uc_Addmember1);
             this.Controls.Add(this.uc_LendBook1);
             this.Controls.Add(this.uc_Addbook1);
             this.Controls.Add(this.uc_ReturnBook1);
             this.Controls.Add(this.uc_Researchbook1);
             this.Controls.Add(this.uc_Reports4);
             this.Controls.Add(this.uc_Membersearchedit1);
-            this.Controls.Add(this.uc_Addmember1);
             this.Name = "Frm_Main";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Library Management System";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frm_Main_FormClosing);
             this.Load += new System.EventHandler(this.Frm_Main_Load);

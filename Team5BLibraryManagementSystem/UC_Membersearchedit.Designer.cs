@@ -32,13 +32,19 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textbox_Category = new System.Windows.Forms.TextBox();
             this.Gb_Memberinformation = new System.Windows.Forms.GroupBox();
+            this.btn_Renew = new System.Windows.Forms.Button();
+            this.btn_History = new System.Windows.Forms.Button();
+            this.label_Address = new System.Windows.Forms.Label();
+            this.label_EmailAddress = new System.Windows.Forms.Label();
+            this.label_Phone = new System.Windows.Forms.Label();
+            this.label_MemberId = new System.Windows.Forms.Label();
+            this.label_MemberName = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.textbox_Status = new System.Windows.Forms.TextBox();
             this.btn_Cancel = new System.Windows.Forms.Button();
             this.btn_Save = new System.Windows.Forms.Button();
             this.btn_Delete = new System.Windows.Forms.Button();
             this.btn_Edit = new System.Windows.Forms.Button();
-            this.btn_Print = new System.Windows.Forms.Button();
             this.datetimepicker_Dob = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.textbox_Phone = new System.Windows.Forms.TextBox();
@@ -58,11 +64,6 @@
             this.labelSearch = new System.Windows.Forms.Label();
             this.btn_Search = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.label_MemberName = new System.Windows.Forms.Label();
-            this.label_MemberId = new System.Windows.Forms.Label();
-            this.label_Phone = new System.Windows.Forms.Label();
-            this.label_EmailAddress = new System.Windows.Forms.Label();
-            this.label_Address = new System.Windows.Forms.Label();
             this.Gb_Memberinformation.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -106,6 +107,8 @@
             // 
             // Gb_Memberinformation
             // 
+            this.Gb_Memberinformation.Controls.Add(this.btn_Renew);
+            this.Gb_Memberinformation.Controls.Add(this.btn_History);
             this.Gb_Memberinformation.Controls.Add(this.label_Address);
             this.Gb_Memberinformation.Controls.Add(this.label_EmailAddress);
             this.Gb_Memberinformation.Controls.Add(this.label_Phone);
@@ -117,7 +120,6 @@
             this.Gb_Memberinformation.Controls.Add(this.btn_Save);
             this.Gb_Memberinformation.Controls.Add(this.btn_Delete);
             this.Gb_Memberinformation.Controls.Add(this.btn_Edit);
-            this.Gb_Memberinformation.Controls.Add(this.btn_Print);
             this.Gb_Memberinformation.Controls.Add(this.datetimepicker_Dob);
             this.Gb_Memberinformation.Controls.Add(this.label7);
             this.Gb_Memberinformation.Controls.Add(this.textbox_Phone);
@@ -144,6 +146,89 @@
             this.Gb_Memberinformation.Text = "Member Information";
             this.Gb_Memberinformation.Visible = false;
             // 
+            // btn_Renew
+            // 
+            this.btn_Renew.Location = new System.Drawing.Point(628, 265);
+            this.btn_Renew.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn_Renew.Name = "btn_Renew";
+            this.btn_Renew.Size = new System.Drawing.Size(112, 38);
+            this.btn_Renew.TabIndex = 103;
+            this.btn_Renew.Text = "Renew";
+            this.btn_Renew.UseVisualStyleBackColor = true;
+            this.btn_Renew.Visible = false;
+            this.btn_Renew.Click += new System.EventHandler(this.btn_Renew_Click);
+            // 
+            // btn_History
+            // 
+            this.btn_History.Location = new System.Drawing.Point(628, 93);
+            this.btn_History.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn_History.Name = "btn_History";
+            this.btn_History.Size = new System.Drawing.Size(112, 38);
+            this.btn_History.TabIndex = 13;
+            this.btn_History.Text = "History";
+            this.btn_History.UseVisualStyleBackColor = true;
+            this.btn_History.Click += new System.EventHandler(this.btn_History_Click);
+            // 
+            // label_Address
+            // 
+            this.label_Address.AutoSize = true;
+            this.label_Address.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Address.ForeColor = System.Drawing.Color.Crimson;
+            this.label_Address.Location = new System.Drawing.Point(581, 222);
+            this.label_Address.Name = "label_Address";
+            this.label_Address.Size = new System.Drawing.Size(15, 20);
+            this.label_Address.TabIndex = 102;
+            this.label_Address.Text = "*";
+            this.label_Address.Visible = false;
+            // 
+            // label_EmailAddress
+            // 
+            this.label_EmailAddress.AutoSize = true;
+            this.label_EmailAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_EmailAddress.ForeColor = System.Drawing.Color.Crimson;
+            this.label_EmailAddress.Location = new System.Drawing.Point(581, 148);
+            this.label_EmailAddress.Name = "label_EmailAddress";
+            this.label_EmailAddress.Size = new System.Drawing.Size(15, 20);
+            this.label_EmailAddress.TabIndex = 101;
+            this.label_EmailAddress.Text = "*";
+            this.label_EmailAddress.Visible = false;
+            // 
+            // label_Phone
+            // 
+            this.label_Phone.AutoSize = true;
+            this.label_Phone.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Phone.ForeColor = System.Drawing.Color.Crimson;
+            this.label_Phone.Location = new System.Drawing.Point(581, 111);
+            this.label_Phone.Name = "label_Phone";
+            this.label_Phone.Size = new System.Drawing.Size(15, 20);
+            this.label_Phone.TabIndex = 100;
+            this.label_Phone.Text = "*";
+            this.label_Phone.Visible = false;
+            // 
+            // label_MemberId
+            // 
+            this.label_MemberId.AutoSize = true;
+            this.label_MemberId.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_MemberId.ForeColor = System.Drawing.Color.Crimson;
+            this.label_MemberId.Location = new System.Drawing.Point(581, 74);
+            this.label_MemberId.Name = "label_MemberId";
+            this.label_MemberId.Size = new System.Drawing.Size(15, 20);
+            this.label_MemberId.TabIndex = 99;
+            this.label_MemberId.Text = "*";
+            this.label_MemberId.Visible = false;
+            // 
+            // label_MemberName
+            // 
+            this.label_MemberName.AutoSize = true;
+            this.label_MemberName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_MemberName.ForeColor = System.Drawing.Color.Crimson;
+            this.label_MemberName.Location = new System.Drawing.Point(581, 37);
+            this.label_MemberName.Name = "label_MemberName";
+            this.label_MemberName.Size = new System.Drawing.Size(15, 20);
+            this.label_MemberName.TabIndex = 98;
+            this.label_MemberName.Text = "*";
+            this.label_MemberName.Visible = false;
+            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -158,6 +243,7 @@
             // 
             // textbox_Status
             // 
+            this.textbox_Status.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textbox_Status.Location = new System.Drawing.Point(245, 333);
             this.textbox_Status.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textbox_Status.Name = "textbox_Status";
@@ -167,61 +253,51 @@
             // 
             // btn_Cancel
             // 
-            this.btn_Cancel.Location = new System.Drawing.Point(703, 206);
+            this.btn_Cancel.Location = new System.Drawing.Point(628, 208);
             this.btn_Cancel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_Cancel.Name = "btn_Cancel";
             this.btn_Cancel.Size = new System.Drawing.Size(112, 38);
-            this.btn_Cancel.TabIndex = 17;
+            this.btn_Cancel.TabIndex = 18;
             this.btn_Cancel.Text = "Cancel";
             this.btn_Cancel.UseVisualStyleBackColor = true;
             this.btn_Cancel.Click += new System.EventHandler(this.btn_Cancel_Click);
             // 
             // btn_Save
             // 
-            this.btn_Save.Location = new System.Drawing.Point(703, 150);
+            this.btn_Save.Location = new System.Drawing.Point(628, 151);
             this.btn_Save.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_Save.Name = "btn_Save";
             this.btn_Save.Size = new System.Drawing.Size(112, 38);
-            this.btn_Save.TabIndex = 16;
+            this.btn_Save.TabIndex = 17;
             this.btn_Save.Text = "Save";
             this.btn_Save.UseVisualStyleBackColor = true;
             this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
             // 
             // btn_Delete
             // 
-            this.btn_Delete.Location = new System.Drawing.Point(628, 206);
+            this.btn_Delete.Location = new System.Drawing.Point(628, 208);
             this.btn_Delete.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_Delete.Name = "btn_Delete";
             this.btn_Delete.Size = new System.Drawing.Size(112, 38);
-            this.btn_Delete.TabIndex = 15;
+            this.btn_Delete.TabIndex = 16;
             this.btn_Delete.Text = "Delete";
             this.btn_Delete.UseVisualStyleBackColor = true;
             this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
             // 
             // btn_Edit
             // 
-            this.btn_Edit.Location = new System.Drawing.Point(628, 150);
+            this.btn_Edit.Location = new System.Drawing.Point(628, 151);
             this.btn_Edit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_Edit.Name = "btn_Edit";
             this.btn_Edit.Size = new System.Drawing.Size(112, 38);
-            this.btn_Edit.TabIndex = 14;
+            this.btn_Edit.TabIndex = 15;
             this.btn_Edit.Text = "Edit";
             this.btn_Edit.UseVisualStyleBackColor = true;
             this.btn_Edit.Click += new System.EventHandler(this.btn_Edit_Click);
             // 
-            // btn_Print
-            // 
-            this.btn_Print.Location = new System.Drawing.Point(628, 96);
-            this.btn_Print.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btn_Print.Name = "btn_Print";
-            this.btn_Print.Size = new System.Drawing.Size(112, 38);
-            this.btn_Print.TabIndex = 13;
-            this.btn_Print.Text = "Print";
-            this.btn_Print.UseVisualStyleBackColor = true;
-            this.btn_Print.Click += new System.EventHandler(this.btn_Print_Click);
-            // 
             // datetimepicker_Dob
             // 
+            this.datetimepicker_Dob.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.datetimepicker_Dob.Location = new System.Drawing.Point(245, 185);
             this.datetimepicker_Dob.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.datetimepicker_Dob.Name = "datetimepicker_Dob";
@@ -242,6 +318,7 @@
             // 
             // textbox_Phone
             // 
+            this.textbox_Phone.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textbox_Phone.Location = new System.Drawing.Point(245, 111);
             this.textbox_Phone.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textbox_Phone.Name = "textbox_Phone";
@@ -263,6 +340,7 @@
             // datetimepicker_Expirydate
             // 
             this.datetimepicker_Expirydate.Enabled = false;
+            this.datetimepicker_Expirydate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.datetimepicker_Expirydate.Location = new System.Drawing.Point(245, 296);
             this.datetimepicker_Expirydate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.datetimepicker_Expirydate.Name = "datetimepicker_Expirydate";
@@ -272,6 +350,7 @@
             // datetimepicker_Joineddate
             // 
             this.datetimepicker_Joineddate.Enabled = false;
+            this.datetimepicker_Joineddate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.datetimepicker_Joineddate.Location = new System.Drawing.Point(245, 259);
             this.datetimepicker_Joineddate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.datetimepicker_Joineddate.Name = "datetimepicker_Joineddate";
@@ -352,6 +431,7 @@
             // 
             // textbox_Address
             // 
+            this.textbox_Address.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textbox_Address.Location = new System.Drawing.Point(245, 222);
             this.textbox_Address.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textbox_Address.Name = "textbox_Address";
@@ -360,6 +440,7 @@
             // 
             // textbox_email
             // 
+            this.textbox_email.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textbox_email.Location = new System.Drawing.Point(245, 148);
             this.textbox_email.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textbox_email.Name = "textbox_email";
@@ -369,6 +450,7 @@
             // textbox_Idnumber
             // 
             this.textbox_Idnumber.BackColor = System.Drawing.Color.White;
+            this.textbox_Idnumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textbox_Idnumber.Location = new System.Drawing.Point(245, 74);
             this.textbox_Idnumber.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textbox_Idnumber.Name = "textbox_Idnumber";
@@ -378,6 +460,7 @@
             // 
             // textbox_Membername
             // 
+            this.textbox_Membername.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textbox_Membername.Location = new System.Drawing.Point(245, 37);
             this.textbox_Membername.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textbox_Membername.Name = "textbox_Membername";
@@ -400,7 +483,7 @@
             // 
             this.btn_Search.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Search.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btn_Search.Location = new System.Drawing.Point(655, 62);
+            this.btn_Search.Location = new System.Drawing.Point(657, 62);
             this.btn_Search.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_Search.Name = "btn_Search";
             this.btn_Search.Size = new System.Drawing.Size(112, 38);
@@ -420,66 +503,6 @@
             this.label6.Size = new System.Drawing.Size(323, 33);
             this.label6.TabIndex = 73;
             this.label6.Text = "Member Maintenance ";
-            // 
-            // label_MemberName
-            // 
-            this.label_MemberName.AutoSize = true;
-            this.label_MemberName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_MemberName.ForeColor = System.Drawing.Color.Crimson;
-            this.label_MemberName.Location = new System.Drawing.Point(581, 37);
-            this.label_MemberName.Name = "label_MemberName";
-            this.label_MemberName.Size = new System.Drawing.Size(24, 29);
-            this.label_MemberName.TabIndex = 98;
-            this.label_MemberName.Text = "*";
-            this.label_MemberName.Visible = false;
-            // 
-            // label_MemberId
-            // 
-            this.label_MemberId.AutoSize = true;
-            this.label_MemberId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_MemberId.ForeColor = System.Drawing.Color.Crimson;
-            this.label_MemberId.Location = new System.Drawing.Point(581, 74);
-            this.label_MemberId.Name = "label_MemberId";
-            this.label_MemberId.Size = new System.Drawing.Size(24, 29);
-            this.label_MemberId.TabIndex = 99;
-            this.label_MemberId.Text = "*";
-            this.label_MemberId.Visible = false;
-            // 
-            // label_Phone
-            // 
-            this.label_Phone.AutoSize = true;
-            this.label_Phone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Phone.ForeColor = System.Drawing.Color.Crimson;
-            this.label_Phone.Location = new System.Drawing.Point(581, 111);
-            this.label_Phone.Name = "label_Phone";
-            this.label_Phone.Size = new System.Drawing.Size(24, 29);
-            this.label_Phone.TabIndex = 100;
-            this.label_Phone.Text = "*";
-            this.label_Phone.Visible = false;
-            // 
-            // label_EmailAddress
-            // 
-            this.label_EmailAddress.AutoSize = true;
-            this.label_EmailAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_EmailAddress.ForeColor = System.Drawing.Color.Crimson;
-            this.label_EmailAddress.Location = new System.Drawing.Point(581, 148);
-            this.label_EmailAddress.Name = "label_EmailAddress";
-            this.label_EmailAddress.Size = new System.Drawing.Size(24, 29);
-            this.label_EmailAddress.TabIndex = 101;
-            this.label_EmailAddress.Text = "*";
-            this.label_EmailAddress.Visible = false;
-            // 
-            // label_Address
-            // 
-            this.label_Address.AutoSize = true;
-            this.label_Address.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Address.ForeColor = System.Drawing.Color.Crimson;
-            this.label_Address.Location = new System.Drawing.Point(581, 222);
-            this.label_Address.Name = "label_Address";
-            this.label_Address.Size = new System.Drawing.Size(24, 29);
-            this.label_Address.TabIndex = 102;
-            this.label_Address.Text = "*";
-            this.label_Address.Visible = false;
             // 
             // Uc_Membersearchedit
             // 
@@ -510,7 +533,6 @@
         private System.Windows.Forms.GroupBox Gb_Memberinformation;
         private System.Windows.Forms.Button btn_Delete;
         private System.Windows.Forms.Button btn_Edit;
-        private System.Windows.Forms.Button btn_Print;
         private System.Windows.Forms.DateTimePicker datetimepicker_Dob;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textbox_Phone;
@@ -539,5 +561,7 @@
         private System.Windows.Forms.Label label_Phone;
         private System.Windows.Forms.Label label_MemberId;
         private System.Windows.Forms.Label label_MemberName;
+        private System.Windows.Forms.Button btn_Renew;
+        private System.Windows.Forms.Button btn_History;
     }
 }

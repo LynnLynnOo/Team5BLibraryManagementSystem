@@ -33,6 +33,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.text_Bookid = new System.Windows.Forms.TextBox();
             this.but_Return = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -88,11 +89,24 @@
             this.but_Return.UseVisualStyleBackColor = true;
             this.but_Return.Click += new System.EventHandler(this.but_Return_Click);
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label9.Location = new System.Drawing.Point(370, 39);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(203, 33);
+            this.label9.TabIndex = 67;
+            this.label9.Text = "Return Books";
+            // 
             // Uc_ReturnBook
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.but_Return);
             this.Controls.Add(this.text_Bookid);
             this.Controls.Add(this.label2);
@@ -114,5 +128,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox text_Bookid;
         private System.Windows.Forms.Button but_Return;
+        private System.Windows.Forms.Label label9;
     }
 }

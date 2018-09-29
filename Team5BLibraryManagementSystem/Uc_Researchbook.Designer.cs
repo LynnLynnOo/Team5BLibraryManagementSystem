@@ -34,12 +34,13 @@
             this.butSearch = new System.Windows.Forms.Button();
             this.comboBox_Choose = new System.Windows.Forms.ComboBox();
             this.labelSearch = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.data_Search)).BeginInit();
             this.SuspendLayout();
             // 
             // text_Search
             // 
-            this.text_Search.Location = new System.Drawing.Point(319, 95);
+            this.text_Search.Location = new System.Drawing.Point(319, 114);
             this.text_Search.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.text_Search.Name = "text_Search";
             this.text_Search.Size = new System.Drawing.Size(283, 26);
@@ -64,7 +65,7 @@
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label1.Location = new System.Drawing.Point(205, 55);
+            this.label1.Location = new System.Drawing.Point(205, 74);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(96, 20);
@@ -75,7 +76,7 @@
             // 
             this.butSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.butSearch.Location = new System.Drawing.Point(627, 70);
+            this.butSearch.Location = new System.Drawing.Point(627, 89);
             this.butSearch.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.butSearch.Name = "butSearch";
             this.butSearch.Size = new System.Drawing.Size(112, 38);
@@ -97,7 +98,7 @@
             "Isbn",
             "Status",
             ""});
-            this.comboBox_Choose.Location = new System.Drawing.Point(319, 55);
+            this.comboBox_Choose.Location = new System.Drawing.Point(319, 74);
             this.comboBox_Choose.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.comboBox_Choose.Name = "comboBox_Choose";
             this.comboBox_Choose.Size = new System.Drawing.Size(283, 28);
@@ -108,17 +109,30 @@
             this.labelSearch.AutoSize = true;
             this.labelSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelSearch.ForeColor = System.Drawing.Color.Crimson;
-            this.labelSearch.Location = new System.Drawing.Point(315, 126);
+            this.labelSearch.Location = new System.Drawing.Point(315, 145);
             this.labelSearch.Name = "labelSearch";
             this.labelSearch.Size = new System.Drawing.Size(268, 20);
             this.labelSearch.TabIndex = 74;
             this.labelSearch.Text = "*Please key in the search words.";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label9.Location = new System.Drawing.Point(371, 11);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(208, 33);
+            this.label9.TabIndex = 75;
+            this.label9.Text = "Search Books";
             // 
             // Uc_Researchbook
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.labelSearch);
             this.Controls.Add(this.comboBox_Choose);
             this.Controls.Add(this.text_Search);
@@ -143,5 +157,6 @@
         private System.Windows.Forms.Button butSearch;
         private System.Windows.Forms.ComboBox comboBox_Choose;
         private System.Windows.Forms.Label labelSearch;
+        private System.Windows.Forms.Label label9;
     }
 }

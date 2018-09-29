@@ -48,6 +48,7 @@
             this.rdbtn_Overduebymorethan3days = new System.Windows.Forms.RadioButton();
             this.rdbtn_Overdueby3days = new System.Windows.Forms.RadioButton();
             this.rdbtn_Overdueby1day = new System.Windows.Forms.RadioButton();
+            this.label9 = new System.Windows.Forms.Label();
             this.groupBox_Weeklyloanreport.SuspendLayout();
             this.groupBox_MemberListing.SuspendLayout();
             this.groupBox_BookList.SuspendLayout();
@@ -60,7 +61,7 @@
             this.label_Typesofreport.BackColor = System.Drawing.Color.White;
             this.label_Typesofreport.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_Typesofreport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label_Typesofreport.Location = new System.Drawing.Point(191, 39);
+            this.label_Typesofreport.Location = new System.Drawing.Point(183, 85);
             this.label_Typesofreport.Name = "label_Typesofreport";
             this.label_Typesofreport.Size = new System.Drawing.Size(142, 20);
             this.label_Typesofreport.TabIndex = 0;
@@ -77,7 +78,7 @@
             "Book List",
             "Member List",
             "Monthly Loan Report"});
-            this.cmb_Typesofreport.Location = new System.Drawing.Point(355, 39);
+            this.cmb_Typesofreport.Location = new System.Drawing.Point(347, 85);
             this.cmb_Typesofreport.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmb_Typesofreport.Name = "cmb_Typesofreport";
             this.cmb_Typesofreport.Size = new System.Drawing.Size(334, 28);
@@ -90,7 +91,7 @@
             this.groupBox_Weeklyloanreport.Controls.Add(this.btn_Print);
             this.groupBox_Weeklyloanreport.Controls.Add(this.label_EndDate);
             this.groupBox_Weeklyloanreport.Controls.Add(this.label_SelectMonth);
-            this.groupBox_Weeklyloanreport.Location = new System.Drawing.Point(214, 95);
+            this.groupBox_Weeklyloanreport.Location = new System.Drawing.Point(206, 141);
             this.groupBox_Weeklyloanreport.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox_Weeklyloanreport.Name = "groupBox_Weeklyloanreport";
             this.groupBox_Weeklyloanreport.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -136,7 +137,7 @@
             this.groupBox_MemberListing.Controls.Add(this.rdbtn_Membersbeforeexpiry);
             this.groupBox_MemberListing.Controls.Add(this.rdbtn_Allmembers);
             this.groupBox_MemberListing.Controls.Add(this.rdbtn_Membersafterexpiry);
-            this.groupBox_MemberListing.Location = new System.Drawing.Point(214, 95);
+            this.groupBox_MemberListing.Location = new System.Drawing.Point(206, 141);
             this.groupBox_MemberListing.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox_MemberListing.Name = "groupBox_MemberListing";
             this.groupBox_MemberListing.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -204,7 +205,7 @@
             this.groupBox_BookList.Controls.Add(this.rdbtn_Availability);
             this.groupBox_BookList.Controls.Add(this.rdbtn_Category);
             this.groupBox_BookList.Controls.Add(this.btn_BookList);
-            this.groupBox_BookList.Location = new System.Drawing.Point(214, 95);
+            this.groupBox_BookList.Location = new System.Drawing.Point(206, 141);
             this.groupBox_BookList.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox_BookList.Name = "groupBox_BookList";
             this.groupBox_BookList.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -261,7 +262,7 @@
             this.groupBox_OverdueBooks.Controls.Add(this.rdbtn_Overduebymorethan3days);
             this.groupBox_OverdueBooks.Controls.Add(this.rdbtn_Overdueby3days);
             this.groupBox_OverdueBooks.Controls.Add(this.rdbtn_Overdueby1day);
-            this.groupBox_OverdueBooks.Location = new System.Drawing.Point(214, 95);
+            this.groupBox_OverdueBooks.Location = new System.Drawing.Point(206, 141);
             this.groupBox_OverdueBooks.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox_OverdueBooks.Name = "groupBox_OverdueBooks";
             this.groupBox_OverdueBooks.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -324,17 +325,30 @@
             this.rdbtn_Overdueby1day.Text = "Overdue By 1 Day";
             this.rdbtn_Overdueby1day.UseVisualStyleBackColor = true;
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label9.Location = new System.Drawing.Point(377, 17);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(124, 33);
+            this.label9.TabIndex = 67;
+            this.label9.Text = "Reports";
+            // 
             // Uc_Reports
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.cmb_Typesofreport);
             this.Controls.Add(this.label_Typesofreport);
-            this.Controls.Add(this.groupBox_BookList);
-            this.Controls.Add(this.groupBox_OverdueBooks);
             this.Controls.Add(this.groupBox_MemberListing);
             this.Controls.Add(this.groupBox_Weeklyloanreport);
+            this.Controls.Add(this.groupBox_BookList);
+            this.Controls.Add(this.groupBox_OverdueBooks);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Uc_Reports";
             this.Size = new System.Drawing.Size(882, 517);
@@ -373,5 +387,6 @@
         private System.Windows.Forms.RadioButton rdbtn_Overdueby1day;
         private System.Windows.Forms.RadioButton rdbtn_Availability;
         private System.Windows.Forms.RadioButton rdbtn_Category;
+        private System.Windows.Forms.Label label9;
     }
 }
