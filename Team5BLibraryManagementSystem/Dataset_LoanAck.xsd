@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema id="Dataset_MonthlyLoanReport" targetNamespace="http://tempuri.org/Dataset_MonthlyLoanReport.xsd" xmlns:mstns="http://tempuri.org/Dataset_MonthlyLoanReport.xsd" xmlns="http://tempuri.org/Dataset_MonthlyLoanReport.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+<xs:schema id="Dataset_LoanAck" targetNamespace="http://tempuri.org/Dataset_LoanAck.xsd" xmlns:mstns="http://tempuri.org/Dataset_LoanAck.xsd" xmlns="http://tempuri.org/Dataset_LoanAck.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
@@ -7,12 +7,12 @@
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="SA47Team05BESNETLMSConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="SA47Team05BESNETLMSConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Team5BLibraryManagementSystem.Properties.Settings.GlobalReference.Default.SA47Team05BESNETLMSConnectionString" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ViewAllLoanedBooksTableAdapter" GeneratorDataComponentClassName="ViewAllLoanedBooksTableAdapter" Name="ViewAllLoanedBooks" UserDataComponentName="ViewAllLoanedBooksTableAdapter">
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ViewLoanedBooksTableAdapter" GeneratorDataComponentClassName="ViewLoanedBooksTableAdapter" Name="ViewLoanedBooks" UserDataComponentName="ViewLoanedBooksTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="SA47Team05BESNETLMSConnectionString (Settings)" DbObjectName="SA47Team05BESNETLMS.dbo.ViewAllLoanedBooks" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="SA47Team05BESNETLMSConnectionString (Settings)" DbObjectName="SA47Team05BESNETLMS.dbo.ViewLoanedBooks" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT bookid, status, title, author, publisher, publishyear, category, isbn, startdate, enddate FROM dbo.ViewAllLoanedBooks</CommandText>
+                    <CommandText>SELECT bookid, loandetailsid, status, title, author, publisher, publishyear, category, isbn, startdate, enddate, Difference FROM dbo.ViewLoanedBooks</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -20,6 +20,7 @@
             </MainSource>
             <Mappings>
               <Mapping SourceColumn="bookid" DataSetColumn="bookid" />
+              <Mapping SourceColumn="loandetailsid" DataSetColumn="loandetailsid" />
               <Mapping SourceColumn="status" DataSetColumn="status" />
               <Mapping SourceColumn="title" DataSetColumn="title" />
               <Mapping SourceColumn="author" DataSetColumn="author" />
@@ -29,21 +30,34 @@
               <Mapping SourceColumn="isbn" DataSetColumn="isbn" />
               <Mapping SourceColumn="startdate" DataSetColumn="startdate" />
               <Mapping SourceColumn="enddate" DataSetColumn="enddate" />
+              <Mapping SourceColumn="Difference" DataSetColumn="Difference" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="SA47Team05BESNETLMSConnectionString (Settings)" DbObjectName="SA47Team05BESNETLMS.dbo.ViewLoanedBooks" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT bookid, loandetailsid, status, title, author, publisher, publishyear, category, isbn, startdate, enddate, Difference FROM dbo.ViewLoanedBooks where loandetailsid = @loandetailsid</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="loandetailsid" ColumnName="loandetailsid" DataSourceName="SA47Team05BESNETLMS.dbo.ViewLoanedBooks" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@loandetailsid" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="loandetailsid" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="Dataset_MonthlyLoanReport" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="Dataset_MonthlyLoanReport" msprop:Generator_UserDSName="Dataset_MonthlyLoanReport">
+  <xs:element name="Dataset_LoanAck" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="Dataset_LoanAck" msprop:Generator_UserDSName="Dataset_LoanAck">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="ViewAllLoanedBooks" msprop:Generator_TableClassName="ViewAllLoanedBooksDataTable" msprop:Generator_TableVarName="tableViewAllLoanedBooks" msprop:Generator_TablePropName="ViewAllLoanedBooks" msprop:Generator_RowDeletingName="ViewAllLoanedBooksRowDeleting" msprop:Generator_RowChangingName="ViewAllLoanedBooksRowChanging" msprop:Generator_RowEvHandlerName="ViewAllLoanedBooksRowChangeEventHandler" msprop:Generator_RowDeletedName="ViewAllLoanedBooksRowDeleted" msprop:Generator_UserTableName="ViewAllLoanedBooks" msprop:Generator_RowChangedName="ViewAllLoanedBooksRowChanged" msprop:Generator_RowEvArgName="ViewAllLoanedBooksRowChangeEvent" msprop:Generator_RowClassName="ViewAllLoanedBooksRow">
+        <xs:element name="ViewLoanedBooks" msprop:Generator_TableClassName="ViewLoanedBooksDataTable" msprop:Generator_TableVarName="tableViewLoanedBooks" msprop:Generator_RowChangedName="ViewLoanedBooksRowChanged" msprop:Generator_TablePropName="ViewLoanedBooks" msprop:Generator_RowDeletingName="ViewLoanedBooksRowDeleting" msprop:Generator_RowChangingName="ViewLoanedBooksRowChanging" msprop:Generator_RowEvHandlerName="ViewLoanedBooksRowChangeEventHandler" msprop:Generator_RowDeletedName="ViewLoanedBooksRowDeleted" msprop:Generator_RowClassName="ViewLoanedBooksRow" msprop:Generator_UserTableName="ViewLoanedBooks" msprop:Generator_RowEvArgName="ViewLoanedBooksRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="bookid" msprop:Generator_ColumnVarNameInTable="columnbookid" msprop:Generator_ColumnPropNameInRow="bookid" msprop:Generator_ColumnPropNameInTable="bookidColumn" msprop:Generator_UserColumnName="bookid" type="xs:int" />
+              <xs:element name="loandetailsid" msprop:Generator_ColumnVarNameInTable="columnloandetailsid" msprop:Generator_ColumnPropNameInRow="loandetailsid" msprop:Generator_ColumnPropNameInTable="loandetailsidColumn" msprop:Generator_UserColumnName="loandetailsid" type="xs:int" />
               <xs:element name="status" msprop:Generator_ColumnVarNameInTable="columnstatus" msprop:Generator_ColumnPropNameInRow="status" msprop:Generator_ColumnPropNameInTable="statusColumn" msprop:Generator_UserColumnName="status">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -89,14 +103,11 @@
               </xs:element>
               <xs:element name="startdate" msprop:Generator_ColumnVarNameInTable="columnstartdate" msprop:Generator_ColumnPropNameInRow="startdate" msprop:Generator_ColumnPropNameInTable="startdateColumn" msprop:Generator_UserColumnName="startdate" type="xs:dateTime" />
               <xs:element name="enddate" msprop:Generator_ColumnVarNameInTable="columnenddate" msprop:Generator_ColumnPropNameInRow="enddate" msprop:Generator_ColumnPropNameInTable="enddateColumn" msprop:Generator_UserColumnName="enddate" type="xs:dateTime" />
+              <xs:element name="Difference" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDifference" msprop:Generator_ColumnPropNameInRow="Difference" msprop:Generator_ColumnPropNameInTable="DifferenceColumn" msprop:Generator_UserColumnName="Difference" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
       </xs:choice>
     </xs:complexType>
-    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:ViewAllLoanedBooks" />
-      <xs:field xpath="mstns:bookid" />
-    </xs:unique>
   </xs:element>
 </xs:schema>

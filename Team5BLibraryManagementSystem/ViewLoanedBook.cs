@@ -15,6 +15,7 @@ namespace Team5BLibraryManagementSystem
     public partial class ViewLoanedBook
     {
         public int bookid { get; set; }
+        public int loandetailsid { get; set; }
         public string status { get; set; }
         public string title { get; set; }
         public string author { get; set; }

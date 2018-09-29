@@ -20,9 +20,12 @@ namespace Team5BLibraryManagementSystem
         private void Frm_BookListingByCategory_Load(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
-            SA47Team05BESNETLMSEntities ctx = new SA47Team05BESNETLMSEntities();
+            var ds = new Dataset_BookListAvailability();
+            var dt = ds.ViewBooksListing;
+            var adapter = new Dataset_BookListAvailabilityTableAdapters.ViewBooksListingTableAdapter();
+            adapter.Fill(dt);
             Rpt_BookListingByCategory cr1 = new Rpt_BookListingByCategory();
-            cr1.SetDataSource(ctx.Booksdetails);
+            cr1.SetDataSource(ds);
             crv_BookListingByCategory.ReportSource = cr1;
 
         }

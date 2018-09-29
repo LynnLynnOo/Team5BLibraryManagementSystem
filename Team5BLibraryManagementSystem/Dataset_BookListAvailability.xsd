@@ -12,7 +12,7 @@
               <DbSource ConnectionRef="SA47Team05BESNETLMSConnectionString (Settings)" DbObjectName="SA47Team05BESNETLMS.dbo.ViewBooksListing" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT bookid, title, author, publisher, category, publishyear, isbn, status FROM dbo.ViewBooksListing</CommandText>
+                    <CommandText>SELECT bookid, title, author, publisher, category, publishyear, isbn, status, location FROM dbo.ViewBooksListing</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -27,6 +27,7 @@
               <Mapping SourceColumn="publishyear" DataSetColumn="publishyear" />
               <Mapping SourceColumn="isbn" DataSetColumn="isbn" />
               <Mapping SourceColumn="status" DataSetColumn="status" />
+              <Mapping SourceColumn="location" DataSetColumn="location" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -82,6 +83,13 @@
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="location" msprop:Generator_ColumnVarNameInTable="columnlocation" msprop:Generator_ColumnPropNameInRow="location" msprop:Generator_ColumnPropNameInTable="locationColumn" msprop:Generator_UserColumnName="location">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>

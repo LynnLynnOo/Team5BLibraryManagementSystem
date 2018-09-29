@@ -225,5 +225,40 @@ namespace Team5BLibraryManagementSystem
         {
             AllMenu(false);
         }
+
+        private void uc_Addmember1_MouseEnter(object sender, EventArgs e)
+        {
+            AllMenu(false);
+        }
+
+        private void uc_Researchbook1_MouseEnter_1(object sender, EventArgs e)
+        {
+            AllMenu(false);
+        }
+
+        private void uc_Addmember1_MouseEnter_1(object sender, EventArgs e)
+        {
+            AllMenu(false);
+        }
+
+        private void uc_Addbook1_MouseEnter_1(object sender, EventArgs e)
+        {
+            AllMenu(false);
+        }
+
+        private void uc_ReturnBook1_MouseEnter_1(object sender, EventArgs e)
+        {
+            AllMenu(false);
+        }
+
+        private void uc_LendBook1_MouseEnter_1(object sender, EventArgs e)
+        {
+            AllMenu(false);
+        }
+
+        private void uc_Reports4_MouseEnter_1(object sender, EventArgs e)
+        {
+            AllMenu(false);
+        }
     }
 }

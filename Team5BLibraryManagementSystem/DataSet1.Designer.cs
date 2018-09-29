@@ -36,11 +36,7 @@ namespace Team5BLibraryManagementSystem {
         
         private UsersDataTable tableUsers;
         
-        private ViewBooksListingDataTable tableViewBooksListing;
-        
-        private ViewLoanedBooksDataTable tableViewLoanedBooks;
-        
-        private ViewTotalLoanCountDataTable tableViewTotalLoanCount;
+        private HistoryByMembersDataTable tableHistoryByMembers;
         
         private global::System.Data.DataRelation relationFK_Books_Booksdetails;
         
@@ -96,14 +92,8 @@ namespace Team5BLibraryManagementSystem {
                 if ((ds.Tables["Users"] != null)) {
                     base.Tables.Add(new UsersDataTable(ds.Tables["Users"]));
                 }
-                if ((ds.Tables["ViewBooksListing"] != null)) {
-                    base.Tables.Add(new ViewBooksListingDataTable(ds.Tables["ViewBooksListing"]));
-                }
-                if ((ds.Tables["ViewLoanedBooks"] != null)) {
-                    base.Tables.Add(new ViewLoanedBooksDataTable(ds.Tables["ViewLoanedBooks"]));
-                }
-                if ((ds.Tables["ViewTotalLoanCount"] != null)) {
-                    base.Tables.Add(new ViewTotalLoanCountDataTable(ds.Tables["ViewTotalLoanCount"]));
+                if ((ds.Tables["HistoryByMembers"] != null)) {
+                    base.Tables.Add(new HistoryByMembersDataTable(ds.Tables["HistoryByMembers"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -187,29 +177,9 @@ namespace Team5BLibraryManagementSystem {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public ViewBooksListingDataTable ViewBooksListing {
+        public HistoryByMembersDataTable HistoryByMembers {
             get {
-                return this.tableViewBooksListing;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Browsable(false)]
-        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public ViewLoanedBooksDataTable ViewLoanedBooks {
-            get {
-                return this.tableViewLoanedBooks;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Browsable(false)]
-        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public ViewTotalLoanCountDataTable ViewTotalLoanCount {
-            get {
-                return this.tableViewTotalLoanCount;
+                return this.tableHistoryByMembers;
             }
         }
         
@@ -298,14 +268,8 @@ namespace Team5BLibraryManagementSystem {
                 if ((ds.Tables["Users"] != null)) {
                     base.Tables.Add(new UsersDataTable(ds.Tables["Users"]));
                 }
-                if ((ds.Tables["ViewBooksListing"] != null)) {
-                    base.Tables.Add(new ViewBooksListingDataTable(ds.Tables["ViewBooksListing"]));
-                }
-                if ((ds.Tables["ViewLoanedBooks"] != null)) {
-                    base.Tables.Add(new ViewLoanedBooksDataTable(ds.Tables["ViewLoanedBooks"]));
-                }
-                if ((ds.Tables["ViewTotalLoanCount"] != null)) {
-                    base.Tables.Add(new ViewTotalLoanCountDataTable(ds.Tables["ViewTotalLoanCount"]));
+                if ((ds.Tables["HistoryByMembers"] != null)) {
+                    base.Tables.Add(new HistoryByMembersDataTable(ds.Tables["HistoryByMembers"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -376,22 +340,10 @@ namespace Team5BLibraryManagementSystem {
                     this.tableUsers.InitVars();
                 }
             }
-            this.tableViewBooksListing = ((ViewBooksListingDataTable)(base.Tables["ViewBooksListing"]));
+            this.tableHistoryByMembers = ((HistoryByMembersDataTable)(base.Tables["HistoryByMembers"]));
             if ((initTable == true)) {
-                if ((this.tableViewBooksListing != null)) {
-                    this.tableViewBooksListing.InitVars();
-                }
-            }
-            this.tableViewLoanedBooks = ((ViewLoanedBooksDataTable)(base.Tables["ViewLoanedBooks"]));
-            if ((initTable == true)) {
-                if ((this.tableViewLoanedBooks != null)) {
-                    this.tableViewLoanedBooks.InitVars();
-                }
-            }
-            this.tableViewTotalLoanCount = ((ViewTotalLoanCountDataTable)(base.Tables["ViewTotalLoanCount"]));
-            if ((initTable == true)) {
-                if ((this.tableViewTotalLoanCount != null)) {
-                    this.tableViewTotalLoanCount.InitVars();
+                if ((this.tableHistoryByMembers != null)) {
+                    this.tableHistoryByMembers.InitVars();
                 }
             }
             this.relationFK_Books_Booksdetails = this.Relations["FK_Books_Booksdetails"];
@@ -420,12 +372,8 @@ namespace Team5BLibraryManagementSystem {
             base.Tables.Add(this.tableReturndetails);
             this.tableUsers = new UsersDataTable();
             base.Tables.Add(this.tableUsers);
-            this.tableViewBooksListing = new ViewBooksListingDataTable();
-            base.Tables.Add(this.tableViewBooksListing);
-            this.tableViewLoanedBooks = new ViewLoanedBooksDataTable();
-            base.Tables.Add(this.tableViewLoanedBooks);
-            this.tableViewTotalLoanCount = new ViewTotalLoanCountDataTable();
-            base.Tables.Add(this.tableViewTotalLoanCount);
+            this.tableHistoryByMembers = new HistoryByMembersDataTable();
+            base.Tables.Add(this.tableHistoryByMembers);
             this.relationFK_Books_Booksdetails = new global::System.Data.DataRelation("FK_Books_Booksdetails", new global::System.Data.DataColumn[] {
                         this.tableBooksdetails.booksdetailsidColumn}, new global::System.Data.DataColumn[] {
                         this.tableBooks.booksdetailsidColumn}, false);
@@ -482,19 +430,7 @@ namespace Team5BLibraryManagementSystem {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private bool ShouldSerializeViewBooksListing() {
-            return false;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private bool ShouldSerializeViewLoanedBooks() {
-            return false;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private bool ShouldSerializeViewTotalLoanCount() {
+        private bool ShouldSerializeHistoryByMembers() {
             return false;
         }
         
@@ -572,13 +508,7 @@ namespace Team5BLibraryManagementSystem {
         public delegate void UsersRowChangeEventHandler(object sender, UsersRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public delegate void ViewBooksListingRowChangeEventHandler(object sender, ViewBooksListingRowChangeEvent e);
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public delegate void ViewLoanedBooksRowChangeEventHandler(object sender, ViewLoanedBooksRowChangeEvent e);
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public delegate void ViewTotalLoanCountRowChangeEventHandler(object sender, ViewTotalLoanCountRowChangeEvent e);
+        public delegate void HistoryByMembersRowChangeEventHandler(object sender, HistoryByMembersRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -2553,396 +2483,13 @@ namespace Team5BLibraryManagementSystem {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class ViewBooksListingDataTable : global::System.Data.TypedTableBase<ViewBooksListingRow> {
+        public partial class HistoryByMembersDataTable : global::System.Data.TypedTableBase<HistoryByMembersRow> {
+            
+            private global::System.Data.DataColumn columnmemberid;
             
             private global::System.Data.DataColumn columnbookid;
             
-            private global::System.Data.DataColumn columntitle;
-            
-            private global::System.Data.DataColumn columnauthor;
-            
-            private global::System.Data.DataColumn columnpublisher;
-            
-            private global::System.Data.DataColumn columncategory;
-            
-            private global::System.Data.DataColumn columnpublishyear;
-            
-            private global::System.Data.DataColumn columnisbn;
-            
-            private global::System.Data.DataColumn columnstatus;
-            
-            private global::System.Data.DataColumn columnlocation;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public ViewBooksListingDataTable() {
-                this.TableName = "ViewBooksListing";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal ViewBooksListingDataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected ViewBooksListingDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn bookidColumn {
-                get {
-                    return this.columnbookid;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn titleColumn {
-                get {
-                    return this.columntitle;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn authorColumn {
-                get {
-                    return this.columnauthor;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn publisherColumn {
-                get {
-                    return this.columnpublisher;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn categoryColumn {
-                get {
-                    return this.columncategory;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn publishyearColumn {
-                get {
-                    return this.columnpublishyear;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn isbnColumn {
-                get {
-                    return this.columnisbn;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn statusColumn {
-                get {
-                    return this.columnstatus;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn locationColumn {
-                get {
-                    return this.columnlocation;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public ViewBooksListingRow this[int index] {
-                get {
-                    return ((ViewBooksListingRow)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event ViewBooksListingRowChangeEventHandler ViewBooksListingRowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event ViewBooksListingRowChangeEventHandler ViewBooksListingRowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event ViewBooksListingRowChangeEventHandler ViewBooksListingRowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event ViewBooksListingRowChangeEventHandler ViewBooksListingRowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void AddViewBooksListingRow(ViewBooksListingRow row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public ViewBooksListingRow AddViewBooksListingRow(int bookid, string title, string author, string publisher, string category, decimal publishyear, string isbn, string status, string location) {
-                ViewBooksListingRow rowViewBooksListingRow = ((ViewBooksListingRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        bookid,
-                        title,
-                        author,
-                        publisher,
-                        category,
-                        publishyear,
-                        isbn,
-                        status,
-                        location};
-                rowViewBooksListingRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowViewBooksListingRow);
-                return rowViewBooksListingRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public ViewBooksListingRow FindBybookid(int bookid) {
-                return ((ViewBooksListingRow)(this.Rows.Find(new object[] {
-                            bookid})));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                ViewBooksListingDataTable cln = ((ViewBooksListingDataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new ViewBooksListingDataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal void InitVars() {
-                this.columnbookid = base.Columns["bookid"];
-                this.columntitle = base.Columns["title"];
-                this.columnauthor = base.Columns["author"];
-                this.columnpublisher = base.Columns["publisher"];
-                this.columncategory = base.Columns["category"];
-                this.columnpublishyear = base.Columns["publishyear"];
-                this.columnisbn = base.Columns["isbn"];
-                this.columnstatus = base.Columns["status"];
-                this.columnlocation = base.Columns["location"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            private void InitClass() {
-                this.columnbookid = new global::System.Data.DataColumn("bookid", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnbookid);
-                this.columntitle = new global::System.Data.DataColumn("title", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columntitle);
-                this.columnauthor = new global::System.Data.DataColumn("author", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnauthor);
-                this.columnpublisher = new global::System.Data.DataColumn("publisher", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnpublisher);
-                this.columncategory = new global::System.Data.DataColumn("category", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columncategory);
-                this.columnpublishyear = new global::System.Data.DataColumn("publishyear", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnpublishyear);
-                this.columnisbn = new global::System.Data.DataColumn("isbn", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnisbn);
-                this.columnstatus = new global::System.Data.DataColumn("status", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnstatus);
-                this.columnlocation = new global::System.Data.DataColumn("location", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnlocation);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnbookid}, true));
-                this.columnbookid.AllowDBNull = false;
-                this.columnbookid.Unique = true;
-                this.columntitle.AllowDBNull = false;
-                this.columntitle.MaxLength = 255;
-                this.columnauthor.AllowDBNull = false;
-                this.columnauthor.MaxLength = 255;
-                this.columnpublisher.AllowDBNull = false;
-                this.columnpublisher.MaxLength = 255;
-                this.columncategory.AllowDBNull = false;
-                this.columncategory.MaxLength = 20;
-                this.columnpublishyear.AllowDBNull = false;
-                this.columnisbn.AllowDBNull = false;
-                this.columnisbn.MaxLength = 13;
-                this.columnstatus.AllowDBNull = false;
-                this.columnstatus.MaxLength = 20;
-                this.columnlocation.AllowDBNull = false;
-                this.columnlocation.MaxLength = 10;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public ViewBooksListingRow NewViewBooksListingRow() {
-                return ((ViewBooksListingRow)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new ViewBooksListingRow(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(ViewBooksListingRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.ViewBooksListingRowChanged != null)) {
-                    this.ViewBooksListingRowChanged(this, new ViewBooksListingRowChangeEvent(((ViewBooksListingRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.ViewBooksListingRowChanging != null)) {
-                    this.ViewBooksListingRowChanging(this, new ViewBooksListingRowChangeEvent(((ViewBooksListingRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.ViewBooksListingRowDeleted != null)) {
-                    this.ViewBooksListingRowDeleted(this, new ViewBooksListingRowChangeEvent(((ViewBooksListingRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.ViewBooksListingRowDeleting != null)) {
-                    this.ViewBooksListingRowDeleting(this, new ViewBooksListingRowChangeEvent(((ViewBooksListingRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void RemoveViewBooksListingRow(ViewBooksListingRow row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DataSet1 ds = new DataSet1();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "ViewBooksListingDataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
-        
-        /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class ViewLoanedBooksDataTable : global::System.Data.TypedTableBase<ViewLoanedBooksRow> {
-            
-            private global::System.Data.DataColumn columnbookid;
-            
-            private global::System.Data.DataColumn columnstatus;
+            private global::System.Data.DataColumn columnbooksdetailsid;
             
             private global::System.Data.DataColumn columntitle;
             
@@ -2960,12 +2507,10 @@ namespace Team5BLibraryManagementSystem {
             
             private global::System.Data.DataColumn columnenddate;
             
-            private global::System.Data.DataColumn columnDifference;
-            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public ViewLoanedBooksDataTable() {
-                this.TableName = "ViewLoanedBooks";
+            public HistoryByMembersDataTable() {
+                this.TableName = "HistoryByMembers";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -2973,7 +2518,7 @@ namespace Team5BLibraryManagementSystem {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal ViewLoanedBooksDataTable(global::System.Data.DataTable table) {
+            internal HistoryByMembersDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -2990,9 +2535,17 @@ namespace Team5BLibraryManagementSystem {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected ViewLoanedBooksDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected HistoryByMembersDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn memberidColumn {
+                get {
+                    return this.columnmemberid;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3005,9 +2558,9 @@ namespace Team5BLibraryManagementSystem {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn statusColumn {
+            public global::System.Data.DataColumn booksdetailsidColumn {
                 get {
-                    return this.columnstatus;
+                    return this.columnbooksdetailsid;
                 }
             }
             
@@ -3077,14 +2630,6 @@ namespace Team5BLibraryManagementSystem {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn DifferenceColumn {
-                get {
-                    return this.columnDifference;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -3094,37 +2639,38 @@ namespace Team5BLibraryManagementSystem {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public ViewLoanedBooksRow this[int index] {
+            public HistoryByMembersRow this[int index] {
                 get {
-                    return ((ViewLoanedBooksRow)(this.Rows[index]));
+                    return ((HistoryByMembersRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event ViewLoanedBooksRowChangeEventHandler ViewLoanedBooksRowChanging;
+            public event HistoryByMembersRowChangeEventHandler HistoryByMembersRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event ViewLoanedBooksRowChangeEventHandler ViewLoanedBooksRowChanged;
+            public event HistoryByMembersRowChangeEventHandler HistoryByMembersRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event ViewLoanedBooksRowChangeEventHandler ViewLoanedBooksRowDeleting;
+            public event HistoryByMembersRowChangeEventHandler HistoryByMembersRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event ViewLoanedBooksRowChangeEventHandler ViewLoanedBooksRowDeleted;
+            public event HistoryByMembersRowChangeEventHandler HistoryByMembersRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void AddViewLoanedBooksRow(ViewLoanedBooksRow row) {
+            public void AddHistoryByMembersRow(HistoryByMembersRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public ViewLoanedBooksRow AddViewLoanedBooksRow(int bookid, string status, string title, string author, string publisher, decimal publishyear, string category, string isbn, System.DateTime startdate, System.DateTime enddate, int Difference) {
-                ViewLoanedBooksRow rowViewLoanedBooksRow = ((ViewLoanedBooksRow)(this.NewRow()));
+            public HistoryByMembersRow AddHistoryByMembersRow(int booksdetailsid, string title, string author, string publisher, decimal publishyear, string category, string isbn, System.DateTime startdate, System.DateTime enddate) {
+                HistoryByMembersRow rowHistoryByMembersRow = ((HistoryByMembersRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        bookid,
-                        status,
+                        null,
+                        null,
+                        booksdetailsid,
                         title,
                         author,
                         publisher,
@@ -3132,24 +2678,16 @@ namespace Team5BLibraryManagementSystem {
                         category,
                         isbn,
                         startdate,
-                        enddate,
-                        Difference};
-                rowViewLoanedBooksRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowViewLoanedBooksRow);
-                return rowViewLoanedBooksRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public ViewLoanedBooksRow FindBybookid(int bookid) {
-                return ((ViewLoanedBooksRow)(this.Rows.Find(new object[] {
-                            bookid})));
+                        enddate};
+                rowHistoryByMembersRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowHistoryByMembersRow);
+                return rowHistoryByMembersRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                ViewLoanedBooksDataTable cln = ((ViewLoanedBooksDataTable)(base.Clone()));
+                HistoryByMembersDataTable cln = ((HistoryByMembersDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -3157,14 +2695,15 @@ namespace Team5BLibraryManagementSystem {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new ViewLoanedBooksDataTable();
+                return new HistoryByMembersDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             internal void InitVars() {
+                this.columnmemberid = base.Columns["memberid"];
                 this.columnbookid = base.Columns["bookid"];
-                this.columnstatus = base.Columns["status"];
+                this.columnbooksdetailsid = base.Columns["booksdetailsid"];
                 this.columntitle = base.Columns["title"];
                 this.columnauthor = base.Columns["author"];
                 this.columnpublisher = base.Columns["publisher"];
@@ -3173,16 +2712,17 @@ namespace Team5BLibraryManagementSystem {
                 this.columnisbn = base.Columns["isbn"];
                 this.columnstartdate = base.Columns["startdate"];
                 this.columnenddate = base.Columns["enddate"];
-                this.columnDifference = base.Columns["Difference"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             private void InitClass() {
+                this.columnmemberid = new global::System.Data.DataColumn("memberid", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmemberid);
                 this.columnbookid = new global::System.Data.DataColumn("bookid", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnbookid);
-                this.columnstatus = new global::System.Data.DataColumn("status", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnstatus);
+                this.columnbooksdetailsid = new global::System.Data.DataColumn("booksdetailsid", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnbooksdetailsid);
                 this.columntitle = new global::System.Data.DataColumn("title", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columntitle);
                 this.columnauthor = new global::System.Data.DataColumn("author", typeof(string), null, global::System.Data.MappingType.Element);
@@ -3199,373 +2739,11 @@ namespace Team5BLibraryManagementSystem {
                 base.Columns.Add(this.columnstartdate);
                 this.columnenddate = new global::System.Data.DataColumn("enddate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnenddate);
-                this.columnDifference = new global::System.Data.DataColumn("Difference", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDifference);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnbookid}, true));
+                this.columnmemberid.AutoIncrement = true;
+                this.columnmemberid.ReadOnly = true;
+                this.columnbookid.AutoIncrement = true;
                 this.columnbookid.AllowDBNull = false;
-                this.columnbookid.Unique = true;
-                this.columnstatus.AllowDBNull = false;
-                this.columnstatus.MaxLength = 20;
-                this.columntitle.AllowDBNull = false;
-                this.columntitle.MaxLength = 255;
-                this.columnauthor.AllowDBNull = false;
-                this.columnauthor.MaxLength = 255;
-                this.columnpublisher.AllowDBNull = false;
-                this.columnpublisher.MaxLength = 255;
-                this.columnpublishyear.AllowDBNull = false;
-                this.columncategory.AllowDBNull = false;
-                this.columncategory.MaxLength = 20;
-                this.columnisbn.AllowDBNull = false;
-                this.columnisbn.MaxLength = 13;
-                this.columnstartdate.AllowDBNull = false;
-                this.columnenddate.AllowDBNull = false;
-                this.columnDifference.ReadOnly = true;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public ViewLoanedBooksRow NewViewLoanedBooksRow() {
-                return ((ViewLoanedBooksRow)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new ViewLoanedBooksRow(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(ViewLoanedBooksRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.ViewLoanedBooksRowChanged != null)) {
-                    this.ViewLoanedBooksRowChanged(this, new ViewLoanedBooksRowChangeEvent(((ViewLoanedBooksRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.ViewLoanedBooksRowChanging != null)) {
-                    this.ViewLoanedBooksRowChanging(this, new ViewLoanedBooksRowChangeEvent(((ViewLoanedBooksRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.ViewLoanedBooksRowDeleted != null)) {
-                    this.ViewLoanedBooksRowDeleted(this, new ViewLoanedBooksRowChangeEvent(((ViewLoanedBooksRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.ViewLoanedBooksRowDeleting != null)) {
-                    this.ViewLoanedBooksRowDeleting(this, new ViewLoanedBooksRowChangeEvent(((ViewLoanedBooksRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void RemoveViewLoanedBooksRow(ViewLoanedBooksRow row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DataSet1 ds = new DataSet1();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "ViewLoanedBooksDataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
-        
-        /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class ViewTotalLoanCountDataTable : global::System.Data.TypedTableBase<ViewTotalLoanCountRow> {
-            
-            private global::System.Data.DataColumn columnbooksdetailsid;
-            
-            private global::System.Data.DataColumn columntitle;
-            
-            private global::System.Data.DataColumn columnauthor;
-            
-            private global::System.Data.DataColumn columnpublisher;
-            
-            private global::System.Data.DataColumn columnpublishyear;
-            
-            private global::System.Data.DataColumn columncategory;
-            
-            private global::System.Data.DataColumn columnisbn;
-            
-            private global::System.Data.DataColumn columnTotalLoanCount;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public ViewTotalLoanCountDataTable() {
-                this.TableName = "ViewTotalLoanCount";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal ViewTotalLoanCountDataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected ViewTotalLoanCountDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn booksdetailsidColumn {
-                get {
-                    return this.columnbooksdetailsid;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn titleColumn {
-                get {
-                    return this.columntitle;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn authorColumn {
-                get {
-                    return this.columnauthor;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn publisherColumn {
-                get {
-                    return this.columnpublisher;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn publishyearColumn {
-                get {
-                    return this.columnpublishyear;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn categoryColumn {
-                get {
-                    return this.columncategory;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn isbnColumn {
-                get {
-                    return this.columnisbn;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn TotalLoanCountColumn {
-                get {
-                    return this.columnTotalLoanCount;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public ViewTotalLoanCountRow this[int index] {
-                get {
-                    return ((ViewTotalLoanCountRow)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event ViewTotalLoanCountRowChangeEventHandler ViewTotalLoanCountRowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event ViewTotalLoanCountRowChangeEventHandler ViewTotalLoanCountRowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event ViewTotalLoanCountRowChangeEventHandler ViewTotalLoanCountRowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event ViewTotalLoanCountRowChangeEventHandler ViewTotalLoanCountRowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void AddViewTotalLoanCountRow(ViewTotalLoanCountRow row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public ViewTotalLoanCountRow AddViewTotalLoanCountRow(int booksdetailsid, string title, string author, string publisher, decimal publishyear, string category, string isbn, int TotalLoanCount) {
-                ViewTotalLoanCountRow rowViewTotalLoanCountRow = ((ViewTotalLoanCountRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        booksdetailsid,
-                        title,
-                        author,
-                        publisher,
-                        publishyear,
-                        category,
-                        isbn,
-                        TotalLoanCount};
-                rowViewTotalLoanCountRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowViewTotalLoanCountRow);
-                return rowViewTotalLoanCountRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                ViewTotalLoanCountDataTable cln = ((ViewTotalLoanCountDataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new ViewTotalLoanCountDataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal void InitVars() {
-                this.columnbooksdetailsid = base.Columns["booksdetailsid"];
-                this.columntitle = base.Columns["title"];
-                this.columnauthor = base.Columns["author"];
-                this.columnpublisher = base.Columns["publisher"];
-                this.columnpublishyear = base.Columns["publishyear"];
-                this.columncategory = base.Columns["category"];
-                this.columnisbn = base.Columns["isbn"];
-                this.columnTotalLoanCount = base.Columns["TotalLoanCount"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            private void InitClass() {
-                this.columnbooksdetailsid = new global::System.Data.DataColumn("booksdetailsid", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnbooksdetailsid);
-                this.columntitle = new global::System.Data.DataColumn("title", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columntitle);
-                this.columnauthor = new global::System.Data.DataColumn("author", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnauthor);
-                this.columnpublisher = new global::System.Data.DataColumn("publisher", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnpublisher);
-                this.columnpublishyear = new global::System.Data.DataColumn("publishyear", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnpublishyear);
-                this.columncategory = new global::System.Data.DataColumn("category", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columncategory);
-                this.columnisbn = new global::System.Data.DataColumn("isbn", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnisbn);
-                this.columnTotalLoanCount = new global::System.Data.DataColumn("TotalLoanCount", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTotalLoanCount);
+                this.columnbookid.ReadOnly = true;
                 this.columnbooksdetailsid.AllowDBNull = false;
                 this.columntitle.AllowDBNull = false;
                 this.columntitle.MaxLength = 255;
@@ -3582,28 +2760,28 @@ namespace Team5BLibraryManagementSystem {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public ViewTotalLoanCountRow NewViewTotalLoanCountRow() {
-                return ((ViewTotalLoanCountRow)(this.NewRow()));
+            public HistoryByMembersRow NewHistoryByMembersRow() {
+                return ((HistoryByMembersRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new ViewTotalLoanCountRow(builder);
+                return new HistoryByMembersRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(ViewTotalLoanCountRow);
+                return typeof(HistoryByMembersRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.ViewTotalLoanCountRowChanged != null)) {
-                    this.ViewTotalLoanCountRowChanged(this, new ViewTotalLoanCountRowChangeEvent(((ViewTotalLoanCountRow)(e.Row)), e.Action));
+                if ((this.HistoryByMembersRowChanged != null)) {
+                    this.HistoryByMembersRowChanged(this, new HistoryByMembersRowChangeEvent(((HistoryByMembersRow)(e.Row)), e.Action));
                 }
             }
             
@@ -3611,8 +2789,8 @@ namespace Team5BLibraryManagementSystem {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.ViewTotalLoanCountRowChanging != null)) {
-                    this.ViewTotalLoanCountRowChanging(this, new ViewTotalLoanCountRowChangeEvent(((ViewTotalLoanCountRow)(e.Row)), e.Action));
+                if ((this.HistoryByMembersRowChanging != null)) {
+                    this.HistoryByMembersRowChanging(this, new HistoryByMembersRowChangeEvent(((HistoryByMembersRow)(e.Row)), e.Action));
                 }
             }
             
@@ -3620,8 +2798,8 @@ namespace Team5BLibraryManagementSystem {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.ViewTotalLoanCountRowDeleted != null)) {
-                    this.ViewTotalLoanCountRowDeleted(this, new ViewTotalLoanCountRowChangeEvent(((ViewTotalLoanCountRow)(e.Row)), e.Action));
+                if ((this.HistoryByMembersRowDeleted != null)) {
+                    this.HistoryByMembersRowDeleted(this, new HistoryByMembersRowChangeEvent(((HistoryByMembersRow)(e.Row)), e.Action));
                 }
             }
             
@@ -3629,14 +2807,14 @@ namespace Team5BLibraryManagementSystem {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.ViewTotalLoanCountRowDeleting != null)) {
-                    this.ViewTotalLoanCountRowDeleting(this, new ViewTotalLoanCountRowChangeEvent(((ViewTotalLoanCountRow)(e.Row)), e.Action));
+                if ((this.HistoryByMembersRowDeleting != null)) {
+                    this.HistoryByMembersRowDeleting(this, new HistoryByMembersRowChangeEvent(((HistoryByMembersRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void RemoveViewTotalLoanCountRow(ViewTotalLoanCountRow row) {
+            public void RemoveHistoryByMembersRow(HistoryByMembersRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -3663,7 +2841,7 @@ namespace Team5BLibraryManagementSystem {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "ViewTotalLoanCountDataTable";
+                attribute2.FixedValue = "HistoryByMembersDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -4226,25 +3404,52 @@ namespace Team5BLibraryManagementSystem {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class ViewBooksListingRow : global::System.Data.DataRow {
+        public partial class HistoryByMembersRow : global::System.Data.DataRow {
             
-            private ViewBooksListingDataTable tableViewBooksListing;
+            private HistoryByMembersDataTable tableHistoryByMembers;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal ViewBooksListingRow(global::System.Data.DataRowBuilder rb) : 
+            internal HistoryByMembersRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableViewBooksListing = ((ViewBooksListingDataTable)(this.Table));
+                this.tableHistoryByMembers = ((HistoryByMembersDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int memberid {
+                get {
+                    try {
+                        return ((int)(this[this.tableHistoryByMembers.memberidColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'memberid\' in table \'HistoryByMembers\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableHistoryByMembers.memberidColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public int bookid {
                 get {
-                    return ((int)(this[this.tableViewBooksListing.bookidColumn]));
+                    return ((int)(this[this.tableHistoryByMembers.bookidColumn]));
                 }
                 set {
-                    this[this.tableViewBooksListing.bookidColumn] = value;
+                    this[this.tableHistoryByMembers.bookidColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int booksdetailsid {
+                get {
+                    return ((int)(this[this.tableHistoryByMembers.booksdetailsidColumn]));
+                }
+                set {
+                    this[this.tableHistoryByMembers.booksdetailsidColumn] = value;
                 }
             }
             
@@ -4252,10 +3457,10 @@ namespace Team5BLibraryManagementSystem {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string title {
                 get {
-                    return ((string)(this[this.tableViewBooksListing.titleColumn]));
+                    return ((string)(this[this.tableHistoryByMembers.titleColumn]));
                 }
                 set {
-                    this[this.tableViewBooksListing.titleColumn] = value;
+                    this[this.tableHistoryByMembers.titleColumn] = value;
                 }
             }
             
@@ -4263,10 +3468,10 @@ namespace Team5BLibraryManagementSystem {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string author {
                 get {
-                    return ((string)(this[this.tableViewBooksListing.authorColumn]));
+                    return ((string)(this[this.tableHistoryByMembers.authorColumn]));
                 }
                 set {
-                    this[this.tableViewBooksListing.authorColumn] = value;
+                    this[this.tableHistoryByMembers.authorColumn] = value;
                 }
             }
             
@@ -4274,21 +3479,10 @@ namespace Team5BLibraryManagementSystem {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string publisher {
                 get {
-                    return ((string)(this[this.tableViewBooksListing.publisherColumn]));
+                    return ((string)(this[this.tableHistoryByMembers.publisherColumn]));
                 }
                 set {
-                    this[this.tableViewBooksListing.publisherColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string category {
-                get {
-                    return ((string)(this[this.tableViewBooksListing.categoryColumn]));
-                }
-                set {
-                    this[this.tableViewBooksListing.categoryColumn] = value;
+                    this[this.tableHistoryByMembers.publisherColumn] = value;
                 }
             }
             
@@ -4296,124 +3490,10 @@ namespace Team5BLibraryManagementSystem {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public decimal publishyear {
                 get {
-                    return ((decimal)(this[this.tableViewBooksListing.publishyearColumn]));
+                    return ((decimal)(this[this.tableHistoryByMembers.publishyearColumn]));
                 }
                 set {
-                    this[this.tableViewBooksListing.publishyearColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string isbn {
-                get {
-                    return ((string)(this[this.tableViewBooksListing.isbnColumn]));
-                }
-                set {
-                    this[this.tableViewBooksListing.isbnColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string status {
-                get {
-                    return ((string)(this[this.tableViewBooksListing.statusColumn]));
-                }
-                set {
-                    this[this.tableViewBooksListing.statusColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string location {
-                get {
-                    return ((string)(this[this.tableViewBooksListing.locationColumn]));
-                }
-                set {
-                    this[this.tableViewBooksListing.locationColumn] = value;
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
-        public partial class ViewLoanedBooksRow : global::System.Data.DataRow {
-            
-            private ViewLoanedBooksDataTable tableViewLoanedBooks;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal ViewLoanedBooksRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tableViewLoanedBooks = ((ViewLoanedBooksDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int bookid {
-                get {
-                    return ((int)(this[this.tableViewLoanedBooks.bookidColumn]));
-                }
-                set {
-                    this[this.tableViewLoanedBooks.bookidColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string status {
-                get {
-                    return ((string)(this[this.tableViewLoanedBooks.statusColumn]));
-                }
-                set {
-                    this[this.tableViewLoanedBooks.statusColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string title {
-                get {
-                    return ((string)(this[this.tableViewLoanedBooks.titleColumn]));
-                }
-                set {
-                    this[this.tableViewLoanedBooks.titleColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string author {
-                get {
-                    return ((string)(this[this.tableViewLoanedBooks.authorColumn]));
-                }
-                set {
-                    this[this.tableViewLoanedBooks.authorColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string publisher {
-                get {
-                    return ((string)(this[this.tableViewLoanedBooks.publisherColumn]));
-                }
-                set {
-                    this[this.tableViewLoanedBooks.publisherColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public decimal publishyear {
-                get {
-                    return ((decimal)(this[this.tableViewLoanedBooks.publishyearColumn]));
-                }
-                set {
-                    this[this.tableViewLoanedBooks.publishyearColumn] = value;
+                    this[this.tableHistoryByMembers.publishyearColumn] = value;
                 }
             }
             
@@ -4421,10 +3501,10 @@ namespace Team5BLibraryManagementSystem {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string category {
                 get {
-                    return ((string)(this[this.tableViewLoanedBooks.categoryColumn]));
+                    return ((string)(this[this.tableHistoryByMembers.categoryColumn]));
                 }
                 set {
-                    this[this.tableViewLoanedBooks.categoryColumn] = value;
+                    this[this.tableHistoryByMembers.categoryColumn] = value;
                 }
             }
             
@@ -4432,10 +3512,10 @@ namespace Team5BLibraryManagementSystem {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string isbn {
                 get {
-                    return ((string)(this[this.tableViewLoanedBooks.isbnColumn]));
+                    return ((string)(this[this.tableHistoryByMembers.isbnColumn]));
                 }
                 set {
-                    this[this.tableViewLoanedBooks.isbnColumn] = value;
+                    this[this.tableHistoryByMembers.isbnColumn] = value;
                 }
             }
             
@@ -4443,10 +3523,15 @@ namespace Team5BLibraryManagementSystem {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public System.DateTime startdate {
                 get {
-                    return ((global::System.DateTime)(this[this.tableViewLoanedBooks.startdateColumn]));
+                    try {
+                        return ((global::System.DateTime)(this[this.tableHistoryByMembers.startdateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'startdate\' in table \'HistoryByMembers\' is DBNull.", e);
+                    }
                 }
                 set {
-                    this[this.tableViewLoanedBooks.startdateColumn] = value;
+                    this[this.tableHistoryByMembers.startdateColumn] = value;
                 }
             }
             
@@ -4454,159 +3539,52 @@ namespace Team5BLibraryManagementSystem {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public System.DateTime enddate {
                 get {
-                    return ((global::System.DateTime)(this[this.tableViewLoanedBooks.enddateColumn]));
-                }
-                set {
-                    this[this.tableViewLoanedBooks.enddateColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int Difference {
-                get {
                     try {
-                        return ((int)(this[this.tableViewLoanedBooks.DifferenceColumn]));
+                        return ((global::System.DateTime)(this[this.tableHistoryByMembers.enddateColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Difference\' in table \'ViewLoanedBooks\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'enddate\' in table \'HistoryByMembers\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableViewLoanedBooks.DifferenceColumn] = value;
+                    this[this.tableHistoryByMembers.enddateColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsDifferenceNull() {
-                return this.IsNull(this.tableViewLoanedBooks.DifferenceColumn);
+            public bool IsmemberidNull() {
+                return this.IsNull(this.tableHistoryByMembers.memberidColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetDifferenceNull() {
-                this[this.tableViewLoanedBooks.DifferenceColumn] = global::System.Convert.DBNull;
-            }
-        }
-        
-        /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
-        public partial class ViewTotalLoanCountRow : global::System.Data.DataRow {
-            
-            private ViewTotalLoanCountDataTable tableViewTotalLoanCount;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal ViewTotalLoanCountRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tableViewTotalLoanCount = ((ViewTotalLoanCountDataTable)(this.Table));
+            public void SetmemberidNull() {
+                this[this.tableHistoryByMembers.memberidColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int booksdetailsid {
-                get {
-                    return ((int)(this[this.tableViewTotalLoanCount.booksdetailsidColumn]));
-                }
-                set {
-                    this[this.tableViewTotalLoanCount.booksdetailsidColumn] = value;
-                }
+            public bool IsstartdateNull() {
+                return this.IsNull(this.tableHistoryByMembers.startdateColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string title {
-                get {
-                    return ((string)(this[this.tableViewTotalLoanCount.titleColumn]));
-                }
-                set {
-                    this[this.tableViewTotalLoanCount.titleColumn] = value;
-                }
+            public void SetstartdateNull() {
+                this[this.tableHistoryByMembers.startdateColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string author {
-                get {
-                    return ((string)(this[this.tableViewTotalLoanCount.authorColumn]));
-                }
-                set {
-                    this[this.tableViewTotalLoanCount.authorColumn] = value;
-                }
+            public bool IsenddateNull() {
+                return this.IsNull(this.tableHistoryByMembers.enddateColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string publisher {
-                get {
-                    return ((string)(this[this.tableViewTotalLoanCount.publisherColumn]));
-                }
-                set {
-                    this[this.tableViewTotalLoanCount.publisherColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public decimal publishyear {
-                get {
-                    return ((decimal)(this[this.tableViewTotalLoanCount.publishyearColumn]));
-                }
-                set {
-                    this[this.tableViewTotalLoanCount.publishyearColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string category {
-                get {
-                    return ((string)(this[this.tableViewTotalLoanCount.categoryColumn]));
-                }
-                set {
-                    this[this.tableViewTotalLoanCount.categoryColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string isbn {
-                get {
-                    return ((string)(this[this.tableViewTotalLoanCount.isbnColumn]));
-                }
-                set {
-                    this[this.tableViewTotalLoanCount.isbnColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int TotalLoanCount {
-                get {
-                    try {
-                        return ((int)(this[this.tableViewTotalLoanCount.TotalLoanCountColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'TotalLoanCount\' in table \'ViewTotalLoanCount\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableViewTotalLoanCount.TotalLoanCountColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsTotalLoanCountNull() {
-                return this.IsNull(this.tableViewTotalLoanCount.TotalLoanCountColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetTotalLoanCountNull() {
-                this[this.tableViewTotalLoanCount.TotalLoanCountColumn] = global::System.Convert.DBNull;
+            public void SetenddateNull() {
+                this[this.tableHistoryByMembers.enddateColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -4818,90 +3796,22 @@ namespace Team5BLibraryManagementSystem {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public class ViewBooksListingRowChangeEvent : global::System.EventArgs {
+        public class HistoryByMembersRowChangeEvent : global::System.EventArgs {
             
-            private ViewBooksListingRow eventRow;
+            private HistoryByMembersRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public ViewBooksListingRowChangeEvent(ViewBooksListingRow row, global::System.Data.DataRowAction action) {
+            public HistoryByMembersRowChangeEvent(HistoryByMembersRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public ViewBooksListingRow Row {
-                get {
-                    return this.eventRow;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataRowAction Action {
-                get {
-                    return this.eventAction;
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Row event argument class
-        ///</summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public class ViewLoanedBooksRowChangeEvent : global::System.EventArgs {
-            
-            private ViewLoanedBooksRow eventRow;
-            
-            private global::System.Data.DataRowAction eventAction;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public ViewLoanedBooksRowChangeEvent(ViewLoanedBooksRow row, global::System.Data.DataRowAction action) {
-                this.eventRow = row;
-                this.eventAction = action;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public ViewLoanedBooksRow Row {
-                get {
-                    return this.eventRow;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataRowAction Action {
-                get {
-                    return this.eventAction;
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Row event argument class
-        ///</summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public class ViewTotalLoanCountRowChangeEvent : global::System.EventArgs {
-            
-            private ViewTotalLoanCountRow eventRow;
-            
-            private global::System.Data.DataRowAction eventAction;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public ViewTotalLoanCountRowChangeEvent(ViewTotalLoanCountRow row, global::System.Data.DataRowAction action) {
-                this.eventRow = row;
-                this.eventAction = action;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public ViewTotalLoanCountRow Row {
+            public HistoryByMembersRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -7202,7 +6112,7 @@ SELECT userid, username, password FROM Users WHERE (userid = @userid)";
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class ViewBooksListingTableAdapter : global::System.ComponentModel.Component {
+    public partial class HistoryByMembersTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -7216,7 +6126,7 @@ SELECT userid, username, password FROM Users WHERE (userid = @userid)";
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public ViewBooksListingTableAdapter() {
+        public HistoryByMembersTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -7313,185 +6223,10 @@ SELECT userid, username, password FROM Users WHERE (userid = @userid)";
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "ViewBooksListing";
+            tableMapping.DataSetTable = "HistoryByMembers";
+            tableMapping.ColumnMappings.Add("memberid", "memberid");
             tableMapping.ColumnMappings.Add("bookid", "bookid");
-            tableMapping.ColumnMappings.Add("title", "title");
-            tableMapping.ColumnMappings.Add("author", "author");
-            tableMapping.ColumnMappings.Add("publisher", "publisher");
-            tableMapping.ColumnMappings.Add("category", "category");
-            tableMapping.ColumnMappings.Add("publishyear", "publishyear");
-            tableMapping.ColumnMappings.Add("isbn", "isbn");
-            tableMapping.ColumnMappings.Add("status", "status");
-            tableMapping.ColumnMappings.Add("location", "location");
-            this._adapter.TableMappings.Add(tableMapping);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private void InitConnection() {
-            this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Team5BLibraryManagementSystem.Properties.Settings.Default.SA47Team05BESNETLMSConnectionString;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
-            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT bookid, title, author, publisher, category, publishyear, isbn, status, loc" +
-                "ation FROM dbo.ViewBooksListing";
-            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DataSet1.ViewBooksListingDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DataSet1.ViewBooksListingDataTable GetData() {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            DataSet1.ViewBooksListingDataTable dataTable = new DataSet1.ViewBooksListingDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-    }
-    
-    /// <summary>
-    ///Represents the connection and commands used to retrieve and save data.
-    ///</summary>
-    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
-    [global::System.ComponentModel.ToolboxItem(true)]
-    [global::System.ComponentModel.DataObjectAttribute(true)]
-    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
-    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class ViewLoanedBooksTableAdapter : global::System.ComponentModel.Component {
-        
-        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
-        
-        private global::System.Data.SqlClient.SqlConnection _connection;
-        
-        private global::System.Data.SqlClient.SqlTransaction _transaction;
-        
-        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
-        
-        private bool _clearBeforeFill;
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public ViewLoanedBooksTableAdapter() {
-            this.ClearBeforeFill = true;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
-            get {
-                if ((this._adapter == null)) {
-                    this.InitAdapter();
-                }
-                return this._adapter;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        internal global::System.Data.SqlClient.SqlConnection Connection {
-            get {
-                if ((this._connection == null)) {
-                    this.InitConnection();
-                }
-                return this._connection;
-            }
-            set {
-                this._connection = value;
-                if ((this.Adapter.InsertCommand != null)) {
-                    this.Adapter.InsertCommand.Connection = value;
-                }
-                if ((this.Adapter.DeleteCommand != null)) {
-                    this.Adapter.DeleteCommand.Connection = value;
-                }
-                if ((this.Adapter.UpdateCommand != null)) {
-                    this.Adapter.UpdateCommand.Connection = value;
-                }
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    if ((this.CommandCollection[i] != null)) {
-                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
-                    }
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        internal global::System.Data.SqlClient.SqlTransaction Transaction {
-            get {
-                return this._transaction;
-            }
-            set {
-                this._transaction = value;
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    this.CommandCollection[i].Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.DeleteCommand != null))) {
-                    this.Adapter.DeleteCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.InsertCommand != null))) {
-                    this.Adapter.InsertCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.UpdateCommand != null))) {
-                    this.Adapter.UpdateCommand.Transaction = this._transaction;
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
-            get {
-                if ((this._commandCollection == null)) {
-                    this.InitCommandCollection();
-                }
-                return this._commandCollection;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public bool ClearBeforeFill {
-            get {
-                return this._clearBeforeFill;
-            }
-            set {
-                this._clearBeforeFill = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private void InitAdapter() {
-            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
-            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
-            tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "ViewLoanedBooks";
-            tableMapping.ColumnMappings.Add("bookid", "bookid");
-            tableMapping.ColumnMappings.Add("status", "status");
+            tableMapping.ColumnMappings.Add("booksdetailsid", "booksdetailsid");
             tableMapping.ColumnMappings.Add("title", "title");
             tableMapping.ColumnMappings.Add("author", "author");
             tableMapping.ColumnMappings.Add("publisher", "publisher");
@@ -7500,7 +6235,6 @@ SELECT userid, username, password FROM Users WHERE (userid = @userid)";
             tableMapping.ColumnMappings.Add("isbn", "isbn");
             tableMapping.ColumnMappings.Add("startdate", "startdate");
             tableMapping.ColumnMappings.Add("enddate", "enddate");
-            tableMapping.ColumnMappings.Add("Difference", "Difference");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -7517,17 +6251,24 @@ SELECT userid, username, password FROM Users WHERE (userid = @userid)";
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT bookid, status, title, author, publisher, publishyear, category, isbn, sta" +
-                "rtdate, enddate, Difference FROM dbo.ViewLoanedBooks";
-            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[0].CommandText = "dbo.HistoryByMembers";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@memberid", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DataSet1.ViewLoanedBooksDataTable dataTable) {
+        public virtual int Fill(DataSet1.HistoryByMembersDataTable dataTable, global::System.Nullable<int> memberid) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((memberid.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(memberid.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -7539,184 +6280,15 @@ SELECT userid, username, password FROM Users WHERE (userid = @userid)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DataSet1.ViewLoanedBooksDataTable GetData() {
+        public virtual DataSet1.HistoryByMembersDataTable GetData(global::System.Nullable<int> memberid) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DataSet1.ViewLoanedBooksDataTable dataTable = new DataSet1.ViewLoanedBooksDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-    }
-    
-    /// <summary>
-    ///Represents the connection and commands used to retrieve and save data.
-    ///</summary>
-    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
-    [global::System.ComponentModel.ToolboxItem(true)]
-    [global::System.ComponentModel.DataObjectAttribute(true)]
-    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
-    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class ViewTotalLoanCountTableAdapter : global::System.ComponentModel.Component {
-        
-        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
-        
-        private global::System.Data.SqlClient.SqlConnection _connection;
-        
-        private global::System.Data.SqlClient.SqlTransaction _transaction;
-        
-        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
-        
-        private bool _clearBeforeFill;
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public ViewTotalLoanCountTableAdapter() {
-            this.ClearBeforeFill = true;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
-            get {
-                if ((this._adapter == null)) {
-                    this.InitAdapter();
-                }
-                return this._adapter;
+            if ((memberid.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(memberid.Value));
             }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        internal global::System.Data.SqlClient.SqlConnection Connection {
-            get {
-                if ((this._connection == null)) {
-                    this.InitConnection();
-                }
-                return this._connection;
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            set {
-                this._connection = value;
-                if ((this.Adapter.InsertCommand != null)) {
-                    this.Adapter.InsertCommand.Connection = value;
-                }
-                if ((this.Adapter.DeleteCommand != null)) {
-                    this.Adapter.DeleteCommand.Connection = value;
-                }
-                if ((this.Adapter.UpdateCommand != null)) {
-                    this.Adapter.UpdateCommand.Connection = value;
-                }
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    if ((this.CommandCollection[i] != null)) {
-                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
-                    }
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        internal global::System.Data.SqlClient.SqlTransaction Transaction {
-            get {
-                return this._transaction;
-            }
-            set {
-                this._transaction = value;
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    this.CommandCollection[i].Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.DeleteCommand != null))) {
-                    this.Adapter.DeleteCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.InsertCommand != null))) {
-                    this.Adapter.InsertCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.UpdateCommand != null))) {
-                    this.Adapter.UpdateCommand.Transaction = this._transaction;
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
-            get {
-                if ((this._commandCollection == null)) {
-                    this.InitCommandCollection();
-                }
-                return this._commandCollection;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public bool ClearBeforeFill {
-            get {
-                return this._clearBeforeFill;
-            }
-            set {
-                this._clearBeforeFill = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private void InitAdapter() {
-            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
-            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
-            tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "ViewTotalLoanCount";
-            tableMapping.ColumnMappings.Add("booksdetailsid", "booksdetailsid");
-            tableMapping.ColumnMappings.Add("title", "title");
-            tableMapping.ColumnMappings.Add("author", "author");
-            tableMapping.ColumnMappings.Add("publisher", "publisher");
-            tableMapping.ColumnMappings.Add("publishyear", "publishyear");
-            tableMapping.ColumnMappings.Add("category", "category");
-            tableMapping.ColumnMappings.Add("isbn", "isbn");
-            tableMapping.ColumnMappings.Add("TotalLoanCount", "TotalLoanCount");
-            this._adapter.TableMappings.Add(tableMapping);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private void InitConnection() {
-            this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Team5BLibraryManagementSystem.Properties.Settings.Default.SA47Team05BESNETLMSConnectionString;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
-            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT booksdetailsid, title, author, publisher, publishyear, category, isbn, Tot" +
-                "alLoanCount FROM dbo.ViewTotalLoanCount";
-            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DataSet1.ViewTotalLoanCountDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DataSet1.ViewTotalLoanCountDataTable GetData() {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            DataSet1.ViewTotalLoanCountDataTable dataTable = new DataSet1.ViewTotalLoanCountDataTable();
+            DataSet1.HistoryByMembersDataTable dataTable = new DataSet1.HistoryByMembersDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }

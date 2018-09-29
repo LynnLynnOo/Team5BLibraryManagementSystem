@@ -1,6 +1,6 @@
 ﻿namespace Team5BLibraryManagementSystem
 {
-    partial class Frm_Sjw
+    partial class Frm_BookListingAll
     {
         /// <summary>
         /// Required designer variable.
@@ -28,32 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.uc_Reports1 = new Team5BLibraryManagementSystem.Uc_Reports();
+            this.crv_BookListing = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.SuspendLayout();
             // 
-            // uc_Reports1
+            // crv_BookListing
             // 
-            this.uc_Reports1.BackColor = System.Drawing.Color.White;
-            this.uc_Reports1.Location = new System.Drawing.Point(116, 23);
-            this.uc_Reports1.Name = "uc_Reports1";
-            this.uc_Reports1.Size = new System.Drawing.Size(752, 508);
-            this.uc_Reports1.TabIndex = 0;
-            this.uc_Reports1.Load += new System.EventHandler(this.uc_Reports1_Load);
+            this.crv_BookListing.ActiveViewIndex = -1;
+            this.crv_BookListing.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.crv_BookListing.Cursor = System.Windows.Forms.Cursors.Default;
+            this.crv_BookListing.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.crv_BookListing.Location = new System.Drawing.Point(0, 0);
+            this.crv_BookListing.Name = "crv_BookListing";
+            this.crv_BookListing.Size = new System.Drawing.Size(800, 450);
+            this.crv_BookListing.TabIndex = 0;
+            this.crv_BookListing.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
-            // Frm_Sjw
+            // Frm_BookListingAll
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(921, 532);
-            this.Controls.Add(this.uc_Reports1);
-            this.Name = "Frm_Sjw";
-            this.Text = "Frm_Sjw";
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.crv_BookListing);
+            this.Name = "Frm_BookListingAll";
+            this.Text = "Frm_BookListingAll";
+            this.Load += new System.EventHandler(this.Frm_BookListingAll_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private Uc_Reports uc_Reports1;
+        private CrystalDecisions.Windows.Forms.CrystalReportViewer crv_BookListing;
     }
 }

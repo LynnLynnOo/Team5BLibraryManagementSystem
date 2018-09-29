@@ -31,37 +31,17 @@ namespace Team5BLibraryManagementSystem
         {
             if (cmb_Typesofreport.SelectedIndex == 0)
             {
-                //OVERDUE BOOKS
-                groupBox_OverdueBooks.Visible = true;
-                groupBox_BookList.Visible = false;
-                groupBox_MemberListing.Visible = false;
-                groupBox_Weeklyloanreport.Visible = false;
-
-            }
-            else if (cmb_Typesofreport.SelectedIndex == 1)
-            {
                 //BOOK LIST
-                groupBox_OverdueBooks.Visible = false;
                 groupBox_BookList.Visible = true;
                 groupBox_MemberListing.Visible = false;
-                groupBox_Weeklyloanreport.Visible = false;
             }
-            else if (cmb_Typesofreport.SelectedIndex == 2)
+            else 
             {
                 //MEMBER LIST
-                groupBox_OverdueBooks.Visible = false;
                 groupBox_BookList.Visible = false;
                 groupBox_MemberListing.Visible = true;
-                groupBox_Weeklyloanreport.Visible = false;
             }
-            else
-            {
-                //MONTHLY LOAN REPORT
-                groupBox_OverdueBooks.Visible = false;
-                groupBox_BookList.Visible = false;
-                groupBox_MemberListing.Visible = false;
-                groupBox_Weeklyloanreport.Visible = true;
-            }
+            
         }
 
         private void btn_PrintMemberListing_Click(object sender, EventArgs e)
@@ -98,21 +78,7 @@ namespace Team5BLibraryManagementSystem
             }
         }
 
-        private void btn_PrintBooksOverdue_Click(object sender, EventArgs e)
-        {
-            if (rdbtn_Overdueby1day.Checked == true)
-            {
-
-            }
-            else if (rdbtn_Overdueby3days.Checked == true)
-            {
-
-            }
-            else if (rdbtn_Overduebymorethan3days.Checked == true)
-            {
-
-            }
-        }
+        
 
         private void btn_BookList_Click(object sender, EventArgs e)
         {
@@ -128,6 +94,13 @@ namespace Team5BLibraryManagementSystem
                 f1.ShowDialog();
                 return;
             }
+        }
+
+        private void btn_Print_Click(object sender, EventArgs e)
+        {
+            Frm_BookListingAll f1 = new Frm_BookListingAll();
+            f1.ShowDialog();
+            return;
         }
     }
 }
