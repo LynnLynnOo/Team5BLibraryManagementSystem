@@ -276,12 +276,12 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label9.Location = new System.Drawing.Point(319, 23);
+            this.label9.Location = new System.Drawing.Point(263, 25);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(265, 33);
+            this.label9.Size = new System.Drawing.Size(387, 33);
             this.label9.TabIndex = 65;
-            this.label9.Text = "Registration Form";
+            this.label9.Text = "Member Registration Form";
             // 
             // errorProvider1
             // 

@@ -225,5 +225,10 @@ namespace Team5BLibraryManagementSystem
         {
             AllMenu(false);
         }
+
+        private void uc_Addmember1_MouseEnter(object sender, EventArgs e)
+        {
+            AllMenu(false);
+        }
     }
 }

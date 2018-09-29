@@ -73,7 +73,13 @@
     <Compile Include="Booksdetail.cs">
       <DependentUpon>SA47Team05BESNETLMS.tt</DependentUpon>
     </Compile>
-    <Compile Include="Checkemailvalidity.cs" />
+    <Compile Include="Frm_TransactionHist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_TransactionHist.Designer.cs">
+      <DependentUpon>Frm_TransactionHist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ZtkValidityCheck.cs" />
     <Compile Include="DataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -345,6 +351,12 @@
     <EmbeddedResource Include="Frm_Sjw.resx">
       <DependentUpon>Frm_Sjw.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Frm_MonthlyLoanReport.resx">
+      <DependentUpon>Frm_MonthlyLoanReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_TransactionHist.resx">
+      <DependentUpon>Frm_TransactionHist.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -489,7 +501,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="readme.txt" />
-    <None Include="Resources\Banner.PNG" />
     <Content Include="SA47Team05BESNETLMS.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>SA47Team05BESNETLMS.edmx</DependentUpon>
@@ -500,6 +511,7 @@
       <DependentUpon>SA47Team05BESNETLMS.edmx</DependentUpon>
       <LastGenOutput>SA47Team05BESNETLMS.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\Banner.PNG" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
