@@ -32,14 +32,12 @@ namespace Team5BLibraryManagementSystem
             if (cmb_Typesofreport.SelectedIndex == 0)
             {
                 //BOOK LIST
-                groupBox_OverdueBooks.Visible = false;
                 groupBox_BookList.Visible = true;
                 groupBox_MemberListing.Visible = false;
             }
             else 
             {
                 //MEMBER LIST
-                groupBox_OverdueBooks.Visible = false;
                 groupBox_BookList.Visible = false;
                 groupBox_MemberListing.Visible = true;
             }
@@ -80,21 +78,7 @@ namespace Team5BLibraryManagementSystem
             }
         }
 
-        private void btn_PrintBooksOverdue_Click(object sender, EventArgs e)
-        {
-            if (rdbtn_Overdueby1day.Checked == true)
-            {
-
-            }
-            else if (rdbtn_Overdueby3days.Checked == true)
-            {
-
-            }
-            else if (rdbtn_Overduebymorethan3days.Checked == true)
-            {
-
-            }
-        }
+        
 
         private void btn_BookList_Click(object sender, EventArgs e)
         {

@@ -39,14 +39,8 @@
             this.rdbtn_Availability = new System.Windows.Forms.RadioButton();
             this.rdbtn_Category = new System.Windows.Forms.RadioButton();
             this.btn_BookList = new System.Windows.Forms.Button();
-            this.groupBox_OverdueBooks = new System.Windows.Forms.GroupBox();
-            this.btn_PrintBooksOverdue = new System.Windows.Forms.Button();
-            this.rdbtn_Overduebymorethan3days = new System.Windows.Forms.RadioButton();
-            this.rdbtn_Overdueby3days = new System.Windows.Forms.RadioButton();
-            this.rdbtn_Overdueby1day = new System.Windows.Forms.RadioButton();
             this.groupBox_MemberListing.SuspendLayout();
             this.groupBox_BookList.SuspendLayout();
-            this.groupBox_OverdueBooks.SuspendLayout();
             this.SuspendLayout();
             // 
             // label_Typesofreport
@@ -55,7 +49,7 @@
             this.label_Typesofreport.BackColor = System.Drawing.Color.White;
             this.label_Typesofreport.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_Typesofreport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label_Typesofreport.Location = new System.Drawing.Point(170, 31);
+            this.label_Typesofreport.Location = new System.Drawing.Point(374, 99);
             this.label_Typesofreport.Name = "label_Typesofreport";
             this.label_Typesofreport.Size = new System.Drawing.Size(130, 17);
             this.label_Typesofreport.TabIndex = 0;
@@ -70,7 +64,7 @@
             this.cmb_Typesofreport.Items.AddRange(new object[] {
             "Book List",
             "Member List"});
-            this.cmb_Typesofreport.Location = new System.Drawing.Point(316, 31);
+            this.cmb_Typesofreport.Location = new System.Drawing.Point(520, 99);
             this.cmb_Typesofreport.Name = "cmb_Typesofreport";
             this.cmb_Typesofreport.Size = new System.Drawing.Size(297, 24);
             this.cmb_Typesofreport.TabIndex = 1;
@@ -83,9 +77,9 @@
             this.groupBox_MemberListing.Controls.Add(this.rdbtn_Membersbeforeexpiry);
             this.groupBox_MemberListing.Controls.Add(this.rdbtn_Allmembers);
             this.groupBox_MemberListing.Controls.Add(this.rdbtn_Membersafterexpiry);
-            this.groupBox_MemberListing.Location = new System.Drawing.Point(190, 76);
+            this.groupBox_MemberListing.Location = new System.Drawing.Point(474, 192);
             this.groupBox_MemberListing.Name = "groupBox_MemberListing";
-            this.groupBox_MemberListing.Size = new System.Drawing.Size(460, 310);
+            this.groupBox_MemberListing.Size = new System.Drawing.Size(295, 195);
             this.groupBox_MemberListing.TabIndex = 3;
             this.groupBox_MemberListing.TabStop = false;
             this.groupBox_MemberListing.Visible = false;
@@ -94,7 +88,7 @@
             // 
             this.btn_PrintMemberListing.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_PrintMemberListing.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btn_PrintMemberListing.Location = new System.Drawing.Point(201, 184);
+            this.btn_PrintMemberListing.Location = new System.Drawing.Point(89, 123);
             this.btn_PrintMemberListing.Name = "btn_PrintMemberListing";
             this.btn_PrintMemberListing.Size = new System.Drawing.Size(115, 48);
             this.btn_PrintMemberListing.TabIndex = 4;
@@ -108,7 +102,7 @@
             this.rdbtn_Membersbeforeexpiry.Checked = true;
             this.rdbtn_Membersbeforeexpiry.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdbtn_Membersbeforeexpiry.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.rdbtn_Membersbeforeexpiry.Location = new System.Drawing.Point(150, 62);
+            this.rdbtn_Membersbeforeexpiry.Location = new System.Drawing.Point(31, 31);
             this.rdbtn_Membersbeforeexpiry.Name = "rdbtn_Membersbeforeexpiry";
             this.rdbtn_Membersbeforeexpiry.Size = new System.Drawing.Size(235, 21);
             this.rdbtn_Membersbeforeexpiry.TabIndex = 1;
@@ -121,7 +115,7 @@
             this.rdbtn_Allmembers.AutoSize = true;
             this.rdbtn_Allmembers.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdbtn_Allmembers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.rdbtn_Allmembers.Location = new System.Drawing.Point(150, 116);
+            this.rdbtn_Allmembers.Location = new System.Drawing.Point(31, 85);
             this.rdbtn_Allmembers.Name = "rdbtn_Allmembers";
             this.rdbtn_Allmembers.Size = new System.Drawing.Size(117, 21);
             this.rdbtn_Allmembers.TabIndex = 3;
@@ -133,7 +127,7 @@
             this.rdbtn_Membersafterexpiry.AutoSize = true;
             this.rdbtn_Membersafterexpiry.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdbtn_Membersafterexpiry.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.rdbtn_Membersafterexpiry.Location = new System.Drawing.Point(150, 89);
+            this.rdbtn_Membersafterexpiry.Location = new System.Drawing.Point(31, 58);
             this.rdbtn_Membersafterexpiry.Name = "rdbtn_Membersafterexpiry";
             this.rdbtn_Membersafterexpiry.Size = new System.Drawing.Size(222, 21);
             this.rdbtn_Membersafterexpiry.TabIndex = 2;
@@ -145,9 +139,9 @@
             this.groupBox_BookList.Controls.Add(this.rdbtn_Availability);
             this.groupBox_BookList.Controls.Add(this.rdbtn_Category);
             this.groupBox_BookList.Controls.Add(this.btn_BookList);
-            this.groupBox_BookList.Location = new System.Drawing.Point(153, 64);
+            this.groupBox_BookList.Location = new System.Drawing.Point(480, 185);
             this.groupBox_BookList.Name = "groupBox_BookList";
-            this.groupBox_BookList.Size = new System.Drawing.Size(460, 310);
+            this.groupBox_BookList.Size = new System.Drawing.Size(283, 178);
             this.groupBox_BookList.TabIndex = 4;
             this.groupBox_BookList.TabStop = false;
             this.groupBox_BookList.Visible = false;
@@ -157,7 +151,7 @@
             this.rdbtn_Availability.AutoSize = true;
             this.rdbtn_Availability.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdbtn_Availability.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.rdbtn_Availability.Location = new System.Drawing.Point(114, 86);
+            this.rdbtn_Availability.Location = new System.Drawing.Point(24, 56);
             this.rdbtn_Availability.Name = "rdbtn_Availability";
             this.rdbtn_Availability.Size = new System.Drawing.Size(232, 21);
             this.rdbtn_Availability.TabIndex = 2;
@@ -170,7 +164,7 @@
             this.rdbtn_Category.Checked = true;
             this.rdbtn_Category.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdbtn_Category.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.rdbtn_Category.Location = new System.Drawing.Point(114, 57);
+            this.rdbtn_Category.Location = new System.Drawing.Point(24, 27);
             this.rdbtn_Category.Name = "rdbtn_Category";
             this.rdbtn_Category.Size = new System.Drawing.Size(219, 21);
             this.rdbtn_Category.TabIndex = 1;
@@ -182,77 +176,13 @@
             // 
             this.btn_BookList.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_BookList.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btn_BookList.Location = new System.Drawing.Point(139, 223);
+            this.btn_BookList.Location = new System.Drawing.Point(77, 99);
             this.btn_BookList.Name = "btn_BookList";
             this.btn_BookList.Size = new System.Drawing.Size(115, 48);
             this.btn_BookList.TabIndex = 3;
             this.btn_BookList.Text = "Print";
             this.btn_BookList.UseVisualStyleBackColor = true;
             this.btn_BookList.Click += new System.EventHandler(this.btn_BookList_Click);
-            // 
-            // groupBox_OverdueBooks
-            // 
-            this.groupBox_OverdueBooks.BackColor = System.Drawing.Color.White;
-            this.groupBox_OverdueBooks.Controls.Add(this.btn_PrintBooksOverdue);
-            this.groupBox_OverdueBooks.Controls.Add(this.rdbtn_Overduebymorethan3days);
-            this.groupBox_OverdueBooks.Controls.Add(this.rdbtn_Overdueby3days);
-            this.groupBox_OverdueBooks.Controls.Add(this.rdbtn_Overdueby1day);
-            this.groupBox_OverdueBooks.Location = new System.Drawing.Point(190, 76);
-            this.groupBox_OverdueBooks.Name = "groupBox_OverdueBooks";
-            this.groupBox_OverdueBooks.Size = new System.Drawing.Size(460, 304);
-            this.groupBox_OverdueBooks.TabIndex = 5;
-            this.groupBox_OverdueBooks.TabStop = false;
-            this.groupBox_OverdueBooks.Visible = false;
-            // 
-            // btn_PrintBooksOverdue
-            // 
-            this.btn_PrintBooksOverdue.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_PrintBooksOverdue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btn_PrintBooksOverdue.Location = new System.Drawing.Point(181, 174);
-            this.btn_PrintBooksOverdue.Name = "btn_PrintBooksOverdue";
-            this.btn_PrintBooksOverdue.Size = new System.Drawing.Size(115, 48);
-            this.btn_PrintBooksOverdue.TabIndex = 6;
-            this.btn_PrintBooksOverdue.Text = "Print";
-            this.btn_PrintBooksOverdue.UseVisualStyleBackColor = true;
-            this.btn_PrintBooksOverdue.Click += new System.EventHandler(this.btn_PrintBooksOverdue_Click);
-            // 
-            // rdbtn_Overduebymorethan3days
-            // 
-            this.rdbtn_Overduebymorethan3days.AutoSize = true;
-            this.rdbtn_Overduebymorethan3days.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbtn_Overduebymorethan3days.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.rdbtn_Overduebymorethan3days.Location = new System.Drawing.Point(151, 99);
-            this.rdbtn_Overduebymorethan3days.Name = "rdbtn_Overduebymorethan3days";
-            this.rdbtn_Overduebymorethan3days.Size = new System.Drawing.Size(252, 21);
-            this.rdbtn_Overduebymorethan3days.TabIndex = 2;
-            this.rdbtn_Overduebymorethan3days.Text = "Overdue By More Than 3 Days";
-            this.rdbtn_Overduebymorethan3days.UseVisualStyleBackColor = true;
-            // 
-            // rdbtn_Overdueby3days
-            // 
-            this.rdbtn_Overdueby3days.AutoSize = true;
-            this.rdbtn_Overdueby3days.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbtn_Overdueby3days.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.rdbtn_Overdueby3days.Location = new System.Drawing.Point(151, 72);
-            this.rdbtn_Overdueby3days.Name = "rdbtn_Overdueby3days";
-            this.rdbtn_Overdueby3days.Size = new System.Drawing.Size(168, 21);
-            this.rdbtn_Overdueby3days.TabIndex = 1;
-            this.rdbtn_Overdueby3days.Text = "Overdue by 3 Days";
-            this.rdbtn_Overdueby3days.UseVisualStyleBackColor = true;
-            // 
-            // rdbtn_Overdueby1day
-            // 
-            this.rdbtn_Overdueby1day.AutoSize = true;
-            this.rdbtn_Overdueby1day.Checked = true;
-            this.rdbtn_Overdueby1day.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbtn_Overdueby1day.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.rdbtn_Overdueby1day.Location = new System.Drawing.Point(151, 45);
-            this.rdbtn_Overdueby1day.Name = "rdbtn_Overdueby1day";
-            this.rdbtn_Overdueby1day.Size = new System.Drawing.Size(161, 21);
-            this.rdbtn_Overdueby1day.TabIndex = 0;
-            this.rdbtn_Overdueby1day.TabStop = true;
-            this.rdbtn_Overdueby1day.Text = "Overdue By 1 Day";
-            this.rdbtn_Overdueby1day.UseVisualStyleBackColor = true;
             // 
             // Uc_Reports
             // 
@@ -262,16 +192,13 @@
             this.Controls.Add(this.cmb_Typesofreport);
             this.Controls.Add(this.label_Typesofreport);
             this.Controls.Add(this.groupBox_BookList);
-            this.Controls.Add(this.groupBox_OverdueBooks);
             this.Controls.Add(this.groupBox_MemberListing);
             this.Name = "Uc_Reports";
-            this.Size = new System.Drawing.Size(784, 414);
+            this.Size = new System.Drawing.Size(1092, 520);
             this.groupBox_MemberListing.ResumeLayout(false);
             this.groupBox_MemberListing.PerformLayout();
             this.groupBox_BookList.ResumeLayout(false);
             this.groupBox_BookList.PerformLayout();
-            this.groupBox_OverdueBooks.ResumeLayout(false);
-            this.groupBox_OverdueBooks.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -288,11 +215,6 @@
         private System.Windows.Forms.Button btn_PrintMemberListing;
         private System.Windows.Forms.GroupBox groupBox_BookList;
         private System.Windows.Forms.Button btn_BookList;
-        private System.Windows.Forms.GroupBox groupBox_OverdueBooks;
-        private System.Windows.Forms.Button btn_PrintBooksOverdue;
-        private System.Windows.Forms.RadioButton rdbtn_Overduebymorethan3days;
-        private System.Windows.Forms.RadioButton rdbtn_Overdueby3days;
-        private System.Windows.Forms.RadioButton rdbtn_Overdueby1day;
         private System.Windows.Forms.RadioButton rdbtn_Availability;
         private System.Windows.Forms.RadioButton rdbtn_Category;
     }

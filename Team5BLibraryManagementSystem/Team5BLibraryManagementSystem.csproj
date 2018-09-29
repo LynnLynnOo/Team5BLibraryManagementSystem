@@ -351,9 +351,6 @@
     <EmbeddedResource Include="Frm_Sjw.resx">
       <DependentUpon>Frm_Sjw.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frm_MonthlyLoanReport.resx">
-      <DependentUpon>Frm_MonthlyLoanReport.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Frm_TransactionHist.resx">
       <DependentUpon>Frm_TransactionHist.cs</DependentUpon>
     </EmbeddedResource>
