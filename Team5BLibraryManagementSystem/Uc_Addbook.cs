@@ -26,9 +26,7 @@ namespace Team5BLibraryManagementSystem
         }
 
 
-        //public int Theid
-        //{ get; set; }
-        private void label6_Click(object sender, EventArgs e)
+             private void label6_Click(object sender, EventArgs e)
         {
 
         }
@@ -42,34 +40,17 @@ namespace Team5BLibraryManagementSystem
             }
             int a = Convert.ToInt32(text_Quantity.Text);
             int b = Convert.ToInt32(ds.Tables["Booksdetails"].Rows[pasn]["quantity"]);
-            //Theid = Convert.ToInt32(text_Bookdetail.Text);
+           
             if (a < b)
             { Form1 selectbook = new Form1(this);
                 DialogResult dr = selectbook.ShowDialog();
                 SA47Team05BESNETLMSEntities context = new SA47Team05BESNETLMSEntities();
                 if (dr == DialogResult.OK)
                 {
-                   //int selectid = Convert.ToInt32(selectbook.selectedBookID);
-                   // Console.WriteLine(selectid);
-                   // Book c = context.Books.Where(x => x.bookid == selectid).First();
-                   // if (c.status == "Avaliable")
-                   // {
-                        //context.Books.Remove(c);
-                        //context.SaveChanges();
-                        ds.Tables["Booksdetails"].Rows[pasn]["title"] = textBookName.Text;
-                        ds.Tables["Booksdetails"].Rows[pasn]["author"] = textAuthor.Text;
-                        ds.Tables["Booksdetails"].Rows[pasn]["category"] = textGenre.Text;
-                        ds.Tables["Booksdetails"].Rows[pasn]["publisher"] = textPublisher.Text;
-                        ds.Tables["Booksdetails"].Rows[pasn]["publishyear"] = comboBox_year.Text.ToString();
-                        ds.Tables["Booksdetails"].Rows[pasn]["isbn"] = text_Isbn.Text;
-                        ds.Tables["Booksdetails"].Rows[pasn]["quantity"] = text_Quantity.Text;
-                        ta.Update(ds);
-                        MessageBox.Show("Update Successfully!");
-                    //}
-                    //else
-                    //{
-                    //    MessageBox.Show("The book was lent out,please select other books");
-                    //}
+                    P1();
+                   
+                    MessageBox.Show("Update Successfully!");
+                    
                 }
             }
             if (a >b)
@@ -84,18 +65,18 @@ namespace Team5BLibraryManagementSystem
                     ds.Tables["Books"].Rows.Add(r);
                     b++;
                     ta1.Update(ds);
-                    ds.Tables["Booksdetails"].Rows[pasn]["title"] = textBookName.Text;
-                    ds.Tables["Booksdetails"].Rows[pasn]["author"] = textAuthor.Text;
-                    ds.Tables["Booksdetails"].Rows[pasn]["category"] = textGenre.Text;
-                    ds.Tables["Booksdetails"].Rows[pasn]["publisher"] = textPublisher.Text;
-                    ds.Tables["Booksdetails"].Rows[pasn]["publishyear"] = comboBox_year.Text.ToString();
-                    ds.Tables["Booksdetails"].Rows[pasn]["isbn"] = text_Isbn.Text;
-                    ds.Tables["Booksdetails"].Rows[pasn]["quantity"] = text_Quantity.Text;
-                    ta.Update(ds);
+                    P1();
+                  
                 }
+            
                 MessageBox.Show("Update Successfully!");
             }
-            //ds.Tables["Booksdetails"].Rows[pasn]["booksdetailsid"] = text_Bookdetail.Text;
+          if (a==b)
+            {
+                P1();
+                MessageBox.Show("Update Successfully!");
+            }
+          
            
         }
         private int find2(string Search)
@@ -137,6 +118,19 @@ namespace Team5BLibraryManagementSystem
             comboBox_year.Text = ds.Tables["Booksdetails"].Rows[pasn]["publishyear"].ToString();
             text_Isbn.Text = ds.Tables["Booksdetails"].Rows[pasn]["isbn"].ToString();
             text_Quantity.Text = ds.Tables["Booksdetails"].Rows[pasn]["quantity"].ToString();
+           text_Location.Text = ds.Tables["Booksdetails"].Rows[pasn]["location"].ToString();
+        }
+        private void P1()
+        {
+            ds.Tables["Booksdetails"].Rows[pasn]["title"] = textBookName.Text;
+            ds.Tables["Booksdetails"].Rows[pasn]["author"] = textAuthor.Text;
+            ds.Tables["Booksdetails"].Rows[pasn]["category"] = textGenre.Text;
+            ds.Tables["Booksdetails"].Rows[pasn]["publisher"] = textPublisher.Text;
+            ds.Tables["Booksdetails"].Rows[pasn]["publishyear"] = comboBox_year.Text.ToString();
+            ds.Tables["Booksdetails"].Rows[pasn]["isbn"] = text_Isbn.Text;
+            ds.Tables["Booksdetails"].Rows[pasn]["quantity"] = text_Quantity.Text;
+            ds.Tables["Booksdetails"].Rows[pasn]["location"] = text_Location.Text;
+            ta.Update(ds);
         }
 
         private void Uc_Addbook_Load(object sender, EventArgs e)
@@ -162,14 +156,14 @@ namespace Team5BLibraryManagementSystem
             }
             int a = Convert.ToInt32(text_Quantity.Text);
             DataRow r = ds.Tables["Booksdetails"].NewRow();
-            //r["booksdetailsid"] = text_Bookdetail.Text;
-            r["title"] = textBookName.Text;
+           r["title"] = textBookName.Text;
             r["author"] = textAuthor.Text;
             r["category"] = textGenre.Text;
             r["publisher"] = textPublisher.Text;
             r["publishyear"] = comboBox_year.Text;
             r["isbn"] = text_Isbn.Text;
             r["quantity"] = a;
+            r["location"] =text_Location.Text;
             ds.Tables["Booksdetails"].Rows.Add(r);
             ta.Update(ds);
                 while (a > 0)

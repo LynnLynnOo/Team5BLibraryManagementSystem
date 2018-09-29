@@ -78,5 +78,10 @@ namespace Team5BLibraryManagementSystem
             ta1 = new DataSet1TableAdapters.BooksTableAdapter();
             ta1.Fill(ds.Books);
         }
+
+        private void date_Issue_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

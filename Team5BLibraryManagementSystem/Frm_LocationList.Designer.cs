@@ -1,6 +1,6 @@
 ﻿namespace Team5BLibraryManagementSystem
 {
-    partial class Frm_Book
+    partial class Frm_LocationList
     {
         /// <summary>
         /// Required designer variable.
@@ -28,31 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.uc_Addbook1 = new Team5BLibraryManagementSystem.Uc_Addbook();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // uc_Addbook1
+            // dataGridView1
             // 
-            this.uc_Addbook1.ForeColor = System.Drawing.Color.White;
-            this.uc_Addbook1.Location = new System.Drawing.Point(73, 12);
-            this.uc_Addbook1.Name = "uc_Addbook1";
-            this.uc_Addbook1.Size = new System.Drawing.Size(588, 359);
-            this.uc_Addbook1.TabIndex = 0;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(159, 72);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 23;
+            this.dataGridView1.Size = new System.Drawing.Size(354, 222);
+            this.dataGridView1.TabIndex = 0;
             // 
-            // Frm_Book
+            // Frm_LocationList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(736, 399);
-            this.Controls.Add(this.uc_Addbook1);
-            this.Name = "Frm_Book";
-            this.Text = "Frm_Book";
+            this.Controls.Add(this.dataGridView1);
+            this.Name = "Frm_LocationList";
+            this.Text = "Frm_Member";
+            this.Load += new System.EventHandler(this.Frm_LocationList_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private Uc_Addbook uc_Addbook1;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

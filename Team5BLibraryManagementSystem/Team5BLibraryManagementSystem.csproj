@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{D774D2D7-8AA9-4B0B-BA98-FB8E0C586662}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Exe</OutputType>
     <RootNamespace>Team5BLibraryManagementSystem</RootNamespace>
     <AssemblyName>Team5BLibraryManagementSystem</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
@@ -118,11 +118,11 @@
     <Compile Include="Frm_BookListingByCategory.Designer.cs">
       <DependentUpon>Frm_BookListingByCategory.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm_Member.cs">
+    <Compile Include="Frm_LocationList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frm_Member.Designer.cs">
-      <DependentUpon>Frm_Member.cs</DependentUpon>
+    <Compile Include="Frm_LocationList.Designer.cs">
+      <DependentUpon>Frm_LocationList.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm_MemberListing.cs">
       <SubType>Form</SubType>
@@ -304,8 +304,8 @@
     <EmbeddedResource Include="Frm_Main.resx">
       <DependentUpon>Frm_Main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frm_Member.resx">
-      <DependentUpon>Frm_Member.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_LocationList.resx">
+      <DependentUpon>Frm_LocationList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_MemberListing.resx">
       <DependentUpon>Frm_MemberListing.cs</DependentUpon>
