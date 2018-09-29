@@ -22,5 +22,6 @@ namespace Team5BLibraryManagementSystem
         public decimal publishyear { get; set; }
         public string isbn { get; set; }
         public string status { get; set; }
+        public string location { get; set; }
     }
 }

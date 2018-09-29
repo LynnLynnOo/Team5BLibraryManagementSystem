@@ -10,23 +10,23 @@ using System.Windows.Forms;
 
 namespace Team5BLibraryManagementSystem
 {
-    public partial class Frm_BookListingByAvailability : Form
+    public partial class Frm_BookListingAll : Form
     {
-        public Frm_BookListingByAvailability()
+        public Frm_BookListingAll()
         {
             InitializeComponent();
         }
 
-        private void Frm_BookListingByAvailability_Load(object sender, EventArgs e)
+        private void Frm_BookListingAll_Load(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Maximized;
             var ds = new Dataset_BookListAvailability();
             var dt = ds.ViewBooksListing;
             var adapter = new Dataset_BookListAvailabilityTableAdapters.ViewBooksListingTableAdapter();
             adapter.Fill(dt);
-            Rpt_BookListingByAvailability cr1 = new Rpt_BookListingByAvailability();
+            var cr1 = new Rpt_BookListingByAvailability();
             cr1.SetDataSource(ds);
-            crv_BookListingByAvailiability.ReportSource = cr1;
+            crv_BookListing.ReportSource = cr1;
+
         }
     }
 }

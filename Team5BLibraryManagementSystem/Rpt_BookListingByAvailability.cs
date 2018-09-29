@@ -16,14 +16,14 @@ namespace Team5BLibraryManagementSystem {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class Rpt_WeeklyLoanReport : ReportClass {
+    public class Rpt_BookListingByAvailability : ReportClass {
         
-        public Rpt_WeeklyLoanReport() {
+        public Rpt_BookListingByAvailability() {
         }
         
         public override string ResourceName {
             get {
-                return "Rpt_WeeklyLoanReport.rpt";
+                return "Rpt_BookListingByAvailability.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace Team5BLibraryManagementSystem {
         
         public override string FullResourceName {
             get {
-                return "Team5BLibraryManagementSystem.Rpt_WeeklyLoanReport.rpt";
+                return "Team5BLibraryManagementSystem.Rpt_BookListingByAvailability.rpt";
             }
             set {
                 // Do nothing
@@ -106,9 +106,9 @@ namespace Team5BLibraryManagementSystem {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedRpt_WeeklyLoanReport : Component, ICachedReport {
+    public class CachedRpt_BookListingByAvailability : Component, ICachedReport {
         
-        public CachedRpt_WeeklyLoanReport() {
+        public CachedRpt_BookListingByAvailability() {
         }
         
         [Browsable(false)]
@@ -145,7 +145,7 @@ namespace Team5BLibraryManagementSystem {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            Rpt_WeeklyLoanReport rpt = new Rpt_WeeklyLoanReport();
+            Rpt_BookListingByAvailability rpt = new Rpt_BookListingByAvailability();
             rpt.Site = this.Site;
             return rpt;
         }

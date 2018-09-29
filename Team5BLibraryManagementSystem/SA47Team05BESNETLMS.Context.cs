@@ -34,8 +34,8 @@ namespace Team5BLibraryManagementSystem
         public virtual DbSet<Returndetail> Returndetails { get; set; }
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<ViewBooksListing> ViewBooksListings { get; set; }
-        public virtual DbSet<ViewLoanedBook> ViewLoanedBooks { get; set; }
         public virtual DbSet<ViewTotalLoanCount> ViewTotalLoanCounts { get; set; }
+        public virtual DbSet<ViewLoanedBook> ViewLoanedBooks { get; set; }
     
         public virtual ObjectResult<BookListByAvailability_Result> BookListByAvailability(string status)
         {
@@ -44,6 +44,15 @@ namespace Team5BLibraryManagementSystem
                 new ObjectParameter("status", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<BookListByAvailability_Result>("BookListByAvailability", statusParameter);
+        }
+    
+        public virtual ObjectResult<HistoryByMembers_Result> HistoryByMembers(Nullable<int> memberid)
+        {
+            var memberidParameter = memberid.HasValue ?
+                new ObjectParameter("memberid", memberid) :
+                new ObjectParameter("memberid", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<HistoryByMembers_Result>("HistoryByMembers", memberidParameter);
         }
     
         public virtual ObjectResult<MembersBeforeExpiry_Result> MembersBeforeExpiry()

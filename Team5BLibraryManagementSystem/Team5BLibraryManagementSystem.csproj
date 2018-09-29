@@ -79,6 +79,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Dataset_LoanAck.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Dataset_LoanAck.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dataset_PrintMember.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Dataset_PrintMember.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,16 +105,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Dataset_MembersByExpiry.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Dataset_MonthlyLoanReport.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Dataset_MonthlyLoanReport.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Frm_Book.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm_Book.Designer.cs">
       <DependentUpon>Frm_Book.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_BookListingAll.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_BookListingAll.Designer.cs">
+      <DependentUpon>Frm_BookListingAll.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm_BookListingByAvailability.cs">
       <SubType>Form</SubType>
@@ -118,6 +129,12 @@
     <Compile Include="Frm_BookListingByCategory.Designer.cs">
       <DependentUpon>Frm_BookListingByCategory.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_LoanAck.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_LoanAck.Designer.cs">
+      <DependentUpon>Frm_LoanAck.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_Member.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,17 +147,17 @@
     <Compile Include="Frm_MemberListing.Designer.cs">
       <DependentUpon>Frm_MemberListing.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_PrintMember.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_PrintMember.Designer.cs">
+      <DependentUpon>Frm_PrintMember.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_Sjw.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm_Sjw.Designer.cs">
       <DependentUpon>Frm_Sjw.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Frm_MonthlyLoanReport.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Frm_MonthlyLoanReport.Designer.cs">
-      <DependentUpon>Frm_MonthlyLoanReport.cs</DependentUpon>
     </Compile>
     <Compile Include="Helpersfunc.cs" />
     <Compile Include="Frm_Login.cs">
@@ -154,6 +171,9 @@
     </Compile>
     <Compile Include="Frm_Main.Designer.cs">
       <DependentUpon>Frm_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HistoryByMembers_Result.cs">
+      <DependentUpon>SA47Team05BESNETLMS.tt</DependentUpon>
     </Compile>
     <Compile Include="Loandetail.cs">
       <DependentUpon>SA47Team05BESNETLMS.tt</DependentUpon>
@@ -172,16 +192,22 @@
     <Compile Include="Returndetail.cs">
       <DependentUpon>SA47Team05BESNETLMS.tt</DependentUpon>
     </Compile>
-    <Compile Include="Rpt_BookListByAvailability.cs">
+    <Compile Include="Rpt_BookListingByCa.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Rpt_BookListByAvailability.rpt</DependentUpon>
+      <DependentUpon>Rpt_BookListingByCa.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Rpt_BookListingByCategory.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Rpt_BookListingByCategory.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rpt_LoanAck.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Rpt_LoanAck.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Rpt_MemberListing.cs">
@@ -202,16 +228,16 @@
       <DependentUpon>Rpt_MemberListingPastExpiry.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Rpt_MonthlyLoanReport.cs">
+    <Compile Include="Rpt_PrintMember.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Rpt_MonthlyLoanReport.rpt</DependentUpon>
+      <DependentUpon>Rpt_PrintMember.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Rpt_WeeklyLoanReport.cs">
+    <Compile Include="Rpt_BookListingByAvailability.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Rpt_WeeklyLoanReport.rpt</DependentUpon>
+      <DependentUpon>Rpt_BookListingByAvailability.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="SA47Team05BESNETLMS.Context.cs">
@@ -289,11 +315,17 @@
     <EmbeddedResource Include="Frm_Book.resx">
       <DependentUpon>Frm_Book.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Frm_BookListingAll.resx">
+      <DependentUpon>Frm_BookListingAll.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_BookListingByAvailability.resx">
       <DependentUpon>Frm_BookListingByAvailability.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_BookListingByCategory.resx">
       <DependentUpon>Frm_BookListingByCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_LoanAck.resx">
+      <DependentUpon>Frm_LoanAck.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Login.resx">
       <DependentUpon>Frm_Login.cs</DependentUpon>
@@ -307,11 +339,11 @@
     <EmbeddedResource Include="Frm_MemberListing.resx">
       <DependentUpon>Frm_MemberListing.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Frm_PrintMember.resx">
+      <DependentUpon>Frm_PrintMember.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_Sjw.resx">
       <DependentUpon>Frm_Sjw.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Frm_MonthlyLoanReport.resx">
-      <DependentUpon>Frm_MonthlyLoanReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -323,13 +355,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Rpt_BookListByAvailability.rpt">
+    <EmbeddedResource Include="Rpt_BookListingByCa.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Rpt_BookListByAvailability.cs</LastGenOutput>
+      <LastGenOutput>Rpt_BookListingByCa.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Rpt_BookListingByCategory.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Rpt_BookListingByCategory.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rpt_LoanAck.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Rpt_LoanAck.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Rpt_MemberListing.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -343,13 +379,13 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Rpt_MemberListingPastExpiry.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Rpt_MonthlyLoanReport.rpt">
+    <EmbeddedResource Include="Rpt_PrintMember.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Rpt_MonthlyLoanReport.cs</LastGenOutput>
+      <LastGenOutput>Rpt_PrintMember.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Rpt_WeeklyLoanReport.rpt">
+    <EmbeddedResource Include="Rpt_BookListingByAvailability.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Rpt_WeeklyLoanReport.cs</LastGenOutput>
+      <LastGenOutput>Rpt_BookListingByAvailability.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Uc_Addbook.resx">
       <DependentUpon>Uc_Addbook.cs</DependentUpon>
@@ -395,6 +431,17 @@
     <None Include="Dataset_BookListAvailability.xss">
       <DependentUpon>Dataset_BookListAvailability.xsd</DependentUpon>
     </None>
+    <None Include="Dataset_LoanAck.xsc">
+      <DependentUpon>Dataset_LoanAck.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset_LoanAck.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Dataset_LoanAck.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Dataset_LoanAck.xss">
+      <DependentUpon>Dataset_LoanAck.xsd</DependentUpon>
+    </None>
     <None Include="Dataset_MembersByExpiry.xsc">
       <DependentUpon>Dataset_MembersByExpiry.xsd</DependentUpon>
     </None>
@@ -406,16 +453,16 @@
     <None Include="Dataset_MembersByExpiry.xss">
       <DependentUpon>Dataset_MembersByExpiry.xsd</DependentUpon>
     </None>
-    <None Include="Dataset_MonthlyLoanReport.xsc">
-      <DependentUpon>Dataset_MonthlyLoanReport.xsd</DependentUpon>
+    <None Include="Dataset_PrintMember.xsc">
+      <DependentUpon>Dataset_PrintMember.xsd</DependentUpon>
     </None>
-    <None Include="Dataset_MonthlyLoanReport.xsd">
+    <None Include="Dataset_PrintMember.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Dataset_MonthlyLoanReport.Designer.cs</LastGenOutput>
+      <LastGenOutput>Dataset_PrintMember.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Dataset_MonthlyLoanReport.xss">
-      <DependentUpon>Dataset_MonthlyLoanReport.xsd</DependentUpon>
+    <None Include="Dataset_PrintMember.xss">
+      <DependentUpon>Dataset_PrintMember.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

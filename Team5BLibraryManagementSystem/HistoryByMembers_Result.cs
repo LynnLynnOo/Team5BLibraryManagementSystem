@@ -10,21 +10,19 @@
 namespace Team5BLibraryManagementSystem
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class ViewLoanedBook
+    public partial class HistoryByMembers_Result
     {
+        public Nullable<int> memberid { get; set; }
         public int bookid { get; set; }
-        public int loandetailsid { get; set; }
-        public string status { get; set; }
+        public int booksdetailsid { get; set; }
         public string title { get; set; }
         public string author { get; set; }
         public string publisher { get; set; }
         public decimal publishyear { get; set; }
         public string category { get; set; }
         public string isbn { get; set; }
-        public System.DateTime startdate { get; set; }
-        public System.DateTime enddate { get; set; }
-        public Nullable<int> Difference { get; set; }
+        public Nullable<System.DateTime> startdate { get; set; }
+        public Nullable<System.DateTime> enddate { get; set; }
     }
 }
